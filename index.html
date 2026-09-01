@@ -146,6 +146,7 @@
   .seg-label{background:rgba(255,255,255,.88)!important;border:1px solid #d8d2c4!important;border-radius:20px!important;
              padding:0 8px!important;color:#5a5347!important;font-size:10.5px!important;box-shadow:none!important}
   .seg-label::before{display:none!important}
+  .seg-label.ovkm{background:rgba(255,255,255,.42)!important;border:1px solid rgba(180,172,150,.35)!important;color:rgba(90,83,71,.6)!important;font-weight:700}
 
   /* ---------- Day card ---------- */
   .day{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;
@@ -298,6 +299,7 @@
     .dmap .map{height:268px}
     .name-label{font-size:9.5px!important;padding:0 4px!important}
     .seg-label{display:none!important}
+    .seg-label.ovkm{display:block!important;font-size:9.5px!important}
     .pin{width:20px;height:20px;border-width:2px;font-size:10px}
     .pin.air{width:auto;height:19px;padding:0 6px;font-size:10px}
 
@@ -488,14 +490,6 @@
   <!-- ============ 总览地图 ============ -->
   <h2 class="sec" id="sec-overview">全程航图（广州 → 上海集合 → 阿拉木图 ⇄ 阿克套 → 分别回上海/广州）</h2>
   <div id="overviewMap" class="map big"></div>
-  <div class="legend">
-    <span><i class="sw gather"></i>国内集合段（广州 → 上海）</span>
-    <span><i class="sw flight"></i>飞行航段（虚线标注里程）</span>
-    <span><i class="sw drive"></i>公路/越野</span>
-    <span><i class="sw hike"></i>徒步路线</span>
-    <span><i class="sw walk"></i>步行</span>
-    <span style="color:#a39a86">地图为示意坐标，里程为公路/航空约值，需联网加载底图</span>
-  </div>
 
   <!-- ============ 逐日 ============ -->
   <h2 class="sec" id="sec-days">逐日行程（时间轴编号 ↔ 地图编号）</h2>
@@ -1228,10 +1222,10 @@ setTimeout(()=>{
   const ov=L.map('overviewMap',{scrollWheelZoom:false});
   addBaseLayers(ov);
   const airports=[
-    {code:'PVG · Shanghai',lat:31.1443,lng:121.8083},
-    {code:'ALA · Almaty',lat:43.3521,lng:77.0405},
-    {code:'SCO · Aktau',lat:43.8601,lng:51.0946},
-    {code:'CAN · Guangzhou',lat:23.3924,lng:113.2988}];
+    {code:'PVG',lat:31.1443,lng:121.8083},
+    {code:'ALA',lat:43.3521,lng:77.0405},
+    {code:'SCO',lat:43.8601,lng:51.0946},
+    {code:'CAN',lat:23.3924,lng:113.2988}];
   // 二次贝塞尔弧线（经纬度平面），bulge 为垂直于航线方向的拱起度数，让回沪/回穗两条线分开
   function arcPts(P,Q,bulge){
     const A=[P.lng,P.lat],B=[Q.lng,Q.lat],mx=(A[0]+B[0])/2,my=(A[1]+B[1])/2;
@@ -1245,21 +1239,21 @@ setTimeout(()=>{
   }
   // [起, 止, 标签, 颜色, 弧度, 标签位置t, 标签微调]
   const arcs=[
-    [3,0,'CA8582 CAN→PVG ≈1200km',C.gather,2,0.5,{dlat:1.1,dlng:0}],
-    [0,1,'MU6041 PVG→ALA ≈4130km',C.flight,4,0.55,{dlat:1.2,dlng:0}],
-    [1,2,'DV731/DV729 ALA⇄SCO 2087km',C.drive,0,0.5,{dlat:1.1,dlng:0}],
-    [1,0,'MU6042 ALA→PVG ≈4130km',C.hike,4,0.64,{dlat:-1.5,dlng:4}],
-    [1,3,'CZ3084 ALA→CAN ≈3990km',C.rose,-6,0.55,{dlat:-1.3,dlng:0}]];
+    [3,0,'1200km',C.gather,2,0.5,{dlat:1.1,dlng:0}],
+    [0,1,'4130km',C.flight,4,0.55,{dlat:1.2,dlng:0}],
+    [1,2,'2087km',C.drive,0,0.5,{dlat:1.1,dlng:0}],
+    [1,0,'4130km',C.hike,4,0.64,{dlat:-1.5,dlng:4}],
+    [1,3,'3990km',C.rose,-6,0.55,{dlat:-1.3,dlng:0}]];
   arcs.forEach(a=>{
     const A=airports[a[0]],B=airports[a[1]];
     L.polyline(arcPts(A,B,a[4]),{color:a[3],weight:2.5,dashArray:'7,7'}).addTo(ov);
     const lp=arcAt(A,B,a[4],a[5]),off=a[6];
     L.marker(L.latLng(lp.lat+off.dlat,lp.lng+off.dlng),{interactive:false,icon:L.divIcon({className:'',iconSize:null})})
-      .bindTooltip(a[2],{permanent:true,direction:'center',className:'seg-label'}).addTo(ov);
+      .bindTooltip(a[2],{permanent:true,direction:'center',className:'seg-label ovkm'}).addTo(ov);
   });
   airports.forEach(p=>{
     L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',html:`<div class="pin air" style="--c:var(--slate)">${p.code}</div>`,
-      iconSize:IS_MOBILE?[116,19]:[128,21],iconAnchor:IS_MOBILE?[58,9.5]:[64,10.5]})}).addTo(ov);
+      iconSize:IS_MOBILE?[46,19]:[52,21],iconAnchor:IS_MOBILE?[23,9.5]:[26,10.5]})}).addTo(ov);
   });
   ov.fitBounds([[22.8,50.5],[45.3,122.4]],{padding:IS_MOBILE?[60,72]:[24,24]});
   ov.__fit={bounds:[[22.8,50.5],[45.3,122.4]],opts:{padding:IS_MOBILE?[60,72]:[24,24]}};
