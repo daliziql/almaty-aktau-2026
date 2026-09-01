@@ -228,9 +228,11 @@ const SEED=[
   imgs:[
    {src:'assets/hotels/h8.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261008;drs-40;rc-1-2&dealId=-5959164114925356202'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'leaning',note:'MCP核验09-01：Booking.com ¥774/晚；平台评分 8.9（3,188条）'},
 
- {id:'h9',city:'aktau',name:'Holiday Inn Aktau',en:'Holiday Inn Aktau',area:'市区/近海岸线',tier:'中端',
-  refPrice:560,rating:4.4,xhsCnt:'',tags:'国际连锁,含早,稳定',colleague:'',xhs:'',pros:'标准化兜底',cons:'海景一般',
-  imgs:[],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01： ¥None/晚；平台暂无评分/报价，待人工核'},
+ {id:'h9',city:'aktau',name:'Holiday Inn AKTAU by IHG',en:'Holiday Inn AKTAU by IHG',area:'市区/近 Dana 超市',tier:'中端',
+  refPrice:522,rating:4.5,xhsCnt:'',tags:'国际连锁,含早,免费取消,Aktau 四星榜 No.2',colleague:'',xhs:'Trip 8.9/10（64条）：Clean and tidy / Great rooms',pros:'标准化兜底、免费取消、2 晚总价 ¥1170 含税',cons:'海景一般；注意阿克套另有一家 SEASIDE 店勿订混',
+  imgs:[
+   {src:'assets/hotels/h9.webp',cap:'Trip.com 实拍（2026-09-01）',url:'https://www.trip.com/hotels/detail/?hotelId=5931553&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX'}],
+  nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'浏览器人工核验 09-01：Trip ¥522/晚（Standard，2晚¥1170含税），8.9分64评；Trivago 无库存属平台缺口'},
 
  {id:'h10',city:'aktau',name:'Renaissance Aktau by Sulo',en:'Renaissance Aktau',area:'海岸片区',tier:'高端',
   refPrice:592,rating:4.5,xhsCnt:'',tags:'设计感,海景酒廊',colleague:'',xhs:'',pros:'颜值高、适合小酌',cons:'价格波动大',
@@ -247,6 +249,12 @@ const SEED=[
   xhs:'',pros:'度假设施全',cons:'位置硬伤，与本行程节奏冲突',
   imgs:[
    {src:'assets/hotels/h12.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-rixos-water-world-aktau-aqtau?cip=234716015&currencyCode=CNY&search=100-22233910;dr-20261006-20261008;drs-40;rc-1-2&dealId=133691888806043992'},],nights:'不适用',mcpDate:'2026-09-01',status:'out',note:'保留记录防止误订；MCP核验09-01：Booking.com ¥1910/晚；平台评分 9.2（4,428条）'},
+
+ {id:'h21',city:'aktau',name:'Holiday Inn AKTAU - SEASIDE by IHG',en:'Holiday Inn AKTAU SEASIDE',area:'Laguna Akvapark 片区（距市中心4.8km）',tier:'中端',
+  refPrice:589,rating:4.5,xhsCnt:'',tags:'国际连锁,海景倾向,早餐好评,免费取消',colleague:'',xhs:'Trip 9.0/10（24条）：Delicious breakfast / Great service',pros:'评分更高、早餐好评、靠水乐园',cons:'距第一海岸线 4.8km，赶曼吉斯套团集合略绕',
+  imgs:[
+   {src:'assets/hotels/h21.webp',cap:'Trip.com 实拍（2026-09-01）',url:'https://www.trip.com/hotels/detail/?hotelId=30785434&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX'}],
+  nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'浏览器人工核验 09-01：Trip ¥589/晚（Standard King），9.0分24评；位置不如 by IHG 店'},
 
  {id:'h13',city:'almaty',name:'Hotel Kazakhstan',en:'Hotel Kazakhstan',area:'MCP 扩展候选',tier:'中端',refPrice:760,rating:4.2,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 10039 条，评分 8.5\n设施：大厅无线网络, 客房无线网络, 空调, 餐厅, 酒吧',cons:'',imgs:[{src:'assets/hotels/h13.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-kazakhstan-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942573;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=700471358354587183'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [772, 749]'},
 
@@ -291,6 +299,8 @@ const SEED=[
 const SEED_QUOTES={};
 SEED.forEach(h=>{SEED_QUOTES[h.id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''},agoda:{price:null,date:'',url:''}}});
 const MCP_QUOTES={
+  "h9": {"trip": {"price": 522, "date": "2026-09-01", "url": "https://www.trip.com/hotels/detail/?hotelId=5931553&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX"}},
+  "h21": {"trip": {"price": 589, "date": "2026-09-01", "url": "https://www.trip.com/hotels/detail/?hotelId=30785434&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX"}},
  "h1": {
   "trip": {
    "price": 816,
@@ -423,29 +433,7 @@ const MCP_QUOTES={
    "url": ""
   }
  },
- "h9": {
-  "trip": {
-   "price": null,
-   "date": "",
-   "url": ""
-  },
-  "airbnb": {
-   "price": null,
-   "date": "",
-   "url": ""
-  },
-  "booking": {
-   "price": null,
-   "date": "",
-   "url": ""
-  },
-  "agoda": {
-   "price": null,
-   "date": "",
-   "url": ""
-  }
- },
- "h10": {
+  "h10": {
   "trip": {
    "price": null,
    "date": "",
@@ -1079,7 +1067,7 @@ document.getElementById('cards').addEventListener('click',e=>{
 document.getElementById('lbClose').addEventListener('click',()=>document.getElementById('lb').classList.remove('show'));
 document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')e.currentTarget.classList.remove('show')});
 document.getElementById('addBtn').addEventListener('click',()=>{
-  const id='h'+Date.now();hotels.unshift({id,city:cityFilter==='all'?'almaty':cityFilter,name:'新候选（点我改名）',en:'',area:'',tier:'中端',refPrice:0,rating:0,xhsCnt:'',tags:'',colleague:'',xhs:'',pros:'',cons:'',imgs:[],nights:'',status:'candidate',note:''});
+  const id='h'+Date.now();hotels.unshift({id,city:cityFilter==='all'?'almaty':cityFilter,name:'新候选（点我改名）',en:'',area:'',tier:'中端',refPrice:0,rating:0,xhsCnt:'',tags:'',colleague:'',xhs:'',pros:'',cons:'',imgs:[],nights:'',status:'candidate',note:''})
   quotes[id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''},agoda:{price:null,date:'',url:''}};renderAll();
 });
 document.getElementById('exportBtn').addEventListener('click',()=>{
