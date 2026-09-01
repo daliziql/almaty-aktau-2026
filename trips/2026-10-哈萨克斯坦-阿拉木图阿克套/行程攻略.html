@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈萨克斯坦 8 天 · 阿拉木图 × 阿克套行程图册（2026 国庆 · 2 人）</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root{
+    --paper:#f4f2ec; --card:#ffffff; --ink:#22302c; --sub:#66736e; --line:#e4dfd4;
+    --jade:#2e7d6b; --jade-soft:#e4f0ec;
+    --sky:#3a7ca5;  --sky-soft:#e7f0f5;
+    --clay:#d08a3c; --clay-soft:#faf0e1;
+    --rose:#c2553d; --rose-soft:#fbe9e4;
+    --slate:#4f6d7a; --slate-soft:#e9eff1;
+    --gold:#b08900; --gold-soft:#f8f1dc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+       background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 90px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(125deg,#1d5b53 0%,#2e7d6b 48%,#3a7ca5 100%);color:#fff;
+        border-radius:0 0 28px 28px;padding:46px 36px 34px;position:relative;overflow:hidden;margin:0 -20px 26px}
+  .hero::after{content:"🏔️";position:absolute;right:26px;bottom:-14px;font-size:130px;opacity:.13}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:4px;opacity:.85;font-weight:700}
+  .hero h1{font-size:30px;margin:10px 0 8px;line-height:1.3}
+  .hero .meta{font-size:14.5px;opacity:.95}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:5px 13px;border-radius:30px;font-size:12.5px}
+
+  /* ---------- Countdown ---------- */
+  .countdown{background:linear-gradient(135deg,#fff,#f2f8f6);border:1px solid #d6e6e0;border-radius:18px;
+             padding:20px 24px 18px;margin:22px 0 18px;text-align:center;box-shadow:0 3px 14px rgba(30,45,40,.06)}
+  .countdown.state-travel{background:linear-gradient(135deg,#fff,#ecf4f8);border-color:#cfdfe8}
+  .countdown.state-after{background:linear-gradient(135deg,#fff,#fbf3e7);border-color:#ecd9bd}
+  .cd-eyebrow{font-size:11.5px;letter-spacing:3px;font-weight:800;color:var(--jade)}
+  .state-travel .cd-eyebrow{color:var(--sky)} .state-after .cd-eyebrow{color:var(--clay)}
+  .cd-main{font-size:18px;font-weight:800;margin:7px 0 12px}
+  .cd-units{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .cd-units span{background:#fff;border:1px solid var(--line);border-radius:13px;min-width:76px;padding:9px 8px;
+                 display:flex;flex-direction:column;align-items:center;box-shadow:0 1px 4px rgba(30,45,40,.04)}
+  .cd-units b{font-size:27px;font-weight:800;color:var(--jade);font-variant-numeric:tabular-nums;line-height:1.05}
+  .state-travel .cd-units b{color:var(--sky)} .state-after .cd-units b{color:var(--clay)}
+  .cd-units small{font-size:11px;color:var(--sub);margin-top:3px}
+  .cd-sub{font-size:13px;color:var(--sub);max-width:600px;margin:0 auto 12px;line-height:1.7}
+  .cd-bar{height:6px;border-radius:6px;background:#e7ece9;overflow:hidden}
+  .cd-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--jade),var(--sky));transition:width .8s ease}
+  .state-after .cd-bar i{background:linear-gradient(90deg,var(--clay),var(--gold))}
+
+  /* ---------- 快跳导航 ---------- */
+  .daynav{position:sticky;top:0;z-index:700;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+          padding:9px 10px;margin:14px 0 16px;background:rgba(246,243,237,.93);backdrop-filter:blur(8px);
+          border-bottom:1px solid var(--line);border-radius:0 0 12px 12px}
+  .daynav a{font-size:12px;font-weight:600;padding:4px 11px;border-radius:30px;border:1px solid var(--line);
+            background:#fff;color:var(--ink);text-decoration:none;transition:all .15s}
+  .daynav a:hover{border-color:var(--jade);color:var(--jade)}
+  .daynav a.on{background:var(--jade);border-color:var(--jade);color:#fff}
+  .daynav .sep{flex-basis:100%;height:0}
+  .day,.sec,#overviewMap{scroll-margin-top:58px}
+
+  /* ---------- Alternatives ---------- */
+  .alt-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .alt-col{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+  .alt-col h3{margin:0 0 2px;font-size:16.5px}
+  .alt-col .alt-sub{font-size:12px;color:var(--sub);margin-bottom:6px}
+  .alt-group{margin:14px 0 2px;font-size:11.5px;font-weight:800;letter-spacing:1.5px;color:var(--jade)}
+  .alt-item{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.6}
+  .alt-col .alt-item:last-of-type{border-bottom:none}
+  .alt-item b{font-weight:700}
+  .alt-item .m{display:block;color:var(--sub);font-size:12px;margin-top:1px}
+  .alt-note{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:11px 16px;font-size:12.5px;color:var(--sub);margin-top:14px;line-height:1.7}
+  @media(max-width:900px){.alt-grid{grid-template-columns:1fr}}
+  .inlink{color:var(--terracotta);font-weight:700;text-decoration:none;border-bottom:1px dashed var(--terracotta);white-space:nowrap}
+  .ref-btn{display:inline-block;margin-top:12px;background:var(--jade);color:#fff;border:none;border-radius:999px;padding:9px 20px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(47,84,73,.25)}
+  .ref-btn:hover{filter:brightness(1.08)}
+  .ref-mask{position:fixed;inset:0;background:rgba(25,30,28,.5);display:none;align-items:center;justify-content:center;z-index:999;padding:24px}
+  .ref-mask.show{display:flex}
+  .ref-modal{background:#faf7f1;width:760px;max-width:94vw;max-height:84vh;overflow:auto;border-radius:18px;padding:22px 26px;box-shadow:0 24px 70px rgba(0,0,0,.35);position:relative}
+  .ref-modal h3{margin:0 0 2px;font-size:18px}
+  .ref-modal .rm-sub{font-size:12px;color:var(--sub);margin-bottom:8px}
+  .ref-modal .rg{margin:14px 0 4px;font-size:11.5px;font-weight:800;letter-spacing:1.5px;color:var(--jade)}
+  .ref-modal ul{margin:4px 0;padding-left:2px;list-style:none}
+  .ref-modal li{margin:6px 0;font-size:13px;line-height:1.55}
+  .ref-modal a{color:var(--terracotta);font-weight:700;text-decoration:none;border-bottom:1px dotted var(--terracotta)}
+  .ref-modal .lk-meta{color:var(--sub);font-size:12px}
+  .ref-x{position:absolute;top:14px;right:16px;border:none;background:#eee5d8;border-radius:50%;width:32px;height:32px;font-size:15px;cursor:pointer;color:#555}
+  .hike-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .hike-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:13px;line-height:1.7}
+  .hike-card h4{margin:0 0 6px;font-size:14px;color:var(--jade)}
+  .hike-card ol,.hike-card ul{margin:4px 0 0 18px;padding:0}
+  .hike-card li{margin:4px 0}
+  @media(max-width:900px){.hike-grid{grid-template-columns:1fr}}
+  @media(max-width:900px){.alt-grid{grid-template-columns:1fr}}
+
+  /* ---------- Flight board ---------- */
+  h2.sec{font-size:19px;margin:30px 0 14px;display:flex;align-items:center;gap:9px}
+  h2.sec::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--jade)}
+  /* ---------- Flight timeline（逐行时间顺序） ---------- */
+  .flightline{display:flex;flex-direction:column;gap:10px;position:relative}
+  .fleg{display:grid;grid-template-columns:104px 30px minmax(0,1fr);gap:14px;align-items:center;
+        background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 18px;
+        box-shadow:0 2px 10px rgba(30,45,40,.05);position:relative}
+  .fleg .fdate{text-align:right;font-size:12.5px;font-weight:800;color:var(--sky);line-height:1.35;white-space:nowrap}
+  .fleg .fdate small{display:block;font-size:10.5px;color:var(--sub);font-weight:600;letter-spacing:.5px;margin-top:2px;white-space:nowrap}
+  .fleg .ficon{width:30px;height:30px;border-radius:50%;background:var(--sky-soft);color:var(--sky);
+               display:grid;place-items:center;font-size:13px;font-weight:800;justify-self:center}
+  .fleg .fbody{min-width:0}
+  .fleg .frow{display:flex;align-items:center;gap:14px;flex-wrap:nowrap}
+  .fleg .fpt{font-size:17px;font-weight:800;line-height:1.2;width:104px;flex:none;white-space:nowrap}
+  .fleg .fpt small{display:block;font-size:11px;color:var(--sub);font-weight:600;margin-top:1px;white-space:nowrap}
+  .fleg .farrow{width:118px;flex:none;display:flex;align-items:center;gap:6px;
+                color:var(--sky);font-size:12px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+  .fleg .farrow span{width:34px;flex:none}
+  .fleg .farrow i{flex:1;min-width:0;border-top:1.5px dashed currentColor;opacity:.6;height:0}
+  .fleg .farrow b{flex:none;font-size:9.5px}
+  .fleg .fmeta{margin-left:auto;text-align:right;font-size:12px;font-weight:700;color:var(--slate);white-space:nowrap}
+  .fleg .fno{font-size:11.5px;color:var(--sub);margin-top:8px;border-top:1px dashed var(--line);padding-top:7px}
+  /* 回程分叉：同一程两个目的地，列与主行严格对齐 */
+  .fbranch{padding:3px 0}
+  .fbranch+.fbranch{border-top:1px dashed var(--line);margin-top:5px;padding-top:8px}
+  @media(max-width:640px){.fleg{grid-template-columns:68px 26px 1fr;gap:9px;padding:11px}
+    .fleg .fpt{width:78px}.fleg .farrow{width:66px}.fleg .farrow span{width:24px}
+    .fleg .fmeta{font-size:10px}}
+
+  /* ---------- Legend ---------- */
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--sub);margin:10px 2px 0}
+  .legend span{display:flex;align-items:center;gap:6px}
+  .sw{width:22px;height:0;border-top:3px solid;display:inline-block}
+  .sw.flight{border-top:3px dashed var(--sky)} .sw.drive{border-top:3px solid var(--clay)}
+  .sw.hike{border-top:3px dashed var(--jade)} .sw.walk{border-top:3px dotted #8a8f98}
+  .sw.gather{border-top:3px dashed #b08d3e}
+
+  .map{height:360px;border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#e9eff1}
+  .map.big{height:420px}
+  .leaflet-container{font-family:inherit;font-size:11.5px}
+  .pin{width:23px;height:23px;border-radius:50%;background:#fff;border:2.5px solid var(--c,var(--sky));
+       display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;color:var(--c,var(--sky));
+       box-shadow:0 1px 4px rgba(0,0,0,.25)}
+  .pin.air{border-radius:6px;background:var(--c);color:#fff;width:auto;padding:0 7px;height:21px}
+  .name-label{background:rgba(255,255,255,.92)!important;border:1px solid var(--line)!important;border-radius:7px!important;
+              box-shadow:0 1px 3px rgba(0,0,0,.1)!important;padding:1px 7px!important;font-weight:600;color:var(--ink)!important}
+  .name-label::before{display:none!important}
+  .seg-label{background:rgba(255,255,255,.88)!important;border:1px solid #d8d2c4!important;border-radius:20px!important;
+             padding:0 8px!important;color:#5a5347!important;font-size:10.5px!important;box-shadow:none!important}
+  .seg-label::before{display:none!important}
+
+  /* ---------- Day card ---------- */
+  .day{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;
+       box-shadow:0 3px 14px rgba(30,45,40,.06);margin-bottom:22px}
+  .day .dhead{display:flex;align-items:center;gap:15px;padding:15px 22px;
+              background:linear-gradient(90deg,#fbfaf6,#f3f7f5);border-bottom:1px solid var(--line)}
+  .dbadge{flex:none;width:54px;height:54px;border-radius:15px;background:var(--jade-soft);color:var(--jade);
+          display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1.05}
+  .dbadge small{font-size:9.5px;letter-spacing:1px;opacity:.75}
+  .dbadge b{font-size:21px}
+  .dhead h3{font-size:17.5px}
+  .dhead .dmeta{font-size:12.5px;color:var(--sub);margin-top:2px}
+  .dstats{margin-left:auto;text-align:right;font-size:11.5px;color:var(--sub);line-height:1.7;white-space:nowrap}
+  .dstats b{color:var(--ink)}
+  .dbody{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0}
+  .tl{padding:10px 20px 16px;border-right:1px solid var(--line)}
+  .ev{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);position:relative}
+  .ev:last-child{border-bottom:none}
+  .ev .no{width:23px;height:23px;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;
+          background:var(--ec,var(--sky-soft));color:var(--etc,var(--sky));margin-top:2px}
+  .ev .t{font-size:12px;font-weight:800;color:var(--etc,var(--sky));letter-spacing:.3px}
+  .ev .x{font-size:13.8px}
+  .ev .x .sub{display:block;font-size:12px;color:var(--sub)}
+  .ev.flight{--ec:var(--sky-soft);--etc:var(--sky)}
+  .ev.drive {--ec:var(--clay-soft);--etc:var(--clay)}
+  .ev.walk  {--ec:#eef0f2;--etc:#69717c}
+  .ev.hike  {--ec:var(--jade-soft);--etc:var(--jade)}
+  .ev.food  {--ec:var(--rose-soft);--etc:var(--rose)}
+  .ev.stay  {--ec:var(--slate-soft);--etc:var(--slate)}
+  .dmap{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;background:#fbfaf6}
+  .dmap .map{height:330px}
+  .pill{display:inline-block;font-size:12px;font-weight:700;background:var(--slate-soft);color:var(--slate);
+        padding:5px 13px;border-radius:20px}
+  .rb{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  .rb .rbox{font-size:12px;border-radius:10px;padding:8px 11px;line-height:1.5}
+  .rbox.red{background:var(--jade-soft);color:#235f52}
+  .rbox.black{background:var(--rose-soft);color:#96402d}
+  .rbox b{display:block;font-size:11.5px;letter-spacing:1px;margin-bottom:2px}
+
+  /* ---------- generic tables/cards ---------- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;box-shadow:0 2px 10px rgba(30,45,40,.04)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--jade-soft);color:var(--jade);font-size:12.5px}
+  tr:last-child td{border-bottom:none}
+  td:first-child{font-weight:700;white-space:nowrap}
+  .rb-list li{list-style:none;font-size:13.5px;padding:8px 0;border-bottom:1px dashed var(--line)}
+  .rb-list li:last-child{border-bottom:none}
+  .red-list li::before{content:"🟥 ";} .black-list li::before{content:"🖤 ";}
+  .food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .food{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 15px;font-size:13px}
+  .food b{font-size:14px} .food .city{font-size:11px;color:var(--sky);font-weight:700}
+  .food .price{float:right;color:var(--rose);font-weight:700;font-size:12px}
+  footer{text-align:center;color:var(--sub);font-size:11.5px;margin-top:40px;line-height:1.9}
+  footer a{color:var(--sub);text-decoration:none;border-bottom:1px dotted #b9c0bb}
+
+  /* ---------- 风险与应急 ---------- */
+  .sos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:10px}
+  .sos-card{border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:#fff}
+  .sos-card .num{font-size:19px;font-weight:800;color:var(--rose);letter-spacing:.5px}
+  .sos-card .nm{font-size:13px;font-weight:800;margin-top:1px}
+  .sos-card .ds{font-size:11.5px;color:var(--sub);margin-top:3px;line-height:1.5}
+  .sos-card a{color:var(--sky);word-break:break-all}
+  .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .risk-item{font-size:13px;padding:9px 0;border-bottom:1px dashed var(--line);line-height:1.55}
+  .risk-item:last-child{border-bottom:none}
+  .risk-item b{color:var(--ink)}
+  .fill-blank{background:var(--gold-soft);border-radius:5px;padding:0 6px;color:#7a5b12;font-weight:700}
+  @media(max-width:900px){.risk-grid{grid-template-columns:1fr}}
+
+  /* ---------- 图片弹窗 ---------- */
+  .g-btn{display:inline-flex;align-items:center;gap:3px;margin-left:6px;font-size:10.5px;font-weight:700;
+         background:var(--gold-soft);color:var(--gold);border:1px solid #e6d7a8;border-radius:20px;
+         padding:1px 9px;cursor:pointer;vertical-align:1px;transition:all .15s;white-space:nowrap}
+  .g-btn:hover{background:var(--gold);color:#fff}
+  .g-btn::before{content:"📷";font-size:10px}
+  .alt-item .g-btn,.food .g-btn{margin-top:4px}
+  .gal-mask{position:fixed;inset:0;background:rgba(25,30,28,.62);display:none;align-items:center;justify-content:center;z-index:1100;padding:22px}
+  .gal-mask.show{display:flex}
+  .gal-modal{background:#faf7f1;width:980px;max-width:96vw;max-height:90vh;border-radius:18px;overflow:hidden;
+             display:flex;flex-direction:column;box-shadow:0 24px 70px rgba(0,0,0,.4);position:relative}
+  .gal-head{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);background:#fff}
+  .gal-head h3{font-size:16px;margin:0}
+  .gal-head .gal-count{font-size:12px;color:var(--sub)}
+  .gal-x{margin-left:auto;border:none;background:#eee5d8;border-radius:50%;width:32px;height:32px;font-size:15px;cursor:pointer;color:#555}
+  .gal-grid{overflow:auto;padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;background:#faf7f1}
+  .gal-grid img{width:100%;height:150px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:#eee;transition:transform .15s}
+  .gal-grid img:hover{transform:scale(1.03)}
+  .gal-view{display:none;flex:1;min-height:0;background:#1d211f;flex-direction:column}
+  .gal-view.show{display:flex}
+  .gal-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative;padding:10px}
+  .gal-stage img{max-width:100%;max-height:62vh;border-radius:8px;box-shadow:0 6px 30px rgba(0,0,0,.5)}
+  .gal-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;width:44px;height:44px;border-radius:50%;
+           background:rgba(255,255,255,.88);font-size:19px;cursor:pointer;color:#22302c}
+  .gal-nav:hover{background:#fff}
+  .gal-prev{left:16px}.gal-next{right:16px}
+  .gal-back{position:absolute;top:12px;left:14px;border:none;background:rgba(255,255,255,.9);border-radius:20px;padding:6px 14px;font-size:12.5px;font-weight:700;cursor:pointer}
+  .gal-cap{padding:10px 20px 14px;background:#262b29;color:#e8e4da;font-size:12.5px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .gal-cap a{color:#e9c879;text-decoration:none;border-bottom:1px dotted #e9c879;font-weight:700}
+  .gal-cap .gi{color:#9fb3ac}
+
+  @media (max-width:860px){
+    .dbody{grid-template-columns:1fr}
+    .tl{border-right:none;border-bottom:1px solid var(--line)}
+    .grid2{grid-template-columns:1fr}
+    .dstats{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">ALMATY × AKTAU · KAZAKHSTAN</div>
+    <h1>哈萨克斯坦 8 天 7 晚<br>两湖一峡谷 · 远古海底 · 冰川与高山湖</h1>
+    <div class="meta">2026/10/02（五）— 10/09（五） · 2 人 · 上海去 / 上海+广州分别回 · 全程当地时间 UTC+5（比北京晚 3 小时）</div>
+    <div class="chips">
+      <span class="chip">🛂 免签 30 天</span>
+      <span class="chip">🏞️ 两湖一峡谷（住 Saty）</span>
+      <span class="chip">🥾 管道徒步上 BAO</span>
+      <span class="chip">🧊 博格达诺维奇冰川</span>
+      <span class="chip">🪐 曼吉斯套远古海床</span>
+      <span class="chip">✈️ 不连续飞行</span>
+    </div>
+  </header>
+
+  <section class="countdown" id="cd">
+    <div class="cd-eyebrow" id="cdEye">COUNTDOWN</div>
+    <div class="cd-main" id="cdMain">--</div>
+    <div class="cd-units">
+      <span><b id="cdD">--</b><small>天</small></span>
+      <span><b id="cdH">--</b><small>小时</small></span>
+      <span><b id="cdM">--</b><small>分钟</small></span>
+      <span><b id="cdS">--</b><small>秒</small></span>
+    </div>
+    <div class="cd-sub" id="cdSub"></div>
+    <div class="cd-bar"><i id="cdBar"></i></div>
+  </section>
+
+  <!-- ============ 航班板（时间顺序逐行，回程 A/B 合为一程两目的地） ============ -->
+  <h2 class="sec">航段总览（时间顺序 · 5 程 6 段飞行）</h2>
+  <div class="flightline">
+    <div class="fleg">
+      <div class="fdate">10/01<small>下午 · 国内集合</small></div>
+      <div class="ficon">✈</div>
+      <div class="fbody">
+        <div class="frow">
+          <div class="fpt">14:10<small>白云 CAN</small></div>
+          <div class="farrow"><span>集合</span><i></i><b>▶</b></div>
+          <div class="fpt">约 16:30<small>浦东 PVG</small></div>
+          <div class="fmeta">CA8582 · 2h20m · 1200km</div>
+        </div>
+      </div>
+    </div>
+    <div class="fleg">
+      <div class="fdate">10/02<small>周五 · 去程</small></div>
+      <div class="ficon">✈</div>
+      <div class="fbody">
+        <div class="frow">
+          <div class="fpt">15:45<small>浦东 PVG</small></div>
+          <div class="farrow"><span>直飞</span><i></i><b>▶</b></div>
+          <div class="fpt">19:35<small>阿拉木图 ALA</small></div>
+          <div class="fmeta">MU6041 · 6h50m · 4130km</div>
+        </div>
+        <div class="fno">两人同行 · 北京时间起飞、当地时间落地（时差 -3h）</div>
+      </div>
+    </div>
+    <div class="fleg">
+      <div class="fdate">10/06<small>周二 · 内陆去程</small></div>
+      <div class="ficon">✈</div>
+      <div class="fbody">
+        <div class="frow">
+          <div class="fpt">17:00<small>阿拉木图 ALA</small></div>
+          <div class="farrow"><span>向西</span><i></i><b>▶</b></div>
+          <div class="fpt">20:00<small>阿克套 SCO</small></div>
+          <div class="fmeta">DV731 · 3h00m · 2087km</div>
+        </div>
+        <div class="fno">上午冰川半日，傍晚从容飞抵，海边夜宵</div>
+      </div>
+    </div>
+    <div class="fleg">
+      <div class="fdate">10/08<small>周四 · 内陆回程</small></div>
+      <div class="ficon">✈</div>
+      <div class="fbody">
+        <div class="frow">
+          <div class="fpt">20:30<small>阿克套 SCO</small></div>
+          <div class="farrow"><span>向东</span><i></i><b>▶</b></div>
+          <div class="fpt">23:20<small>阿拉木图 ALA</small></div>
+          <div class="fmeta">DV729 · 2h50m · 2087km</div>
+        </div>
+        <div class="fno">北线睡饱再走，晚班机回不用早起</div>
+      </div>
+    </div>
+    <div class="fleg">
+      <div class="fdate">10/09<small>周五 · 回程</small></div>
+      <div class="ficon">✈</div>
+      <div class="fbody">
+        <div class="frow fbranch">
+          <div class="fpt">20:50<small>阿拉木图 ALA</small></div>
+          <div class="farrow"><span>回程</span><i></i><b>▶</b></div>
+          <div class="fpt">05:30+1<small>浦东 PVG</small></div>
+          <div class="fmeta">MU6042 · 5h40m · 4130km</div>
+        </div>
+        <div class="frow fbranch">
+          <div class="fpt">21:15<small>阿拉木图 ALA</small></div>
+          <div class="farrow"><span>回程</span><i></i><b>▶</b></div>
+          <div class="fpt">06:25+1<small>白云 CAN</small></div>
+          <div class="fmeta">CZ3084 · 6h10m · 3990km</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 快跳导航 ============ -->
+  <nav class="daynav" id="dayNav"></nav>
+
+  <!-- ============ 总览地图 ============ -->
+  <h2 class="sec" id="sec-overview">全程航图（广州 → 上海集合 → 阿拉木图 ⇄ 阿克套 → 分别回上海/广州）</h2>
+  <div id="overviewMap" class="map big"></div>
+  <div class="legend">
+    <span><i class="sw gather"></i>国内集合段（广州 → 上海）</span>
+    <span><i class="sw flight"></i>飞行航段（虚线标注里程）</span>
+    <span><i class="sw drive"></i>公路/越野</span>
+    <span><i class="sw hike"></i>徒步路线</span>
+    <span><i class="sw walk"></i>步行</span>
+    <span style="color:#a39a86">地图为示意坐标，里程为公路/航空约值，需联网加载底图</span>
+  </div>
+
+  <!-- ============ 逐日 ============ -->
+  <h2 class="sec">逐日行程（时间轴编号 ↔ 地图编号）</h2>
+  <div id="days"></div>
+
+  <!-- ============ 住宿 ============ -->
+  <h2 class="sec" id="sec-stay">住宿总览（7 晚）</h2>
+  <div class="panel" style="padding:6px 10px">
+    <table>
+      <tr><th>晚次</th><th>地点</th><th>推荐</th><th>要点</th></tr>
+      <tr><td>D1-D2、D4、D7<br>共 4 晚</td><td>阿拉木图·金广场/Arbat</td><td>中端 Renion City / Kazzhol / Holiday Inn（550-900/晚）；升级 Ritz-Carlton；经济 Interhouse</td><td><b>同一家连住、寄存大件</b>，两湖与阿克套只带分包；步行覆盖市区、去机场 25 分钟</td></tr>
+      <tr><td>D3 共 1 晚</td><td>Saty 村</td><td>两湖团含哈萨克家庭民宿</td><td>公共卫浴，带头灯/拖鞋/洗漱；含家宴早晚餐</td></tr>
+      <tr><td>D5-D6 共 2 晚</td><td>阿克套·第一海岸线</td><td>Caspian Riviera Grand Palace（500-800，海景 4.6 分）；Holiday Inn / Renaissance by Sulo；经济 Tarlan</td><td>不选城外 20km 的 Rixos 度假村，赶团绕路</td></tr>
+    </table>
+  </div>
+
+  <!-- ============ 餐饮 ============ -->
+  <h2 class="sec" id="sec-food">餐饮速查</h2>
+  <div class="food-grid">
+    <div class="food"><span class="price">¥50-70</span><b>Navat</b><div class="city">阿拉木图 · 连锁到 24:00</div>别什巴尔马克、手抓饭、马肉肠、烤包子，不会出错的默认食堂<button class="g-btn" data-gal="food_navat">实拍</button></div>
+    <div class="food"><span class="price">¥25-40</span><b>绿巴扎二楼</b><div class="city">阿拉木图 · 午</div>手抓饭、现烤馕、包尔萨克，最本地烟火气<button class="g-btn" data-gal="green_bazaar">实拍</button></div>
+    <div class="food"><span class="price">¥150-250</span><b>Auyl</b><div class="city">阿拉木图 · 需订位</div>烤牛骨髓、马肉鞑靼，游牧创意菜仪式感；兜底 Daredzhani 格鲁吉亚菜<button class="g-btn" data-gal="food_auyl">实拍/菜单</button></div>
+    <div class="food"><span class="price">¥40-60</span><b>Smile / Shashlychok</b><div class="city">阿拉木图 · 红房子烤肉</div>烤蘑菇、羊油包肝封神，羊排偏干；有中文菜单，Yandex 直接搜<button class="g-btn" data-gal="food_smile">实拍</button></div>
+    <div class="food"><span class="price">¥90-150</span><b>Hose &amp; Josper</b><div class="city">阿拉木图 · Zheltoqsan 162</div>小红书 5 篇一致推荐的高性价比牛排西餐，citywalk 沿线<button class="g-btn" data-gal="food_hosejosper">实拍</button></div>
+    <div class="food"><b>其他本地小馆合集</b><div class="city">阿拉木图</div>穷游小馆、brunch、山景餐厅等实拍，吃腻连锁时翻牌子<button class="g-btn" data-gal="food_local">实拍合集</button></div>
+    <div class="food"><span class="price">¥60-100</span><b>Daredzhani</b><div class="city">阿拉木图 · 连锁</div>格鲁吉亚菜兜底：奶酪烤饼 Khachapuri、蘑菇炖鸡，D4 晚餐主场<button class="g-btn" data-gal="daredzhani">实拍</button></div>
+    <div class="food"><span class="price">¥80-140</span><b>Bomba</b><div class="city">阿克套 · 到凌晨 1 点</div>面朝里海的日落海景位，D5 落地后的夜宵主场（小红书暂无本店强关联实拍）</div>
+    <div class="food"><span class="price">¥90-130</span><b>CHECHIL PUB</b><div class="city">阿克套 · 海边</div>小红书两篇实测的海边牛扒馆，T 骨/沙拉适合中国胃，无服务税；Bomba 排队时的强备选<button class="g-btn" data-gal="chechil_pub">实拍</button></div>
+    <div class="food"><b>Aspan</b><div class="city">阿克套</div>本地国菜别什巴尔马克出品稳；里海小海鲜 Kilka 可尝</div>
+    <div class="food"><b>野外团餐</b><div class="city">Saty / 曼吉斯套</div>团方供餐，自备电解质泡腾片、能量棒、保温杯；荒漠每天至少 2L 水/人</div>
+  </div>
+
+  <!-- ============ 红黑榜 ============ -->
+  <h2 class="sec" id="sec-rb">同事红黑经验榜（内网提炼）</h2>
+  <div class="grid2">
+    <div class="panel"><b style="color:var(--jade)">🟥 红榜 · 照着做</b>
+      <ul class="rb-list red-list">
+        <li>国庆是阿拉木图最佳窗口：金秋黄叶、晴天多、不挤不抢（陈儒 25 国庆实测）</li>
+        <li>大教堂+绿巴扎一线步行串联最顺；博物馆只选中央国家博物馆一个即可</li>
+        <li>阿拜歌剧院几十元看高水准芭蕾（按 gatob.kz 排期，D8 午后有场就替换博物馆尾段）</li>
+        <li>酒店/租车可砍价，越早订越便宜</li>
+        <li>两湖住 Saty 村哈萨克家宴，体验与性价比双高</li>
+        <li>Bozzhyra 日落是曼吉斯套第一高光，本行程特意保留</li>
+      </ul>
+    </div>
+    <div class="panel"><b style="color:var(--rose)">🖤 黑榜 · 绕着走</b>
+      <ul class="rb-list black-list">
+        <li>机场拉客出租喊价 1-2 万坚戈（溢价 5-10 倍）→ 只用 Yandex Go（约 2000）</li>
+        <li>两湖一日团 = 16 小时特种兵 → 必须 2 天 1 晚</li>
+        <li>中亚饮食易拉肚子 → 只吃热食，备蒙脱石散/益生菌</li>
+        <li>旅行社层层外包会缩水 → 小团直签、酒店自订、合同写清车型含费</li>
+        <li>内陆段（SCAT/FlyArystan）行李选座多另购 → 订票时一次买足</li>
+        <li>荒漠无路只有车辙 → 绝不自驾，必须越野团+向导+离线地图</li>
+        <li>BAO 湖禁下水、下山打不到车 → 包车等候到下山</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 预算 ============ -->
+  <h2 class="sec" id="sec-budget">人均预算估算（方案 A · 元）</h2>
+  <div class="panel" style="padding:6px 10px">
+    <table>
+      <tr><th>项目</th><th>区间</th><th>说明</th></tr>
+      <tr><td>国际往返</td><td>5500-6000</td><td>去程 MU6041 + 回程按各自目的地</td></tr>
+      <tr><td>内陆两段（含行李）</td><td>1700-2400</td><td>DV731 + DV729，越早越便宜</td></tr>
+      <tr><td>两湖 2 日小团</td><td>700-1100</td><td>拼团；私团 SUV 约 2500-3200</td></tr>
+      <tr><td>曼吉斯套（北半+南整）</td><td>2600-3600</td><td>标准 3 日团 $480≈3432 可比价</td></tr>
+      <tr><td>冰川团+BAO 包车</td><td>510-830</td><td>冰川含冰爪缆车</td></tr>
+      <tr><td>住宿 7 晚（两人分摊后）</td><td>1400-2500</td><td>阿拉木图 4 晚+阿克套 2 晚+Saty 含团</td></tr>
+      <tr><td>餐饮+杂费</td><td>1700-2800</td><td>含市内交通、缆车、eSIM、保险</td></tr>
+      <tr><td><b>合计/人</b></td><td><b>约 1.4w-2.0w</b></td><td>拼团偏下限、全程私团偏上限</td></tr>
+    </table>
+  </div>
+
+  <!-- ============ 行前 ============ -->
+  <h2 class="sec" id="sec-prep">行前倒计时 & 待确认</h2>
+  <div class="grid2">
+    <div class="panel">
+      <b>本周锁定（距出发仅 1 个月）</b>
+      <ul class="rb-list" style="margin-top:6px">
+        <li>① 两段内陆机票（含 20kg 托运），出票后回写时刻核对</li>
+        <li>② 阿拉木图同一家酒店 4 晚（确认可寄存）+ 阿克套 2 晚</li>
+        <li>③ 两湖 2 日团（10/4 09:00 接）、冰川半日团（10/6 10:15 接）、南线整日（10/7 08:30 接，全程唯一早起日）、北线（10/8 09:30 酒店接）</li>
+        <li>④ 含徒步/高海拔救援的旅游保险；Auyl 订位</li>
+        <li>⑤ eSIM、Yandex Go 绑卡、离线地图、银联取现+200 美元零钱</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <b>仍需你确认</b>
+      <ul class="rb-list" style="margin-top:6px">
+        <li>① 预算档次：拼团还是全程私团</li>
+        <li>② DV731（10/6 17:00）/DV729（10/8 20:30）实际班期出票复核，变动我来重排</li>
+        <li>③ 10/3 阿拜歌剧院排期与选座（gatob.kz 提前一周放票）</li>
+        <li>④ Atelier 是否需要订位（D4 周一晚回城有余兴再去，热门时段建议预订）</li>
+        <li>⑤ 是否带无人机（Bozzhyra/卡因迪出片，需确认团方规定）</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 其他备选 ============ -->
+  <h2 class="sec" id="sec-alt">其他备选（主线玩腻/天气改期/加天时替换）</h2>
+  <div class="panel" style="margin-bottom:14px;border-left:4px solid var(--terracotta)">
+    <b>小红书口碑速览（2026-08-31 模拟人工浏览采集：6 词扫描 348 篇，深读 72 篇 + 1169 条评论，完整分析见同目录《小红书口碑调研报告.md》）</b>
+    <ul class="rb-list" style="margin-top:6px">
+      <li><b>路线共识</b>：阿拉木图 citywalk 最大公约数＝潘菲洛夫→大教堂→中央清真寺→苏式地铁站→绿巴扎→Arbat→国家博物馆→Kok Tobe 日落→歌剧院，与我们 D8 慢逛日一致（D2 留给周末旧货+BAO 徒步、D5 上午冰川傍晚飞）；选店用 2GIS 看 4.5 分以上</li>
+      <li><b>团费锚点</b>：曼吉斯套南线 5 景点一日团 27000₸≈355 元/人（6:45-22:30，可支付宝）；北线 5 景点包车 10 万₸/车；整车包车约 11 万₸/天；多孔峡谷 Ibik 口碑一般可砍</li>
+      <li><b>避雷</b>：Red Maya 多日团（9 人 3 车/无卫星电话/坏天气无 plan B）；网红私车要书面确认英语向导、备水、行程；Bozzhyra 崖边头发竖起+静电是雷击前兆，立刻回车</li>
+      <li><b>秋季体感</b>：14 篇 9-10 月样本一致「不冷不热、人少景美」，山区早晚加薄外套；国庆直飞往返样本价 3200 元，住宿提早订</li>
+    </ul>
+  </div>
+  <div class="alt-grid">
+    <div class="alt-col">
+      <h3>阿拉木图 Almaty</h3>
+      <div class="alt-sub">市区与近郊，按「替换半天/加一天」场景备选</div>
+
+      <div class="alt-group">景点</div>
+      <div class="alt-item"><b>Medeu 梅杰乌高山冰场</b>：市区 13km，与 D5 冰川同向；全球海拔最高的露天冰场之一，不滑冰也值得看大坝；可与 Shymbulak 缆车拼半天。<span class="m">交通：打车 20-25min；缆车约 09:00-22:00</span><button class="g-btn" data-gal="medeu">实拍</button></div>
+      <div class="alt-item"><b>Issyk 耶斯克湖（伊塞克湖，非吉尔吉斯那个）</b>：70km/1h15，海拔 1760m 滑坡堰塞湖，颜色从蒂芙尼蓝到深蓝；半日往返。<span class="m">可与 Turgen 熊瀑布连线一日，小团 $25-40/人</span><button class="g-btn" data-gal="issyk">实拍</button></div>
+      <div class="alt-item"><b>Turgen 图尔根峡谷·熊瀑布</b>：70km/1.5h，松林徒步 1.5km/30min 到瀑布，顺路鳟鱼农场午餐，5-10 月最佳。<button class="g-btn" data-gal="turgen">实拍</button></div>
+      <div class="alt-item"><b>Assy 阿西高原</b>：150km/2.5-3h，2700m 牧场、毡房与马群；雨后土路难行必须 SUV，与 Issyk+Turgen 串成约 12h 大环线。<button class="g-btn" data-gal="assy">实拍</button></div>
+      <div class="alt-item"><b>Kok Zhailau 草甸徒步</b>：城市后山环线 3-4h，想加野趣可替换 D8 博物馆段。<button class="g-btn" data-gal="kokzhailau">实拍</button></div>
+      <div class="alt-item"><b>Arasan 浴馆</b>：市区苏式大澡堂，两湖/荒漠长途回来那晚泡 1.5h 回血。<button class="g-btn" data-gal="arasan_banya">实拍</button></div>
+      <div class="alt-item"><b>Kok Tobe 夜景</b>：缆车运营到 24:00、往返 1700 坚戈；D8 慢逛日傍晚有余兴可上。<button class="g-btn" data-gal="koktobe">实拍</button></div>
+      <div class="alt-item"><b>中央清真寺</b>（小红书 9 篇路线串联）：就在绿巴扎附近，金顶 15:00-16:00 斜光最出片；<b>周五不开放</b>——D8 正是周五去不了，只能 D5 出发冰川前顺道快逛。<button class="g-btn" data-gal="citywalk_mosque">实拍</button></div>
+      <div class="alt-item"><b>Kurmangazy 精品咖啡街</b>（831 赞路线）：哈萨克斯坦大酒店对面（Dostyk 52 正对面），moon/sunshine 饰品店+密集咖啡馆，适合下午慢逛；评论提醒同款淘宝 20 元，别买贵。<button class="g-btn" data-gal="citywalk_street">街拍</button></div>
+
+      <div class="alt-group">吃 · 喝</div>
+      <div class="alt-item"><b>Sandyq</b>（Abylai Khan 55，12:00 开）：网红民族菜，环境比 Navat 更出片，需订位。<button class="g-btn" data-gal="sandyq">实拍</button></div>
+      <div class="alt-item"><b>Navat / Daredzhani</b>：国菜与格鲁吉亚菜连锁兜底，金广场步行可达。</div>
+      <div class="alt-item"><b>Barbolsyn</b>（Valikhanova 47，与 Atelier 同址）：餐酒馆，人均 4000-10000 坚戈，D4 晚微醺第二摊。</div>
+      <div class="alt-item"><b>Atelier</b>（Valikhanova 47，18:00 开门，4.7 分）：本地创意调酒，已排进 D4 晚（有余兴场，累了可删）。</div>
+      <div class="alt-item"><b>Hose &amp; Josper</b>（小红书 5 篇提及，Zheltoqsan 162）：高性价比牛排西餐，citywalk 沿线，评论「实惠又好吃」。<button class="g-btn" data-gal="food_hosejosper">实拍</button></div>
+      <div class="alt-item"><b>Smile</b>（391 赞专文，人均约 50 元）：便宜量大，烤蘑菇/羊油包羊肝封神、烤羊排偏干，Yandex 搜 Smile，有中文菜单。<button class="g-btn" data-gal="food_smile">实拍</button></div>
+      <div class="alt-item"><b>Shashlychok Na Pastera 市区红房子烤肉</b>（4 篇提及，Жандосова 58，绿巴扎旁 10:30-24:00）：注意它和 BAO 徒步起点「红房子 Edelweiss」<b>完全是两家</b>，别导航混。<button class="g-btn" data-gal="food_smile">实拍</button></div>
+      <div class="alt-item"><b>Aroma</b>：公认最佳 brunch，无花果 toast，小院出片；只收现金。<button class="g-btn" data-gal="food_local">实拍</button></div>
+
+      <div class="alt-group">住宿区域</div>
+      <div class="alt-item">主线住<b>金广场/Arbat</b>（步行覆盖市区）；升级 Ritz-Carlton（Esentai Mall 商圈）；经济选 Interhouse 青旅；想离山近选 Dostyk 大道（去 Medeu/Shymbulak 更快）。</div>
+
+      <div class="alt-group">交通</div>
+      <div class="alt-item">市区全程 Yandex Go；地铁 1 号线买单程 token；远郊（Issyk/Turgen/Assy）公交极耗时，拼小团或包车性价比最高；去 Medeu 也可坐 12 路公交。</div>
+    </div>
+
+    <div class="alt-col">
+      <h3>曼吉斯套 Mangystau</h3>
+      <div class="alt-sub">阿克套为基地，全部需要 4WD+向导，按多挤半天/加一天备选</div>
+
+      <div class="alt-group">景点</div>
+      <div class="alt-item"><b>Zhygylgan「坠落之地」</b>：Tupkaragan 半岛，坍塌古海床巨盆+1.5km 临海悬崖步道与海蚀洞，和 Shakpak-Ata 同一条北线。<button class="g-btn" data-gal="zhygylgan">实拍</button></div>
+      <div class="alt-item"><b>Shakpak-Ata 地下清真寺</b>：10-13 世纪凿岩而成，D7 北线时间够就加（主线已留口），遮肩膝、脱鞋。<button class="g-btn" data-gal="alt_shakpak_ata">实拍</button></div>
+      <div class="alt-item"><b>Kapamsay 白垩峡谷</b>：距城约 130km，70m 高古河床白崖，北线延伸点。</div>
+      <div class="alt-item"><b>Airakty-Shomanai「城堡谷」</b>：4000 万年古海床蚀成的岩塔群，北线可替代或加塞球谷。<button class="g-btn" data-gal="airakty">实拍</button></div>
+      <div class="alt-item"><b>Tamshaly 泉洲</b>：约 130km，崖壁渗下的淡水泉在荒漠里养出一小片绿洲，适合短徒步野餐。</div>
+      <div class="alt-item"><b>Tuzbair 盐沼+白崖</b>：东北约 270km，雨后变天空之镜、夏天是干裂白原，越野摄影/露营向，需多留一天。<button class="g-btn" data-gal="tuzbair">盐沼实拍</button></div>
+      <div class="alt-item"><b>Karynzharyk 洼地+Kenderli 盐滩</b>：最低处低于海平面 75m，日出日落露营大片，深入 Ustyurt。<button class="g-btn" data-gal="karynzharyk">实拍</button></div>
+      <div class="alt-item"><b>Beket-Ata 地下清真寺</b>：哈萨克朝圣圣地，单日往返 600km+，只建议多住一天或有信仰目的再去，着装严格。<button class="g-btn" data-gal="beket_ata">实拍</button></div>
+      <div class="alt-item"><b>阿克套市区</b>：里海海滨步道、曼吉斯套州博物馆（古海床地质展，等飞机/刮风备选）、17 微区海滩。<button class="g-btn" data-gal="aktau_city">实拍</button></div>
+
+      <div class="alt-group">吃 · 喝</div>
+      <div class="alt-item"><b>Aydyn</b>：落地第一顿选它，鱼别尔卜克（fishbarmak）和鲟鱼汤，里海鱼比阿拉木图便宜。</div>
+      <div class="alt-item"><b>East West</b>：海边公园旁，现烤里海鲟鱼；<b>Napoli Steak House</b> 开到凌晨 1 点。</div>
+      <div class="alt-item"><b>Krasny Mayak 红灯塔悬崖咖啡</b>：渔民棚屋改的野路子海景咖啡，包尔萨克+驼奶 shubat。</div>
+      <div class="alt-item"><b>Pinta Pub</b>（14 微区）：自酿+哈萨克式鱼薯；黄巴扎买水果自存车上。</div>
+
+      <div class="alt-group">住宿区域</div>
+      <div class="alt-item">主线住<b>第一海岸线</b>；升级 <b>Holiday Inn Aktau-Seaside</b>（IHG，距海百米，Booking 9.0，约 €66 起）；Renaissance 海景房楼下就是海边烤串（800-1000 坚戈/串）；经济选 14/16 微区公寓。</div>
+
+      <div class="alt-item"><b>多孔峡谷 Ibik 可砍</b>（小红书多篇一致）：绕路且口碑一般，五景点嫌累直接选三景点精华，把时间留给 Bozzhyra 日落。</div>
+      <div class="alt-item"><b>雷击预警</b>（336 赞实测）：Bozzhyra 崖边乌云压来时头发竖起、身上静电噼啪是云地放电前兆，立刻回车躲避。</div>
+
+      <div class="alt-group">交通 · 报团（小红书 72 篇价格锚点）</div>
+      <div class="alt-item">南线 5 景点一日团 27000₸≈355 元/人（6:45-22:30，大社 Mangystau Safari，支付宝可付）；北线 5 景点包车约 10 万₸/车；整车包车约 11 万₸/天≈1500 元，拼面包车约 300 元/人。</div>
+      <div class="alt-item"><b>避雷</b>：Red Maya 多日露营团（9 人挤 3 车、无卫星电话、坏天气无 plan B）；私车包车书面确认英语向导/备水/行程，警惕迟到、不认路；95% 区域无信号，优先选带 Starlink 的团。</div>
+      <div class="alt-item">景点间无公共交通，必须 4WD+本地向导；SCO 机场在市区北 25km；Zhanaozen 是唯一补给/充电/午餐点，到机场约 2h；出城后补满油、离线地图、足量水。</div>
+    </div>
+  </div>
+  <div class="alt-note">
+    来源说明：小红书部分为 2026-08-31 登录态下模拟人工浏览采集（6 关键词扫描 348 篇、深读 72 篇正文 + 1169 条评论，逐篇点击、慢速滚动，未使用接口抓取），标注「小红书 N 篇提及」的条目均来自该样本，完整频次统计与评论原文见同目录《小红书口碑调研报告.md》与 raw/xhs/；其余条目来自 Astana Times、GetYourGuide、about-kazakhstan、toor.kz、IHG/Booking、2GIS、Trip.com 及内网同事攻略。价格、营业时间、班期为采集值，出行前以官方页为准。
+  </div>
+
+  <button class="ref-btn" id="refOpenBtn">📚 小红书精选参考（28 篇 · 点击展开）</button>
+  <div class="ref-mask" id="refMask">
+    <div class="ref-modal">
+      <button class="ref-x" id="refCloseBtn">✕</button>
+      <h3>小红书精选参考</h3>
+      <div class="rm-sub">从 348 篇扫描样本 / 72 篇深读中去重聚合，只保留内容互不重复、各有独立信息的 28 篇（括号为采集时点赞）；需已登录小红书，点击新页签打开。</div>
+
+      <div class="rg">CITYWALK 与市区（4）</div>
+      <ul>
+        <li><a href="https://www.xiaohongshu.com/explore/6891776200000000040042c7" target="_blank" rel="noopener">市区 Citywalk 游玩攻略（附地图）</a> <span class="lk-meta">1277 赞 · 标准串联路线图</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/689b3ef2000000001c0083a4" target="_blank" rel="noopener">citywalk 宝藏路线</a> <span class="lk-meta">703 赞 · 每个点的开放时间/门票/地址</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/682d69a60000000012006532" target="_blank" rel="noopener">超适合 city walk 的一条街</a> <span class="lk-meta">831 赞 · Kurmangazy 精品咖啡街</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69d105040000000021006f36" target="_blank" rel="noopener">苏联遗梦·粗野主义建筑</a> <span class="lk-meta">934 赞 · 建筑摄影专线</span></li>
+      </ul>
+
+      <div class="rg">餐饮（4）</div>
+      <ul>
+        <li><a href="https://www.xiaohongshu.com/explore/69cb82e1000000001d01c594" target="_blank" rel="noopener">美食必吃榜（带定位版）</a> <span class="lk-meta">506 赞 · 9 家店定位可直接打车</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/68fb509f000000000301060d" target="_blank" rel="noopener">五家精选餐厅测评</a> <span class="lk-meta">439 赞 · Auyl/Aroma/Del Papa 逐项打分</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/68f684190000000005033c12" target="_blank" rel="noopener">Smile 红房子烤肉专文</a> <span class="lk-meta">335 赞 · 中文菜单+逐道菜评价</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69e30fa40000000021007372" target="_blank" rel="noopener">二刷宝藏小店（人均 30）</a> <span class="lk-meta">391 赞 · 穷游吃饭兜底</span></li>
+      </ul>
+
+      <div class="rg">🥾 徒步（8 · 详见下方徒步专栏）</div>
+      <ul>
+        <li><a href="https://www.xiaohongshu.com/explore/6a30f765000000001702b129" target="_blank" rel="noopener">管道徒步｜最美的风景不在山顶</a> <span class="lk-meta">243 赞 · 5-7h 时间口径</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69104d230000000003037d14" target="_blank" rel="noopener">大阿拉木图湖徒步攻略</a> <span class="lk-meta">268 赞 · 红房子/补给/岔路选择</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/68df77a10000000004005605" target="_blank" rel="noopener">管道徒步之旅</a> <span class="lk-meta">127 赞 · 三段管道实拍+门票</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/68e5587f0000000004022045" target="_blank" rel="noopener">solo 避坑经验</a> <span class="lk-meta">115 赞 · 单人交通/拼车/费用拆解</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/6818ade1000000000f03b9ac" target="_blank" rel="noopener">业余选手路线对比</a> <span class="lk-meta">205 赞 · 多条徒步线难度横评</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/6825793d000000002202cd6a" target="_blank" rel="noopener">11km 高山草甸徒步</a> <span class="lk-meta">190 赞 · Kok Zhailau 备选线</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69ca8baf000000001b0006a7" target="_blank" rel="noopener">150 元冰川无向导版</a> <span class="lk-meta">587 赞 · 冰川路线与争议区说明</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69c5f290000000002800b5a4" target="_blank" rel="noopener">冰川更有性价比</a> <span class="lk-meta">384 赞 · 雪况/冰洞/向导问答</span></li>
+      </ul>
+
+      <div class="rg">曼吉斯套 · 阿克套（9）</div>
+      <ul>
+        <li><a href="https://www.xiaohongshu.com/explore/6a07d9de000000003700c1be" target="_blank" rel="noopener">阿克套海底遗址总览</a> <span class="lk-meta">1612 赞 · 特提斯洋科普向</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/6a5291d7000000001603f663" target="_blank" rel="noopener">海底遗迹蓝调时刻</a> <span class="lk-meta">1480 赞 · 日出机位</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/68e5da460000000003019006" target="_blank" rel="noopener">完美阿克套全攻略</a> <span class="lk-meta">264 赞 · Turbo 5 景点顺序+27000₸ 报价</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/6a3953160000000017009799" target="_blank" rel="noopener">3 天 2 晚荒野求生实录</a> <span class="lk-meta">517 赞 · 露营/网络/厕所真实细节</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/699c6b00000000001a020d4d" target="_blank" rel="noopener">四天三夜南北线分日</a> <span class="lk-meta">215 赞 · 南线/北线各看什么</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/6a0d11610000000037034615" target="_blank" rel="noopener">曼吉斯套国家公园</a> <span class="lk-meta">106 赞 · 北线五景点+10 万₸/车报价</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69f797810000000037034a95" target="_blank" rel="noopener">日落版海底遗址</a> <span class="lk-meta">608 赞 · 日落路线+包车踩雷经历</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/6a3a1f66000000001101df39" target="_blank" rel="noopener">在海底遗迹避过雷？</a> <span class="lk-meta">336 赞 · 崖边雷击静电实测</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69f1afb10000000038034057" target="_blank" rel="noopener">避雷 Red Maya 旅行社</a> <span class="lk-meta">91 赞 · 报团前必读</span></li>
+      </ul>
+
+      <div class="rg">综合 · 国庆同期（3）</div>
+      <ul>
+        <li><a href="https://www.xiaohongshu.com/explore/68edf34f000000000302d800" target="_blank" rel="noopener">2025 十一 阿拉木图+阿克套完整攻略</a> <span class="lk-meta">228 赞 · 与我们同档期，换汇/电话卡/插座</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69805f5b000000002801dce8" target="_blank" rel="noopener">应该做的跟不该做的</a> <span class="lk-meta">1090 赞 · 砍价/包车/防坑清单</span></li>
+        <li><a href="https://www.xiaohongshu.com/explore/69898d84000000000a028893" target="_blank" rel="noopener">3 天 2 晚吃住行全攻略</a> <span class="lk-meta">1009 赞 · 紧凑日程模板</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 徒步专栏 ============ -->
+  <h2 class="sec" id="sec-hike">🥾 徒步专栏（重点项目 · 独立于时间轴的详解）</h2>
+  <div class="panel" style="margin-bottom:14px">
+    <b>三条线路怎么选</b>（小红书 12 篇徒步专文+评论共识，叠加 GetYourGuide 团信息）
+    <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:13px">
+      <tr style="background:#f1ece2">
+        <td style="padding:7px;border:1px solid var(--line);font-weight:800">线路</td>
+        <td style="padding:7px;border:1px solid var(--line);font-weight:800">长度/耗时</td>
+        <td style="padding:7px;border:1px solid var(--line);font-weight:800">难度/爬升</td>
+        <td style="padding:7px;border:1px solid var(--line);font-weight:800">怎么去</td>
+        <td style="padding:7px;border:1px solid var(--line);font-weight:800">本次安排</td>
+      </tr>
+      <tr>
+        <td style="padding:7px;border:1px solid var(--line)"><b>BAO 管道徒步上大阿拉木图湖</b></td>
+        <td style="padding:7px;border:1px solid var(--line)">往返 8-11km / 5-7h（含湖边停留）</td>
+        <td style="padding:7px;border:1px solid var(--line)">中等，累计约 1000m，最高 2511m</td>
+        <td style="padding:7px;border:1px solid var(--line)">打车定位 Edelweiss 红房子，进山费 1000₸/人</td>
+        <td style="padding:7px;border:1px solid var(--line)">D2（10/3）午后场</td>
+      </tr>
+      <tr>
+        <td style="padding:7px;border:1px solid var(--line)"><b>Bogdanovich 冰川+冰洞</b></td>
+        <td style="padding:7px;border:1px solid var(--line)">团线 6-8h，冰面徒步约 4km</td>
+        <td style="padding:7px;border:1px solid var(--line)">中等，冰爪+向导，10 月有积雪</td>
+        <td style="padding:7px;border:1px solid var(--line)">Shymbulak 缆车上 3200m，跟团</td>
+        <td style="padding:7px;border:1px solid var(--line)">D5（10/6）午间场</td>
+      </tr>
+      <tr>
+        <td style="padding:7px;border:1px solid var(--line)"><b>Kok Zhailau 高山草甸</b>（备选）</td>
+        <td style="padding:7px;border:1px solid var(--line)">环线 11km / 3-4h</td>
+        <td style="padding:7px;border:1px solid var(--line)">轻松-中等，缓坡草甸</td>
+        <td style="padding:7px;border:1px solid var(--line)">市区后山公交可达</td>
+        <td style="padding:7px;border:1px solid var(--line)">D8 想加野趣时替换</td>
+      </tr>
+    </table>
+  </div>
+  <div class="hike-grid">
+    <div class="hike-card">
+      <h4>BAO 分步实操（评论区共识）<button class="g-btn" data-gal="bao_pipe">管道实拍 10</button><button class="g-btn" data-gal="bao_lake">大湖实拍 10</button></h4>
+      <ol>
+        <li><b>去程定位 Edelweiss（红房子）</b>，千万别直接定"大阿拉木图湖"——只到一半路程却被收全程钱（7700₸ 真实案例）；Yandex 约 40min。</li>
+        <li>路口收进山费约 1000₸/人；红房子是<b>全程唯一厕所和补给点</b>，水和行动粮在这里买足，之后（含湖边）什么都没有。</li>
+        <li>红房子附近无信号，山上反而偶有；离线地图提前下好。</li>
+        <li>岔路右管道、左公路；管道分三段（超陡→平缓→缓坡），首段别抓钢锁链、走旁边土路，<b>戴手套</b>。</li>
+        <li>标准节奏「管道上 2.5h → 湖边 1-1.5h → 公路下 1-1.5h」；10 月路迹清晰、路上人不少，评论原话"这会儿到十月份是最好的季节"。</li>
+        <li><b>回程</b>：红房子拼车 1000-1500₸/人到 28/211 公交站再回市区；我们直接让包车全程等候最稳——无网叫不到 Yandex，黑车回市区开口 1 万₸。</li>
+      </ol>
+    </div>
+    <div class="hike-card">
+      <h4>冰川（D5）注意<button class="g-btn" data-gal="glacier">冰川实拍 10</button></h4>
+      <ul>
+        <li>跟团费用含冰爪/头盔/缆车，10 月冰面有积雪、下冰洞不方便，必须穿钉鞋、跟当地向导。</li>
+        <li>评论区争议：部分冰川区域官方关闭，<b>报名时确认路线不进入关闭区</b>，不跟"偷带关闭冰川"的团。</li>
+        <li>3200m 海拔放慢节奏，前一晚不熬夜；风雪天团方会取消，兜底改 Shymbulak 缆车观光。</li>
+      </ul>
+      <h4 style="margin-top:10px">装备清单（两条线通用）</h4>
+      <ul>
+        <li>防滑徒步鞋、薄手套、冲锋衣+薄羽绒（10 月山上风大，市区短袖时山上要外套）</li>
+        <li>1.5L 水、行动粮（巧克力/能量棒）、墨镜+防晒+帽子（高海拔紫外线强）</li>
+        <li>充电宝、离线地图、小额现金（进山费/拼车只收现金）</li>
+      </ul>
+    </div>
+    <div class="hike-card" style="border-left:4px solid var(--terracotta)">
+      <h4>红榜（照做就爽）</h4>
+      <ul>
+        <li>管道尽头湖面撞进眼里的瞬间，是全市评论"最值得"的画面；管道上公路下最省力。</li>
+        <li>红房子旁山泉水可接饮（多人实测）；10 月人少景美，午后侧光湖面更柔。</li>
+        <li>业余选手首推 BAO 管道线，"离市区 40 分钟就有这种徒步"是高频感叹。</li>
+      </ul>
+    </div>
+    <div class="hike-card" style="border-left:4px solid #b04a3f">
+      <h4>黑榜（踩过的坑）</h4>
+      <ul>
+        <li>定位错=多付一倍车费；回程无网被黑车宰（1 万₸）。</li>
+        <li>公路下撤暴晒且长，没带够水很痛苦；首段钢索段徒手抓会划破手。</li>
+        <li>冬季/雪天别硬走全程管道，拍照即可；Medeu-Shymbulak 沿公路徒步又晒又热，不推荐。</li>
+        <li>不单独抄近道、不脱离主路；湖边严禁下水（保护区）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 风险与应急 ============ -->
+  <h2 class="sec" id="sec-safety">风险注意事项与应急手册</h2>
+
+  <div class="panel" style="margin-bottom:14px;border-left:4px solid var(--rose)">
+    <b>本行程的 10 类风险与防范（按危险度排序）</b>
+    <div class="risk-grid">
+      <div>
+        <div class="risk-item"><b>① 高海拔徒步（BAO 2511m / 冰川 3200m）</b>：头痛气短立刻下撤，不硬撑；山区天气 1 小时变脸，出发前看 Kazhydromet 预报，雨雪天冰川团会取消，兜底改 Shymbulak 缆车；不脱离主路、不抄近道，BAO 湖边严禁下水。</div>
+        <div class="risk-item"><b>② 荒漠失联（曼吉斯套 95% 区域无信号）</b>：只跟 4WD+本地向导团，优先选带 Starlink/卫星电话的团；每天每人至少 2L 水，离线地图提前下好；绝不自驾追车辙，离队必告知去向与返回时间。</div>
+        <div class="risk-item"><b>③ 雷击（Bozzhyra 等制高点）</b>：崖边头发竖起、身上静电噼啪、金属发麻是云地放电前兆，立刻离开崖边回到车内，不在孤峰/大树下停留。</div>
+        <div class="risk-item"><b>④ 昼夜温差与失温</b>：荒漠夜里 9-12℃、冰川体感可到 -15℃；分层穿衣+抓绒+防风壳+手套帽子，出汗后及时换干层。</div>
+        <div class="risk-item"><b>⑤ 城市治安</b>：绿巴扎、地铁、Arbat、机场注意扒手；不露富、手机不挂桌边、双肩包前置；护照随身带、另存复印件和电子照片，现金分散放。</div>
+      </div>
+      <div>
+        <div class="risk-item"><b>⑥ 交通风险</b>：只叫 Yandex Go 网约车，机场拉客出租溢价 5-10 倍一律不上；长途/荒漠不自驾；全程系安全带，夜间尽量不步行。</div>
+        <div class="risk-item"><b>⑦ 饮食饮水</b>：只喝瓶装水、不吃路边生冷、肉类要全熟；备蒙脱石散/益生菌/口服补液盐，处方药带英文说明书；中亚奶制品肠胃敏感者浅尝。</div>
+        <div class="risk-item"><b>⑧ 资金与盗刷</b>：优先银行室内 ATM，Visa/Master 为主、备 200 美元现金应急；卡被吞/盗刷立即电话冻卡，并拨 102 报案拿报案回执（保险理赔需要）。</div>
+        <div class="risk-item"><b>⑨ 内陆航班变动（SCAT/FlyArystan）</b>：行李选座多另购、已一次买足；班期可能调整，出票后把航司 App 通知打开，航班变动第一时间改签并通知向导改接站。</div>
+        <div class="risk-item"><b>⑩ 入境合规</b>：中哈互免签证 30 天，护照有效期需 6 个月以上；留存入境章照片与每段住宿单，不超期停留；无人机需提前确认许可，保护区禁飞。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-bottom:14px">
+    <div class="panel">
+      <b>☎ 当地与官方应急渠道（存在手机里，锁屏也能看到）</b>
+      <div class="sos-grid">
+        <div class="sos-card"><div class="num">112</div><div class="nm">统一应急救援</div><div class="ds">24h，无 SIM 卡、欠费也可拨打；生命受到威胁第一顺位</div></div>
+        <div class="sos-card"><div class="num">102</div><div class="nm">警察</div><div class="ds">盗窃/被骗/交通事故报案，索要书面报案回执</div></div>
+        <div class="sos-card"><div class="num">103</div><div class="nm">急救</div><div class="ds">叫救护车；酒店前台可协助叫英语私立急诊</div></div>
+        <div class="sos-card"><div class="num">101 / 104</div><div class="nm">消防救援 / 燃气抢修</div><div class="ds">火灾、受困、燃气泄漏</div></div>
+        <div class="sos-card"><div class="num">+86-10-12308</div><div class="nm">外交部全球领保热线</div><div class="ds">24h；备用 +86-10-65612308。海外拨 0086-10-12308</div></div>
+        <div class="sos-card"><div class="num">+7 727 236 2230</div><div class="nm">驻阿拉木图总领馆·领保协助</div><div class="ds">巴伊塔索夫大街 12 号；邮箱 chinaconsul_alm@mfa.gov.cn</div></div>
+        <div class="sos-card"><div class="nm">Safe Travel 游客安全平台</div><div class="ds">哈萨克斯坦警务旅游安全门户，可装官方 App 一键 SOS：<a href="https://www.safetravel.kz/" target="_blank" rel="noopener">safetravel.kz</a></div></div>
+        <div class="sos-card"><div class="nm">Kazhydromet 国家气象局</div><div class="ds">徒步/冰川/荒漠出发前查天气与大风预警：<a href="https://kazhydromet.kz/en" target="_blank" rel="noopener">kazhydromet.kz/en</a></div></div>
+        <div class="sos-card"><div class="nm">「中国领事」App</div><div class="ds">一键网络求助、附近使领馆、安全提醒推送，出发前装好并实名认证</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <b>🧰 出事了按这个顺序来</b>
+      <ul class="rb-list" style="margin-top:6px">
+        <li><b>人身受伤/受威胁</b>：先撤到安全处 → 拨 <b>112/103</b>（说清位置，可让当地人/向导用俄语报地址）→ 同步联系保险 24h 救援 <span class="fill-blank">保险救援电话：____</span>，保留所有病历发票原件。</li>
+        <li><b>护照丢失/被偷</b>：拨 <b>102</b> 报案拿 Police Report → 联系驻阿拉木图总领馆办旅行证（+7 727 236 2230）→ 凭旅行证与报案证明处理航司值机，回程预留更多机场时间。</li>
+        <li><b>银行卡盗刷/被吞</b>：立即打银行客服冻卡 → 102 报案取回执 → 留存交易记录用于拒付与理赔。</li>
+        <li><b>团队走散</b>：原地等候不移动，离线地图共享位置截图；约定每车一个集合点与时间，荒漠绝不分头找路。</li>
+        <li><b>航班取消/延误</b>：航司柜台改签下一班 → 通知向导/酒店改接送（内陆两段衔接当日行程，改动立刻在群里同步）。</li>
+      </ul>
+      <b style="display:block;margin-top:10px">出发前填好这张「随身卡」（截图存锁屏相册+纸质一份）</b>
+      <ul class="rb-list">
+        <li>旅行保险单号与 24h 救援：<span class="fill-blank">________</span>（确认含 3000m 以上徒步/直升机救援）</li>
+        <li>两湖/曼吉斯套/冰川团向导电话：<span class="fill-blank">________</span></li>
+        <li>阿拉木图酒店名址（俄语卡片给司机看）：<span class="fill-blank">________</span>；阿克套酒店：<span class="fill-blank">________</span></li>
+        <li>航司客服：东航 95530 / 南航 95539（境外 +86-21-95530 / +86-20-95539）；SCAT 航空官网 scat.kz / App 在线客服</li>
+        <li>血型、过敏史、长期药名（英文）：<span class="fill-blank">________</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="alt-note">
+    信息来源：哈萨克斯坦电子政府 egov.kz（112/101/102/103/104）、中国领事服务网 cs.mfa.gov.cn（哈萨克斯坦治安与安全提醒）、中国驻阿拉木图总领馆官网（领保电话 +7 727 236 2230、2026-07《徒步登山有风险》提示）、哈萨克斯坦警方 Safe Travel（safetravel.kz）、Kazhydromet 气象局；电话与网址核验于 2026-09-01，出行前请再到使领馆官网复核一次。
+  </div>
+
+  <footer>
+    哈萨克斯坦 8 天行程图册 v2.0 · 更新于 2026/09/01 · 时间/票价为采集值，出票与预订前以官方为准<br>
+    素材：内网旅游群与同事攻略（郭宇琛/陈儒/王琛等）+ 使馆公告/航司时刻/GetYourGuide/Redmaya/WeatherSpark 等公开来源；📷 实拍图均来自小红书笔记（按点位关键词专搜→AI 审帖→逐张 AI 审图双过关，64 组精选 564 张，溯源见 assets/gallery2/provenance.json），完整链接见同目录 raw/素材来源快照.md
+  </footer>
+</div>
+
+<!-- 图片素材数据（自动生成，图源小红书笔记） -->
+<script src="assets/gallery2/gallery-data.js"></script>
+<!-- 图片弹窗 -->
+<div class="gal-mask" id="galMask">
+  <div class="gal-modal">
+    <div class="gal-head">
+      <h3 id="galTitle"></h3><span class="gal-count" id="galCount"></span>
+      <button class="gal-x" id="galClose">✕</button>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+    <div class="gal-view" id="galView">
+      <button class="gal-back" id="galBack">← 返回图集</button>
+      <div class="gal-stage">
+        <button class="gal-nav gal-prev" id="galPrev">‹</button>
+        <img id="galImg" alt="">
+        <button class="gal-nav gal-next" id="galNext">›</button>
+      </div>
+      <div class="gal-cap">
+        <span id="galCapText"></span>
+        <a id="galSrc" href="#" target="_blank" rel="noopener">查看原笔记 ↗</a>
+        <span class="gi" id="galIdx"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ 行程数据 ============ */
+const C={flight:'#3a7ca5',drive:'#d08a3c',walk:'#8a8f98',hike:'#2e7d6b',food:'#c2553d',stay:'#4f6d7a',rose:'#c2553d',gather:'#b08d3e'};
+const DAYS=[
+ {id:1,date:'10/02 周五',title:'上海 ✈ 阿拉木图 · 落地休整',stat:'车程 15km',level:'●○○○○',labels:'hover',
+  stops:[
+   {t:'19:35',n:'阿拉木图机场 ALA',lat:43.3521,lng:77.0405,type:'flight'},
+   {t:'20:50',n:'金广场酒店',lat:43.2550,lng:76.9450,type:'stay'},
+   {t:'21:30',n:'Navat 晚餐',lat:43.2535,lng:76.9410,type:'food'}],
+  legs:[{a:0,b:1,mode:'drive',d:'15km · 25min · Yandex≈2000坚戈'},{a:1,b:2,mode:'walk',d:'步行 500m'}],
+  ev:[
+   ['flight','15:45','浦东 MU6041 起飞（北京时间）','直飞 6h50m，两人同行'],
+   ['flight','19:35','落地 ALA，免签入境','盖章约 30-45 分钟，备好酒店订单'],
+   ['drive','20:20','Yandex Go 去金广场酒店','15km/25min，约 2000 坚戈'],
+   ['stay','20:50','入住（阿拉木图连住 4 晚）','大件寄存酒店，后续只带分包'],
+   ['food','21:30','Navat 晚餐','烤包子+奶茶，清淡为主，早点休息','food_navat']],
+  stay:'🏨 阿拉木图 · 金广场/Arbat',
+  red:'机场到达口直接走网约车点，不与拉客司机纠缠',
+  black:'门口拉客出租喊 1-2 万坚戈（正常价 5-10 倍），只用 Yandex Go'},
+
+ {id:2,date:'10/03 周六',title:'周末旧货淘宝 + 管道徒步上大阿拉木图湖（体力前置）',stat:'徒步 6km/爬升约 300m + 车约 60km',level:'●●●●○',labels:'permanent',fitStops:[0,1,2,3,4,5],
+  stops:[
+   {t:'10:00',n:'Barakholka 旧货大巴扎',lat:43.3330,lng:77.0200,type:'drive'},
+   {t:'12:45',n:'绿巴扎午餐',lat:43.2606,lng:76.9464,type:'food'},
+   {t:'14:30',n:'红房子 Edelweiss',lat:43.0836,lng:77.0667,type:'drive',dir:'left'},
+   {t:'16:30',n:'大阿拉木图湖',lat:43.0497,lng:77.0208,type:'hike',dir:'bottom'},
+   {t:'19:45',n:'回金广场',lat:43.2550,lng:76.9450,type:'drive',dir:'top'},
+   {t:'20:30',n:'Auyl 晚餐',lat:43.2510,lng:76.9380,type:'food',dir:'right'}],
+  legs:[{a:0,b:1,mode:'drive',d:'打车 12km · 25min',hideLabel:true},{a:1,b:2,mode:'drive',d:'回酒店换装 · 25km/40min',lo:{dlat:0.04,dlng:0.1}},
+        {a:2,b:3,mode:'hike',d:'管道 3km · 2h 上行',lo:{dlat:-0.09,dlng:0.12}},{a:3,b:2,mode:'hike',d:'公路缓下 1.5h',lo:{dlat:0.09,dlng:-0.12}},
+        {a:2,b:4,mode:'drive',d:'包车等候回城 25km/40min',lo:{dlat:-0.05,dlng:-0.1}},{a:4,b:5,mode:'walk',d:'步行 600m'}],
+  ev:[
+   ['drive','10:00','睡到 9 点，打车去 Barakholka 旧货大巴扎（城北 Severnoe Koltso，近机场）','旧货区仅周六日开、9 点出摊、部分摊 13-15 点收，10 点到刚好货全人不多'],
+   ['walk','10:30','旧货市场淘宝约 2h','苏联徽章/纪念币/军品/老相机/旧邮票，现金为主、对半砍价','barakholka_flea'],
+   ['food','12:15','返程市区，12:45 绿巴扎二楼午餐','手抓饭/馕/包尔萨克，人均 25-40 元','green_bazaar'],
+   ['drive','13:45','回酒店换徒步装备，包车去红房子','定位 Edelweiss 红房子（别直接定大湖），进山费约 1000₸/人，包车全程等候'],
+   ['hike','14:30','管道线上山（趁体力满格先啃 BAO）','首段钢索陡坡，输水管段近而陡，约 2h <a class="inlink" href="#sec-hike">→ 徒步专栏（路线/装备/避坑详解）</a>','bao_pipe'],
+   ['hike','16:30','大阿拉木图湖（2511m）','Tiffany 蓝，拍摄 45 分钟，严禁下水；傍晚侧光更柔','bao_lake'],
+   ['hike','17:15','沥青公路缓下','管上公路下最省力，约 1.5h，天黑前撤回红房子'],
+   ['food','20:30','Auyl 晚餐（已提前订位）','徒步后补一顿硬的；今晚不熬夜，明早 09:00 出发两湖','food_auyl']],
+  stay:'🏨 阿拉木图 · 金广场',
+  red:'旧货周末限定、赶早货最全；刚落地体力最好，先把全程最费腿的 BAO 拿下，午后侧光湖面更柔',
+  black:'旧货只收现金、砍价对半起，徽章钱币甄别真伪、注意海关禁忌；BAO 下山无网无车必须包车等候、湖边严禁下水；Atelier 挪到 D4 晚、歌剧院看 D8 排期，今晚早睡'},
+
+ {id:3,date:'10/04 周日',title:'两湖一峡谷 D1 · 恰伦峡谷 + 科尔赛湖',stat:'车程约 380km',level:'●●●○○',labels:'permanent',
+  stops:[
+   {t:'09:00',n:'阿拉木图',lat:43.2550,lng:76.9450,type:'drive',dir:'right'},
+   {t:'12:00',n:'恰伦峡谷',lat:43.3697,lng:79.0800,type:'hike',dir:'left'},
+   {t:'17:15',n:'科尔赛湖',lat:43.0403,lng:78.4131,type:'hike',dir:'bottom'},
+   {t:'19:00',n:'Saty 村',lat:43.0736,lng:78.4328,type:'stay',dir:'top'}],
+  legs:[{a:0,b:1,mode:'drive',d:'220km · 3h',lo:{dlat:0.06,dlng:-0.1}},{a:1,b:2,mode:'drive',d:'150km · 2.5h',lo:{dlat:0.12,dlng:0.05}},{a:2,b:3,mode:'drive',d:'12km',lo:{dlat:0.06,dlng:0.22}}],
+  ev:[
+   ['drive','09:00','睡到自然醒，小团/包车酒店接出发','220km 约 3h，车上继续补觉'],
+   ['hike','12:00','恰伦峡谷·城堡谷徒步','红褐色岩柱廊道，往返约 2km/2h','charyn'],
+   ['food','14:00','峡谷附近路餐','团含或简餐'],
+   ['drive','14:45','转场 Saty','150km/2.5h，奇利克河谷停车观景'],
+   ['hike','17:15','下科尔赛湖湖岸徒步','雪山蓝绿湖，日落前光线最柔，划船可选约 $13','kolsai'],
+   ['stay','19:00','Saty 村民宿 + 20:00 哈萨克家宴','手抓肉/奶茶/包尔萨克','saty_village']],
+  stay:'🏕️ Saty 村家庭民宿（公共卫浴）',
+  red:'住一晚避开 16h 一日团，家宴是额外体验',
+  black:'村夜无信号，提前下离线地图；带洗漱+头灯+拖鞋'},
+
+ {id:4,date:'10/05 周一',title:'两湖一峡谷 D2 · 从 Saty 村出发：卡因迪 → 回阿拉木图',stat:'车程约 340km',level:'●●●○○',labels:'permanent',
+  stops:[
+   {t:'09:30',n:'Saty 村',lat:43.0736,lng:78.4328,type:'drive',dir:'right'},
+   {t:'10:15',n:'卡因迪湖',lat:42.9819,lng:78.0736,type:'hike',dir:'left'},
+   {t:'19:30',n:'阿拉木图',lat:43.2550,lng:76.9450,type:'stay',dir:'top'}],
+  legs:[{a:0,b:1,mode:'drive',d:'UAZ 越野往返 60km',lo:{dlat:0.2,dlng:-0.11}},{a:0,b:2,mode:'drive',d:'280km · 4-4.5h',lo:{dlat:0.09,dlng:-0.12}}],
+  ev:[
+   ['drive','09:30','村里慢慢吃个早饭再出发，UAZ 越野进卡因迪','搓板路约 30km/1h，必须越野车（不回阿拉木图）','uaz_kaindy'],
+   ['hike','10:15','卡因迪湖徒步往返 4km','1911 地震堰塞湖，枯云杉如沉船桅杆','kaindy'],
+   ['food','13:00','回 Saty 午餐',''],
+   ['drive','14:15','返程阿拉木图','280km/4-4.5h，中途休息一次'],
+   ['food','20:00','Daredzhani 格鲁吉亚菜 + 采购早餐包','换个口味：奶酪烤饼/蘑菇炖鸡；明天 9 点半才出发冰川，不用早起','daredzhani'],
+   ['food','21:30','有余兴再去 Atelier 喝一杯（Valikhanova 47）','本地创意调酒，累了就直接回酒店，不勉强','atelier_bar']],
+  stay:'🏨 阿拉木图 · 金广场',
+  red:'徒步比骑马更可控，泥泞路段马也慢',
+  black:'最后一段无公路，不要试图步行公路抄近'},
+
+ {id:5,date:'10/06 周二',title:'上午冰川半日 · 傍晚从容飞阿克套',stat:'冰川徒步约 4km + 飞 2087km',level:'●●●○○',labels:'permanent',fitStops:[0,1,2,3,4,5],
+  stops:[
+   {t:'09:30',n:'金广场酒店',lat:43.2550,lng:76.9450,type:'stay',dir:'left'},
+   {t:'10:45',n:'Shymbulak 缆车站',lat:43.1589,lng:77.0828,type:'drive'},
+   {t:'11:15',n:'3200m 上站',lat:43.1370,lng:77.1070,type:'hike',dir:'left',toff:[0,16]},
+   {t:'11:45',n:'冰川/冰洞',lat:43.1210,lng:77.1280,type:'hike',dir:'bottom'},
+   {t:'14:45',n:'市区简午餐',lat:43.2520,lng:76.9400,type:'food',dir:'top'},
+   {t:'16:15',n:'ALA 机场',lat:43.3521,lng:77.0405,type:'flight',dir:'top'},
+   {t:'20:00',n:'SCO 机场',lat:43.8601,lng:51.0946,type:'flight',dir:'left'},
+   {t:'21:00',n:'Bomba 海边夜宵',lat:43.6440,lng:51.1460,type:'food',dir:'bottom'}],
+  legs:[{a:0,b:1,mode:'drive',d:'20km · 35min'},{a:1,b:2,mode:'hike',d:'三段缆车'},{a:2,b:3,mode:'hike'},
+        {a:3,b:4,mode:'drive',d:'缆车下山+回城',lo:{dlat:-0.05,dlng:-0.15}},{a:4,b:5,mode:'drive',d:'15km · 25min',lo:{dlat:0.02,dlng:0.05}},
+        {a:5,b:6,mode:'flight'},{a:6,b:7,mode:'drive',d:'35km · 40min',lo:{dlat:-0.08,dlng:0.1}}],
+  ev:[
+   ['stay','09:30','自然醒 + 早餐，退房把行李寄存在酒店','冰川装备直接穿身上：分层衣/手套/帽子/墨镜'],
+   ['drive','10:15','冰川团向导接，10:45 到 Shymbulak','半日团：缆车+冰爪+向导','shymbulak'],
+   ['hike','11:15','三段缆车直上 3200m',''],
+   ['hike','11:45','冰川 + Oktyabrskaya 冰洞（约 2.5h）','导游发冰爪，慢走慢拍；高海拔放慢节奏 <a class="inlink" href="#sec-hike">→ 徒步专栏</a>','glacier'],
+   ['drive','14:15','缆车下山，14:45 市区简午餐',''],
+   ['drive','15:45','回酒店取行李去机场','国内航班提前 1h 足够，16:15 到 ALA'],
+   ['flight','17:00','DV731 起飞 → 20:00 落地 SCO（SCAT 航空）','选傍晚班替代凌晨 5 点早班；班期出票复核'],
+   ['food','20:40','入住第一海岸线，21:00 Bomba 海边夜宵','营业到凌晨 1 点；备选 CHECHIL PUB（海边牛扒，见餐饮速查）']],
+  stay:'🏨 阿克套 · 第一海岸线（连住 2 晚）',
+  red:'上午冰川下午飞，两头都不赶；冰川若因风雪取消就改市区喝咖啡，完全不影响晚上航班',
+  black:'冰川体感可到 -15℃，手套帽子墨镜缺一不可；国内段行李额订票时买足'},
+
+ {id:6,date:'10/07 周三',title:'南线整天 · 提拉米苏峡谷 + Bozzhyra 日落 ⭐（全程唯一早起日）',stat:'车程约 600km',level:'●●●●●',labels:'permanent',
+  stops:[
+   {t:'08:30',n:'阿克套',lat:43.6582,lng:51.1623,type:'drive',dir:'left'},
+   {t:'途停',n:'Zhanaozen',lat:43.3386,lng:52.8571,type:'drive',dir:'top'},
+   {t:'12:30',n:'Kyzylkup',lat:43.1500,lng:53.3500,type:'hike',dir:'bottom'},
+   {t:'14:30',n:'Bokty',lat:43.2040,lng:53.3860,type:'hike',dir:'right'},
+   {t:'16:45',n:'Bozzhyra',lat:43.3830,lng:54.0160,type:'hike',dir:'top'},
+   {t:'23:50',n:'返阿克套',lat:43.6900,lng:51.0950,type:'stay',dir:'top'}],
+  legs:[{a:0,b:1,mode:'drive',d:'150km',lo:{dlat:0.12,dlng:-0.1}},{a:1,b:2,mode:'drive',d:'75km',lo:{dlat:0.5,dlng:-0.62}},{a:2,b:3,mode:'drive',d:'12km',lo:{dlat:0.09,dlng:-0.32}},
+        {a:3,b:4,mode:'drive',d:'65km',lo:{dlat:0.14,dlng:0.5}},{a:4,b:5,mode:'drive',d:'300km 夜返',lo:{dlat:0.9,dlng:-1.2}}],
+  ev:[
+   ['drive','08:30','出发深入南线（全程唯一 8 点半起的一天，为了日落大轴）','单程 275-300km，车上补觉'],
+   ['hike','12:30','Kyzylkup「提拉米苏」峡谷','奶油/赭红层理彩丘 + 野餐','kyzylkup'],
+   ['hike','14:30','Bokty 堡垒山','孤起层山，无人机视角最佳','bokty'],
+   ['hike','16:45','Bozzhyra 火星全景 → Fangs 尖牙群','1000 坚戈纸币图案，8000 万年海床','bozzhyra'],
+   ['hike','18:30','⭐ Bozzhyra 日落（全程最出片 45 分钟）','白垩崖从雪白染金粉，留给三脚架；实拍见上一条同点图集'],
+   ['drive','19:45','热餐后夜返','约 23:50 回酒店洗热水澡（用一次早起换全程第一高光）']],
+  stay:'🏨 阿克套 · 第一海岸线',
+  red:'日落是全程第一高光，行程特意保留并不露营；这是全程唯一需要 8 点多起的一天',
+  black:'荒漠无路只有车辙绝不自驾；夜里 9-12℃ 风大，抓绒+防风壳'},
+
+ {id:7,date:'10/08 周四',title:'北线睡饱版 · 球谷狮山 → 晚班机回阿拉木图',stat:'车约 270km + 飞 2087km',level:'●●●○○',labels:'permanent',fitStops:[0,1,2,3,4],
+  stops:[
+   {t:'09:30',n:'阿克套出发',lat:43.6582,lng:51.1623,type:'drive',dir:'left'},
+   {t:'11:15',n:'Torysh 球谷',lat:44.5360,lng:51.8140,type:'hike',dir:'top'},
+   {t:'13:45',n:'Sherkala 狮山',lat:44.4920,lng:51.8830,type:'hike',dir:'right'},
+   {t:'18:00',n:'市区晚餐',lat:43.6440,lng:51.1460,type:'food',dir:'bottom'},
+   {t:'20:30',n:'SCO 机场',lat:43.8601,lng:51.0946,type:'flight',dir:'left'},
+   {t:'23:20',n:'ALA 机场',lat:43.3521,lng:77.0405,type:'flight',dir:'top'},
+   {t:'00:00',n:'金广场酒店',lat:43.2550,lng:76.9450,type:'stay',dir:'right'}],
+  legs:[{a:0,b:1,mode:'drive',d:'120km · 1.5h',lo:{dlat:0.08,dlng:-0.18}},{a:1,b:2,mode:'drive',d:'10km',lo:{dlat:-0.08,dlng:0.05}},
+        {a:2,b:3,mode:'drive',d:'140km · 2h',lo:{dlat:-0.1,dlng:0.14}},{a:3,b:4,mode:'drive',d:'35km · 40min',lo:{dlat:0.05,dlng:-0.05}},
+        {a:4,b:5,mode:'flight'},{a:5,b:6,mode:'drive',d:'25km · 25min',lo:{dlat:0.03,dlng:-0.05}}],
+  ev:[
+   ['drive','09:30','睡饱退房，行李放车上，越野向导接','荒漠日不赶路，光线好才是正经事'],
+   ['hike','11:15','Torysh 球谷','远古海床凝结的巨型石球，轻徒步 1.5h','torysh'],
+   ['food','12:45','沿途村落 cafe 午餐',''],
+   ['hike','13:45','Sherkala 狮山','曼吉斯套「斯芬克斯」，时间够加 Shakpak-Ata 地下清真寺','sherkala'],
+   ['drive','16:00','返阿克套市区，18:00 海边晚餐','CHECHIL PUB 牛扒或 Bomba，吃完去机场','chechil_pub'],
+   ['flight','20:30','DV729 起飞 → 23:20 落地 ALA（SCAT 航空）','晚班机替代早班，不用凌晨起床；班期出票复核'],
+   ['drive','23:50','到金广场酒店','倒头就睡，明早自然醒，D8 零硬行程']],
+  stay:'🏨 阿拉木图 · 金广场',
+  red:'北线睡饱再走、傍晚晚班机回，全天没有闹钟压力；狮山下午斜光同样出片',
+  black:'荒漠无信号无厕所，备 2L 水/人，出发前上厕所；国内段提前 50min 到机场即可'},
+
+ {id:8,date:'10/09 周五',title:'完全放松日 · City Walk 慢逛买手信 → 两人分别回上海/广州',stat:'步行约 3km + 机场 15km',level:'●○○○○',labels:'hover',fitStops:[0,1,2,3,4,5,6],
+  stops:[
+   {t:'10:30',n:'潘菲洛夫/升天大教堂',lat:43.2581,lng:76.9528,type:'walk'},
+   {t:'11:30',n:'Arbat + 苏式地铁站',lat:43.2547,lng:76.9431,type:'walk'},
+   {t:'12:30',n:'绿巴扎逛吃+手信',lat:43.2606,lng:76.9464,type:'food'},
+   {t:'14:00',n:'中央国家博物馆',lat:43.2344,lng:76.9100,type:'walk'},
+   {t:'15:45',n:'最后一杯咖啡',lat:43.2520,lng:76.9400,type:'food',dir:'right'},
+   {t:'16:30',n:'回酒店取行李',lat:43.2550,lng:76.9450,type:'stay'},
+   {t:'20:50',n:'ALA 机场',lat:43.3521,lng:77.0405,type:'flight',dir:'top'}],
+  legs:[{a:0,b:1,mode:'walk',d:'步行 600m'},{a:1,b:2,mode:'walk',d:'步行 700m'},{a:2,b:3,mode:'drive',d:'3.3km 打车',lo:{dlat:0.003,dlng:-0.005}},
+        {a:3,b:4,mode:'drive',d:'2.5km · 10min',lo:{dlat:-0.0035,dlng:0.005}},{a:4,b:5,mode:'walk',d:'步行 400m'},{a:5,b:6,mode:'drive',d:'15km · 25min',lo:{dlat:0.02,dlng:0.05}}],
+  ev:[
+   ['walk','09:30','睡到自然醒，酒店慢慢吃早餐','最后一天不设闹钟，硬行程昨天已全部清零'],
+   ['walk','10:30','潘菲洛夫 28 勇士公园 + 升天大教堂','全木构无钉，晨光最柔，慢慢逛 1h','citywalk_cathedral'],
+   ['walk','11:30','Arbat 步行街 + Zhibek Zholy 苏式地铁站','顺路逛纪念品小店','citywalk_metro'],
+   ['food','12:30','绿巴扎二楼逛吃 + 买齐伴手礼','干果/蜂蜜/马肠/冰箱贴，先问价再称重','green_bazaar'],
+   ['walk','14:00','中央国家博物馆（留 1.5h，周五正常开放）','临走前把哈萨克历史补上一眼；若阿拜歌剧院有午后场，可砍掉博物馆尾段去看戏','museum'],
+   ['food','15:45','最后一杯咖啡/简餐，16:30 回酒店取全部行李','检查护照、退税单、eSIM'],
+   ['drive','17:15','两人同车出发机场','18:00 到航站楼，国际航班提前 2.5-3h'],
+   ['flight','20:50','A：MU6042 → 浦东 05:30+1','回上海'],
+   ['flight','21:15','B：CZ3084 → 白云 06:25+1','回广州，两班差 25 分钟']],
+  stay:'✈️ 夜宿航班上',
+  red:'全天零硬行程、随时可删项；两人同车到机场再分别值机，白天完全共享',
+  black:'最晚 17:15 必须出发去机场；巴扎散装干果先问价称重，液体手信全部托运'}
+];
+
+/* ============ 渲染逐日 ============ */
+const TYPE_LABEL={flight:'飞行',drive:'车程',walk:'步行',hike:'徒步',food:'餐饮',stay:'住宿'};
+const daysEl=document.getElementById('days');
+DAYS.forEach(d=>{
+  const evHtml=d.ev.map((e,i)=>`
+    <div class="ev ${e[0]}">
+      <div class="no">${i+1}</div>
+      <div><div class="t">${e[1]} · ${TYPE_LABEL[e[0]]}${e[4]&&window.GALLERY&&window.GALLERY[e[4]]?`<button class="g-btn" data-gal="${e[4]}">实拍 ${window.GALLERY[e[4]].items.length}</button>`:''}</div><div class="x">${e[2]}${e[3]?`<span class="sub">${e[3]}</span>`:''}</div></div>
+    </div>`).join('');
+  const el=document.createElement('section');
+  el.className='day';el.id='d'+d.id;
+  el.innerHTML=`
+    <div class="dhead">
+      <div class="dbadge"><small>DAY</small><b>${d.id}</b></div>
+      <div><h3>${d.title}</h3><div class="dmeta">${d.date}</div></div>
+      <div class="dstats">${d.stat}<br>强度 <b>${d.level}</b></div>
+    </div>
+    <div class="dbody">
+      <div class="tl">${evHtml}
+        <div style="margin-top:12px"><span class="pill">${d.stay}</span></div>
+        <div class="rb" style="grid-template-columns:1fr">
+          <div class="rbox red"><b>🟥 红经验</b>${d.red}</div>
+          <div class="rbox black"><b>🖤 避坑</b>${d.black}</div>
+        </div>
+      </div>
+      <div class="dmap"><div class="map" id="map${d.id}"></div></div>
+    </div>`;
+  daysEl.appendChild(el);
+});
+
+/* ============ 快跳导航 + 滚动高亮 ============ */
+(function(){
+  const items=[['sec-overview','航图'],...DAYS.flatMap(d=>[['d'+d.id,'D'+d.id]]),
+    ['sec-stay','住宿'],['sec-food','餐饮'],['sec-rb','红黑'],['sec-budget','预算'],['sec-alt','备选'],['sec-hike','徒步'],['sec-prep','行前'],['sec-safety','应急']];
+  const nav=document.getElementById('dayNav');
+  nav.innerHTML=items.map(([id,t])=>`<a href="#${id}" data-t="${id}">${t}</a>`).join('');
+  const links=[...nav.querySelectorAll('a')];
+  links.forEach(a=>a.addEventListener('click',ev=>{
+    ev.preventDefault();
+    document.getElementById(a.dataset.t).scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){
+      links.forEach(a=>a.classList.toggle('on',a.dataset.t===e.target.id));
+    }});
+  },{rootMargin:'-30% 0px -60% 0px'});
+  items.forEach(([id])=>{const el=document.getElementById(id);if(el)obs.observe(el);});
+})();
+
+/* ============ 地图 ============ */
+const tileUrl='https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}';
+const tileAttr='&copy; Esri · USGS · NOAA | 路线为示意标注';
+const satUrl='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+function addBaseLayers(map){
+  const topo=L.tileLayer(tileUrl,{attribution:tileAttr,maxZoom:18});
+  const sat=L.tileLayer(satUrl,{maxZoom:18});
+  topo.addTo(map);
+  L.control.layers({'地形图 Topo':topo,'卫星图 Satellite':sat},null,{position:'topright',collapsed:true}).addTo(map);
+}
+function styleFor(mode){
+  if(mode==='flight')return{color:C.flight,weight:2.5,dashArray:'7,7'};
+  if(mode==='drive') return{color:C.drive,weight:3};
+  if(mode==='hike')  return{color:C.hike,weight:2.5,dashArray:'6,5'};
+  return{color:C.walk,weight:2,dashArray:'2,5'};
+}
+function mid(a,b){return L.latLng((a.lat+b.lat)/2,(a.lng+b.lng)/2)}
+function buildDayMap(d){
+  const map=L.map('map'+d.id,{scrollWheelZoom:false,attributionControl:false});
+  L.control.attribution({prefix:false,position:'bottomright'}).addTo(map);
+  addBaseLayers(map);
+  const bounds=[];
+  d.legs.forEach(leg=>{
+    const A=d.stops[leg.a],B=d.stops[leg.b];
+    const p1=L.latLng(A.lat,A.lng),p2=L.latLng(B.lat,B.lng);
+    L.polyline([p1,p2],styleFor(leg.mode)).addTo(map);
+    if(!leg.d||leg.hideLabel) return;
+    let lp=mid(A,B);
+    if(leg.lo) lp=L.latLng(lp.lat+(leg.lo.dlat||0),lp.lng+(leg.lo.dlng||0));
+    L.marker(lp,{interactive:false,icon:L.divIcon({className:'',iconSize:null})})
+      .bindTooltip(leg.d,{permanent:true,direction:'center',className:'seg-label',offset:[0,0]}).addTo(map);
+  });
+  d.stops.forEach((s,i)=>{
+    if(!d.fitStops||d.fitStops.includes(i)) bounds.push([s.lat,s.lng]);
+    const icon=L.divIcon({className:'',html:`<div class="pin" style="--c:${C[s.type]}">${i+1}</div>`,iconSize:[23,23],iconAnchor:[11.5,11.5]});
+    const m=L.marker([s.lat,s.lng],{icon}).addTo(map);
+    if(s.hideName) return;
+    const label=d.labels==='permanent'?s.n:`${s.t} ${s.n}`;
+    m.bindTooltip(label,{direction:s.dir||'top',offset:s.toff||[0,-13],className:'name-label',permanent:d.labels==='permanent'});
+  });
+  map.fitBounds(bounds,{padding:[50,50]});
+}
+setTimeout(()=>DAYS.forEach(buildDayMap),60);
+
+/* ============ 总览地图 ============ */
+setTimeout(()=>{
+  const ov=L.map('overviewMap',{scrollWheelZoom:false});
+  addBaseLayers(ov);
+  const airports=[
+    {code:'PVG · Shanghai',lat:31.1443,lng:121.8083},
+    {code:'ALA · Almaty',lat:43.3521,lng:77.0405},
+    {code:'SCO · Aktau',lat:43.8601,lng:51.0946},
+    {code:'CAN · Guangzhou',lat:23.3924,lng:113.2988}];
+  // 二次贝塞尔弧线（经纬度平面），bulge 为垂直于航线方向的拱起度数，让回沪/回穗两条线分开
+  function arcPts(P,Q,bulge){
+    const A=[P.lng,P.lat],B=[Q.lng,Q.lat],mx=(A[0]+B[0])/2,my=(A[1]+B[1])/2;
+    const dx=B[0]-A[0],dy=B[1]-A[1],len=Math.hypot(dx,dy)||1,px=-dy/len,py=dx/len,Cc=[mx+px*bulge,my+py*bulge],out=[];
+    for(let t=0;t<=1.0001;t+=0.04){const u=1-t;out.push([u*u*A[1]+2*u*t*Cc[1]+t*t*B[1],u*u*A[0]+2*u*t*Cc[0]+t*t*B[0]]);}return out;
+  }
+  function arcAt(P,Q,bulge,t){
+    const A=[P.lng,P.lat],B=[Q.lng,Q.lat],mx=(A[0]+B[0])/2,my=(A[1]+B[1])/2;
+    const dx=B[0]-A[0],dy=B[1]-A[1],len=Math.hypot(dx,dy)||1,px=-dy/len,py=dx/len,Cc=[mx+px*bulge,my+py*bulge],u=1-t;
+    return L.latLng(u*u*A[1]+2*u*t*Cc[1]+t*t*B[1],u*u*A[0]+2*u*t*Cc[0]+t*t*B[0]);
+  }
+  // [起, 止, 标签, 颜色, 弧度, 标签位置t, 标签微调]
+  const arcs=[
+    [3,0,'CA8582 CAN→PVG ≈1200km',C.gather,2,0.5,{dlat:1.1,dlng:0}],
+    [0,1,'MU6041 PVG→ALA ≈4130km',C.flight,4,0.55,{dlat:1.2,dlng:0}],
+    [1,2,'DV731/DV729 ALA⇄SCO 2087km',C.drive,0,0.5,{dlat:1.1,dlng:0}],
+    [1,0,'MU6042 ALA→PVG ≈4130km',C.hike,4,0.64,{dlat:-1.5,dlng:4}],
+    [1,3,'CZ3084 ALA→CAN ≈3990km',C.rose,-6,0.55,{dlat:-1.3,dlng:0}]];
+  arcs.forEach(a=>{
+    const A=airports[a[0]],B=airports[a[1]];
+    L.polyline(arcPts(A,B,a[4]),{color:a[3],weight:2.5,dashArray:'7,7'}).addTo(ov);
+    const lp=arcAt(A,B,a[4],a[5]),off=a[6];
+    L.marker(L.latLng(lp.lat+off.dlat,lp.lng+off.dlng),{interactive:false,icon:L.divIcon({className:'',iconSize:null})})
+      .bindTooltip(a[2],{permanent:true,direction:'center',className:'seg-label'}).addTo(ov);
+  });
+  airports.forEach(p=>{
+    L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',html:`<div class="pin air" style="--c:var(--slate)">${p.code}</div>`,
+      iconSize:[128,21],iconAnchor:[64,10.5]})}).addTo(ov);
+  });
+  ov.fitBounds([[22.8,50.5],[45.3,122.4]],{padding:[24,24]});
+},80);
+
+/* ============ 旅途倒计时小组件（窗口：北京时间 10/01 00:00 → 10/10 00:00） ============ */
+(function(){
+  const T0=Date.UTC(2026,9,1,0,0,0)-8*3600e3;   // 2026-10-01 00:00 CST
+  const T1=Date.UTC(2026,9,10,0,0,0)-8*3600e3;  // 2026-10-10 00:00 CST
+  const $=id=>document.getElementById(id);
+  const p2=n=>String(n).padStart(2,'0');
+  function parts(ms){ms=Math.max(0,ms);return{d:Math.floor(ms/864e5),h:Math.floor(ms/36e5)%24,
+    m:Math.floor(ms/6e4)%60,s:Math.floor(ms/1e3)%60};}
+  function render(){
+    const now=Date.now(),box=$('cd');
+    box.classList.remove('state-travel','state-after');
+    let main,sub,eye,x,prog;
+    if(now<T0){
+      eye='COUNTDOWN · 启程倒计时';main='就快了就快了。';x=parts(T0-now);prog=0;
+      sub='';
+    }else if(now<T1){
+      box.classList.add('state-travel');
+      eye='ON THE ROAD · 旅途进行中';main='出发咯gogogo';x=parts(now-T0);
+      prog=(now-T0)/(T1-T0)*100;
+      sub=`已出发 ${x.d} 天 ${x.h} 时 ${x.m} 分 ${x.s} 秒 · 玩得野一点，安全第一`;
+    }else{
+      box.classList.add('state-after');
+      eye='MEMORY · 旅途已收官';main='2026年国庆过去了，我很怀念ta';x=parts(now-T1);prog=100;
+      sub=`收官已有 ${x.d} 天 ${x.h} 时 ${x.m} 分 · 山水已存档，下一站见`;
+    }
+    $('cdEye').textContent=eye;$('cdMain').textContent=main;
+    $('cdD').textContent=p2(x.d);$('cdH').textContent=p2(x.h);$('cdM').textContent=p2(x.m);$('cdS').textContent=p2(x.s);
+    $('cdSub').textContent=sub;$('cdSub').style.display=sub?'block':'none';
+    $('cdBar').style.width=Math.max(0,Math.min(100,prog))+'%';
+  }
+  render();setInterval(render,1000);
+})();
+
+/* ============ 参考链接弹窗 ============ */
+(function(){
+  const mask=document.getElementById('refMask');
+  document.getElementById('refOpenBtn').addEventListener('click',()=>mask.classList.add('show'));
+  document.getElementById('refCloseBtn').addEventListener('click',()=>mask.classList.remove('show'));
+  mask.addEventListener('click',e=>{if(e.target===mask)mask.classList.remove('show');});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')mask.classList.remove('show');});
+})();
+
+/* ============ 小红书实拍图集弹窗 ============ */
+(function(){
+  const mask=document.getElementById('galMask'),grid=document.getElementById('galGrid'),
+        view=document.getElementById('galView'),gImg=document.getElementById('galImg'),
+        gCap=document.getElementById('galCapText'),gSrc=document.getElementById('galSrc'),
+        gIdx=document.getElementById('galIdx'),gTitle=document.getElementById('galTitle'),
+        gCount=document.getElementById('galCount');
+  let cur=[],pos=0;
+  function showGrid(){view.classList.remove('show');grid.style.display='grid';}
+  function openViewer(i){
+    pos=i;const it=cur[i];gImg.src=it.src;gImg.alt=it.cap||'';
+    gCap.textContent=it.cap||'';gSrc.href=it.url;
+    gIdx.textContent=`${i+1} / ${cur.length}`;
+    grid.style.display='none';view.classList.add('show');
+  }
+  function step(d){openViewer((pos+d+cur.length)%cur.length);}
+  window.openGallery=function(key){
+    const g=window.GALLERY&&window.GALLERY[key];if(!g||!g.items.length)return;
+    cur=g.items;gTitle.textContent=g.title;gCount.textContent=`${cur.length} 张 · 均来自小红书旅拍，点击看大图`;
+    grid.innerHTML=cur.map((it,i)=>`<img loading="lazy" src="${it.src}" data-i="${i}" alt="${it.cap||''}" title="${it.cap||''}">`).join('');
+    showGrid();mask.classList.add('show');
+  };
+  grid.addEventListener('click',e=>{if(e.target.dataset.i)openViewer(+e.target.dataset.i);});
+  document.getElementById('galClose').addEventListener('click',()=>mask.classList.remove('show'));
+  document.getElementById('galBack').addEventListener('click',showGrid);
+  document.getElementById('galPrev').addEventListener('click',()=>step(-1));
+  document.getElementById('galNext').addEventListener('click',()=>step(1));
+  mask.addEventListener('click',e=>{if(e.target===mask)mask.classList.remove('show');});
+  document.addEventListener('keydown',e=>{
+    if(!mask.classList.contains('show'))return;
+    if(e.key==='Escape'){if(view.classList.contains('show'))showGrid();else mask.classList.remove('show');}
+    if(e.key==='ArrowLeft'&&view.classList.contains('show'))step(-1);
+    if(e.key==='ArrowRight'&&view.classList.contains('show'))step(1);
+  });
+  // 时间轴按钮为动态渲染，统一事件委托
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('.g-btn');if(b&&b.dataset.gal){e.preventDefault();window.openGallery(b.dataset.gal);}
+  });
+})();
+</script>
+</body>
+</html>

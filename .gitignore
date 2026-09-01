@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# 本地存档（已压缩归档，不入库）
+backup/
+
+# 小红书原始采集中间数据（体积大、仅本地工作用）
+**/raw/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

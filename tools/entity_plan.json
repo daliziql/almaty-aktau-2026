@@ -1,0 +1,824 @@
+{
+  "_doc": "关键点定向采集计划：key=点位id，zh=中文名，kws=搜索词，must=标题命中词（严格模式），target=最终保留张数",
+  "entities": [
+    {
+      "key": "cathedral",
+      "zh": "升天大教堂/潘菲洛夫公园",
+      "kws": [
+        "阿拉木图升天大教堂",
+        "潘菲洛夫公园 升天大教堂"
+      ],
+      "must": [
+        "大教堂",
+        "升天",
+        "cathedral",
+        "zenkov",
+        "潘菲洛夫"
+      ],
+      "target": 10
+    },
+    {
+      "key": "memorial_park",
+      "zh": "28勇士公园永恒之火",
+      "kws": [
+        "阿拉木图潘菲洛夫28勇士公园",
+        "阿拉木图永恒之火"
+      ],
+      "must": [
+        "勇士",
+        "潘菲洛夫",
+        "永恒",
+        "火焰",
+        "纪念"
+      ],
+      "target": 8
+    },
+    {
+      "key": "museum_csm",
+      "zh": "中央国家博物馆",
+      "kws": [
+        "阿拉木图中央国家博物馆",
+        "哈萨克斯坦中央国家博物馆"
+      ],
+      "must": [
+        "博物馆",
+        "museum"
+      ],
+      "target": 10
+    },
+    {
+      "key": "abay_opera",
+      "zh": "阿拜歌剧院",
+      "kws": [
+        "阿拉木图阿拜歌剧院",
+        "阿拉木图芭蕾舞剧院"
+      ],
+      "must": [
+        "歌剧",
+        "芭蕾",
+        "剧院",
+        "opera",
+        "ballet",
+        "abay",
+        "阿拜"
+      ],
+      "target": 10
+    },
+    {
+      "key": "metro",
+      "zh": "阿拉木图地铁站",
+      "kws": [
+        "阿拉木图地铁站"
+      ],
+      "must": [
+        "地铁",
+        "metro",
+        "zhibek"
+      ],
+      "target": 8
+    },
+    {
+      "key": "green_bazaar",
+      "zh": "绿巴扎",
+      "kws": [
+        "阿拉木图绿巴扎",
+        "阿拉木图绿色巴扎"
+      ],
+      "must": [
+        "巴扎",
+        "bazaar",
+        "市场",
+        "菜场"
+      ],
+      "target": 10
+    },
+    {
+      "key": "barakholka",
+      "zh": "Barakholka旧货市场",
+      "kws": [
+        "阿拉木图旧货市场",
+        "Barakholka 阿拉木图"
+      ],
+      "must": [
+        "旧货",
+        "二手",
+        "跳蚤",
+        "barakholka",
+        "大巴扎",
+        "古董"
+      ],
+      "target": 8
+    },
+    {
+      "key": "koktobe",
+      "zh": "Kok Tobe科克托别山",
+      "kws": [
+        "Kok Tobe 阿拉木图",
+        "科克托别山 阿拉木图"
+      ],
+      "must": [
+        "kok",
+        "tobe",
+        "科克",
+        "托别",
+        "电视塔"
+      ],
+      "target": 8
+    },
+    {
+      "key": "central_mosque",
+      "zh": "中央清真寺",
+      "kws": [
+        "阿拉木图中央清真寺"
+      ],
+      "must": [
+        "清真寺",
+        "mosque",
+        "masjid"
+      ],
+      "target": 8
+    },
+    {
+      "key": "arbat",
+      "zh": "Arbat步行街",
+      "kws": [
+        "阿拉木图Arbat步行街",
+        "阿拉木图 jibek joly 步行街"
+      ],
+      "must": [
+        "arbat",
+        "步行街",
+        "阿尔巴特",
+        "jibek",
+        "panfilov街"
+      ],
+      "target": 8
+    },
+    {
+      "key": "brutalism",
+      "zh": "苏式粗野主义建筑",
+      "kws": [
+        "阿拉木图粗野主义建筑",
+        "阿拉木图苏式建筑"
+      ],
+      "must": [
+        "粗野",
+        "苏式",
+        "苏联",
+        "建筑",
+        "brutal",
+        "construct"
+      ],
+      "target": 8
+    },
+    {
+      "key": "atelier_bar",
+      "zh": "Atelier鸡尾酒吧",
+      "kws": [
+        "Atelier 阿拉木图",
+        "阿拉木图鸡尾酒吧 推荐"
+      ],
+      "must": [
+        "atelier",
+        "调酒",
+        "鸡尾酒",
+        "酒吧",
+        "bar"
+      ],
+      "target": 6
+    },
+    {
+      "key": "bao_lake",
+      "zh": "大阿拉木图湖BAO",
+      "kws": [
+        "大阿拉木图湖",
+        "Big Almaty Lake"
+      ],
+      "must": [
+        "大阿拉木图",
+        "bao",
+        "big almaty"
+      ],
+      "target": 10
+    },
+    {
+      "key": "bao_pipe",
+      "zh": "管道徒步路线",
+      "kws": [
+        "大阿拉木图湖 管道徒步",
+        "BAO管道徒步"
+      ],
+      "must": [
+        "管道",
+        "pipe",
+        "徒步",
+        "hike"
+      ],
+      "target": 10
+    },
+    {
+      "key": "glacier",
+      "zh": "博格达诺维奇冰川",
+      "kws": [
+        "博格达诺维奇冰川",
+        "阿拉木图冰川徒步 冰洞"
+      ],
+      "must": [
+        "冰川",
+        "冰洞",
+        "glacier",
+        "bogdanovich"
+      ],
+      "target": 10
+    },
+    {
+      "key": "shymbulak",
+      "zh": "Shymbulak琼布拉克",
+      "kws": [
+        "琼布拉克滑雪场",
+        "Shymbulak 阿拉木图 缆车"
+      ],
+      "must": [
+        "琼布拉克",
+        "shymbulak",
+        "琴布拉克",
+        "缆车",
+        "滑雪场"
+      ],
+      "target": 8
+    },
+    {
+      "key": "medeu",
+      "zh": "Medeu梅杰乌冰场",
+      "kws": [
+        "麦迪奥冰场 阿拉木图",
+        "Medeu 阿拉木图"
+      ],
+      "must": [
+        "medeu",
+        "麦迪奥",
+        "梅杰乌",
+        "冰场"
+      ],
+      "target": 8
+    },
+    {
+      "key": "kolsai",
+      "zh": "科尔赛湖",
+      "kws": [
+        "科尔赛湖 阿拉木图",
+        "Kolsai lakes"
+      ],
+      "must": [
+        "科尔赛",
+        "kolsai",
+        "考尔赛"
+      ],
+      "target": 10
+    },
+    {
+      "key": "kaindy",
+      "zh": "卡因迪湖",
+      "kws": [
+        "卡因迪湖",
+        "Kaindy lake 哈萨克斯坦"
+      ],
+      "must": [
+        "卡因迪",
+        "kaindy",
+        "沉船湖"
+      ],
+      "target": 10
+    },
+    {
+      "key": "charyn",
+      "zh": "恰伦峡谷",
+      "kws": [
+        "恰伦峡谷",
+        "Charyn canyon 哈萨克斯坦"
+      ],
+      "must": [
+        "恰伦",
+        "charyn",
+        "峡谷",
+        "canyon"
+      ],
+      "target": 10
+    },
+    {
+      "key": "issyk",
+      "zh": "耶斯克湖(备选)",
+      "kws": [
+        "阿拉木图伊塞克湖 Esik",
+        "Issyk lake Almaty",
+        "阿拉木图 耶斯克湖 堰塞湖",
+        "Esik lake 阿拉木图 徒步"
+      ],
+      "must": [
+        "伊塞克",
+        "耶斯克",
+        "issyk",
+        "esik",
+        "湖"
+      ],
+      "target": 10
+    },
+    {
+      "key": "turgen",
+      "zh": "图尔根峡谷瀑布(备选)",
+      "kws": [
+        "图尔根峡谷 阿拉木图",
+        "Turgen waterfall Almaty"
+      ],
+      "must": [
+        "图尔根",
+        "turgen",
+        "瀑布",
+        "熊瀑"
+      ],
+      "target": 8
+    },
+    {
+      "key": "assy",
+      "zh": "阿西高原(备选)",
+      "kws": [
+        "阿西高原 阿拉木图",
+        "Assy plateau Kazakhstan"
+      ],
+      "must": [
+        "阿西",
+        "assy",
+        "高原",
+        "牧场"
+      ],
+      "target": 8
+    },
+    {
+      "key": "kokzhailau",
+      "zh": "Kok Zhailau草甸(备选)",
+      "kws": [
+        "Kok Zhailau 阿拉木图",
+        "科克热依劳 徒步"
+      ],
+      "must": [
+        "zhailau",
+        "热依劳",
+        "草甸"
+      ],
+      "target": 8
+    },
+    {
+      "key": "torysh",
+      "zh": "Torysh球谷",
+      "kws": [
+        "Torysh 球谷 曼吉斯套",
+        "曼吉斯套 石球谷"
+      ],
+      "must": [
+        "torysh",
+        "球谷",
+        "石球",
+        "球形"
+      ],
+      "target": 10
+    },
+    {
+      "key": "sherkala",
+      "zh": "Sherkala狮山",
+      "kws": [
+        "Sherkala 狮山 曼吉斯套",
+        "曼吉斯套 狮山"
+      ],
+      "must": [
+        "sherkala",
+        "舍尔",
+        "狮山",
+        "斯芬克斯"
+      ],
+      "target": 10
+    },
+    {
+      "key": "shakpakata",
+      "zh": "Shakpak-Ata地下清真寺",
+      "kws": [
+        "Shakpak Ata 地下清真寺",
+        "沙克帕克阿塔 清真寺",
+        "Shakpak Ata Mangystau underground mosque",
+        "曼吉斯套 岩石清真寺"
+      ],
+      "must": [
+        "shakpak",
+        "地下清真寺",
+        "凿岩",
+        "岩石清真寺",
+        "underground"
+      ],
+      "target": 10
+    },
+    {
+      "key": "kyzylkup",
+      "zh": "Kyzylkup提拉米苏峡谷",
+      "kws": [
+        "Kyzylkup 提拉米苏峡谷",
+        "曼吉斯套 提拉米苏山"
+      ],
+      "must": [
+        "kyzylkup",
+        "提拉米苏",
+        "彩丘",
+        "层理"
+      ],
+      "target": 10
+    },
+    {
+      "key": "bozzhyra",
+      "zh": "Bozzhyra博兹日拉",
+      "kws": [
+        "Bozzhyra 曼吉斯套",
+        "博兹日拉 悬崖"
+      ],
+      "must": [
+        "bozzhyra",
+        "博兹",
+        "尖牙",
+        "fangs",
+        "白垩"
+      ],
+      "target": 10
+    },
+    {
+      "key": "bokty",
+      "zh": "Bokty堡垒山(备选)",
+      "kws": [
+        "Bokty 曼吉斯套",
+        "博克季山"
+      ],
+      "must": [
+        "bokty",
+        "博克",
+        "堡垒山"
+      ],
+      "target": 6
+    },
+    {
+      "key": "zhygylgan",
+      "zh": "Zhygylgan坠落之地(备选)",
+      "kws": [
+        "Zhygylgan 曼吉斯套",
+        "坠落之地 哈萨克斯坦",
+        "Zhigylgan 坍塌盆地 Mangystau"
+      ],
+      "must": [
+        "zhygylgan",
+        "zhigylgan",
+        "坠落",
+        "坍塌",
+        "盆地"
+      ],
+      "target": 8
+    },
+    {
+      "key": "tuzbair",
+      "zh": "Tuzbair盐沼(备选)",
+      "kws": [
+        "Tuzbair 曼吉斯套",
+        "图兹拜尔 盐沼",
+        "Tuzbair salt flat Mangystau",
+        "曼吉斯套 天空之镜"
+      ],
+      "must": [
+        "tuzbair",
+        "盐沼",
+        "盐滩",
+        "天空之镜",
+        "salt"
+      ],
+      "target": 8
+    },
+    {
+      "key": "aktau_city",
+      "zh": "阿克套市区/里海岸",
+      "kws": [
+        "阿克套 市区 里海",
+        "Aktau Caspian 海滨"
+      ],
+      "must": [
+        "阿克套",
+        "aktau",
+        "里海",
+        "caspian",
+        "海岸",
+        "海滨"
+      ],
+      "target": 10
+    },
+    {
+      "key": "navat",
+      "zh": "Navat餐厅",
+      "kws": [
+        "Navat 阿拉木图 餐厅"
+      ],
+      "must": [
+        "navat",
+        "纳瓦"
+      ],
+      "target": 8
+    },
+    {
+      "key": "auyl",
+      "zh": "Auyl餐厅",
+      "kws": [
+        "Auyl 阿拉木图 餐厅"
+      ],
+      "must": [
+        "auyl",
+        "阿乌勒",
+        "auyl"
+      ],
+      "target": 8
+    },
+    {
+      "key": "smile",
+      "zh": "Smile/红房子烤肉",
+      "kws": [
+        "Smile 阿拉木图 餐厅",
+        "Shashlychok Na Pastera 阿拉木图"
+      ],
+      "must": [
+        "smile",
+        "shashlychok",
+        "烤肉",
+        "烤串",
+        "红房子"
+      ],
+      "target": 8
+    },
+    {
+      "key": "hosejosper",
+      "zh": "Hose&Josper牛排",
+      "kws": [
+        "Hose Josper 阿拉木图",
+        "阿拉木图 牛排 推荐"
+      ],
+      "must": [
+        "josper",
+        "hose",
+        "牛排",
+        "steak"
+      ],
+      "target": 8
+    },
+    {
+      "key": "aroma",
+      "zh": "Aroma brunch(备选)",
+      "kws": [
+        "Aroma 阿拉木图 brunch",
+        "阿拉木图 brunch 推荐"
+      ],
+      "must": [
+        "aroma",
+        "brunch",
+        "早午餐",
+        "无花果"
+      ],
+      "target": 6
+    },
+    {
+      "key": "daredzhani",
+      "zh": "Daredzhani格鲁吉亚菜",
+      "kws": [
+        "Daredzhani 阿拉木图",
+        "阿拉木图 格鲁吉亚菜"
+      ],
+      "must": [
+        "daredzhani",
+        "格鲁吉亚",
+        "奶酪烤饼",
+        "khachapuri",
+        "格鲁"
+      ],
+      "target": 8
+    },
+    {
+      "key": "saty_village",
+      "zh": "Saty村民宿家宴",
+      "kws": [
+        "Saty村 科尔赛 民宿",
+        "Kolsai Saty village guesthouse",
+        "科尔赛湖 住村 哈萨克家宴"
+      ],
+      "must": [
+        "saty",
+        "民宿",
+        "村",
+        "家宴",
+        "牧民",
+        "kolsai",
+        "科尔赛"
+      ],
+      "target": 8
+    },
+    {
+      "key": "uaz_kaindy",
+      "zh": "卡因迪UAZ越野搓板路",
+      "kws": [
+        "卡因迪湖 UAZ 越野",
+        "Kaindy lake offroad UAZ",
+        "卡因迪 越野车 渡河"
+      ],
+      "must": [
+        "uaz",
+        "越野",
+        "搓板",
+        "渡河",
+        "bukhanka",
+        "瓦滋",
+        "卡因迪",
+        "kaindy"
+      ],
+      "target": 6
+    },
+    {
+      "key": "arasan_banya",
+      "zh": "Arasan苏式浴馆",
+      "kws": [
+        "阿拉木图 Arasan 浴馆",
+        "Almaty Arasan banya 澡堂"
+      ],
+      "must": [
+        "arasan",
+        "浴",
+        "澡堂",
+        "banya",
+        "bath",
+        "桑拿"
+      ],
+      "target": 6
+    },
+    {
+      "key": "sandyq",
+      "zh": "Sandyq民族菜餐厅",
+      "kws": [
+        "Sandyq 阿拉木图 餐厅",
+        "阿拉木图 Sandyq 民族菜"
+      ],
+      "must": [
+        "sandyq",
+        "民族",
+        "餐厅",
+        "餐"
+      ],
+      "target": 6
+    },
+    {
+      "key": "barbolsyn",
+      "zh": "Barbolsyn餐酒馆",
+      "kws": [
+        "Barbolsyn Almaty",
+        "Барболсын Алматы",
+        "Valikhanova 47 阿拉木图 餐酒"
+      ],
+      "must": [
+        "barbolsyn",
+        "餐酒",
+        "bistro"
+      ],
+      "target": 6
+    },
+    {
+      "key": "kapamsay",
+      "zh": "Kapamsay白垩峡谷",
+      "kws": [
+        "Kapamsay canyon Mangystau",
+        "Капамсай ущелье",
+        "曼吉斯套 卡普姆赛 白垩峡谷"
+      ],
+      "must": [
+        "kapamsay",
+        "白垩",
+        "峡谷",
+        "kapam"
+      ],
+      "target": 8
+    },
+    {
+      "key": "airakty",
+      "zh": "Airakty-Shomanai城堡谷",
+      "kws": [
+        "Airakty Shomanai Mangystau",
+        "Айракты Шоманай",
+        "曼吉斯套 城堡谷 岩塔"
+      ],
+      "must": [
+        "airakty",
+        "shomanai",
+        "城堡",
+        "岩塔",
+        "valley of castles"
+      ],
+      "target": 8
+    },
+    {
+      "key": "tamshaly",
+      "zh": "Tamshaly泉洲绿洲",
+      "kws": [
+        "Tamshaly spring Mangystau",
+        "Тамшалы родник",
+        "曼吉斯套 滴泉 绿洲"
+      ],
+      "must": [
+        "tamshaly",
+        "泉",
+        "绿洲",
+        "spring",
+        "oasis"
+      ],
+      "target": 8
+    },
+    {
+      "key": "karynzharyk",
+      "zh": "Karynzharyk洼地",
+      "kws": [
+        "Karynzharyk Mangystau",
+        "Karynzharyq 曼吉斯套",
+        "卡林扎里克 洼地",
+        "Карынжарык"
+      ],
+      "must": [
+        "karynzharyk",
+        "karynzharyq",
+        "卡林扎里克",
+        "карынжарык",
+        "洼地"
+      ],
+      "target": 8
+    },
+    {
+      "key": "beket_ata",
+      "zh": "Beket-Ata地下清真寺",
+      "kws": [
+        "Beket Ata mosque Mangystau",
+        "Бекет Ата мечеть",
+        "别凯特阿塔 地下清真寺 阿克套"
+      ],
+      "must": [
+        "beket",
+        "地下清真寺",
+        "朝圣",
+        "清真寺",
+        "mosque"
+      ],
+      "target": 8
+    },
+    {
+      "key": "aydyn",
+      "zh": "Aydyn阿克套鱼餐厅",
+      "kws": [
+        "Aydyn Aktau restaurant",
+        "Айдын Актау ресторан",
+        "阿克套 Aydyn 鱼餐厅"
+      ],
+      "must": [
+        "aydyn",
+        "鱼",
+        "fish",
+        "阿克套",
+        "aktau",
+        "鲟"
+      ],
+      "target": 6
+    },
+    {
+      "key": "krasny_mayak",
+      "zh": "Krasny Mayak红灯塔咖啡",
+      "kws": [
+        "Krasny Mayak Aktau lighthouse",
+        "Красный маяк Актау",
+        "阿克套 红色灯塔 咖啡馆"
+      ],
+      "must": [
+        "mayak",
+        "灯塔",
+        "lighthouse",
+        "红灯塔",
+        "krasny"
+      ],
+      "target": 6
+    },
+    {
+      "key": "chechil_pub",
+      "zh": "CHECHIL PUB阿克套海边西餐",
+      "kws": [
+        "CHECHIL PUB 阿克套",
+        "阿克套 海边 西餐厅 chechil"
+      ],
+      "must": [
+        "chechil",
+        "海边",
+        "牛扒",
+        "西餐"
+      ],
+      "target": 8
+    }
+  ]
+}
