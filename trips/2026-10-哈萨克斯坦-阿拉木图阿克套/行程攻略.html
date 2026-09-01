@@ -1266,7 +1266,11 @@ setTimeout(()=>{
   window.openGallery=function(key){
     const g=window.GALLERY&&window.GALLERY[key];if(!g||!g.items.length)return;
     cur=g.items;gTitle.textContent=g.title;gCount.textContent=`${cur.length} 张 · 均来自小红书旅拍，点击看大图`;
-    grid.innerHTML=cur.map((it,i)=>`<img loading="lazy" src="${it.src}" data-i="${i}" alt="${it.cap||''}" title="${it.cap||''}">`).join('');
+    // 宫格走 480px 缩略图（弱网卡顿优化），缩略图缺失时回退原图
+    grid.innerHTML=cur.map((it,i)=>{
+      const th=it.src.replace(/\.webp$/,'.th.webp');
+      return `<img loading="lazy" decoding="async" src="${th}" data-full="${it.src}" onerror="this.onerror=null;this.src=this.dataset.full" data-i="${i}" alt="${it.cap||''}" title="${it.cap||''}">`;
+    }).join('');
     showGrid();mask.classList.add('show');
   };
   grid.addEventListener('click',e=>{if(e.target.dataset.i)openViewer(+e.target.dataset.i);});
