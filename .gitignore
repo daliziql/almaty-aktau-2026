@@ -11,3 +11,6 @@ backup/
 __pycache__/
 *.pyc
 .venv/
+
+# 小红书候选图（AI未过审），仅本地留存不发布
+**/_cand/
