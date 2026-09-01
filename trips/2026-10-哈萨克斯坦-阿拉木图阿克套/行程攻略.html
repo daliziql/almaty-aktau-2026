@@ -1269,7 +1269,7 @@ setTimeout(()=>{
     // 宫格走 480px 缩略图（弱网卡顿优化），缩略图缺失时回退原图
     grid.innerHTML=cur.map((it,i)=>{
       const th=it.src.replace(/\.webp$/,'.th.webp');
-      return `<img loading="lazy" decoding="async" src="${th}" data-full="${it.src}" onerror="this.onerror=null;this.src=this.dataset.full" data-i="${i}" alt="${it.cap||''}" title="${it.cap||''}">`;
+      return `<img loading="eager" decoding="async" fetchpriority="high" src="${th}" data-full="${it.src}" onerror="this.onerror=null;this.src=this.dataset.full" data-i="${i}" alt="${it.cap||''}" title="${it.cap||''}">`;
     }).join('');
     showGrid();mask.classList.add('show');
   };
