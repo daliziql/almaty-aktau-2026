@@ -131,23 +131,12 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <a class="back" href="行程攻略.html">← 返回行程攻略</a>
+    <a class="back" href="../">← 返回行程攻略</a>
     <h1>🏨 住宿选型工作台</h1>
     <div class="meta">阿拉木图 4 晚 · Saty 村 1 晚 · 阿克套 2 晚 ｜ 同事文档 + 小红书口碑 + Trip/Airbnb/Booking 报价采集汇总（只读展示，分酒店 / 民宿两部分）</div>
   </header>
 
   <div class="need" id="needBar"></div>
-
-  <details class="sop">
-    <summary>📋 采集口径与字段说明（点开看怎么填）</summary>
-    <ul>
-      <li><b>同事攻略/内网群</b>：住过哪家、房型、真实价格、踩坑（隔音/卫生/位置/寄存/前台英语），原话摘进「同事经验」，一条一行。</li>
-      <li><b>小红书</b>：按「酒店名 + 城市」专搜，<b>浏览器模拟人工点击</b>逐篇看正文+评论，强相关才采；笔记数与高频评价进「小红书口碑」，实拍图存本地后路径填进图片条（不要跨酒店挪用图）。</li>
-      <li><b>Trip / Airbnb / Booking</b>：按实际入住日期（10/02-10/09、2 人 1 间）查含税总价与单晚价，记录<b>报价日期</b>；点平台按钮直达对应页面。</li>
-      <li>本页为<b>只读汇总</b>，按「酒店」「民宿」两部分展示，可用顶部城市标签 / 搜索 / 排序快速筛选；点实拍图放大。</li>
-      <li>标注「避坑/不选」的为主动排除项（如位置硬伤的城外度假村），保留用于防止误订。</li>
-    </ul>
-  </details>
 
   <div class="toolbar">
     <div class="tabs" id="cityTabs"></div>
@@ -193,34 +182,34 @@ const SEED=[
   colleague:'阿拉木图市区建议同一家连住4晚，大件寄存，两湖/阿克套只带分包\n金广场片区吃饭打车都方便，晚上步行回酒店安全',
   xhs:'【1帖/30赞】2025新开业，步行到潘菲洛夫/升天大教堂/绿巴扎；自助早餐丰富、英语前台、含桑拿泳池；评论：大床房可摊两个大行李箱、无装修味、约600+/晚。几乎无差评。',pros:'位置中心，周边餐厅密度高\n连锁式管理，前台英语可用',cons:'',
   imgs:[
-   {src:'assets/hotels/h1.jpg',cap:'MCP 聚合平台图（来源 Trip.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/renion-city-hotel-almaty?cip=234716015&currencyCode=CNY&search=100-41560720;dr-20261008-20261009;drs-40;rc-1-2&dealId=-4813849933181043728'},
-   {src:'assets/lodge-xhs/h1/68e6797c0000000005013355_0.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
-   {src:'assets/lodge-xhs/h1/68e6797c0000000005013355_1.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
-   {src:'assets/lodge-xhs/h1/68e6797c0000000005013355_2.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
-   {src:'assets/lodge-xhs/h1/68e6797c0000000005013355_3.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
-   {src:'assets/lodge-xhs/h1/68e6797c0000000005013355_4.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
-   {src:'assets/lodge-xhs/h1/68e6797c0000000005013355_5.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Trip.com ¥816/晚；平台评分 8.8（241条）'},
+   {src:'../assets/hotels/h1.jpg',cap:'MCP 聚合平台图（来源 Trip.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/renion-city-hotel-almaty?cip=234716015&currencyCode=CNY&search=100-41560720;dr-20261008-20261009;drs-40;rc-1-2&dealId=-4813849933181043728'},
+   {src:'../assets/lodge-xhs/h1/68e6797c0000000005013355_0.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
+   {src:'../assets/lodge-xhs/h1/68e6797c0000000005013355_1.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
+   {src:'../assets/lodge-xhs/h1/68e6797c0000000005013355_2.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
+   {src:'../assets/lodge-xhs/h1/68e6797c0000000005013355_3.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
+   {src:'../assets/lodge-xhs/h1/68e6797c0000000005013355_4.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'},
+   {src:'../assets/lodge-xhs/h1/68e6797c0000000005013355_5.webp',cap:'小红书实拍（半拍，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68e6797c0000000005013355'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Trip.com ¥816/晚；平台评分 8.8（241条）'},
 
  {id:'h2',city:'almaty',name:'Kazzhol Hotel Almaty',en:'Kazzhol',area:'金广场片区',tier:'中端',
   refPrice:676,rating:4.2,xhsCnt:'',tags:'可寄存,含早',colleague:'',xhs:'',pros:'本地老牌中端，房型偏大',cons:'装修偏老',
   imgs:[
-   {src:'assets/hotels/h2.jpg',cap:'MCP 聚合平台图（来源 Agoda，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-kazzhol-almaty?cip=234716015&currencyCode=CNY&search=100-944705;dr-20261002-20261003;drs-40;rc-1-2&dealId=-3323586906593245264'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Agoda ¥676/晚；平台评分 8.3（3,067条）'},
+   {src:'../assets/hotels/h2.jpg',cap:'MCP 聚合平台图（来源 Agoda，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-kazzhol-almaty?cip=234716015&currencyCode=CNY&search=100-944705;dr-20261002-20261003;drs-40;rc-1-2&dealId=-3323586906593245264'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Agoda ¥676/晚；平台评分 8.3（3,067条）'},
 
  {id:'h3',city:'almaty',name:'Holiday Inn Almaty',en:'Holiday Inn Almaty',area:'市区',tier:'中端',
   refPrice:965,rating:4.1,xhsCnt:'',tags:'国际连锁,会员积分,含早',colleague:'',xhs:'【1帖/5赞】这是全服务Holiday Inn（非智选Express，勿订混）：约800+/晚、约20㎡、无瓶装水用楼层饮水机；评论冬季约400+、早餐牛肉好吃。小红书专属实拍极少，不拿Express图冒充。',pros:'标准稳定不出错，取消政策友好',cons:'性价比一般',
   imgs:[
-   {src:'assets/hotels/h3.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-holiday-inn-almaty-by-ihg?cip=234716015&currencyCode=CNY&search=100-996349;dr-20261008-20261009;drs-40;rc-1-2&dealId=6500194389139946080'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥965/晚；平台评分 8.2（5,021条）'},
+   {src:'../assets/hotels/h3.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-holiday-inn-almaty-by-ihg?cip=234716015&currencyCode=CNY&search=100-996349;dr-20261008-20261009;drs-40;rc-1-2&dealId=6500194389139946080'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥965/晚；平台评分 8.2（5,021条）'},
 
  {id:'h4',city:'almaty',name:'Ritz-Carlton Almaty',en:'The Ritz-Carlton Almaty',area:'Esentai Mall 片区',tier:'高端',
   refPrice:5472,rating:4.7,xhsCnt:'',tags:'高空城景,奢华,商场楼上',colleague:'',xhs:'',
   pros:'全程最好的一家放最后一晚犒劳自己',cons:'离 Arbat/老城有车程，步行逛城不方便；价格高',
   imgs:[
-   {src:'assets/hotels/h4.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-the-ritz-carlton-almaty?cip=234716015&currencyCode=CNY&search=100-2866652;dr-20261008-20261009;drs-40;rc-1-2&dealId=-8270048675696769389'},],nights:'D7（可选升级）',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥5472/晚，另样本 10-02~2026-10-03 ¥4464；平台评分 9.3（4,247条）'},
+   {src:'../assets/hotels/h4.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-the-ritz-carlton-almaty?cip=234716015&currencyCode=CNY&search=100-2866652;dr-20261008-20261009;drs-40;rc-1-2&dealId=-8270048675696769389'},],nights:'D7（可选升级）',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥5472/晚，另样本 10-02~2026-10-03 ¥4464；平台评分 9.3（4,247条）'},
 
  {id:'h5',city:'almaty',name:'Interhouse Almaty',en:'Interhouse',area:'Arbat 附近',tier:'经济',
   refPrice:204,rating:4.2,xhsCnt:'',tags:'青旅/民宿风,公共厨房',colleague:'',xhs:'',pros:'预算优先时的兜底，氛围好',cons:'隔音一般，部分房型公卫',
   imgs:[
-   {src:'assets/hotels/h5.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hostel-interhouse-almaty?cip=234716015&currencyCode=CNY&search=100-6819744;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1958311992724986226'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥204/晚；平台评分 8.4（5条）'},
+   {src:'../assets/hotels/h5.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hostel-interhouse-almaty?cip=234716015&currencyCode=CNY&search=100-6819744;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1958311992724986226'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥204/晚；平台评分 8.4（5条）'},
 
  {id:'h6',city:'saty',name:'两湖团 · 哈萨克家庭民宿',en:'Saty family homestay',area:'Saty 村内',tier:'民宿',
   refPrice:0,rating:0,xhsCnt:'',tags:'团费已含,含家宴早晚餐,公共卫浴',
@@ -228,10 +217,10 @@ const SEED=[
   xhs:'科尔塞湖网红民宿吐槽贴：条件简朴但房东家宴好吃，看星星很绝',
   pros:'省心（团方安排）、含两餐、离两湖近、夜晚星空',cons:'公共卫浴、Wi-Fi 弱、隔音差，别按酒店标准期待',
   imgs:[
-   {src:'assets/gallery2/saty_village/saty_village_01.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
-   {src:'assets/gallery2/saty_village/saty_village_02.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
-   {src:'assets/gallery2/saty_village/saty_village_03.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
-   {src:'assets/gallery2/saty_village/saty_village_04.webp',cap:'Saty 村风貌（小红书）',url:''}],
+   {src:'../assets/gallery2/saty_village/saty_village_01.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
+   {src:'../assets/gallery2/saty_village/saty_village_02.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
+   {src:'../assets/gallery2/saty_village/saty_village_03.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
+   {src:'../assets/gallery2/saty_village/saty_village_04.webp',cap:'Saty 村风貌（小红书）',url:''}],
   nights:'D3',status:'leaning',note:'随两湖团订，无需自行下单；自备洗漱拖鞋'},
 
  {id:'h7',city:'saty',name:'Saty 村独立 Guesthouse（备选）',en:'',area:'Saty 村/Kolsai 路口',tier:'民宿',
@@ -243,76 +232,76 @@ const SEED=[
   colleague:'阿克套住第一海岸线，吃饭看海都方便；别住城外20km的Rixos，赶曼吉斯套团绕路',
   xhs:'',pros:'海景评分高、位置正中、适合落地放松',cons:'旺季海景房紧俏需早订',
   imgs:[
-   {src:'assets/hotels/h8.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261008;drs-40;rc-1-2&dealId=-5959164114925356202'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'leaning',note:'MCP核验09-01：Booking.com ¥774/晚；平台评分 8.9（3,188条）'},
+   {src:'../assets/hotels/h8.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261008;drs-40;rc-1-2&dealId=-5959164114925356202'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'leaning',note:'MCP核验09-01：Booking.com ¥774/晚；平台评分 8.9（3,188条）'},
 
  {id:'h9',city:'aktau',name:'Holiday Inn AKTAU by IHG',en:'Holiday Inn AKTAU by IHG',area:'市区/近 Dana 超市',tier:'中端',
   refPrice:522,rating:4.5,xhsCnt:'',tags:'国际连锁,含早,免费取消,Aktau 四星榜 No.2',colleague:'',xhs:'Trip 8.9/10（64条）：Clean and tidy / Great rooms',pros:'标准化兜底、免费取消、2 晚总价 ¥1170 含税',cons:'海景一般；注意阿克套另有一家 SEASIDE 店勿订混',
   imgs:[
-   {src:'assets/hotels/h9.webp',cap:'Trip.com 实拍（2026-09-01）',url:'https://www.trip.com/hotels/detail/?hotelId=5931553&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX'}],
+   {src:'../assets/hotels/h9.webp',cap:'Trip.com 实拍（2026-09-01）',url:'https://www.trip.com/hotels/detail/?hotelId=5931553&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX'}],
   nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'浏览器人工核验 09-01：Trip ¥522/晚（Standard，2晚¥1170含税），8.9分64评；Trivago 无库存属平台缺口'},
 
  {id:'h10',city:'aktau',name:'Renaissance Aktau by Sulo',en:'Renaissance Aktau',area:'海岸片区',tier:'高端',
   refPrice:592,rating:4.5,xhsCnt:'',tags:'设计感,海景酒廊',colleague:'',xhs:'【1帖/14赞】原万丽已摘牌。位置第一梯队（步行3-5分到里海、10分内永恒之火广场、近网红餐厅）；房间偏小偏旧、备品敷衍布草一般；英文好、room service好吃偏贵；OTA新客约300/晚。评论：阿特劳万丽或同摘牌。',pros:'颜值高、适合小酌',cons:'价格波动大',
   imgs:[
-   {src:'assets/hotels/h10.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-renaissance-by-sulo-aqtau?cip=234716015&currencyCode=CNY&search=100-1298740;dr-20261006-20261008;drs-40;rc-1-2&dealId=-6368786513358424666'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_0.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_1.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_2.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_4.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_5.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_6.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_7.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_8.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
-   {src:'assets/lodge-xhs/h10/692bfb60000000001b025994_9.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'}],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥592/晚；平台评分 8.9（2,194条）'},
+   {src:'../assets/hotels/h10.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-renaissance-by-sulo-aqtau?cip=234716015&currencyCode=CNY&search=100-1298740;dr-20261006-20261008;drs-40;rc-1-2&dealId=-6368786513358424666'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_0.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_1.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_2.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_4.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_5.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_6.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_7.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_8.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'},
+   {src:'../assets/lodge-xhs/h10/692bfb60000000001b025994_9.webp',cap:'小红书实拍（小羊削他，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/692bfb60000000001b025994'}],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥592/晚；平台评分 8.9（2,194条）'},
 
  {id:'h11',city:'aktau',name:'Tarlan Hotel',en:'Tarlan',area:'市区',tier:'经济',
   refPrice:237,rating:4.1,xhsCnt:'',tags:'经济,干净',colleague:'',xhs:'',pros:'省钱',cons:'设施基础、离海边略远',
   imgs:[
-   {src:'assets/hotels/h11.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/tarlan-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-33635146;dr-20261006-20261008;drs-40;rc-1-2&dealId=4178391075869337390'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥237/晚；平台暂无评分/报价，待人工核'},
+   {src:'../assets/hotels/h11.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/tarlan-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-33635146;dr-20261006-20261008;drs-40;rc-1-2&dealId=4178391075869337390'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥237/晚；平台暂无评分/报价，待人工核'},
 
  {id:'h12',city:'aktau',name:'Rixos Water World Aktau（避坑记录）',en:'Rixos Aktau',area:'城外约 20km 度假区',tier:'高端',
   refPrice:1910,rating:4.6,xhsCnt:'',tags:'度假村,全包',colleague:'不选：离城20km，曼吉斯套团早集合绕路，吃住被锁在度假区',
   xhs:'',pros:'度假设施全',cons:'位置硬伤，与本行程节奏冲突',
   imgs:[
-   {src:'assets/hotels/h12.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-rixos-water-world-aktau-aqtau?cip=234716015&currencyCode=CNY&search=100-22233910;dr-20261006-20261008;drs-40;rc-1-2&dealId=133691888806043992'},],nights:'不适用',mcpDate:'2026-09-01',status:'out',note:'保留记录防止误订；MCP核验09-01：Booking.com ¥1910/晚；平台评分 9.2（4,428条）'},
+   {src:'../assets/hotels/h12.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-rixos-water-world-aktau-aqtau?cip=234716015&currencyCode=CNY&search=100-22233910;dr-20261006-20261008;drs-40;rc-1-2&dealId=133691888806043992'},],nights:'不适用',mcpDate:'2026-09-01',status:'out',note:'保留记录防止误订；MCP核验09-01：Booking.com ¥1910/晚；平台评分 9.2（4,428条）'},
 
  {id:'h21',city:'aktau',name:'Holiday Inn AKTAU - SEASIDE by IHG',en:'Holiday Inn AKTAU SEASIDE',area:'Laguna Akvapark 片区（距市中心4.8km）',tier:'中端',
   refPrice:589,rating:4.5,xhsCnt:'',tags:'国际连锁,海景倾向,早餐好评,免费取消',colleague:'',xhs:'Trip 9.0/10（24条）：Delicious breakfast / Great service',pros:'评分更高、早餐好评、靠水乐园',cons:'距第一海岸线 4.8km，赶曼吉斯套团集合略绕',
   imgs:[
-   {src:'assets/hotels/h21.webp',cap:'Trip.com 实拍（2026-09-01）',url:'https://www.trip.com/hotels/detail/?hotelId=30785434&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX'}],
+   {src:'../assets/hotels/h21.webp',cap:'Trip.com 实拍（2026-09-01）',url:'https://www.trip.com/hotels/detail/?hotelId=30785434&checkIn=2026-10-06&checkOut=2026-10-08&adult=2&curr=CNY&locale=en-XX'}],
   nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'浏览器人工核验 09-01：Trip ¥589/晚（Standard King），9.0分24评；位置不如 by IHG 店'},
 
- {id:'h13',city:'almaty',name:'Hotel Kazakhstan',en:'Hotel Kazakhstan',area:'MCP 扩展候选',tier:'中端',refPrice:760,rating:4.2,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'【2帖/326+42赞】1977苏联地标（旧5000坚戈图案），约2010翻新。务必订‘高级房+高楼层mountain view（东北向最佳）’：已翻新且避开低层酒吧噪音，雪山城景绝佳，高级房约480-580含早；标准房老旧像老招待所、WiFi弱；25层为原VIP元首层。',pros:'平台评论 10039 条，评分 8.5\n设施：大厅无线网络, 客房无线网络, 空调, 餐厅, 酒吧',cons:'',imgs:[{src:'assets/hotels/h13.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-kazakhstan-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942573;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=700471358354587183'},
-   {src:'assets/lodge-xhs/h13/64f3d84a000000001f03f60d_0.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/64f3d84a000000001f03f60d_1.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_0.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_1.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_10.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_11.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_12.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_13.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_14.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_2.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_3.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_5.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_6.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_7.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_8.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
-   {src:'assets/lodge-xhs/h13/6a61a91c000000000903657e_9.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [772, 749]'},
+ {id:'h13',city:'almaty',name:'Hotel Kazakhstan',en:'Hotel Kazakhstan',area:'MCP 扩展候选',tier:'中端',refPrice:760,rating:4.2,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'【2帖/326+42赞】1977苏联地标（旧5000坚戈图案），约2010翻新。务必订‘高级房+高楼层mountain view（东北向最佳）’：已翻新且避开低层酒吧噪音，雪山城景绝佳，高级房约480-580含早；标准房老旧像老招待所、WiFi弱；25层为原VIP元首层。',pros:'平台评论 10039 条，评分 8.5\n设施：大厅无线网络, 客房无线网络, 空调, 餐厅, 酒吧',cons:'',imgs:[{src:'../assets/hotels/h13.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-kazakhstan-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942573;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=700471358354587183'},
+   {src:'../assets/lodge-xhs/h13/64f3d84a000000001f03f60d_0.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/64f3d84a000000001f03f60d_1.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_0.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_1.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_10.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_11.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_12.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_13.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_14.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_2.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_3.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_5.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_6.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_7.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_8.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'},
+   {src:'../assets/lodge-xhs/h13/6a61a91c000000000903657e_9.webp',cap:'小红书实拍（远苏老饕/Aubrey，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a61a91c000000000903657e'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [772, 749]'},
 
- {id:'h14',city:'almaty',name:'Ramada by Wyndham Almaty',en:'Ramada by Wyndham Almaty',area:'MCP 扩展候选',tier:'中端',refPrice:950,rating:4.0,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 4091 条，评分 8.1\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h14.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-ramada-by-wyndham-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3798860;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1342841161291043444'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [950, 950]'},
+ {id:'h14',city:'almaty',name:'Ramada by Wyndham Almaty',en:'Ramada by Wyndham Almaty',area:'MCP 扩展候选',tier:'中端',refPrice:950,rating:4.0,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 4091 条，评分 8.1\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'../assets/hotels/h14.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-ramada-by-wyndham-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3798860;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1342841161291043444'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [950, 950]'},
 
- {id:'h15',city:'almaty',name:'Grand Tien Shan Hotel',en:'Grand Tien Shan Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:1018,rating:4.3,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 3802 条，评分 8.6\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h15.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-tien-shan-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996325;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2026397260468152589'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1012, 1023]'},
+ {id:'h15',city:'almaty',name:'Grand Tien Shan Hotel',en:'Grand Tien Shan Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:1018,rating:4.3,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 3802 条，评分 8.6\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'../assets/hotels/h15.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-tien-shan-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996325;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2026397260468152589'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1012, 1023]'},
 
- {id:'h16',city:'almaty',name:'Hotel Uyut Almaty',en:'Hotel Uyut Almaty',area:'MCP 扩展候选',tier:'中端',refPrice:754,rating:4.4,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 3545 条，评分 8.8\n设施：大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h16.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-uyut-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996333;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-8272898606421759528'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [754]'},
+ {id:'h16',city:'almaty',name:'Hotel Uyut Almaty',en:'Hotel Uyut Almaty',area:'MCP 扩展候选',tier:'中端',refPrice:754,rating:4.4,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 3545 条，评分 8.8\n设施：大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'../assets/hotels/h16.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-uyut-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996333;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-8272898606421759528'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [754]'},
 
- {id:'h17',city:'almaty',name:'Novotel Almaty City Center',en:'Novotel Almaty City Center',area:'MCP 扩展候选',tier:'中端',refPrice:1574,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 2956 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h17.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-novotel-almaty-city-center-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-11505988;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1437862033047226335'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1655, 1494]'},
+ {id:'h17',city:'almaty',name:'Novotel Almaty City Center',en:'Novotel Almaty City Center',area:'MCP 扩展候选',tier:'中端',refPrice:1574,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 2956 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'../assets/hotels/h17.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-novotel-almaty-city-center-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-11505988;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1437862033047226335'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1655, 1494]'},
 
- {id:'h18',city:'almaty',name:'ibis Almaty Jetisu',en:'ibis Almaty Jetisu',area:'MCP 扩展候选',tier:'中端',refPrice:1036,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 2660 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 健身房',cons:'',imgs:[{src:'assets/hotels/h18.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-ibis-almaty-jetisu-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-26962624;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2893242295437410929'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1026, 1046]'},
+ {id:'h18',city:'almaty',name:'ibis Almaty Jetisu',en:'ibis Almaty Jetisu',area:'MCP 扩展候选',tier:'中端',refPrice:1036,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 2660 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 健身房',cons:'',imgs:[{src:'../assets/hotels/h18.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-ibis-almaty-jetisu-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-26962624;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2893242295437410929'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1026, 1046]'},
 
- {id:'h19',city:'almaty',name:'The Dostyk Hotel',en:'The Dostyk Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:592,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 1544 条，评分 9.0\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h19.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-the-dostyk-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-321381;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=480212569959363202'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [592]'},
+ {id:'h19',city:'almaty',name:'The Dostyk Hotel',en:'The Dostyk Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:592,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 1544 条，评分 9.0\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'../assets/hotels/h19.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-the-dostyk-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-321381;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=480212569959363202'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [592]'},
 
- {id:'h20',city:'almaty',name:'Grand Voyage Hotel',en:'Grand Voyage Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:686,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 1064 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 停车场, 空调',cons:'',imgs:[{src:'assets/hotels/h20.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-voyage-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3982590;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2255118809269874847'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [740, 633]'},
+ {id:'h20',city:'almaty',name:'Grand Voyage Hotel',en:'Grand Voyage Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:686,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 1064 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 停车场, 空调',cons:'',imgs:[{src:'../assets/hotels/h20.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-voyage-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3982590;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2255118809269874847'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [740, 633]'},
 
  {id:'ab1',city:'almaty',name:'Airbnb · Apartment on Arbat 21',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:263,rating:5.0,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 1 bed, 1 bath',colleague:'',xhs:'',pros:'5.0 out of 5 average rating,  14 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥263 CNY for 1 night，14条评论'},
 
@@ -339,65 +328,65 @@ const SEED=[
  {id:'ab12',city:'saty',name:'Airbnb · Kolsai A-Frame AI-ADIL',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:697,rating:4.49,xhsCnt:'',tags:'Airbnb,Superhost,1 bedroom, 3 beds, 1 bath',colleague:'',xhs:'',pros:'4.49 out of 5 average rating,  39 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D3',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥697 CNY for 1 night，39条评论'},
  {id:'h22',city:'aktau',name:'Miramar Apart & Hotel（小红书实测）',en:'',area:'阿克套/一街之隔沙滩',tier:'中端',refPrice:313,rating:0,xhsCnt:'',tags:'海景露台,公寓式,带厨房',colleague:'',xhs:'',pros:'海景露台绝美\n一街之隔到沙滩\n约313/晚价格适中',cons:'设施旧、多次无预警停水\n早餐少\n离城区15分钟车程\n员工多不会英语',
   imgs:[
-   {src:'assets/lodge-xhs/h22/685fd9f4000000001c032c0d_0.webp',cap:'小红书实拍（无糖元气花，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/685fd9f4000000001c032c0d'},
-   {src:'assets/lodge-xhs/h22/685fd9f4000000001c032c0d_2.webp',cap:'小红书实拍（无糖元气花，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/685fd9f4000000001c032c0d'}
+   {src:'../assets/lodge-xhs/h22/685fd9f4000000001c032c0d_0.webp',cap:'小红书实拍（无糖元气花，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/685fd9f4000000001c032c0d'},
+   {src:'../assets/lodge-xhs/h22/685fd9f4000000001c032c0d_2.webp',cap:'小红书实拍（无糖元气花，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/685fd9f4000000001c032c0d'}
   ], nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'小红书跨城帖实测（无糖元气花98赞）；为海景露台妥协之选，停水风险需有预案'},
  {id:'h23',city:'almaty',name:'Mildom Premium（小红书实测）',en:'',area:'北2街区升天大教堂/南500m Abay歌剧院',tier:'经济',refPrice:237,rating:3.7,xhsCnt:'',tags:'位置王者,低价,近歌剧院/绿巴扎',colleague:'',xhs:'',pros:'位置极佳，景点餐饮500m内\n实测约237/晚（MCP报价约502）',cons:'无电梯\n走廊如迷宫\n处处陈旧，行李重/介意老旧慎选',
   imgs:[], nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'小红书跨城帖实测（无糖元气花98赞）；注意与 h16 Hotel Uyut 不是同一家'},
  {id:'x1',city:'almaty',name:'Urban Yurt（UY民宿·Arbat旁）',en:'',area:'Arbat步行街步行3分钟/地铁10分',tier:'民宿',refPrice:400,rating:4.8,xhsCnt:'',tags:'Booking可订,自助入住,楼层行李柜,中国胃友好',colleague:'',xhs:'',pros:'457赞高口碑、有复购好评\nArbat步行3分，楼下麻辣烫/新疆菜/便利店\n全程自助入住（前一天发代码）、每层行李柜\n卫生间干净',cons:'无电梯（行李重可提前要2楼房）',
   imgs:[
-   {src:'assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_0.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
-   {src:'assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_1.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
-   {src:'assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_2.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
-   {src:'assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_3.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
-   {src:'assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_4.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
-   {src:'assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_5.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'}
+   {src:'../assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_0.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
+   {src:'../assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_1.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
+   {src:'../assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_2.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
+   {src:'../assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_3.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
+   {src:'../assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_4.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'},
+   {src:'../assets/lodge-xhs/bnb_uy/68ddfb1e0000000005001a16_5.webp',cap:'小红书实拍（Deries，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68ddfb1e0000000005001a16'}
   ], nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'小红书高赞民宿综合最推荐；约400+/晚，4楼最里间树景好'},
  {id:'x2',city:'almaty',name:'Evergreen Apart（含早老公寓民宿）',en:'',area:'79路直达机场/小树林闹中取静',tier:'民宿',refPrice:350,rating:0,xhsCnt:'',tags:'含西式早6选,厨房洗衣机,英文房东,晚到可接待',colleague:'',xhs:'',pros:'连住6天口碑、350/晚两人含早\n79路直达机场，去景点公交打车方便\n老板英文极好、23点到也有人\n有厨房洗衣机、实际有空调',cons:'无电梯\n双床仅0.8m偏窄',
   imgs:[
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_0.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_1.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_10.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_11.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_4.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_5.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_6.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_7.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_8.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
-   {src:'assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_9.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'}
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_0.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_1.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_10.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_11.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_4.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_5.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_6.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_7.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_8.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'},
+   {src:'../assets/lodge-xhs/bnb_evergreen/6a30faa8000000000f031fea_9.webp',cap:'小红书实拍（素素，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/6a30faa8000000000f031fea'}
   ], nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'小红书54赞；适合多日长住，携程可订、联系靠WhatsApp'},
  {id:'x3',city:'almaty',name:'插画艺术家公寓（Airbnb）',en:'',area:'Отау住宅区/汽车站打车16分',tier:'民宿',refPrice:137,rating:0,xhsCnt:'',tags:'Airbnb,雪山阳台,艺术装修,英文房东',colleague:'',xhs:'',pros:'259赞；3晚819、人均约137/晚极致性价比\n可见雪山阳台、家具齐全、房东审美佳\n房东会英语、Airbnb自动翻译',cons:'在Отау住宅区，去核心景点需打车/公交',
   imgs:[
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_0.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_1.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_2.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_3.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_4.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_5.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_6.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
-   {src:'assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_7.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'}
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_0.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_1.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_2.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_3.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_4.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_5.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_6.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'},
+   {src:'../assets/lodge-xhs/bnb_art/684c2d5b000000002001da2b_7.webp',cap:'小红书实拍（Xuan_nnon，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/684c2d5b000000002001da2b'}
   ], nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'小红书259赞；Airbnb预订，预算敏感+喜欢本地住区者优选'},
  {id:'x4',city:'almaty',name:'市中心前苏联老公寓（氛围型·未具名）',en:'',area:'市中心/楼下开放式公园',tier:'民宿',refPrice:300,rating:0,xhsCnt:'',tags:'苏式老楼,树景+雪山窗景,生活感',colleague:'',xhs:'',pros:'296赞；约300出头/间\n阳台对参天大树+雪山、木地板、楼下公园，生活氛围浓',cons:'老公寓木地板响、大概率无电梯\n未具名，需在平台按‘市中心+高评分+山景’自行筛选',
   imgs:[
-   {src:'assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_1.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
-   {src:'assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_2.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
-   {src:'assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_4.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
-   {src:'assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_6.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
-   {src:'assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_7.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
-   {src:'assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_8.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'}
+   {src:'../assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_1.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
+   {src:'../assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_2.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
+   {src:'../assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_4.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
+   {src:'../assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_6.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
+   {src:'../assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_7.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'},
+   {src:'../assets/lodge-xhs/bnb_oldapt/68da79f900000000130355fe_8.webp',cap:'小红书实拍（一只盆盆，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/68da79f900000000130355fe'}
   ], nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'代表一类市中心苏式老公寓风格，作为选房风格参考'},
  {id:'x5',city:'almaty',name:'雪山+清真寺景观高层Airbnb',en:'',area:'看得到雪山的主干道高层',tier:'民宿',refPrice:449,rating:0,xhsCnt:'',tags:'Airbnb,高层视野,清真寺+雪山同框',colleague:'',xhs:'',pros:'200赞；3天1348（约449/晚）\n高层同时见Nur-Astana清真寺与阿拉套雪山\n有Airbnb真实深链可查',cons:'阿拉木图雪山景较普遍，不必为视野溢价太多',
   imgs:[
-   {src:'assets/lodge-xhs/bnb_view/69aa52f8000000002202fe61_3.webp',cap:'小红书实拍（未能写下的诗，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/69aa52f8000000002202fe61'},
-   {src:'assets/lodge-xhs/bnb_view/69aa52f8000000002202fe61_4.webp',cap:'小红书实拍（未能写下的诗，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/69aa52f8000000002202fe61'},
-   {src:'assets/lodge-xhs/bnb_view/69aa52f8000000002202fe61_5.webp',cap:'小红书实拍（未能写下的诗，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/69aa52f8000000002202fe61'}
+   {src:'../assets/lodge-xhs/bnb_view/69aa52f8000000002202fe61_3.webp',cap:'小红书实拍（未能写下的诗，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/69aa52f8000000002202fe61'},
+   {src:'../assets/lodge-xhs/bnb_view/69aa52f8000000002202fe61_4.webp',cap:'小红书实拍（未能写下的诗，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/69aa52f8000000002202fe61'},
+   {src:'../assets/lodge-xhs/bnb_view/69aa52f8000000002202fe61_5.webp',cap:'小红书实拍（未能写下的诗，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/69aa52f8000000002202fe61'}
   ], nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'深链 airbnb.cn/rooms/1408781920735082043；原帖AI参考图已剔除只留实拍'},
  {id:'x6',city:'aktau',name:'苏式里海海景私人公寓（Booking）',en:'',area:'阳台直面里海',tier:'民宿',refPrice:130,rating:0,xhsCnt:'',tags:'Booking,私人房东,海景阳台,带洗衣机',colleague:'',xhs:'',pros:'60赞；约130/晚\n阳台直面里海、房内三星洗衣机可洗衣、房东友善',cons:'私人房东，支付方式需提前确认\n旺季易订满需早订、苏式老公寓楼龄',
   imgs:[
-   {src:'assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_0.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'},
-   {src:'assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_1.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'},
-   {src:'assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_5.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'},
-   {src:'assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_6.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'}
+   {src:'../assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_0.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'},
+   {src:'../assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_1.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'},
+   {src:'../assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_5.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'},
+   {src:'../assets/lodge-xhs/bnb_aktau_sea/666155d2000000000e033839_6.webp',cap:'小红书实拍（徐汇区柴静，AI双审强关联）',url:'https://www.xiaohongshu.com/explore/666155d2000000000e033839'}
   ], nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'小红书60赞；阿克套高性价比海景公寓代表'}];
 /* 平台报价单独结构，可持续填：{酒店id:{trip:{price,date,url},airbnb:{...},booking:{...}}} */
 const SEED_QUOTES={};

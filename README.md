@@ -2,7 +2,10 @@
 
 ## 在线阅读
 
-- 2026 国庆 · 哈萨克斯坦（阿拉木图 × 阿克套）8 天：https://daliziql.github.io/almaty-aktau-2026/
+- 2026 国庆 · 哈萨克斯坦（阿拉木图 × 阿克套）8 天主攻略：https://daliziql.github.io/almaty-aktau-2026/
+- 住宿选型（酒店 / 民宿）：https://daliziql.github.io/almaty-aktau-2026/hotels/
+
+> 发布仓库只放最新成品，URL 全英文、无中文路径：主攻略为仓库根 `index.html`，住宿页为单一英文子目录 `hotels/index.html`；`raw/` 原始素材与 `_cand/` 候选图不入库。
 
 ## 这个工程是干什么的
 
