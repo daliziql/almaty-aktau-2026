@@ -359,6 +359,8 @@
   .view-btn:active{transform:translateY(1px)}
   body.simple .view-btn{background:#fff;color:var(--jade);box-shadow:none}
   .view-hint{font-size:12.5px;color:var(--sub)}
+  .view-link{margin-left:auto;font-size:12.5px;font-weight:800;text-decoration:none;color:var(--jade);border:1px solid var(--jade);border-radius:30px;padding:7px 15px;background:#fff;white-space:nowrap}
+  .view-link:active{transform:translateY(1px)}
   /* 简洁版：只留倒计时 + 每日时间轴文字 */
   body.simple #sec-flight,body.simple .flightline,
   body.simple #sec-overview,body.simple #overviewMap,body.simple .legend,body.simple .tail,
@@ -378,6 +380,7 @@
   <div class="view-toolbar">
     <button id="viewToggle" class="view-btn" type="button">🗺️ 展开详细版</button>
     <span class="view-hint" id="viewHint">简洁版：只保留每天的时间安排，地图 / 实拍 / 备选已收起</span>
+    <a class="view-link" href="住宿选型.html">🏨 住宿选型工作台 ↗</a>
   </div>
   <script>(function(){try{if(localStorage.getItem('kzViewMode')==='detail')document.body.classList.remove('simple');}catch(e){}})();</script>
 
