@@ -38,7 +38,6 @@
   .hc.s-booked{border-left-color:var(--jade)}
   .hc.s-out{border-left-color:var(--rose);opacity:.72}
   .hc-top{padding:13px 16px 9px;display:flex;gap:10px;align-items:flex-start}
-  .hc-pick{margin-top:4px}
   .hc-name{font-size:16.5px;font-weight:800;width:100%;border:none;border-bottom:1px dashed transparent;background:transparent;color:var(--ink);font-family:inherit;padding:1px 2px}
   .hc-name:focus{outline:none;border-bottom-color:var(--jade)}
   .hc-sub{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;align-items:center}
@@ -105,6 +104,28 @@
     .toolbar{position:static;padding:10px;gap:8px}.cards{grid-template-columns:1fr}
     .qrow{grid-template-columns:56px 1fr auto;gap:6px}
   }
+  /* ===== 纯展示：酒店/民宿分组 + 静态卡片 ===== */
+  #cards{display:block}
+  .grp-head{display:flex;align-items:baseline;gap:10px;font-size:17px;margin:18px 2px 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+  .grp-head small{color:var(--sub);font-size:12px;font-weight:400}
+  .grp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:14px}
+  .hc-name-static{font-size:16px;font-weight:700;line-height:1.35;padding-right:4px}
+  .sblock{margin:9px 0}
+  .sblock>.lbl{font-size:11.5px;color:var(--sub);margin-bottom:4px;letter-spacing:.3px}
+  .chips{display:flex;flex-wrap:wrap;gap:5px}
+  .chip{background:#f1ece0;border:1px solid var(--line);border-radius:20px;padding:2px 9px;font-size:11.5px;color:#6b6353}
+  .slist{margin:0;padding-left:17px;font-size:12.5px;line-height:1.6}
+  .slist.pro li{margin-bottom:2px}
+  .slist.pro li::marker{color:#c0563f}
+  .slist.con li::marker{color:#6a6457}
+  .stext{font-size:12.5px;line-height:1.65;color:#3f3a30;white-space:pre-line;background:#faf7ee;border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+  .badge{font-size:11px;padding:1px 9px;border-radius:20px;border:1px solid var(--line);color:var(--sub)}
+  .badge.leaning{color:var(--clay);border-color:var(--clay)}
+  .badge.booked{color:var(--jade);border-color:var(--jade)}
+  .badge.out{color:#9a9186;text-decoration:line-through}
+  .hc.s-out{opacity:.7}
+  .note-static{font-size:11.5px;color:#7a7261;line-height:1.55}
+  @media (max-width:640px){.grp-grid{grid-template-columns:1fr}.grp-head{font-size:15px}}
 </style>
 </head>
 <body>
@@ -112,7 +133,7 @@
   <header class="hero">
     <a class="back" href="行程攻略.html">← 返回行程攻略</a>
     <h1>🏨 住宿选型工作台</h1>
-    <div class="meta">阿拉木图 4 晚 · Saty 村 1 晚 · 阿克套 2 晚 ｜ 汇总同事文档 + 小红书口碑 + Trip/Airbnb 实时报价，边采集边决策</div>
+    <div class="meta">阿拉木图 4 晚 · Saty 村 1 晚 · 阿克套 2 晚 ｜ 同事文档 + 小红书口碑 + Trip/Airbnb/Booking 报价采集汇总（只读展示，分酒店 / 民宿两部分）</div>
   </header>
 
   <div class="need" id="needBar"></div>
@@ -122,9 +143,9 @@
     <ul>
       <li><b>同事攻略/内网群</b>：住过哪家、房型、真实价格、踩坑（隔音/卫生/位置/寄存/前台英语），原话摘进「同事经验」，一条一行。</li>
       <li><b>小红书</b>：按「酒店名 + 城市」专搜，<b>浏览器模拟人工点击</b>逐篇看正文+评论，强相关才采；笔记数与高频评价进「小红书口碑」，实拍图存本地后路径填进图片条（不要跨酒店挪用图）。</li>
-      <li><b>Trip / Airbnb / Booking</b>：按实际入住日期（10/02-10/09、2 人 1 间）查含税总价与单晚价，记录<b>报价日期</b>；点平台按钮直达搜索页，拿到具体房型页后可把深链贴进备注。</li>
-      <li>所有编辑自动存在本浏览器（localStorage），换电脑用「导出 JSON」备份、「导入 JSON」合并；「恢复种子」会清掉本地修改。</li>
-      <li>状态流：候选 → 倾向 → 已订；确认不选的标「排除」并写明原因（留作避坑记录）。</li>
+      <li><b>Trip / Airbnb / Booking</b>：按实际入住日期（10/02-10/09、2 人 1 间）查含税总价与单晚价，记录<b>报价日期</b>；点平台按钮直达对应页面。</li>
+      <li>本页为<b>只读汇总</b>，按「酒店」「民宿」两部分展示，可用顶部城市标签 / 搜索 / 排序快速筛选；点实拍图放大。</li>
+      <li>标注「避坑/不选」的为主动排除项（如位置硬伤的城外度假村），保留用于防止误订。</li>
     </ul>
   </details>
 
@@ -133,25 +154,15 @@
     <input type="search" id="search" placeholder="搜名称/区域/标签…" style="width:150px">
     <label style="font-size:12px;color:var(--sub)">排序
       <select id="sort">
-        <option value="status">按决策状态</option>
+        <option value="status">按推荐</option>
         <option value="price">按参考价升序</option>
         <option value="rating">按口碑</option>
         <option value="city">按城市</option>
       </select>
     </label>
     <span class="spacer"></span>
-    <span class="saved-flag" id="savedFlag">已自动保存 ✓</span>
-    <button class="tool-btn primary" id="addBtn">＋ 新增候选</button>
-    <button class="tool-btn" id="exportBtn">导出 JSON</button>
-    <button class="tool-btn" id="importBtn">导入 JSON</button>
-    <button class="tool-btn warn" id="resetBtn">恢复种子</button>
-    <input type="file" id="importFile" accept="application/json" hidden>
   </div>
-  <div class="hint-line">勾选卡片左上角对比框（最多 3 家）会在下方生成横向对比表；价格单位均为人民币、2 人 1 间/晚，报价为采集值，下单前以平台实时价为准。</div>
-
-  <div class="cmp" id="cmpBox"><b style="color:var(--jade)">横向对比（勾选的候选）</b>
-    <div class="cmp-wrap"><table id="cmpTable"></table></div>
-  </div>
+  <div class="hint-line">价格单位为人民币、2 人 1 间/晚，均为 2026-09-01 采集值，下单前以平台实时价为准；点击实拍图可放大查看。</div>
 
   <div class="cards" id="cards"></div>
 
@@ -1036,13 +1047,15 @@ const MCP_QUOTES={
 Object.assign(SEED_QUOTES,Object.fromEntries(Object.entries(MCP_QUOTES).map(([k,v])=>[k,Object.assign(SEED_QUOTES[k],v)])));
 
 /* ================= 状态 ================= */
-let data=load(),quotes=data.quotes||structuredClone(SEED_QUOTES);let hotels=data.hotels?structuredClone(data.hotels):structuredClone(SEED);
-let cityFilter='all',cmpPick=new Set();
-function load(){try{const raw=localStorage.getItem(STORE);return raw?JSON.parse(raw):{}}catch(e){return{}}}
-let saveTimer;function save(){clearTimeout(saveTimer);saveTimer=setTimeout(()=>{try{localStorage.setItem(STORE,JSON.stringify({hotels,quotes}));const f=document.getElementById('savedFlag');f.classList.add('on');setTimeout(()=>f.classList.remove('on'),1200);}catch(e){}},250)}
+/* ================= 数据（纯展示，不做本地编辑） ================= */
+const quotes=structuredClone(SEED_QUOTES);
+const hotels=structuredClone(SEED);
+let cityFilter='all';
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const cityName=c=>(CITIES.find(x=>x[0]===c)||['',''])[1]||c;
 const lines=s=>String(s||'').split('\n').filter(Boolean);
+const STATUS_LABEL={candidate:'候选',leaning:'倾向',booked:'已订',out:'避坑/不选'};
+const isBnb=h=>h.tier==='民宿';
 
 /* ================= 渲染 ================= */
 function renderNeed(){
@@ -1072,108 +1085,64 @@ function visibleHotels(){
   });
   return arr;
 }
-function renderCards(){
-  const host=document.getElementById('cards');
-  host.innerHTML=visibleHotels().map(h=>{
-    const q=quotes[h.id]||{};
-    const qrows=PLATFORMS.map(([k,label])=>{
-      const x=q[k]||{};
-      const searchUrl=PLATFORM_SEARCH[k](h.en||h.name,h.city);
-      return `<div class="qrow"><span class="pf">${label}</span>
-        <span><input class="p" type="number" min="0" data-q="${h.id}|${k}|price" value="${x.price??''}" placeholder="¥/晚"> <span class="qd">采集于 <input style="width:92px;border:none;background:transparent;font-size:10.5px;color:#a39a86" data-q="${h.id}|${k}|date" value="${esc(x.date||'')}" placeholder="MM-DD"></span></span>
-        <a class="go" href="${x.url||searchUrl}" target="_blank" rel="noopener">${x.price!=null?'打开 ↗':'去查 ↗'}</a></div>`;
-    }).join('');
-    const imgs=(h.imgs||[]).map(im=>`<img class="ig" loading="lazy" src="${im.src}" data-cap="${esc(im.cap||'')}" alt="${esc(im.cap||'')}">`).join('');
-    return `<article class="hc s-${h.status}" data-id="${h.id}">
-      <div class="hc-top">
-        <input type="checkbox" class="hc-pick" data-pick="${h.id}" ${cmpPick.has(h.id)?'checked':''} title="加入对比">
-        <div style="flex:1;min-width:0">
-          <input class="hc-name" data-f="name" value="${esc(h.name)}">
-          <div class="hc-sub">
-            <span class="pill2 tier-${h.tier}">${h.tier}</span>
-            <input data-f="area" value="${esc(h.area||'')}" placeholder="区域/位置">
-            <span class="pill2">${h.nights||''}</span>
-          </div>
-        </div>
-      </div>
-      <div class="imgs">${imgs}<div class="add-img" data-addimg="${h.id}">＋ 采集图<br>路径/URL</div></div>
-      <div class="quote">${qrows}
-        <div class="qrow"><span class="pf">攻略参考</span><span>${h.refPrice?`¥${h.refPrice}/晚（MCP 实时核验 ${h.mcpDate||''}）`:'<span class="q-missing">团费含/待查</span>'}</span><span class="qd">口碑 ${h.rating?h.rating+' 分':'—'}</span></div>
-      </div>
-      <div class="hc-body">
-        <div class="field tag-edit"><b>标签（逗号分隔：位置/早餐/寄存/接机/隔音…）</b><textarea rows="1" data-f="tags">${esc(h.tags||'')}</textarea></div>
-        <div class="field pro"><b>🟥 优势 / 同事红经验（一行一条）</b><textarea rows="2" data-f="pros">${esc(h.pros||'')}</textarea></div>
-        <div class="field con"><b>🖤 劣势 / 避坑（一行一条）</b><textarea rows="2" data-f="cons">${esc(h.cons||'')}</textarea></div>
-        <div class="field"><b>同事文档 / 内网群原话</b><textarea rows="2" data-f="colleague">${esc(h.colleague||'')}</textarea></div>
-        <div class="field"><b>小红书口碑（笔记数、高频好评/差评、评论区补充）</b><textarea rows="2" data-f="xhs">${esc(h.xhs||'')}</textarea></div>
-      </div>
-      <div class="hc-foot">
-        <div class="statuses">${STATUSES.map(([k,v])=>`<button class="st ${h.status===k?'on':''} ${k}" data-st="${h.id}|${k}">${v}</button>`).join('')}</div>
-        <input class="note" data-f="note" value="${esc(h.note||'')}" placeholder="我的决策备注（房型选择/取消政策/下单入口…）">
-        <div class="meta-row"><span>${cityName(h.city)}</span><button class="del" data-del="${h.id}">删除该候选</button></div>
-      </div>
-    </article>`;
+function cardHtml(h){
+  const q=quotes[h.id]||{};
+  const qrows=PLATFORMS.map(([k,label])=>{
+    const x=q[k]||{};
+    const searchUrl=PLATFORM_SEARCH[k](h.en||h.name,h.city);
+    const cell=x.price!=null?`<b>¥${x.price}/晚</b> <span class="qd">${esc(x.date||'')}</span>`:'<span class="q-missing">未采集到报价</span>';
+    return `<div class="qrow"><span class="pf">${label}</span><span>${cell}</span><a class="go" href="${x.url||searchUrl}" target="_blank" rel="noopener">${x.price!=null?'打开 ↗':'去查 ↗'}</a></div>`;
   }).join('');
+  const imgs=(h.imgs||[]).map(im=>`<img class="ig" loading="lazy" src="${im.src}" data-cap="${esc(im.cap||'')}" alt="${esc(im.cap||'')}">`).join('');
+  const chips=String(h.tags||'').split(/[,，]/).map(t=>t.trim()).filter(Boolean).map(t=>`<span class="chip">${esc(t)}</span>`).join('');
+  const ul=(cls,val)=>{const a=lines(val);return a.length?`<ul class="slist ${cls}">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<div class="qd">—</div>'};
+  const block=(lbl,val)=>val?`<div class="sblock"><div class="lbl">${lbl}</div><div class="stext">${esc(val)}</div></div>`:'';
+  return `<article class="hc s-${h.status}" data-id="${h.id}">
+    <div class="hc-top"><div style="flex:1;min-width:0">
+      <div class="hc-name-static">${esc(h.name)}</div>
+      <div class="hc-sub">
+        <span class="pill2 tier-${h.tier}">${h.tier}</span>
+        ${h.area?`<span class="chip">${esc(h.area)}</span>`:''}
+        ${h.nights?`<span class="pill2">${esc(h.nights)}</span>`:''}
+        <span class="chip">${cityName(h.city)}</span>
+        ${h.status!=='candidate'?`<span class="badge ${h.status}">${STATUS_LABEL[h.status]||''}</span>`:''}
+      </div>
+    </div></div>
+    ${imgs?`<div class="imgs">${imgs}</div>`:''}
+    <div class="quote">${qrows}
+      <div class="qrow"><span class="pf">攻略参考</span><span>${h.refPrice?`¥${h.refPrice}/晚（采集 ${h.mcpDate||''}）`:'<span class="q-missing">团费含/待查</span>'}</span><span class="qd">${h.rating?h.rating+' 分':''}</span></div>
+    </div>
+    <div class="hc-body">
+      ${chips?`<div class="sblock"><div class="lbl">亮点标签</div><div class="chips">${chips}</div></div>`:''}
+      <div class="sblock"><div class="lbl">🟥 优势 / 红经验</div>${ul('pro',h.pros)}</div>
+      <div class="sblock"><div class="lbl">🖤 劣势 / 避坑</div>${ul('con',h.cons)}</div>
+      ${block('同事文档 / 内网群原话',h.colleague)}
+      ${block('小红书口碑（正文 + 评论）',h.xhs)}
+    </div>
+    ${h.note?`<div class="hc-foot"><div class="note-static">📝 ${esc(h.note)}</div></div>`:''}
+  </article>`;
 }
-function renderCmp(){
-  const box=document.getElementById('cmpBox'),tbl=document.getElementById('cmpTable');
-  const picks=hotels.filter(h=>cmpPick.has(h.id));
-  if(!picks.length){box.classList.remove('show');return}
-  box.classList.add('show');
-  const row=(label,fn)=>`<tr><th>${label}</th>${picks.map(h=>`<td>${fn(h)}</td>`).join('')}</tr>`;
-  const priceOf=h=>{const q=quotes[h.id]||{};const ps=PLATFORMS.map(([k,l])=>q[k]?.price?`${l} ¥${q[k].price}`:null).filter(Boolean);return ps.join('<br>')||(h.refPrice?`参考约 ¥${h.refPrice}`:'—')};
-  tbl.innerHTML=
-    row('酒店',h=>`<b>${esc(h.name)}</b><br><small>${esc(h.area||'')}</small>`)+
-    row('档次/晚次',h=>`${h.tier}<br>${esc(h.nights||'')}`)+
-    row('报价',priceOf)+
-    row('口碑',h=>h.rating?h.rating+' 分':'—')+
-    row('优势',h=>lines(h.pros).map(x=>'· '+esc(x)).join('<br>')||'—')+
-    row('劣势',h=>lines(h.cons).map(x=>'· '+esc(x)).join('<br>')||'—')+
-    row('同事',h=>esc(h.colleague||'—').replace(/\n/g,'<br>'))+
-    row('小红书',h=>esc(h.xhs||'—').replace(/\n/g,'<br>'))+
-    row('状态',h=>({candidate:'候选',leaning:'倾向',booked:'已订',out:'排除'})[h.status])+
-    row('备注',h=>esc(h.note||'—'));
+function renderCards(){
+  const arr=visibleHotels();
+  const groups=[
+    ['酒店 / 连锁与品牌公寓',arr.filter(h=>!isBnb(h))],
+    ['民宿 / 公寓（Airbnb 与小红书高评）',arr.filter(isBnb)],
+  ];
+  document.getElementById('cards').innerHTML=groups
+    .filter(([,list])=>list.length)
+    .map(([title,list])=>`<section class="grp"><h2 class="grp-head"><span>${title}</span><small>${list.length} 家</small></h2><div class="grp-grid">${list.map(cardHtml).join('')}</div></section>`)
+    .join('');
 }
-function renderAll(){renderNeed();renderTabs();renderCards();renderCmp();save()}
+function renderAll(){renderNeed();renderTabs();renderCards()}
 
-/* ================= 事件 ================= */
+/* ================= 事件（仅筛选 / 排序 / 图片放大） ================= */
 document.getElementById('cityTabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(!t)return;cityFilter=t.dataset.c;renderAll()});
 ['search','sort'].forEach(id=>document.getElementById(id).addEventListener('input',renderCards));
-document.getElementById('cards').addEventListener('input',e=>{
-  const card=e.target.closest('.hc');if(!card)return;const h=hotels.find(x=>x.id===card.dataset.id);if(!h)return;
-  if(e.target.dataset.f){h[e.target.dataset.f]=e.target.value;save();
-    if(['note','tags'].includes(e.target.dataset.f)){}else if(e.target.dataset.f==='name'){} }
-  const q=e.target.dataset.q;
-  if(q){const[id,k,f]=q.split('|');quotes[id][k][f]=f==='price'?(e.target.value===''?null:+e.target.value):e.target.value;save();}
-});
-// 名称/区域变化只更新需求栏与对比，不整树重绘（避免输入失焦）
-document.getElementById('cards').addEventListener('change',()=>{renderNeed();renderCmp()});
 document.getElementById('cards').addEventListener('click',e=>{
-  const st=e.target.closest('[data-st]');if(st){const[id,k]=st.dataset.st.split('|');hotels.find(x=>x.id===id).status=k;renderAll();return}
-  const del=e.target.closest('[data-del]');if(del){if(confirm('删除这个候选？')){hotels=hotels.filter(x=>x.id!==del.dataset.del);cmpPick.delete(del.dataset.del);renderAll();}return}
-  const addImg=e.target.closest('[data-addimg]');if(addImg){
-    const v=prompt('粘贴本地图片相对路径（如 assets/hotels/xxx_01.webp）或图片 URL：');if(!v)return;
-    const h=hotels.find(x=>x.id===addImg.dataset.addimg);(h.imgs=h.imgs||[]).push({src:v.trim(),cap:'',url:''});renderCards();return}
-  const pk=e.target.closest('[data-pick]');if(pk){pk.checked?cmpPick.size<3?cmpPick.add(pk.dataset.pick):(pk.checked=false,alert('最多对比 3 家')):cmpPick.delete(pk.dataset.pick);renderCmp();return}
   if(e.target.classList.contains('ig')){document.getElementById('lbImg').src=e.target.src;document.getElementById('lbCap').textContent=e.target.dataset.cap||'';document.getElementById('lb').classList.add('show')}
 });
 document.getElementById('lbClose').addEventListener('click',()=>document.getElementById('lb').classList.remove('show'));
 document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')e.currentTarget.classList.remove('show')});
-document.getElementById('addBtn').addEventListener('click',()=>{
-  const id='h'+Date.now();hotels.unshift({id,city:cityFilter==='all'?'almaty':cityFilter,name:'新候选（点我改名）',en:'',area:'',tier:'中端',refPrice:0,rating:0,xhsCnt:'',tags:'',colleague:'',xhs:'',pros:'',cons:'',imgs:[],nights:'',status:'candidate',note:''})
-  quotes[id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''},agoda:{price:null,date:'',url:''}};renderAll();
-});
-document.getElementById('exportBtn').addEventListener('click',()=>{
-  const blob=new Blob([JSON.stringify({hotels,quotes,exported:new Date().toISOString()},null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='住宿选型数据.json';a.click();URL.revokeObjectURL(a.href);
-});
-document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
-document.getElementById('importFile').addEventListener('change',e=>{
-  const f=e.target.files[0];if(!f)return;const r=new FileReader();
-  r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.hotels)throw Error();hotels=d.hotels;quotes=d.quotes||SEED_QUOTES;renderAll();alert('导入成功，'+hotels.length+' 家候选');}catch(err){alert('文件格式不对')}};
-  r.readAsText(f);e.target.value='';
-});
-document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('恢复种子数据会清掉本机全部编辑，确定？')){localStorage.removeItem(STORE);hotels=structuredClone(SEED);quotes=structuredClone(SEED_QUOTES);cmpPick.clear();renderAll()}});
 
 renderAll();
 </script>
