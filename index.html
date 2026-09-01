@@ -492,7 +492,7 @@
   <div id="overviewMap" class="map big"></div>
 
   <!-- ============ 逐日 ============ -->
-  <h2 class="sec" id="sec-days">逐日行程（时间轴编号 ↔ 地图编号）</h2>
+  <h2 class="sec" id="sec-days">逐日行程</h2>
   <div id="days"></div>
 
   <div class="tail">
@@ -1359,7 +1359,7 @@ setTimeout(()=>{
     const simple=mode!=='detail';
     document.body.classList.toggle('simple',simple);
     const daysTitle=document.getElementById('sec-days');
-    if(daysTitle)daysTitle.textContent=simple?'逐日行程（按时间顺序）':'逐日行程（时间轴编号 ↔ 地图编号）';
+    if(daysTitle)daysTitle.textContent='逐日行程';
     btn.textContent=simple?'🗺️ 展开详细版':'📝 返回简洁版';
     hint.textContent=simple?'简洁版：只保留每天的时间安排，地图 / 实拍 / 备选已收起':'详细版：地图、实拍、住宿餐饮、备选与专栏全部展开';
     try{localStorage.setItem(KEY,simple?'simple':'detail');}catch(e){}
