@@ -353,10 +353,33 @@
     .fleg .fpt{font-size:14px}
     .gal-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
   }
+  /* ===== 版本切换：默认简洁版，按钮展开详细版 ===== */
+  .view-toolbar{display:flex;align-items:center;gap:12px;margin:18px 0 4px;flex-wrap:wrap}
+  .view-btn{border:1px solid var(--jade);background:var(--jade);color:#fff;border-radius:30px;padding:8px 20px;font-weight:800;font-size:13.5px;cursor:pointer;transition:all .15s;box-shadow:0 2px 8px rgba(46,125,107,.25)}
+  .view-btn:active{transform:translateY(1px)}
+  body.simple .view-btn{background:#fff;color:var(--jade);box-shadow:none}
+  .view-hint{font-size:12.5px;color:var(--sub)}
+  /* 简洁版：只留每日时间轴文字 */
+  body.simple .countdown,body.simple #sec-flight,body.simple .flightline,
+  body.simple #sec-overview,body.simple #overviewMap,body.simple .legend,body.simple .tail,
+  body.simple .dmap,body.simple .g-btn,body.simple .chips,
+  body.simple .d-stay,body.simple .rb,body.simple .dstats{display:none!important}
+  body.simple .dbody{display:block}
+  body.simple .tl{border-right:none;padding:6px 22px 14px}
+  body.simple .day{margin-bottom:14px;border-radius:16px}
+  body.simple .daynav a:not([data-t^="d"]){display:none}
+  body.simple .hero{padding-bottom:26px}
+
 </style>
 </head>
-<body>
+<body class="simple">
 <div class="wrap">
+
+  <div class="view-toolbar">
+    <button id="viewToggle" class="view-btn" type="button">🗺️ 展开详细版</button>
+    <span class="view-hint" id="viewHint">简洁版：只保留每天的时间安排，地图 / 实拍 / 备选已收起</span>
+  </div>
+  <script>(function(){try{if(localStorage.getItem('kzViewMode')==='detail')document.body.classList.remove('simple');}catch(e){}})();</script>
 
   <header class="hero">
     <div class="eyebrow">ALMATY × AKTAU · KAZAKHSTAN</div>
@@ -386,7 +409,7 @@
   </section>
 
   <!-- ============ 航班板（时间顺序逐行，回程 A/B 合为一程两目的地） ============ -->
-  <h2 class="sec">航段总览（时间顺序 · 5 程 6 段飞行）</h2>
+  <h2 class="sec" id="sec-flight">航段总览（时间顺序 · 5 程 6 段飞行）</h2>
   <div class="flightline">
     <div class="fleg">
       <div class="fdate">10/01<small>下午 · 国内集合</small></div>
@@ -475,9 +498,10 @@
   </div>
 
   <!-- ============ 逐日 ============ -->
-  <h2 class="sec">逐日行程（时间轴编号 ↔ 地图编号）</h2>
+  <h2 class="sec" id="sec-days">逐日行程（时间轴编号 ↔ 地图编号）</h2>
   <div id="days"></div>
 
+  <div class="tail">
   <!-- ============ 住宿 ============ -->
   <h2 class="sec" id="sec-stay">住宿总览（7 晚）</h2>
   <div class="panel" style="padding:6px 10px">
@@ -855,6 +879,7 @@
     哈萨克斯坦 8 天行程图册 v2.0 · 更新于 2026/09/01 · 时间/票价为采集值，出票与预订前以官方为准<br>
     素材：内网旅游群与同事攻略（郭宇琛/陈儒/王琛等）+ 使馆公告/航司时刻/GetYourGuide/Redmaya/WeatherSpark 等公开来源；📷 实拍图均来自小红书笔记（按点位关键词专搜→AI 审帖→逐张 AI 审图双过关，64 组精选 564 张，溯源见 assets/gallery2/provenance.json），完整链接见同目录 raw/素材来源快照.md
   </footer>
+  </div><!-- /.tail -->
 </div>
 
 <!-- 图片素材数据（自动生成，图源小红书笔记） -->
@@ -1086,7 +1111,7 @@ DAYS.forEach(d=>{
     </div>
     <div class="dbody">
       <div class="tl">${evHtml}
-        <div style="margin-top:12px"><span class="pill">${d.stay}</span></div>
+        <div class="d-stay" style="margin-top:12px"><span class="pill">${d.stay}</span></div>
         <div class="rb" style="grid-template-columns:1fr">
           <div class="rbox red"><b>🟥 红经验</b>${d.red}</div>
           <div class="rbox black"><b>🖤 避坑</b>${d.black}</div>
@@ -1117,6 +1142,7 @@ DAYS.forEach(d=>{
 })();
 
 /* ============ 地图 ============ */
+window.__maps=[];const __Lmap=L.map.bind(L);L.map=function(){const m=__Lmap.apply(null,arguments);window.__maps.push(m);return m;};
 const tileUrl='https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}';
 const tileAttr='&copy; Esri · USGS · NOAA | 路线为示意标注';
 const satUrl='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
@@ -1157,6 +1183,7 @@ function buildDayMap(d){
     m.bindTooltip(label,{direction:s.dir||'top',offset:s.toff||[0,-13],className:'name-label',permanent:d.labels==='permanent'&&!IS_MOBILE});
   });
   map.fitBounds(bounds,{padding:IS_MOBILE?[32,32]:[50,50]});
+  map.__fit={bounds,opts:{padding:IS_MOBILE?[32,32]:[50,50]}};
 }
 setTimeout(()=>DAYS.forEach(buildDayMap),60);
 
@@ -1199,6 +1226,7 @@ setTimeout(()=>{
       iconSize:IS_MOBILE?[116,19]:[128,21],iconAnchor:IS_MOBILE?[58,9.5]:[64,10.5]})}).addTo(ov);
   });
   ov.fitBounds([[22.8,50.5],[45.3,122.4]],{padding:IS_MOBILE?[60,72]:[24,24]});
+  ov.__fit={bounds:[[22.8,50.5],[45.3,122.4]],opts:{padding:IS_MOBILE?[60,72]:[24,24]}};
 },80);
 
 /* ============ 旅途倒计时小组件（窗口：北京时间 10/01 00:00 → 10/10 00:00） ============ */
@@ -1289,6 +1317,26 @@ setTimeout(()=>{
   document.addEventListener('click',e=>{
     const b=e.target.closest('.g-btn');if(b&&b.dataset.gal){e.preventDefault();window.openGallery(b.dataset.gal);}
   });
+})();
+
+/* ============ 简洁版 / 详细版切换（默认简洁版，选择记忆到 localStorage） ============ */
+(function(){
+  const KEY='kzViewMode',btn=document.getElementById('viewToggle'),hint=document.getElementById('viewHint');
+  function refreshMaps(){ // 地图在 display:none 时创建/隐藏，展开后需强制重算尺寸
+    [60,260,600].forEach(d=>setTimeout(()=>{(window.__maps||[]).forEach(m=>{try{m.invalidateSize();if(m.__fit)m.fitBounds(m.__fit.bounds,m.__fit.opts);}catch(e){}});},d));
+  }
+  function apply(mode){
+    const simple=mode!=='detail';
+    document.body.classList.toggle('simple',simple);
+    const daysTitle=document.getElementById('sec-days');
+    if(daysTitle)daysTitle.textContent=simple?'逐日行程（按时间顺序）':'逐日行程（时间轴编号 ↔ 地图编号）';
+    btn.textContent=simple?'🗺️ 展开详细版':'📝 返回简洁版';
+    hint.textContent=simple?'简洁版：只保留每天的时间安排，地图 / 实拍 / 备选已收起':'详细版：地图、实拍、住宿餐饮、备选与专栏全部展开';
+    try{localStorage.setItem(KEY,simple?'simple':'detail');}catch(e){}
+    if(!simple)refreshMaps();
+  }
+  apply(document.body.classList.contains('simple')?'simple':'detail');
+  btn.addEventListener('click',()=>apply(document.body.classList.contains('simple')?'detail':'simple'));
 })();
 </script>
 </body>
