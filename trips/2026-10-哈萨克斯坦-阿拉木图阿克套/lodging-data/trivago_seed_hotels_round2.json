@@ -1,0 +1,177 @@
+{
+ "h10b": {
+  "query": "Renaissance Aktau by Sulo",
+  "items": [
+   {
+    "accommodation_id": "1385e27d3bb0",
+    "arrival": "2026-10-06",
+    "departure": "2026-10-08",
+    "accommodation_name": "Renaissance by Sulo",
+    "currency": "CNY",
+    "price_per_night": "¥592",
+    "price_per_stay": "¥1,183",
+    "advertisers": "Booking.com",
+    "hotel_rating": 4,
+    "country_city": "Aqtau, Kazakhstan",
+    "review_rating": "8.9",
+    "review_count": "2,194",
+    "top_amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, A/C, Restaurant, Hotel bar, Gym",
+    "accommodation_url": "https://www.trivago.hk/en-US/lm/hotel-renaissance-by-sulo-aqtau?cip=234716015&currencyCode=CNY&search=100-1298740;dr-20261006-20261008;drs-40;rc-1-2&dealId=-6368786513358424666",
+    "latitude": 43.64542007446289,
+    "longitude": 51.151390075683594,
+    "distance": "Aqtau, 2.6 km to City center",
+    "main_image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/61/8a/9cbf73c165f3a5caece581055b220dfe713d5f31ef77fcd102849c1449fd"
+   }
+  ]
+ },
+ "h11b": {
+  "query": "Tarlan Hotel",
+  "items": [
+   {
+    "accommodation_id": "531c7668dd23",
+    "arrival": "2026-10-06",
+    "departure": "2026-10-08",
+    "accommodation_name": "Tarlan Hotel",
+    "currency": "CNY",
+    "price_per_night": "¥237",
+    "price_per_stay": "¥475",
+    "advertisers": "Booking.com",
+    "hotel_rating": 3,
+    "country_city": "Aqtau, Kazakhstan",
+    "review_rating": "",
+    "review_count": "0",
+    "top_amenities": "WiFi in lobby, WiFi in rooms, Parking, A/C, Restaurant",
+    "accommodation_url": "https://www.trivago.hk/en-US/lm/tarlan-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-33635146;dr-20261006-20261008;drs-40;rc-1-2&dealId=4178391075869337390",
+    "latitude": 43.67763137817383,
+    "longitude": 51.172271728515625,
+    "distance": "Aqtau, 5.2 km to City center",
+    "main_image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/cf/b9/651d6d50f886eb532021943a90e4ed91add19bf0c4fa539c31e42ce12f3e"
+   }
+  ]
+ },
+ "h1_d8": {
+  "query": "Renion City Hotel Almaty",
+  "items": [
+   {
+    "accommodation_id": "366f86147d62",
+    "arrival": "2026-10-08",
+    "departure": "2026-10-09",
+    "accommodation_name": "Renion City Hotel",
+    "currency": "CNY",
+    "price_per_night": "¥816",
+    "price_per_stay": "¥816",
+    "advertisers": "Trip.com",
+    "hotel_rating": 4,
+    "country_city": "Almaty, Kazakhstan",
+    "review_rating": "8.8",
+    "review_count": "241",
+    "top_amenities": "WiFi in lobby, WiFi in rooms, Pool, Parking, A/C, Restaurant, Hotel bar, Gym",
+    "accommodation_url": "https://www.trivago.hk/en-US/lm/renion-city-hotel-almaty?cip=234716015&currencyCode=CNY&search=100-41560720;dr-20261008-20261009;drs-40;rc-1-2&dealId=-4813849933181043728",
+    "latitude": 43.261451721191406,
+    "longitude": 76.95777130126953,
+    "distance": "Almaty, 3.7 km to City center",
+    "main_image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/07/72/49dc4d54f352e4deeb433a97a58e50442909cff8fb67cf144799897bf582"
+   }
+  ]
+ },
+ "h3_d8": {
+  "query": "Holiday Inn Almaty",
+  "items": [
+   {
+    "accommodation_id": "0a86858e335e",
+    "arrival": "2026-10-08",
+    "departure": "2026-10-09",
+    "accommodation_name": "Holiday Inn Almaty By Ihg",
+    "currency": "CNY",
+    "price_per_night": "¥965",
+    "price_per_stay": "¥965",
+    "advertisers": "Booking.com",
+    "hotel_rating": 4,
+    "country_city": "Almaty, Kazakhstan",
+    "review_rating": "8.2",
+    "review_count": "5,021",
+    "top_amenities": "WiFi in lobby, WiFi in rooms, Parking, A/C, Restaurant, Hotel bar, Gym",
+    "accommodation_url": "https://www.trivago.hk/en-US/lm/hotel-holiday-inn-almaty-by-ihg?cip=234716015&currencyCode=CNY&search=100-996349;dr-20261008-20261009;drs-40;rc-1-2&dealId=6500194389139946080",
+    "latitude": 43.233238220214844,
+    "longitude": 76.9392318725586,
+    "distance": "Almaty, 3.2 km to City center",
+    "main_image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/1c/4c/0c749dbf18b82f0e40bc347865fbb956d6e7734f47d478f7aa0263bc418c"
+   }
+  ]
+ },
+ "h4_d8": {
+  "query": "The Ritz-Carlton Almaty",
+  "items": [
+   {
+    "accommodation_id": "bbdbdd912281",
+    "arrival": "2026-10-08",
+    "departure": "2026-10-09",
+    "accommodation_name": "The Ritz-Carlton, Almaty",
+    "currency": "CNY",
+    "price_per_night": "¥5,472",
+    "price_per_stay": "¥5,472",
+    "advertisers": "Booking.com",
+    "hotel_rating": 5,
+    "country_city": "Almaty, Kazakhstan",
+    "review_rating": "9.3",
+    "review_count": "4,247",
+    "top_amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, Pets, A/C, Restaurant, Hotel bar, Gym",
+    "accommodation_url": "https://www.trivago.hk/en-US/lm/hotel-the-ritz-carlton-almaty?cip=234716015&currencyCode=CNY&search=100-2866652;dr-20261008-20261009;drs-40;rc-1-2&dealId=-8270048675696769389",
+    "latitude": 43.21908187866211,
+    "longitude": 76.92923736572266,
+    "distance": "Almaty, 4.2 km to City center",
+    "main_image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/77/56/6093931ca1ab867c4893662b898ebfbb02e0bddfd54a2d6572cb696f8402"
+   }
+  ]
+ },
+ "h9b": {
+  "query": "Holiday Inn Aktau Kazakhstan",
+  "items": [
+   {
+    "accommodation_id": "a9df177f1a9e",
+    "arrival": "2026-10-06",
+    "departure": "2026-10-08",
+    "accommodation_name": "Holiday Inn Aktau",
+    "currency": "CNY",
+    "price_per_night": "",
+    "price_per_stay": "",
+    "advertisers": "",
+    "hotel_rating": 3,
+    "country_city": "Aqtau, Kazakhstan",
+    "review_rating": "",
+    "review_count": "0",
+    "top_amenities": "",
+    "accommodation_url": "",
+    "latitude": 43.638389587402344,
+    "longitude": 51.16508102416992,
+    "distance": "Aqtau, 1.2 km to City center",
+    "main_image": ""
+   }
+  ]
+ },
+ "h8_2n": {
+  "query": "Caspian Riviera Grand Palace Aktau",
+  "items": [
+   {
+    "accommodation_id": "35ad6bdc2953",
+    "arrival": "2026-10-06",
+    "departure": "2026-10-07",
+    "accommodation_name": "Caspian Riviera Grand Palace Hotel",
+    "currency": "CNY",
+    "price_per_night": "¥774",
+    "price_per_stay": "¥774",
+    "advertisers": "Booking.com",
+    "hotel_rating": 5,
+    "country_city": "Aqtau, Kazakhstan",
+    "review_rating": "8.9",
+    "review_count": "3,188",
+    "top_amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, A/C, Restaurant, Hotel bar, Gym",
+    "accommodation_url": "https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261007;drs-40;rc-1-2&dealId=-6641174021285059364",
+    "latitude": 43.63290023803711,
+    "longitude": 51.15896987915039,
+    "distance": "Aqtau, 1.4 km to City center",
+    "main_image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/d6/32/e32d25bb69e2bda2b58716a6cfe30b927af9d91cba1e663fca24913d548e"
+   }
+  ]
+ }
+}

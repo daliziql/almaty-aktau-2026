@@ -1,0 +1,42 @@
+[
+ {
+  "accommodation_id": "8c1e163cc8d2",
+  "arrival": "2026-10-06",
+  "departure": "2026-10-08",
+  "accommodation_name": "Батыс",
+  "currency": "CNY",
+  "price_per_night": "¥186",
+  "price_per_stay": "¥372",
+  "advertisers": "Booking.com",
+  "hotel_rating": 0,
+  "country_city": "Aqtau, Kazakhstan",
+  "review_rating": "",
+  "review_count": "0",
+  "top_amenities": "",
+  "accommodation_url": "https://www.trivago.com/en-US/lm/entire-house-apartment-батыс-aqtau?cip=234716015&currencyCode=CNY&search=100-52238238;500-4619226;dr-20261006-20261008;drs-40;rc-1-2&dealId=-869725279286057316",
+  "latitude": 43.69237,
+  "longitude": 51.1598,
+  "distance": "Aqtau, 4.3 miles to City center",
+  "main_image": ""
+ },
+ {
+  "accommodation_id": "6b92bfb7770e",
+  "arrival": "2026-10-06",
+  "departure": "2026-10-08",
+  "accommodation_name": "Аренда Посуточно",
+  "currency": "CNY",
+  "price_per_night": "¥310",
+  "price_per_stay": "¥621",
+  "advertisers": "Booking.com",
+  "hotel_rating": 0,
+  "country_city": "Aqtau, Kazakhstan",
+  "review_rating": "",
+  "review_count": "0",
+  "top_amenities": "",
+  "accommodation_url": "https://www.trivago.com/en-US/lm/entire-house-apartment-аренда-посуточно-aqtau?cip=234716015&currencyCode=CNY&search=100-52318542;500-4619226;dr-20261006-20261008;drs-40;rc-1-2&dealId=-8857968743228606430",
+  "latitude": 43.68785,
+  "longitude": 51.16186,
+  "distance": "Aqtau, 4.0 miles to City center",
+  "main_image": ""
+ }
+]

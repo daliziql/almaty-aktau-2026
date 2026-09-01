@@ -1,0 +1,5 @@
+[
+  {"name":"almaty_city","query":"Almaty, Kazakhstan","arrival":"2026-10-02","departure":"2026-10-03","limit":30},
+  {"name":"saty_kolsai","query":"Saty, Almaty Region, Kazakhstan","arrival":"2026-10-04","departure":"2026-10-05","limit":20},
+  {"name":"aktau","query":"Aktau, Kazakhstan","arrival":"2026-10-06","departure":"2026-10-08","limit":30}
+]

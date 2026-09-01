@@ -165,35 +165,46 @@
 const CITIES=[['almaty','阿拉木图',4,'D1-D2、D4、D7 共 4 晚 · 同一家连住寄存大件'],
               ['saty','Saty 村',1,'D3 共 1 晚 · 两湖一峡谷团'],
               ['aktau','阿克套',2,'D5-D6 共 2 晚 · 第一海岸线，不选城外度假村']];
-const PLATFORMS=[['trip','Trip.com'],['airbnb','Airbnb'],['booking','Booking']];
+const PLATFORMS=[['trip','Trip.com'],['airbnb','Airbnb'],['booking','Booking'],['agoda','Agoda']];
 const STATUSES=[['candidate','候选'],['leaning','倾向'],['booked','已订'],['out','排除']];
 const STORE='kzHotelPickerV1';
 const PLATFORM_SEARCH={ // 无深链时用名称直达平台搜索
   trip:n=>'https://www.trip.com/hotels/list?searchword='+encodeURIComponent(n),
   airbnb:(n,c)=>'https://www.airbnb.com/s/'+encodeURIComponent({almaty:'Almaty',saty:'Saty Kazakhstan',aktau:'Aktau'}[c]||n)+'/homes',
-  booking:n=>'https://www.booking.com/searchresults.html?ss='+encodeURIComponent(n)
+  booking:n=>'https://www.booking.com/searchresults.html?ss='+encodeURIComponent(n),
+  agoda:n=>'https://www.agoda.com/search?searchText='+encodeURIComponent(n)
 };
 
 /* ================= 种子数据（既有攻略结论，价格待平台实时核验） ================= */
 const SEED=[
  {id:'h1',city:'almaty',name:'Renion City Hotel',en:'Renion City',area:'金广场/Arbat 步行圈',tier:'中端',
-  refPrice:720,rating:4.5,xhsCnt:'',tags:'连住可寄存,近Arbar步行街,打车去机场约25分钟',
+  refPrice:816,rating:4.4,xhsCnt:'',tags:'连住可寄存,近Arbar步行街,打车去机场约25分钟',
   colleague:'阿拉木图市区建议同一家连住4晚，大件寄存，两湖/阿克套只带分包\n金广场片区吃饭打车都方便，晚上步行回酒店安全',
   xhs:'',pros:'位置中心，周边餐厅密度高\n连锁式管理，前台英语可用',cons:'',
-  imgs:[],nights:'D1-D2,D4,D7',status:'candidate',note:''},
+  imgs:[
+   {src:'assets/hotels/h1.jpg',cap:'MCP 聚合平台图（来源 Trip.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/renion-city-hotel-almaty?cip=234716015&currencyCode=CNY&search=100-41560720;dr-20261008-20261009;drs-40;rc-1-2&dealId=-4813849933181043728'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Trip.com ¥816/晚；平台评分 8.8（241条）'},
+
  {id:'h2',city:'almaty',name:'Kazzhol Hotel Almaty',en:'Kazzhol',area:'金广场片区',tier:'中端',
-  refPrice:680,rating:4.4,xhsCnt:'',tags:'可寄存,含早',colleague:'',xhs:'',pros:'本地老牌中端，房型偏大',cons:'装修偏老',
-  imgs:[],nights:'D1-D2,D4,D7',status:'candidate',note:''},
+  refPrice:676,rating:4.2,xhsCnt:'',tags:'可寄存,含早',colleague:'',xhs:'',pros:'本地老牌中端，房型偏大',cons:'装修偏老',
+  imgs:[
+   {src:'assets/hotels/h2.jpg',cap:'MCP 聚合平台图（来源 Agoda，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-kazzhol-almaty?cip=234716015&currencyCode=CNY&search=100-944705;dr-20261002-20261003;drs-40;rc-1-2&dealId=-3323586906593245264'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Agoda ¥676/晚；平台评分 8.3（3,067条）'},
+
  {id:'h3',city:'almaty',name:'Holiday Inn Almaty',en:'Holiday Inn Almaty',area:'市区',tier:'中端',
-  refPrice:820,rating:4.5,xhsCnt:'',tags:'国际连锁,会员积分,含早',colleague:'',xhs:'',pros:'标准稳定不出错，取消政策友好',cons:'性价比一般',
-  imgs:[],nights:'D1-D2,D4,D7',status:'candidate',note:''},
+  refPrice:965,rating:4.1,xhsCnt:'',tags:'国际连锁,会员积分,含早',colleague:'',xhs:'',pros:'标准稳定不出错，取消政策友好',cons:'性价比一般',
+  imgs:[
+   {src:'assets/hotels/h3.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-holiday-inn-almaty-by-ihg?cip=234716015&currencyCode=CNY&search=100-996349;dr-20261008-20261009;drs-40;rc-1-2&dealId=6500194389139946080'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥965/晚；平台评分 8.2（5,021条）'},
+
  {id:'h4',city:'almaty',name:'Ritz-Carlton Almaty',en:'The Ritz-Carlton Almaty',area:'Esentai Mall 片区',tier:'高端',
-  refPrice:2200,rating:4.8,xhsCnt:'',tags:'高空城景,奢华,商场楼上',colleague:'',xhs:'',
+  refPrice:5472,rating:4.7,xhsCnt:'',tags:'高空城景,奢华,商场楼上',colleague:'',xhs:'',
   pros:'全程最好的一家放最后一晚犒劳自己',cons:'离 Arbat/老城有车程，步行逛城不方便；价格高',
-  imgs:[],nights:'D7（可选升级）',status:'candidate',note:''},
+  imgs:[
+   {src:'assets/hotels/h4.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-the-ritz-carlton-almaty?cip=234716015&currencyCode=CNY&search=100-2866652;dr-20261008-20261009;drs-40;rc-1-2&dealId=-8270048675696769389'},],nights:'D7（可选升级）',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥5472/晚，另样本 10-02~2026-10-03 ¥4464；平台评分 9.3（4,247条）'},
+
  {id:'h5',city:'almaty',name:'Interhouse Almaty',en:'Interhouse',area:'Arbat 附近',tier:'经济',
-  refPrice:300,rating:4.3,xhsCnt:'',tags:'青旅/民宿风,公共厨房',colleague:'',xhs:'',pros:'预算优先时的兜底，氛围好',cons:'隔音一般，部分房型公卫',
-  imgs:[],nights:'D1-D2,D4,D7',status:'candidate',note:''},
+  refPrice:204,rating:4.2,xhsCnt:'',tags:'青旅/民宿风,公共厨房',colleague:'',xhs:'',pros:'预算优先时的兜底，氛围好',cons:'隔音一般，部分房型公卫',
+  imgs:[
+   {src:'assets/hotels/h5.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hostel-interhouse-almaty?cip=234716015&currencyCode=CNY&search=100-6819744;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1958311992724986226'},],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥204/晚；平台评分 8.4（5条）'},
+
  {id:'h6',city:'saty',name:'两湖团 · 哈萨克家庭民宿',en:'Saty family homestay',area:'Saty 村内',tier:'民宿',
   refPrice:0,rating:0,xhsCnt:'',tags:'团费已含,含家宴早晚餐,公共卫浴',
   colleague:'Saty 没有酒店，基本都是村民家庭民宿\n网红民宿被吐槽公共卫浴排队、设施简朴，带头灯/拖鞋/洗漱',
@@ -205,31 +216,743 @@ const SEED=[
    {src:'assets/gallery2/saty_village/saty_village_03.webp',cap:'Saty 村民宿实拍（小红书）',url:''},
    {src:'assets/gallery2/saty_village/saty_village_04.webp',cap:'Saty 村风貌（小红书）',url:''}],
   nights:'D3',status:'leaning',note:'随两湖团订，无需自行下单；自备洗漱拖鞋'},
+
  {id:'h7',city:'saty',name:'Saty 村独立 Guesthouse（备选）',en:'',area:'Saty 村/Kolsai 路口',tier:'民宿',
   refPrice:260,rating:0,xhsCnt:'',tags:'自订,需俄/英沟通,通常含早',colleague:'',xhs:'',pros:'团民宿满员时的备份',cons:'多数只能 WhatsApp/邮件订，平台上很少',
   imgs:[],nights:'D3',status:'candidate',note:'待小红书搜 Kolsai guesthouse 补 2-3 家'},
+
  {id:'h8',city:'aktau',name:'Caspian Riviera Grand Palace',en:'Caspian Riviera Grand Palace',area:'第一海岸线',tier:'高端',
-  refPrice:680,rating:4.6,xhsCnt:'',tags:'海景房,步行海边,泳池',
+  refPrice:774,rating:4.5,xhsCnt:'',tags:'海景房,步行海边,泳池',
   colleague:'阿克套住第一海岸线，吃饭看海都方便；别住城外20km的Rixos，赶曼吉斯套团绕路',
   xhs:'',pros:'海景评分高、位置正中、适合落地放松',cons:'旺季海景房紧俏需早订',
-  imgs:[],nights:'D5-D6',status:'leaning',note:''},
+  imgs:[
+   {src:'assets/hotels/h8.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261008;drs-40;rc-1-2&dealId=-5959164114925356202'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'leaning',note:'MCP核验09-01：Booking.com ¥774/晚；平台评分 8.9（3,188条）'},
+
  {id:'h9',city:'aktau',name:'Holiday Inn Aktau',en:'Holiday Inn Aktau',area:'市区/近海岸线',tier:'中端',
   refPrice:560,rating:4.4,xhsCnt:'',tags:'国际连锁,含早,稳定',colleague:'',xhs:'',pros:'标准化兜底',cons:'海景一般',
-  imgs:[],nights:'D5-D6',status:'candidate',note:''},
+  imgs:[],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01： ¥None/晚；平台暂无评分/报价，待人工核'},
+
  {id:'h10',city:'aktau',name:'Renaissance Aktau by Sulo',en:'Renaissance Aktau',area:'海岸片区',tier:'高端',
-  refPrice:720,rating:4.6,xhsCnt:'',tags:'设计感,海景酒廊',colleague:'',xhs:'',pros:'颜值高、适合小酌',cons:'价格波动大',
-  imgs:[],nights:'D5-D6',status:'candidate',note:''},
+  refPrice:592,rating:4.5,xhsCnt:'',tags:'设计感,海景酒廊',colleague:'',xhs:'',pros:'颜值高、适合小酌',cons:'价格波动大',
+  imgs:[
+   {src:'assets/hotels/h10.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-renaissance-by-sulo-aqtau?cip=234716015&currencyCode=CNY&search=100-1298740;dr-20261006-20261008;drs-40;rc-1-2&dealId=-6368786513358424666'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥592/晚；平台评分 8.9（2,194条）'},
+
  {id:'h11',city:'aktau',name:'Tarlan Hotel',en:'Tarlan',area:'市区',tier:'经济',
-  refPrice:320,rating:4.1,xhsCnt:'',tags:'经济,干净',colleague:'',xhs:'',pros:'省钱',cons:'设施基础、离海边略远',
-  imgs:[],nights:'D5-D6',status:'candidate',note:''},
+  refPrice:237,rating:4.1,xhsCnt:'',tags:'经济,干净',colleague:'',xhs:'',pros:'省钱',cons:'设施基础、离海边略远',
+  imgs:[
+   {src:'assets/hotels/h11.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/tarlan-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-33635146;dr-20261006-20261008;drs-40;rc-1-2&dealId=4178391075869337390'},],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'MCP核验09-01：Booking.com ¥237/晚；平台暂无评分/报价，待人工核'},
+
  {id:'h12',city:'aktau',name:'Rixos Water World Aktau（避坑记录）',en:'Rixos Aktau',area:'城外约 20km 度假区',tier:'高端',
-  refPrice:900,rating:4.5,xhsCnt:'',tags:'度假村,全包',colleague:'不选：离城20km，曼吉斯套团早集合绕路，吃住被锁在度假区',
+  refPrice:1910,rating:4.6,xhsCnt:'',tags:'度假村,全包',colleague:'不选：离城20km，曼吉斯套团早集合绕路，吃住被锁在度假区',
   xhs:'',pros:'度假设施全',cons:'位置硬伤，与本行程节奏冲突',
-  imgs:[],nights:'不适用',status:'out',note:'保留记录防止误订'}
-];
+  imgs:[
+   {src:'assets/hotels/h12.jpg',cap:'MCP 聚合平台图（来源 Booking.com，2026-09-01）',url:'https://www.trivago.hk/en-US/lm/hotel-rixos-water-world-aktau-aqtau?cip=234716015&currencyCode=CNY&search=100-22233910;dr-20261006-20261008;drs-40;rc-1-2&dealId=133691888806043992'},],nights:'不适用',mcpDate:'2026-09-01',status:'out',note:'保留记录防止误订；MCP核验09-01：Booking.com ¥1910/晚；平台评分 9.2（4,428条）'},
+
+ {id:'h13',city:'almaty',name:'Hotel Kazakhstan',en:'Hotel Kazakhstan',area:'MCP 扩展候选',tier:'中端',refPrice:760,rating:4.2,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 10039 条，评分 8.5\n设施：大厅无线网络, 客房无线网络, 空调, 餐厅, 酒吧',cons:'',imgs:[{src:'assets/hotels/h13.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-kazakhstan-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942573;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=700471358354587183'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [772, 749]'},
+
+ {id:'h14',city:'almaty',name:'Ramada by Wyndham Almaty',en:'Ramada by Wyndham Almaty',area:'MCP 扩展候选',tier:'中端',refPrice:950,rating:4.0,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 4091 条，评分 8.1\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h14.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-ramada-by-wyndham-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3798860;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1342841161291043444'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [950, 950]'},
+
+ {id:'h15',city:'almaty',name:'Grand Tien Shan Hotel',en:'Grand Tien Shan Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:1018,rating:4.3,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 3802 条，评分 8.6\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h15.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-tien-shan-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996325;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2026397260468152589'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1012, 1023]'},
+
+ {id:'h16',city:'almaty',name:'Hotel Uyut Almaty',en:'Hotel Uyut Almaty',area:'MCP 扩展候选',tier:'中端',refPrice:754,rating:4.4,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 3545 条，评分 8.8\n设施：大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h16.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-uyut-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996333;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-8272898606421759528'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [754]'},
+
+ {id:'h17',city:'almaty',name:'Novotel Almaty City Center',en:'Novotel Almaty City Center',area:'MCP 扩展候选',tier:'中端',refPrice:1574,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 2956 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h17.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-novotel-almaty-city-center-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-11505988;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1437862033047226335'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1655, 1494]'},
+
+ {id:'h18',city:'almaty',name:'ibis Almaty Jetisu',en:'ibis Almaty Jetisu',area:'MCP 扩展候选',tier:'中端',refPrice:1036,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 2660 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 健身房',cons:'',imgs:[{src:'assets/hotels/h18.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-ibis-almaty-jetisu-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-26962624;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2893242295437410929'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [1026, 1046]'},
+
+ {id:'h19',city:'almaty',name:'The Dostyk Hotel',en:'The Dostyk Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:592,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 1544 条，评分 9.0\n设施：大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房',cons:'',imgs:[{src:'assets/hotels/h19.jpg',cap:'MCP 聚合平台图（Booking.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-the-dostyk-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-321381;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=480212569959363202'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [592]'},
+
+ {id:'h20',city:'almaty',name:'Grand Voyage Hotel',en:'Grand Voyage Hotel',area:'MCP 扩展候选',tier:'中端',refPrice:686,rating:4.5,xhsCnt:'',tags:'MCP新增,待实地评估',colleague:'',xhs:'',pros:'平台评论 1064 条，评分 8.9\n设施：大厅无线网络, 客房无线网络, 停车场, 空调',cons:'',imgs:[{src:'assets/hotels/h20.jpg',cap:'MCP 聚合平台图（Trip.com）',url:'https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-voyage-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3982590;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2255118809269874847'}],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'MCP 扩展候选，两晚均价 [740, 633]'},
+
+ {id:'ab1',city:'almaty',name:'Airbnb · Apartment on Arbat 21',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:263,rating:5.0,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 1 bed, 1 bath',colleague:'',xhs:'',pros:'5.0 out of 5 average rating,  14 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥263 CNY for 1 night，14条评论'},
+
+ {id:'ab2',city:'almaty',name:'Airbnb · Sunlit Designer Apartment near Botanical Garden',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:388,rating:5.0,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 2 beds, 1 bath',colleague:'',xhs:'',pros:'5.0 out of 5 average rating,  25 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥388 CNY for 1 night，25条评论'},
+
+ {id:'ab3',city:'almaty',name:'Airbnb · Apartment near Mega Park',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:317,rating:4.97,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 1 double bed, 1 bath',colleague:'',xhs:'',pros:'4.97 out of 5 average rating,  33 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥317 CNY for 1 night，33条评论'},
+
+ {id:'ab4',city:'almaty',name:'Airbnb · Luxe Corner at Meridian 154',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:404,rating:4.97,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 2 beds, 1 bath',colleague:'',xhs:'',pros:'4.97 out of 5 average rating,  32 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D1-D2,D4,D7',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥404 CNY for 1 night，32条评论'},
+
+ {id:'ab5',city:'aktau',name:'Airbnb · Seaside apartment',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:229,rating:5.0,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 2 beds, 1 bath',colleague:'',xhs:'',pros:'5.0 out of 5 average rating,  14 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥458 CNY for 2 nights，14条评论'},
+
+ {id:'ab6',city:'aktau',name:'Airbnb · Cozy studio in Premium Plaza residential complex',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:350,rating:5.0,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 2 beds, 1 bath',colleague:'',xhs:'',pros:'5.0 out of 5 average rating,  5 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥700 CNY for 2 nights，5条评论'},
+
+ {id:'ab7',city:'aktau',name:'Airbnb · The best location!',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:282,rating:4.96,xhsCnt:'',tags:'Airbnb,Guest favorite,1 sofa bed, Half-bath',colleague:'',xhs:'',pros:'4.96 out of 5 average rating,  75 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥565 CNY for 2 nights，75条评论'},
+
+ {id:'ab8',city:'aktau',name:'Airbnb · Clean and cozy apartment',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:155,rating:4.92,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 1 bed, 1 bath',colleague:'',xhs:'',pros:'4.92 out of 5 average rating,  13 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D5-D6',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥310 CNY for 2 nights，13条评论'},
+
+ {id:'ab9',city:'saty',name:'Airbnb · Mountain View - Kolsay',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:982,rating:5.0,xhsCnt:'',tags:'Airbnb,Guest favorite,1 bedroom, 1 bed, 1 bath',colleague:'',xhs:'',pros:'5.0 out of 5 average rating,  7 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D3',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥982 CNY for 1 night，7条评论'},
+
+ {id:'ab10',city:'saty',name:'Airbnb · Glamping Kolsay',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:875,rating:4.86,xhsCnt:'',tags:'Airbnb,,1 bedroom, 2 double beds, 1 bath',colleague:'',xhs:'',pros:'4.86 out of 5 average rating,  7 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D3',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥875 CNY for 1 night，7条评论'},
+
+ {id:'ab11',city:'saty',name:'Airbnb · "Bereke" - Kaindy lake wooden cabin',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:532,rating:4.61,xhsCnt:'',tags:'Airbnb,,1 bedroom, 2 beds, 1.5 baths',colleague:'',xhs:'',pros:'4.61 out of 5 average rating,  62 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D3',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥532 CNY for 1 night，62条评论'},
+
+ {id:'ab12',city:'saty',name:'Airbnb · Kolsai A-Frame AI-ADIL',en:'',area:'Airbnb 高分民宿',tier:'民宿',refPrice:697,rating:4.49,xhsCnt:'',tags:'Airbnb,Superhost,1 bedroom, 3 beds, 1 bath',colleague:'',xhs:'',pros:'4.49 out of 5 average rating,  39 reviews',cons:'民宿无前台，入住需线上沟通；下单前看退订政策',imgs:[],nights:'D3',mcpDate:'2026-09-01',status:'candidate',note:'Airbnb 总价 ¥697 CNY for 1 night，39条评论'}];
 /* 平台报价单独结构，可持续填：{酒店id:{trip:{price,date,url},airbnb:{...},booking:{...}}} */
 const SEED_QUOTES={};
-SEED.forEach(h=>{SEED_QUOTES[h.id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''}}});
+SEED.forEach(h=>{SEED_QUOTES[h.id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''},agoda:{price:null,date:'',url:''}}});
+const MCP_QUOTES={
+ "h1": {
+  "trip": {
+   "price": 816,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/renion-city-hotel-almaty?cip=234716015&currencyCode=CNY&search=100-41560720;dr-20261008-20261009;drs-40;rc-1-2&dealId=-4813849933181043728"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h2": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": 676,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-kazzhol-almaty?cip=234716015&currencyCode=CNY&search=100-944705;dr-20261002-20261003;drs-40;rc-1-2&dealId=-3323586906593245264"
+  }
+ },
+ "h3": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 965,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-holiday-inn-almaty-by-ihg?cip=234716015&currencyCode=CNY&search=100-996349;dr-20261008-20261009;drs-40;rc-1-2&dealId=6500194389139946080"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h4": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 5472,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-the-ritz-carlton-almaty?cip=234716015&currencyCode=CNY&search=100-2866652;dr-20261008-20261009;drs-40;rc-1-2&dealId=-8270048675696769389"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h5": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 204,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/hostel-interhouse-almaty?cip=234716015&currencyCode=CNY&search=100-6819744;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1958311992724986226"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h8": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 774,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261008;drs-40;rc-1-2&dealId=-5959164114925356202"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h9": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h10": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 592,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-renaissance-by-sulo-aqtau?cip=234716015&currencyCode=CNY&search=100-1298740;dr-20261006-20261008;drs-40;rc-1-2&dealId=-6368786513358424666"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h11": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 237,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/tarlan-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-33635146;dr-20261006-20261008;drs-40;rc-1-2&dealId=4178391075869337390"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h12": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 1910,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-rixos-water-world-aktau-aqtau?cip=234716015&currencyCode=CNY&search=100-22233910;dr-20261006-20261008;drs-40;rc-1-2&dealId=133691888806043992"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h13": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 760,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-kazakhstan-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942573;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=700471358354587183"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h14": {
+  "trip": {
+   "price": 950,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-ramada-by-wyndham-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3798860;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1342841161291043444"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h15": {
+  "trip": {
+   "price": 1018,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-tien-shan-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996325;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2026397260468152589"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h16": {
+  "trip": {
+   "price": 754,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-uyut-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996333;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-8272898606421759528"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h17": {
+  "trip": {
+   "price": 1574,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-novotel-almaty-city-center-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-11505988;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1437862033047226335"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h18": {
+  "trip": {
+   "price": 1036,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-ibis-almaty-jetisu-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-26962624;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2893242295437410929"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h19": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": 592,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-the-dostyk-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-321381;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=480212569959363202"
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "h20": {
+  "trip": {
+   "price": 686,
+   "date": "2026-09-01",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-voyage-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3982590;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2255118809269874847"
+  },
+  "airbnb": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab1": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 263,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1618776479164656303"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab2": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 388,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1578809497368492360"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab3": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 317,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1639702023094120255"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab4": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 404,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1427505025732392926"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab5": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 229,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1144822307990599011"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab6": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 350,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1447143235826495335"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab7": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 282,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/968116450887302250"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab8": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 155,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/936829216192675691"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab9": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 982,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1557901567705628702"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab10": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 875,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1728330146226167325"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab11": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 532,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/698827249187788906"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ },
+ "ab12": {
+  "trip": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "airbnb": {
+   "price": 697,
+   "date": "2026-09-01",
+   "url": "https://www.airbnb.com/rooms/1425913448193116832"
+  },
+  "booking": {
+   "price": null,
+   "date": "",
+   "url": ""
+  },
+  "agoda": {
+   "price": null,
+   "date": "",
+   "url": ""
+  }
+ }
+};
+Object.assign(SEED_QUOTES,Object.fromEntries(Object.entries(MCP_QUOTES).map(([k,v])=>[k,Object.assign(SEED_QUOTES[k],v)])));
 
 /* ================= 状态 ================= */
 let data=load(),quotes=data.quotes||structuredClone(SEED_QUOTES);let hotels=data.hotels?structuredClone(data.hotels):structuredClone(SEED);
@@ -294,7 +1017,7 @@ function renderCards(){
       </div>
       <div class="imgs">${imgs}<div class="add-img" data-addimg="${h.id}">＋ 采集图<br>路径/URL</div></div>
       <div class="quote">${qrows}
-        <div class="qrow"><span class="pf">攻略参考</span><span>${h.refPrice?`约 ¥${h.refPrice}/晚（区间估值，待平台核验）`:'<span class="q-missing">团费含/待查</span>'}</span><span class="qd">口碑 ${h.rating?h.rating+' 分':'—'}</span></div>
+        <div class="qrow"><span class="pf">攻略参考</span><span>${h.refPrice?`¥${h.refPrice}/晚（MCP 实时核验 ${h.mcpDate||''}）`:'<span class="q-missing">团费含/待查</span>'}</span><span class="qd">口碑 ${h.rating?h.rating+' 分':'—'}</span></div>
       </div>
       <div class="hc-body">
         <div class="field tag-edit"><b>标签（逗号分隔：位置/早餐/寄存/接机/隔音…）</b><textarea rows="1" data-f="tags">${esc(h.tags||'')}</textarea></div>
@@ -357,7 +1080,7 @@ document.getElementById('lbClose').addEventListener('click',()=>document.getElem
 document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')e.currentTarget.classList.remove('show')});
 document.getElementById('addBtn').addEventListener('click',()=>{
   const id='h'+Date.now();hotels.unshift({id,city:cityFilter==='all'?'almaty':cityFilter,name:'新候选（点我改名）',en:'',area:'',tier:'中端',refPrice:0,rating:0,xhsCnt:'',tags:'',colleague:'',xhs:'',pros:'',cons:'',imgs:[],nights:'',status:'candidate',note:''});
-  quotes[id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''}};renderAll();
+  quotes[id]={trip:{price:null,date:'',url:''},airbnb:{price:null,date:'',url:''},booking:{price:null,date:'',url:''},agoda:{price:null,date:'',url:''}};renderAll();
 });
 document.getElementById('exportBtn').addEventListener('click',()=>{
   const blob=new Blob([JSON.stringify({hotels,quotes,exported:new Date().toISOString()},null,2)],{type:'application/json'});

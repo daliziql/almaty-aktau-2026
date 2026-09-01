@@ -1,0 +1,947 @@
+{
+ "raw": {
+  "searchUrl": "https://www.airbnb.com/s/Almaty--Kazakhstan/homes?ne_lat=47.8699772&ne_lng=82.5785971&sw_lat=41.0789775&sw_lng=71.9506989&checkin=2026-10-02&checkout=2026-10-03&adults=2&children=0&infants=0&pets=0",
+  "searchResults": [
+   {
+    "id": "1696486878497553594",
+    "url": "https://www.airbnb.com/rooms/1696486878497553594",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTY5NjQ4Njg3ODQ5NzU1MzU5NA==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Urban hideaway 8"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 43.2712,
+       "longitude": 76.9624
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "2 single beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  15 reviews",
+    "listingParamOverrides": {
+     "categoryTag": "Tag:8678",
+     "photoId": "2654964255",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥229 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥228.67 CNY: ¥228.67 CNY"
+     }
+    }
+   },
+   {
+    "id": "1557901567705628702",
+    "url": "https://www.airbnb.com/rooms/1557901567705628702",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTU1NzkwMTU2NzcwNTYyODcwMg==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Mountain View - Kolsay"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 43.0096,
+       "longitude": 78.3391
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 1 bed, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  7 reviews",
+    "listingParamOverrides": {
+     "photoId": "2411823185",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥982 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥981.95 CNY: ¥981.95 CNY"
+     }
+    }
+   },
+   {
+    "id": "1546115629317631862",
+    "url": "https://www.airbnb.com/rooms/1546115629317631862",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTU0NjExNTYyOTMxNzYzMTg2Mg==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Authentic Kazakh Yurt"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 44.156230336476995,
+       "longitude": 78.74982068621819
+      }
+     }
+    },
+    "badges": "Superhost",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  4 reviews",
+    "listingParamOverrides": {
+     "photoId": "2698080197",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥512 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥511.62 CNY: ¥511.62 CNY"
+     }
+    }
+   },
+   {
+    "id": "1465042354470538801",
+    "url": "https://www.airbnb.com/rooms/1465042354470538801",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQ2NTA0MjM1NDQ3MDUzODgwMQ==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "East guest house"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.76904276089328,
+       "longitude": 76.15837848922449
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 1 double bed, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  11 reviews",
+    "listingParamOverrides": {
+     "photoId": "2253018972",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥229 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥228.67 CNY: ¥228.67 CNY"
+     }
+    }
+   },
+   {
+    "id": "1203947631055386803",
+    "url": "https://www.airbnb.com/rooms/1203947631055386803",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTIwMzk0NzYzMTA1NTM4NjgwMw==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Cozy corner.  An apartment in the center of Karakol."
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.4925,
+       "longitude": 78.4006
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 2 beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "4.98 out of 5 average rating,  65 reviews",
+    "listingParamOverrides": {
+     "photoId": "1975138117",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥310 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥309.38 CNY: ¥309.38 CNY"
+     }
+    }
+   },
+   {
+    "id": "1084843458159700303",
+    "url": "https://www.airbnb.com/rooms/1084843458159700303",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTA4NDg0MzQ1ODE1OTcwMDMwMw==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Remote. Forgotten Rivers - Double bed #2"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.13617,
+       "longitude": 76.83353
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 queen bed, 1.5 baths",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  8 reviews",
+    "listingParamOverrides": {
+     "categoryTag": "Tag:8678",
+     "photoId": "1835415574",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥1,083 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥1,082.84 CNY: ¥1,082.84 CNY"
+     }
+    }
+   },
+   {
+    "id": "46623246",
+    "url": "https://www.airbnb.com/rooms/46623246",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6NDY2MjMyNDY=",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Юрта (Yurt) Qyran"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 43.3751,
+       "longitude": 77.5471
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "No bathroom",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "4.69 out of 5 average rating,  64 reviews",
+    "listingParamOverrides": {
+     "photoId": "1901506116",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥782 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥781.53 CNY: ¥781.53 CNY"
+     }
+    }
+   },
+   {
+    "id": "1735529968204568773",
+    "url": "https://www.airbnb.com/rooms/1735529968204568773",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTczNTUyOTk2ODIwNDU2ODc3Mw==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Korumdu Garden Cottage"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.6782,
+       "longitude": 77.3286
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 2 beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  3 reviews",
+    "listingParamOverrides": {
+     "photoId": "2738115478",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥303 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥302.66 CNY: ¥302.66 CNY"
+     }
+    }
+   },
+   {
+    "id": "1715682994774623221",
+    "url": "https://www.airbnb.com/rooms/1715682994774623221",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcxNTY4Mjk5NDc3NDYyMzIyMQ==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Quiet place"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.8372,
+       "longitude": 74.5605
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 double bed, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  17 reviews",
+    "listingParamOverrides": {
+     "categoryTag": "Tag:8678",
+     "photoId": "2695995164",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥180 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥179.57 CNY: ¥179.57 CNY"
+     }
+    }
+   },
+   {
+    "id": "796292604053091704",
+    "url": "https://www.airbnb.com/rooms/796292604053091704",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6Nzk2MjkyNjA0MDUzMDkxNzA0",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "KyzArt Hotel"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 41.9942,
+       "longitude": 74.9688
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "5 bedrooms, 10 beds, 10 baths",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  18 reviews",
+    "listingParamOverrides": {
+     "photoId": "1719501726",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥465 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥464.07 CNY: ¥464.07 CNY"
+     }
+    }
+   },
+   {
+    "id": "19644059",
+    "url": "https://www.airbnb.com/rooms/19644059",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTk2NDQwNTk=",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "A 2-bed cabin"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 43.87156,
+       "longitude": 77.08586
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 1 double bed, 1 bath",
+     "secondaryLine": ""
+    },
+    "listingParamOverrides": {
+     "photoId": "2586765502",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥504 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥503.89 CNY: ¥503.89 CNY"
+     }
+    }
+   },
+   {
+    "id": "1740048068088380457",
+    "url": "https://www.airbnb.com/rooms/1740048068088380457",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTc0MDA0ODA2ODA4ODM4MDQ1Nw==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Barnhouse & Spa"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 41.4377,
+       "longitude": 76.2076
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "6 bedrooms, 4 beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  5 reviews",
+    "listingParamOverrides": {
+     "photoId": "2747896906",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥337 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥336.29 CNY: ¥336.29 CNY"
+     }
+    }
+   },
+   {
+    "id": "1734744897639179425",
+    "url": "https://www.airbnb.com/rooms/1734744897639179425",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTczNDc0NDg5NzYzOTE3OTQyNQ==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Guest House of Issyk-Kul Camp"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.5949,
+       "longitude": 76.806
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 queen bed, 2 baths",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  3 reviews",
+    "listingParamOverrides": {
+     "categoryTag": "Tag:8678",
+     "photoId": "2736364900",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥297 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥296.60 CNY: ¥296.60 CNY"
+     }
+    }
+   },
+   {
+    "id": "1709273279858912523",
+    "url": "https://www.airbnb.com/rooms/1709273279858912523",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcwOTI3MzI3OTg1ODkxMjUyMw==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Tosor Hills under the beach"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.1773,
+       "longitude": 77.4355
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bed, 1 bath",
+     "secondaryLine": ""
+    },
+    "listingParamOverrides": {
+     "categoryTag": "Tag:8678",
+     "photoId": "2682504018",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥551 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥550.36 CNY: ¥550.36 CNY"
+     }
+    }
+   },
+   {
+    "id": "1402950146634063513",
+    "url": "https://www.airbnb.com/rooms/1402950146634063513",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQwMjk1MDE0NjYzNDA2MzUxMw==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Apartment with two sleeping areas! Lake Balkhash!"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 46.8344,
+       "longitude": 74.9728
+      }
+     }
+    },
+    "badges": "Guest favorite",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 2 beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "5.0 out of 5 average rating,  9 reviews",
+    "listingParamOverrides": {
+     "photoId": "2269820624",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥224 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥223.09 CNY: ¥223.09 CNY"
+     }
+    }
+   },
+   {
+    "id": "1762056059705689846",
+    "url": "https://www.airbnb.com/rooms/1762056059705689846",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTc2MjA1NjA1OTcwNTY4OTg0Ng==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Kolhaus"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.74,
+       "longitude": 77.8268
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 2 beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "avgRatingA11yLabel": "New place to stay",
+    "listingParamOverrides": {
+     "photoId": "2793547551",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥851 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥850.13 CNY: ¥850.13 CNY"
+     }
+    }
+   },
+   {
+    "id": "1707678371261658569",
+    "url": "https://www.airbnb.com/rooms/1707678371261658569",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcwNzY3ODM3MTI2MTY1ODU2OQ==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "GlamPark by the lake "
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 42.9621,
+       "longitude": 79.0518
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 2 beds, 1 bath",
+     "secondaryLine": ""
+    },
+    "listingParamOverrides": {
+     "photoId": "2682661396",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥597 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥596.91 CNY: ¥596.91 CNY"
+     }
+    }
+   },
+   {
+    "id": "1243967785704284038",
+    "url": "https://www.airbnb.com/rooms/1243967785704284038",
+    "demandStayListing": {
+     "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTI0Mzk2Nzc4NTcwNDI4NDAzOA==",
+     "description": {
+      "name": {
+       "localizedStringWithTranslationPreference": "Double glamping"
+      }
+     },
+     "location": {
+      "coordinate": {
+       "latitude": 43.62202592925199,
+       "longitude": 78.30799715247194
+      }
+     }
+    },
+    "badges": "",
+    "structuredContent": {
+     "mapSecondaryLine": "",
+     "primaryLine": "1 bedroom, 1 bed, 1 bath",
+     "secondaryLine": ""
+    },
+    "listingParamOverrides": {
+     "photoId": "1992229203",
+     "relaxedAmenityIds": "",
+     "splitStaysLocationPrecisions": "",
+     "splitStaysLocationsAcpIds": ""
+    },
+    "structuredDisplayPrice": {
+     "primaryLine": {
+      "accessibilityLabel": "¥776 CNY for 1 night"
+     },
+     "explanationData": {
+      "title": "Price details",
+      "priceDetails": "1 night x ¥775.21 CNY: ¥775.21 CNY"
+     }
+    }
+   }
+  ],
+  "paginationInfo": {
+   "pageCursors": [
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjowLCJ2ZXJzaW9uIjoxfQ==",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0=",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjozNiwidmVyc2lvbiI6MX0=",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo1NCwidmVyc2lvbiI6MX0=",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo3MiwidmVyc2lvbiI6MX0=",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo5MCwidmVyc2lvbiI6MX0=",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMDgsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMjYsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNDQsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNjIsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxODAsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOTgsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyMTYsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyMzQsInZlcnNpb24iOjF9",
+    "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyNTIsInZlcnNpb24iOjF9"
+   ]
+  }
+ },
+ "brief": [
+  {
+   "id": "1696486878497553594",
+   "name": "Urban hideaway 8",
+   "beds": "2 single beds, 1 bath",
+   "rating": "5.0 out of 5 average rating,  15 reviews",
+   "badges": "Guest favorite",
+   "price": "¥229 CNY for 1 night",
+   "lat": 43.2712,
+   "lng": 76.9624,
+   "url": "https://www.airbnb.com/rooms/1696486878497553594"
+  },
+  {
+   "id": "1557901567705628702",
+   "name": "Mountain View - Kolsay",
+   "beds": "1 bedroom, 1 bed, 1 bath",
+   "rating": "5.0 out of 5 average rating,  7 reviews",
+   "badges": "Guest favorite",
+   "price": "¥982 CNY for 1 night",
+   "lat": 43.0096,
+   "lng": 78.3391,
+   "url": "https://www.airbnb.com/rooms/1557901567705628702"
+  },
+  {
+   "id": "1546115629317631862",
+   "name": "Authentic Kazakh Yurt",
+   "beds": "1 bedroom, 1 bath",
+   "rating": "5.0 out of 5 average rating,  4 reviews",
+   "badges": "Superhost",
+   "price": "¥512 CNY for 1 night",
+   "lat": 44.156230336476995,
+   "lng": 78.74982068621819,
+   "url": "https://www.airbnb.com/rooms/1546115629317631862"
+  },
+  {
+   "id": "1465042354470538801",
+   "name": "East guest house",
+   "beds": "1 bedroom, 1 double bed, 1 bath",
+   "rating": "5.0 out of 5 average rating,  11 reviews",
+   "badges": "Guest favorite",
+   "price": "¥229 CNY for 1 night",
+   "lat": 42.76904276089328,
+   "lng": 76.15837848922449,
+   "url": "https://www.airbnb.com/rooms/1465042354470538801"
+  },
+  {
+   "id": "1203947631055386803",
+   "name": "Cozy corner.  An apartment in the center of Karakol.",
+   "beds": "1 bedroom, 2 beds, 1 bath",
+   "rating": "4.98 out of 5 average rating,  65 reviews",
+   "badges": "Guest favorite",
+   "price": "¥310 CNY for 1 night",
+   "lat": 42.4925,
+   "lng": 78.4006,
+   "url": "https://www.airbnb.com/rooms/1203947631055386803"
+  },
+  {
+   "id": "1084843458159700303",
+   "name": "Remote. Forgotten Rivers - Double bed #2",
+   "beds": "1 queen bed, 1.5 baths",
+   "rating": "5.0 out of 5 average rating,  8 reviews",
+   "badges": "Guest favorite",
+   "price": "¥1,083 CNY for 1 night",
+   "lat": 42.13617,
+   "lng": 76.83353,
+   "url": "https://www.airbnb.com/rooms/1084843458159700303"
+  },
+  {
+   "id": "46623246",
+   "name": "Юрта (Yurt) Qyran",
+   "beds": "No bathroom",
+   "rating": "4.69 out of 5 average rating,  64 reviews",
+   "badges": "",
+   "price": "¥782 CNY for 1 night",
+   "lat": 43.3751,
+   "lng": 77.5471,
+   "url": "https://www.airbnb.com/rooms/46623246"
+  },
+  {
+   "id": "1735529968204568773",
+   "name": "Korumdu Garden Cottage",
+   "beds": "1 bedroom, 2 beds, 1 bath",
+   "rating": "5.0 out of 5 average rating,  3 reviews",
+   "badges": "",
+   "price": "¥303 CNY for 1 night",
+   "lat": 42.6782,
+   "lng": 77.3286,
+   "url": "https://www.airbnb.com/rooms/1735529968204568773"
+  },
+  {
+   "id": "1715682994774623221",
+   "name": "Quiet place",
+   "beds": "1 double bed, 1 bath",
+   "rating": "5.0 out of 5 average rating,  17 reviews",
+   "badges": "Guest favorite",
+   "price": "¥180 CNY for 1 night",
+   "lat": 42.8372,
+   "lng": 74.5605,
+   "url": "https://www.airbnb.com/rooms/1715682994774623221"
+  },
+  {
+   "id": "796292604053091704",
+   "name": "KyzArt Hotel",
+   "beds": "5 bedrooms, 10 beds, 10 baths",
+   "rating": "5.0 out of 5 average rating,  18 reviews",
+   "badges": "Guest favorite",
+   "price": "¥465 CNY for 1 night",
+   "lat": 41.9942,
+   "lng": 74.9688,
+   "url": "https://www.airbnb.com/rooms/796292604053091704"
+  },
+  {
+   "id": "19644059",
+   "name": "A 2-bed cabin",
+   "beds": "1 bedroom, 1 double bed, 1 bath",
+   "rating": null,
+   "badges": "",
+   "price": "¥504 CNY for 1 night",
+   "lat": 43.87156,
+   "lng": 77.08586,
+   "url": "https://www.airbnb.com/rooms/19644059"
+  },
+  {
+   "id": "1740048068088380457",
+   "name": "Barnhouse & Spa",
+   "beds": "6 bedrooms, 4 beds, 1 bath",
+   "rating": "5.0 out of 5 average rating,  5 reviews",
+   "badges": "",
+   "price": "¥337 CNY for 1 night",
+   "lat": 41.4377,
+   "lng": 76.2076,
+   "url": "https://www.airbnb.com/rooms/1740048068088380457"
+  },
+  {
+   "id": "1734744897639179425",
+   "name": "Guest House of Issyk-Kul Camp",
+   "beds": "1 queen bed, 2 baths",
+   "rating": "5.0 out of 5 average rating,  3 reviews",
+   "badges": "",
+   "price": "¥297 CNY for 1 night",
+   "lat": 42.5949,
+   "lng": 76.806,
+   "url": "https://www.airbnb.com/rooms/1734744897639179425"
+  },
+  {
+   "id": "1709273279858912523",
+   "name": "Tosor Hills under the beach",
+   "beds": "1 bed, 1 bath",
+   "rating": null,
+   "badges": "",
+   "price": "¥551 CNY for 1 night",
+   "lat": 42.1773,
+   "lng": 77.4355,
+   "url": "https://www.airbnb.com/rooms/1709273279858912523"
+  },
+  {
+   "id": "1402950146634063513",
+   "name": "Apartment with two sleeping areas! Lake Balkhash!",
+   "beds": "1 bedroom, 2 beds, 1 bath",
+   "rating": "5.0 out of 5 average rating,  9 reviews",
+   "badges": "Guest favorite",
+   "price": "¥224 CNY for 1 night",
+   "lat": 46.8344,
+   "lng": 74.9728,
+   "url": "https://www.airbnb.com/rooms/1402950146634063513"
+  },
+  {
+   "id": "1762056059705689846",
+   "name": "Kolhaus",
+   "beds": "1 bedroom, 2 beds, 1 bath",
+   "rating": "New place to stay",
+   "badges": "",
+   "price": "¥851 CNY for 1 night",
+   "lat": 42.74,
+   "lng": 77.8268,
+   "url": "https://www.airbnb.com/rooms/1762056059705689846"
+  },
+  {
+   "id": "1707678371261658569",
+   "name": "GlamPark by the lake ",
+   "beds": "1 bedroom, 2 beds, 1 bath",
+   "rating": null,
+   "badges": "",
+   "price": "¥597 CNY for 1 night",
+   "lat": 42.9621,
+   "lng": 79.0518,
+   "url": "https://www.airbnb.com/rooms/1707678371261658569"
+  },
+  {
+   "id": "1243967785704284038",
+   "name": "Double glamping",
+   "beds": "1 bedroom, 1 bed, 1 bath",
+   "rating": null,
+   "badges": "",
+   "price": "¥776 CNY for 1 night",
+   "lat": 43.62202592925199,
+   "lng": 78.30799715247194,
+   "url": "https://www.airbnb.com/rooms/1243967785704284038"
+  }
+ ]
+}

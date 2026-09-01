@@ -1,0 +1,1317 @@
+{
+ "collected": "2026-09-01",
+ "currency": "CNY",
+ "note": "Trivago 官方 MCP 实时聚合报价（含 Booking/Agoda/Trip.com）；Airbnb 社区 MCP 匿名检索，已按坐标过滤城市圈",
+ "seed_quotes": {
+  "h1": {
+   "name": "Renion City Hotel",
+   "price_cny": 816,
+   "price_stay": "¥816",
+   "alt_quotes": [
+    {
+     "date": "2026-10-08~2026-10-09",
+     "price_cny": 816,
+     "advertiser": "Trip.com"
+    }
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.8",
+   "reviews": "241",
+   "amenities": "WiFi in lobby, WiFi in rooms, Pool, Parking, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/renion-city-hotel-almaty?cip=234716015&currencyCode=CNY&search=100-41560720;dr-20261008-20261009;drs-40;rc-1-2&dealId=-4813849933181043728",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/07/72/49dc4d54f352e4deeb433a97a58e50442909cff8fb67cf144799897bf582",
+   "lat": 43.261451721191406,
+   "lng": 76.95777130126953,
+   "distance": "Almaty, 3.7 km to City center",
+   "sample_date": "2026-10-08~2026-10-09",
+   "collected": "2026-09-01"
+  },
+  "h2": {
+   "name": "Hotel Kazzhol Almaty",
+   "price_cny": 676,
+   "price_stay": "¥676",
+   "alt_quotes": [
+    {
+     "date": "2026-10-02~2026-10-03",
+     "price_cny": 676,
+     "advertiser": "Agoda"
+    }
+   ],
+   "advertiser": "Agoda",
+   "stars": 4,
+   "review": "8.3",
+   "reviews": "3,067",
+   "amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-kazzhol-almaty?cip=234716015&currencyCode=CNY&search=100-944705;dr-20261002-20261003;drs-40;rc-1-2&dealId=-3323586906593245264",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/47/ff/ab28d7a07ea727f2202191ac269780de1985a8f0fbe1016ef2a99d372dc8",
+   "lat": 43.2601203918457,
+   "lng": 76.93363952636719,
+   "distance": "Almaty, 1.8 km to City center",
+   "sample_date": "2026-10-02~2026-10-03",
+   "collected": "2026-09-01"
+  },
+  "h3": {
+   "name": "Holiday Inn Almaty By Ihg",
+   "price_cny": 965,
+   "price_stay": "¥965",
+   "alt_quotes": [
+    {
+     "date": "2026-10-08~2026-10-09",
+     "price_cny": 965,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 4,
+   "review": "8.2",
+   "reviews": "5,021",
+   "amenities": "WiFi in lobby, WiFi in rooms, Parking, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-holiday-inn-almaty-by-ihg?cip=234716015&currencyCode=CNY&search=100-996349;dr-20261008-20261009;drs-40;rc-1-2&dealId=6500194389139946080",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/1c/4c/0c749dbf18b82f0e40bc347865fbb956d6e7734f47d478f7aa0263bc418c",
+   "lat": 43.233238220214844,
+   "lng": 76.9392318725586,
+   "distance": "Almaty, 3.2 km to City center",
+   "sample_date": "2026-10-08~2026-10-09",
+   "collected": "2026-09-01"
+  },
+  "h4": {
+   "name": "The Ritz-Carlton, Almaty",
+   "price_cny": 5472,
+   "price_stay": "¥5,472",
+   "alt_quotes": [
+    {
+     "date": "2026-10-02~2026-10-03",
+     "price_cny": 4464,
+     "advertiser": "Booking.com"
+    },
+    {
+     "date": "2026-10-08~2026-10-09",
+     "price_cny": 5472,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 5,
+   "review": "9.3",
+   "reviews": "4,247",
+   "amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, Pets, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-the-ritz-carlton-almaty?cip=234716015&currencyCode=CNY&search=100-2866652;dr-20261008-20261009;drs-40;rc-1-2&dealId=-8270048675696769389",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/77/56/6093931ca1ab867c4893662b898ebfbb02e0bddfd54a2d6572cb696f8402",
+   "lat": 43.21908187866211,
+   "lng": 76.92923736572266,
+   "distance": "Almaty, 4.2 km to City center",
+   "sample_date": "2026-10-08~2026-10-09",
+   "collected": "2026-09-01"
+  },
+  "h5": {
+   "name": "Interhouse Almaty",
+   "price_cny": 204,
+   "price_stay": "¥204",
+   "alt_quotes": [
+    {
+     "date": "2026-10-02~2026-10-03",
+     "price_cny": 204,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 3,
+   "review": "8.4",
+   "reviews": "5",
+   "amenities": "WiFi in lobby, WiFi in rooms, Parking, A/C",
+   "url": "https://www.trivago.hk/en-US/lm/hostel-interhouse-almaty?cip=234716015&currencyCode=CNY&search=100-6819744;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1958311992724986226",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/9d/c8/63cb1a50ff40e165b75913cfd1d3df4b3f74c56392202d25e54a6d2da935",
+   "lat": 43.21017074584961,
+   "lng": 76.90921020507812,
+   "distance": "Almaty, 5.0 km to City center",
+   "sample_date": "2026-10-02~2026-10-03",
+   "collected": "2026-09-01"
+  },
+  "h8": {
+   "name": "Caspian Riviera Grand Palace Hotel",
+   "price_cny": 774,
+   "price_stay": "¥1,548",
+   "alt_quotes": [
+    {
+     "date": "2026-10-06~2026-10-08",
+     "price_cny": 774,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 5,
+   "review": "8.9",
+   "reviews": "3,188",
+   "amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/caspian-riviera-grand-palace-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-3963694;dr-20261006-20261008;drs-40;rc-1-2&dealId=-5959164114925356202",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/d6/32/e32d25bb69e2bda2b58716a6cfe30b927af9d91cba1e663fca24913d548e",
+   "lat": 43.63290023803711,
+   "lng": 51.15896987915039,
+   "distance": "Aqtau, 1.4 km to City center",
+   "sample_date": "2026-10-06~2026-10-08",
+   "collected": "2026-09-01"
+  },
+  "h9": {
+   "name": "Holiday Inn Aktau",
+   "price_cny": null,
+   "price_stay": "",
+   "alt_quotes": [],
+   "advertiser": "",
+   "stars": 3,
+   "review": "",
+   "reviews": "0",
+   "amenities": "",
+   "url": "",
+   "image": "",
+   "lat": 43.638389587402344,
+   "lng": 51.16508102416992,
+   "distance": "Aqtau, 1.2 km to City center",
+   "sample_date": "2026-10-06~2026-10-08",
+   "collected": "2026-09-01"
+  },
+  "h10": {
+   "name": "Renaissance by Sulo",
+   "price_cny": 592,
+   "price_stay": "¥1,183",
+   "alt_quotes": [
+    {
+     "date": "2026-10-06~2026-10-08",
+     "price_cny": 592,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 4,
+   "review": "8.9",
+   "reviews": "2,194",
+   "amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-renaissance-by-sulo-aqtau?cip=234716015&currencyCode=CNY&search=100-1298740;dr-20261006-20261008;drs-40;rc-1-2&dealId=-6368786513358424666",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/61/8a/9cbf73c165f3a5caece581055b220dfe713d5f31ef77fcd102849c1449fd",
+   "lat": 43.64542007446289,
+   "lng": 51.151390075683594,
+   "distance": "Aqtau, 2.6 km to City center",
+   "sample_date": "2026-10-06~2026-10-08",
+   "collected": "2026-09-01"
+  },
+  "h11": {
+   "name": "Tarlan Hotel",
+   "price_cny": 237,
+   "price_stay": "¥475",
+   "alt_quotes": [
+    {
+     "date": "2026-10-06~2026-10-08",
+     "price_cny": 237,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 3,
+   "review": "",
+   "reviews": "0",
+   "amenities": "WiFi in lobby, WiFi in rooms, Parking, A/C, Restaurant",
+   "url": "https://www.trivago.hk/en-US/lm/tarlan-hotel-aqtau?cip=234716015&currencyCode=CNY&search=100-33635146;dr-20261006-20261008;drs-40;rc-1-2&dealId=4178391075869337390",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/cf/b9/651d6d50f886eb532021943a90e4ed91add19bf0c4fa539c31e42ce12f3e",
+   "lat": 43.67763137817383,
+   "lng": 51.172271728515625,
+   "distance": "Aqtau, 5.2 km to City center",
+   "sample_date": "2026-10-06~2026-10-08",
+   "collected": "2026-09-01"
+  },
+  "h12": {
+   "name": "Rixos Water World Aktau",
+   "price_cny": 1910,
+   "price_stay": "¥3,821",
+   "alt_quotes": [
+    {
+     "date": "2026-10-06~2026-10-08",
+     "price_cny": 1910,
+     "advertiser": "Booking.com"
+    }
+   ],
+   "advertiser": "Booking.com",
+   "stars": 5,
+   "review": "9.2",
+   "reviews": "4,428",
+   "amenities": "WiFi in lobby, WiFi in rooms, Pool, Spa, Parking, A/C, Restaurant, Hotel bar, Gym",
+   "url": "https://www.trivago.hk/en-US/lm/hotel-rixos-water-world-aktau-aqtau?cip=234716015&currencyCode=CNY&search=100-22233910;dr-20261006-20261008;drs-40;rc-1-2&dealId=133691888806043992",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/4c/1e/6167b7723dbc19aca0a4ed20c675ba4d344cbe77c9e56b11c79bda0124c3",
+   "lat": 43.50661087036133,
+   "lng": 51.297298431396484,
+   "distance": "Aqtau, 16.9 km to City center",
+   "sample_date": "2026-10-06~2026-10-08",
+   "collected": "2026-09-01"
+  }
+ },
+ "trivago_extra_almaty": [
+  {
+   "name": "Hotel Kazakhstan",
+   "price_avg": 760,
+   "prices": [
+    772,
+    749
+   ],
+   "advertiser": "Booking.com",
+   "stars": 4,
+   "review": "8.5",
+   "reviews": 10039,
+   "amenities": "大厅无线网络, 客房无线网络, 空调, 餐厅, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-kazakhstan-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942573;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=700471358354587183",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/61/f9/17ba49e7a0814cb57ba416447f344638d3bd549763d9b7b152a5e6b34dd9",
+   "lat": 43.244930267333984,
+   "lng": 76.95765686035156
+  },
+  {
+   "name": "Renion Park Hotel",
+   "price_avg": 1253,
+   "prices": [
+    1367,
+    1139
+   ],
+   "advertiser": "Booking.com",
+   "stars": 4,
+   "review": "8.7",
+   "reviews": 5142,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-renion-park-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-9012072;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=2409260567765587001",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/a8/da/9daf95bb0ea384417a81637fbe3c52ac1c60c6e50003163c8a19e1424df8",
+   "lat": 43.26142120361328,
+   "lng": 76.9498519897461
+  },
+  {
+   "name": "Rahat Palace Hotel",
+   "price_avg": 1963,
+   "prices": [
+    1963
+   ],
+   "advertiser": "Trip.com",
+   "stars": 5,
+   "review": "8.6",
+   "reviews": 4694,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-rahat-palace-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-164258;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-4472276751715043123",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/05/ee/53275e908e2f3a29f5924dc70e51cb8985b42e81143bc1490aa921cb0cd6",
+   "lat": 43.23719024658203,
+   "lng": 76.91649627685547
+  },
+  {
+   "name": "Ramada by Wyndham Almaty",
+   "price_avg": 950,
+   "prices": [
+    950,
+    950
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.1",
+   "reviews": 4091,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-ramada-by-wyndham-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3798860;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1342841161291043444",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/ba/5b/27111278fc5bd904cc89bc7214a2994602de910a97640e20a34badd37470",
+   "lat": 43.25600814819336,
+   "lng": 76.92407989501953
+  },
+  {
+   "name": "Grand Tien Shan Hotel",
+   "price_avg": 1018,
+   "prices": [
+    1012,
+    1023
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.6",
+   "reviews": 3802,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-tien-shan-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996325;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2026397260468152589",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/e2/37/6136a3222bac5671bdb513f2d64171fcbdc05467346411a3a5b9ef4e6d52",
+   "lat": 43.25360107421875,
+   "lng": 76.94893646240234
+  },
+  {
+   "name": "Hotel Uyut Almaty",
+   "price_avg": 754,
+   "prices": [
+    754
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.8",
+   "reviews": 3545,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-hotel-uyut-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996333;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-8272898606421759528",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/c3/bf/345c3364b488d903c755dfc5b5a29f9cb18610cb25f4879f4f6281d1b227",
+   "lat": 43.259910583496094,
+   "lng": 76.93374633789062
+  },
+  {
+   "name": "Mildom Hotel",
+   "price_avg": 502,
+   "prices": [
+    499,
+    505
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "7.4",
+   "reviews": 3379,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 餐厅, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-mildom-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3246628;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=8053533417524619788",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/eb/69/e530751a1c0606a7f7ae6bbea1c40fbcf1d3bc55d82a0021d4b9661441dd",
+   "lat": 43.25297164916992,
+   "lng": 76.94761657714844
+  },
+  {
+   "name": "Almaty",
+   "price_avg": 379,
+   "prices": [
+    379
+   ],
+   "advertiser": "Booking.com",
+   "stars": 3,
+   "review": "8.4",
+   "reviews": 3304,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-996339;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=4045986176270863076",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/3f/41/d3dc95d087908af638fc07ecaffc41fbb700c42e06de58883239aff86cd7",
+   "lat": 43.25006866455078,
+   "lng": 76.94454956054688
+  },
+  {
+   "name": "Garden Park Inn",
+   "price_avg": 850,
+   "prices": [
+    919,
+    780
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.5",
+   "reviews": 3094,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-garden-park-inn-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-9461586;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=5879919619056941666",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/23/a3/9a17299894391e40b83fa049c4e9ccbe4e17a14d085dfc748c46ab0da1e7",
+   "lat": 43.234230041503906,
+   "lng": 76.93018341064453
+  },
+  {
+   "name": "Novotel Almaty City Center",
+   "price_avg": 1574,
+   "prices": [
+    1655,
+    1494
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.9",
+   "reviews": 2956,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 可带宠物, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-novotel-almaty-city-center-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-11505988;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1437862033047226335",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/14/f9/05bb1533ae73f6928655c8152c8f3e0cc484b25df740a56d48e52a13e81c",
+   "lat": 43.242149353027344,
+   "lng": 76.95835876464844
+  },
+  {
+   "name": "ibis Almaty Jetisu",
+   "price_avg": 1036,
+   "prices": [
+    1026,
+    1046
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "8.9",
+   "reviews": 2660,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-ibis-almaty-jetisu-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-26962624;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2893242295437410929",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/6b/eb/8f82a89f39b242fbd30ea575caccf14941a8f44d9f1a024617b653534d2c",
+   "lat": 43.2630615234375,
+   "lng": 76.939453125
+  },
+  {
+   "name": "Astana International Hotel",
+   "price_avg": 452,
+   "prices": [
+    452
+   ],
+   "advertiser": "Booking.com",
+   "stars": 4,
+   "review": "7.3",
+   "reviews": 2201,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-astana-international-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-166632;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=9089168818246201557",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/b6/29/062831d3a2443fe982a66bdb355adb768bac57cced7ffb971e5d3f1c5e24",
+   "lat": 43.23762130737305,
+   "lng": 76.92710876464844
+  },
+  {
+   "name": "远航酒店",
+   "price_avg": 630,
+   "prices": [
+    730,
+    529
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.5",
+   "reviews": 1793,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 餐厅",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/远航酒店-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-1892913;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=45743275536246308",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/15/23/3448e1b9ef71c87d65f96f26c1d43fe02fdb1e9b2eb92cf41f09fb05f12d",
+   "lat": 43.25859069824219,
+   "lng": 76.9453125
+  },
+  {
+   "name": "Renion Hills Hotel",
+   "price_avg": 620,
+   "prices": [
+    620,
+    619
+   ],
+   "advertiser": "Booking.com",
+   "stars": 4,
+   "review": "8.5",
+   "reviews": 1745,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-renion-hills-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-4843920;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=239291890475884706",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/ce/99/7c11e0b684f87d35364af840c56d975caf205bcc776deaf0452e95bc2bd7",
+   "lat": 43.22294998168945,
+   "lng": 76.95352172851562
+  },
+  {
+   "name": "Regardal Hotel",
+   "price_avg": 515,
+   "prices": [
+    512,
+    518
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "7.1",
+   "reviews": 1662,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-regardal-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942611;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-1747257239900458404",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/54/a3/51c84b44cbf62ff33cec86014c9db1e876c520c6be9d884ffff2764c3891",
+   "lat": 43.236751556396484,
+   "lng": 76.92711639404297
+  },
+  {
+   "name": "The Dostyk Hotel",
+   "price_avg": 592,
+   "prices": [
+    592
+   ],
+   "advertiser": "Booking.com",
+   "stars": 5,
+   "review": "9.0",
+   "reviews": 1544,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-the-dostyk-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-321381;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=480212569959363202",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/62/4d/9a2ae9c95c3901dc1c2033b0872bf850b34f79c1eeb3b4b6da9a48b97018",
+   "lat": 43.2445182800293,
+   "lng": 76.95110321044922
+  },
+  {
+   "name": "Plaza Hotel Almaty",
+   "price_avg": 805,
+   "prices": [
+    805
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.4",
+   "reviews": 1281,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-plaza-hotel-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-7929950;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-4090778731794488386",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/14/44/c77409840880d307c8094fd831b051a78213d857fee67f959552ab89f17d",
+   "lat": 43.249271392822266,
+   "lng": 76.91674041748047
+  },
+  {
+   "name": "MILDOM Express",
+   "price_avg": 493,
+   "prices": [
+    568,
+    418
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "7.7",
+   "reviews": 1244,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-mildom-express-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-4787716;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=6026633615097103599",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/2b/82/f76b98ff38caa88f8aed1d0888c70ee7114205cb9a304dd017d4ec9478d5",
+   "lat": 43.261600494384766,
+   "lng": 76.9323501586914
+  },
+  {
+   "name": "Novotel Living Almaty Jetisu",
+   "price_avg": 1466,
+   "prices": [
+    1466
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "9.0",
+   "reviews": 1142,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-novotel-living-almaty-jetisu-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-28381114;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=2129049824222142859",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/5f/3d/d7198dab33772fd90d89561ea1b96e8124ed7dff907dde28e48fe8892993",
+   "lat": 43.2630615234375,
+   "lng": 76.939453125
+  },
+  {
+   "name": "Royal Park Hotel",
+   "price_avg": 450,
+   "prices": [
+    451,
+    450
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "8.6",
+   "reviews": 1127,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-royal-park-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3181842;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=7195075665284345607",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/cf/76/356cbc2c6eddad4b7353e303aa1e08a2b6ad85fa126459d4d3bfe909838f",
+   "lat": 43.33721923828125,
+   "lng": 76.94534301757812
+  },
+  {
+   "name": "Grand Hotel Eurasia",
+   "price_avg": 527,
+   "prices": [
+    527
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "6.9",
+   "reviews": 1108,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-hotel-eurasia-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-942613;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=2925268966322126191",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/7f/90/aa420ac8f5b90422aeb626dcf2933a4d044413f79e2d8c5526aeb2c97a5f",
+   "lat": 43.234771728515625,
+   "lng": 76.95575714111328
+  },
+  {
+   "name": "Grand Voyage Hotel",
+   "price_avg": 686,
+   "prices": [
+    740,
+    633
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.9",
+   "reviews": 1064,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-grand-voyage-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-3982590;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-2255118809269874847",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/e7/fd/649f4abf5956a0fc4a4bbe8664cfc7d63112693cffa7c7d3e53f0eb8b868",
+   "lat": 43.24428176879883,
+   "lng": 76.93311309814453
+  },
+  {
+   "name": "Resident Hotel Almaty",
+   "price_avg": 491,
+   "prices": [
+    491,
+    491
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "8.6",
+   "reviews": 1046,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-resident-hotel-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-5495374;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-7327721824666050359",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/6e/86/2722f84239b59c351d2300bf00666cf54ba1b3ac8469c76222f7dc2924c7",
+   "lat": 43.28982162475586,
+   "lng": 76.93309020996094
+  },
+  {
+   "name": "Royal Palace Hotel",
+   "price_avg": 461,
+   "prices": [
+    461
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "8.0",
+   "reviews": 931,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 餐厅, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-royal-palace-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-1626177;200-65410;dr-20261008-20261009;drs-40;rc-1-2&dealId=4896529848229079093",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/51/e2/0c1e622e38749e7906bae5783df2822f57af21ab54e220fbe516aea7ac31",
+   "lat": 43.299068450927734,
+   "lng": 76.93036651611328
+  },
+  {
+   "name": "Park Dedeman Almaty",
+   "price_avg": 727,
+   "prices": [
+    784,
+    670
+   ],
+   "advertiser": "Trip.com",
+   "stars": 4,
+   "review": "8.5",
+   "reviews": 730,
+   "amenities": "大厅无线网络, 客房无线网络, 泳池, 水疗, 停车场, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-park-dedeman-almaty-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-36666530;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-493556386308505405",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/ae/de/06b98f8e0b50b3348d9c99dbf1deac7f005ccafe3a378055806028581f55",
+   "lat": 43.226341247558594,
+   "lng": 76.90960693359375
+  },
+  {
+   "name": "Sacvoyage Hotel",
+   "price_avg": 768,
+   "prices": [
+    763,
+    772
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "8.4",
+   "reviews": 726,
+   "amenities": "大厅无线网络, 客房无线网络, 水疗, 停车场, 空调, 餐厅, 酒吧, 健身房",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-sacvoyage-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-11348896;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=4286224898820401830",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/b5/c7/801c76cfedc1f70d03de8cdcac50fe3cfc7057990a55c5ce2d093c1de997",
+   "lat": 43.21390914916992,
+   "lng": 76.89653778076172
+  },
+  {
+   "name": "Zvezdnaya Eco-Hotel",
+   "price_avg": 706,
+   "prices": [
+    778,
+    633
+   ],
+   "advertiser": "Booking.com",
+   "stars": 3,
+   "review": "9.0",
+   "reviews": 330,
+   "amenities": "大厅无线网络, 客房无线网络, 停车场, 空调, 餐厅",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-zvezdnaya-eco-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-40244340;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=-3091547988754721160",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/a4/bf/347cd0d6835da0fa1ebdc8feb011ac95a4ef072741e05a21eac47f1fe86c",
+   "lat": 43.23524856567383,
+   "lng": 76.90425872802734
+  },
+  {
+   "name": "Mosh Mosh Boutique Hotel",
+   "price_avg": 600,
+   "prices": [
+    596,
+    603
+   ],
+   "advertiser": "Trip.com",
+   "stars": 3,
+   "review": "8.2",
+   "reviews": 152,
+   "amenities": "餐厅, 酒吧",
+   "url": "https://www.trivago.hk/zh-Hans-CN/lm/酒店-mosh-mosh-boutique-hotel-阿拉木图市?cip=234716015&currencyCode=CNY&search=100-38833302;200-65410;dr-20261002-20261003;drs-40;rc-1-2&dealId=3740178860040539426",
+   "image": "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/partner-images/05/43/974d3a8f0f043f01cf97cb0e444642dc51dabe2564cb37ed3695aa0ac0c8",
+   "lat": 43.1950798034668,
+   "lng": 76.89158630371094
+  }
+ ],
+ "airbnb": {
+  "almaty": [
+   {
+    "id": "1696486878497553594",
+    "name": "Urban hideaway 8",
+    "beds": "2 single beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  15 reviews",
+    "badges": "Guest favorite",
+    "price": "¥229 CNY for 1 night",
+    "lat": 43.2712,
+    "lng": 76.9624,
+    "url": "https://www.airbnb.com/rooms/1696486878497553594"
+   },
+   {
+    "id": "1618776479164656303",
+    "name": "Apartment on Arbat 21",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  14 reviews",
+    "badges": "Guest favorite",
+    "price": "¥263 CNY for 1 night",
+    "lat": 43.2613,
+    "lng": 76.9392,
+    "url": "https://www.airbnb.com/rooms/1618776479164656303"
+   },
+   {
+    "id": "1578809497368492360",
+    "name": "Sunlit Designer Apartment near Botanical Garden",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  25 reviews",
+    "badges": "Guest favorite",
+    "price": "¥388 CNY for 1 night",
+    "lat": 43.2205,
+    "lng": 76.8877,
+    "url": "https://www.airbnb.com/rooms/1578809497368492360"
+   },
+   {
+    "id": "1221817539353650319",
+    "name": "Auezov City",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  13 reviews",
+    "badges": "Guest favorite",
+    "price": "¥376 CNY for 1 night",
+    "lat": 43.2606,
+    "lng": 76.9002,
+    "url": "https://www.airbnb.com/rooms/1221817539353650319"
+   },
+   {
+    "id": "1429677936914798817",
+    "name": "Meridian Prestige Stay 328",
+    "beds": "2 bedrooms, 2 double beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  41 reviews",
+    "badges": "Guest favorite",
+    "price": "¥639 CNY for 1 night",
+    "lat": 43.26252,
+    "lng": 76.93175,
+    "url": "https://www.airbnb.com/rooms/1429677936914798817"
+   },
+   {
+    "id": "1639702023094120255",
+    "name": "Apartment near Mega Park",
+    "beds": "1 bedroom, 1 double bed, 1 bath",
+    "rating": "4.97 out of 5 average rating,  33 reviews",
+    "badges": "Guest favorite",
+    "price": "¥317 CNY for 1 night",
+    "lat": 43.2668,
+    "lng": 76.925,
+    "url": "https://www.airbnb.com/rooms/1639702023094120255"
+   },
+   {
+    "id": "1427505025732392926",
+    "name": "Luxe Corner at Meridian 154",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "4.97 out of 5 average rating,  32 reviews",
+    "badges": "Guest favorite",
+    "price": "¥404 CNY for 1 night",
+    "lat": 43.26109,
+    "lng": 76.93152,
+    "url": "https://www.airbnb.com/rooms/1427505025732392926"
+   },
+   {
+    "id": "1440523369028340314",
+    "name": "Центр City",
+    "beds": "1 double bed, 1 bath",
+    "rating": "4.93 out of 5 average rating,  43 reviews",
+    "badges": "Guest favorite",
+    "price": "¥291 CNY for 1 night",
+    "lat": 43.265195296478836,
+    "lng": 76.94952620891377,
+    "url": "https://www.airbnb.com/rooms/1440523369028340314"
+   },
+   {
+    "id": "1231594723206621095",
+    "name": "Comfort Almaty",
+    "beds": "1 bedroom, 1 double bed, 1 bath",
+    "rating": "4.9 out of 5 average rating,  78 reviews",
+    "badges": "Guest favorite",
+    "price": "¥317 CNY for 1 night",
+    "lat": 43.2668,
+    "lng": 76.9559,
+    "url": "https://www.airbnb.com/rooms/1231594723206621095"
+   },
+   {
+    "id": "1697161689148843403",
+    "name": "Apartment near Green Bazaar and Central Park",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "4.9 out of 5 average rating,  10 reviews",
+    "badges": "Guest favorite",
+    "price": "¥318 CNY for 1 night",
+    "lat": 43.2685,
+    "lng": 76.9586,
+    "url": "https://www.airbnb.com/rooms/1697161689148843403"
+   },
+   {
+    "id": "14223561",
+    "name": "A cozy apartment in the heart of the city",
+    "beds": "2 bedrooms, 2 beds, 1 bath",
+    "rating": "4.89 out of 5 average rating,  9 reviews",
+    "badges": "Guest favorite",
+    "price": "¥377 CNY for 1 night",
+    "lat": 43.2413,
+    "lng": 76.93872,
+    "url": "https://www.airbnb.com/rooms/14223561"
+   },
+   {
+    "id": "1422154322971744405",
+    "name": "Insta Studio 288",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "4.89 out of 5 average rating,  35 reviews",
+    "badges": "Superhost",
+    "price": "¥471 CNY for 1 night",
+    "lat": 43.2142,
+    "lng": 76.8898,
+    "url": "https://www.airbnb.com/rooms/1422154322971744405"
+   },
+   {
+    "id": "1472477463702444696",
+    "name": "Auezov City Life",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "4.86 out of 5 average rating,  29 reviews",
+    "badges": "Superhost",
+    "price": "¥357 CNY for 1 night",
+    "lat": 43.2606,
+    "lng": 76.9002,
+    "url": "https://www.airbnb.com/rooms/1472477463702444696"
+   },
+   {
+    "id": "1069542190592772489",
+    "name": "Inspiration Studio in the city center",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "4.84 out of 5 average rating,  49 reviews",
+    "badges": "Guest favorite",
+    "price": "¥357 CNY for 1 night",
+    "lat": 43.24631,
+    "lng": 76.93613,
+    "url": "https://www.airbnb.com/rooms/1069542190592772489"
+   },
+   {
+    "id": "1499283145142031459",
+    "name": "Синяя Юрта 3, location Metro, Arbat",
+    "beds": "1 bedroom, 1 small double bed, 1 bath",
+    "rating": "4.82 out of 5 average rating,  57 reviews",
+    "badges": "Guest favorite",
+    "price": "¥337 CNY for 1 night",
+    "lat": 43.271994253381465,
+    "lng": 76.94694667074982,
+    "url": "https://www.airbnb.com/rooms/1499283145142031459"
+   },
+   {
+    "id": "707837873651892793",
+    "name": "Housing in the heart of Almaty near Arbat.",
+    "beds": "2 bedrooms, 2 double beds, 1 bath",
+    "rating": "4.78 out of 5 average rating,  36 reviews",
+    "badges": "Superhost",
+    "price": "¥438 CNY for 1 night",
+    "lat": 43.2677,
+    "lng": 76.946,
+    "url": "https://www.airbnb.com/rooms/707837873651892793"
+   },
+   {
+    "id": "1382019557498554452",
+    "name": "Apartments golden square 141",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "4.7 out of 5 average rating,  23 reviews",
+    "badges": "Superhost",
+    "price": "¥296 CNY for 1 night",
+    "lat": 43.24542581988341,
+    "lng": 76.93531981053853,
+    "url": "https://www.airbnb.com/rooms/1382019557498554452"
+   },
+   {
+    "id": "1513175651985415146",
+    "name": "Cozy apartment near the city center",
+    "beds": "1 bedroom, 1 double bed, 1 bath",
+    "rating": null,
+    "badges": "Superhost",
+    "price": "¥202 CNY for 1 night",
+    "lat": 43.226,
+    "lng": 76.8623,
+    "url": "https://www.airbnb.com/rooms/1513175651985415146"
+   }
+  ],
+  "aktau": [
+   {
+    "id": "1144822307990599011",
+    "name": "Seaside apartment",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  14 reviews",
+    "badges": "Guest favorite",
+    "price": "¥458 CNY for 2 nights",
+    "lat": 43.6404,
+    "lng": 51.1564,
+    "url": "https://www.airbnb.com/rooms/1144822307990599011"
+   },
+   {
+    "id": "1447143235826495335",
+    "name": "Cozy studio in Premium Plaza residential complex",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  5 reviews",
+    "badges": "Guest favorite",
+    "price": "¥700 CNY for 2 nights",
+    "lat": 43.6869,
+    "lng": 51.1614,
+    "url": "https://www.airbnb.com/rooms/1447143235826495335"
+   },
+   {
+    "id": "1462202962435741539",
+    "name": "2-room apartment in the city center - quiet and close to the sea",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  3 reviews",
+    "badges": "",
+    "price": "¥666 CNY for 2 nights",
+    "lat": 43.6429,
+    "lng": 51.1608,
+    "url": "https://www.airbnb.com/rooms/1462202962435741539"
+   },
+   {
+    "id": "926620139481673697",
+    "name": "Beautiful studio apartment",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  5 reviews",
+    "badges": "",
+    "price": "¥323 CNY for 2 nights",
+    "lat": 43.64162,
+    "lng": 51.15498,
+    "url": "https://www.airbnb.com/rooms/926620139481673697"
+   },
+   {
+    "id": "1558327484910870861",
+    "name": "Aktau, 1 bedroom apartment, on the 1st floor.",
+    "beds": "1 bedroom, 2 beds, No bathroom",
+    "rating": "5.0 out of 5 average rating,  5 reviews",
+    "badges": "Superhost",
+    "price": "¥364 CNY for 2 nights",
+    "lat": 43.6628,
+    "lng": 51.1526,
+    "url": "https://www.airbnb.com/rooms/1558327484910870861"
+   },
+   {
+    "id": "1410239234530451004",
+    "name": "Sea breeze",
+    "beds": "2 bedrooms, 3 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  9 reviews",
+    "badges": "Guest favorite",
+    "price": "¥1,050 CNY for 2 nights",
+    "lat": 43.6324,
+    "lng": 51.1618,
+    "url": "https://www.airbnb.com/rooms/1410239234530451004"
+   },
+   {
+    "id": "770639158147482811",
+    "name": "Apartment with balcony on the sea",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  10 reviews",
+    "badges": "Guest favorite",
+    "price": "¥444 CNY for 2 nights",
+    "lat": 43.64531,
+    "lng": 51.15287,
+    "url": "https://www.airbnb.com/rooms/770639158147482811"
+   },
+   {
+    "id": "1267870169161428099",
+    "name": "Apartment 20 home",
+    "beds": "2 bedrooms, 3 sofa beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  3 reviews",
+    "badges": "Superhost",
+    "price": "¥310 CNY for 2 nights",
+    "lat": 43.63652593875295,
+    "lng": 51.161707059407355,
+    "url": "https://www.airbnb.com/rooms/1267870169161428099"
+   },
+   {
+    "id": "1491039683962616337",
+    "name": "Two-room apartment 11-24",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  4 reviews",
+    "badges": "",
+    "price": "¥539 CNY for 2 nights",
+    "lat": 43.6561,
+    "lng": 51.1512,
+    "url": "https://www.airbnb.com/rooms/1491039683962616337"
+   },
+   {
+    "id": "968116450887302250",
+    "name": "The best location!",
+    "beds": "1 sofa bed, Half-bath",
+    "rating": "4.96 out of 5 average rating,  75 reviews",
+    "badges": "Guest favorite",
+    "price": "¥565 CNY for 2 nights",
+    "lat": 43.65891,
+    "lng": 51.14583,
+    "url": "https://www.airbnb.com/rooms/968116450887302250"
+   },
+   {
+    "id": "29398848",
+    "name": "One-bedroom apartment for rent",
+    "beds": "1 bedroom, 3 beds, 1 bath",
+    "rating": "4.95 out of 5 average rating,  22 reviews",
+    "badges": "Guest favorite",
+    "price": "¥310 CNY for 2 nights",
+    "lat": 43.6632,
+    "lng": 51.1485,
+    "url": "https://www.airbnb.com/rooms/29398848"
+   },
+   {
+    "id": "936829216192675691",
+    "name": "Clean and cozy apartment",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "4.92 out of 5 average rating,  13 reviews",
+    "badges": "Guest favorite",
+    "price": "¥310 CNY for 2 nights",
+    "lat": 43.664,
+    "lng": 51.1484,
+    "url": "https://www.airbnb.com/rooms/936829216192675691"
+   },
+   {
+    "id": "1393991293514077945",
+    "name": "Apartment with sea view",
+    "beds": "1 bedroom, 1 king bed, 1 bath",
+    "rating": "4.68 out of 5 average rating,  19 reviews",
+    "badges": "",
+    "price": "¥745 CNY for 2 nights",
+    "lat": 43.64147035059344,
+    "lng": 51.154430631367354,
+    "url": "https://www.airbnb.com/rooms/1393991293514077945"
+   },
+   {
+    "id": "1692252046563518162",
+    "name": "Sea view apartments! Versailles residential complex",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥848 CNY for 2 nights",
+    "lat": 43.63030239795677,
+    "lng": 51.17419882269935,
+    "url": "https://www.airbnb.com/rooms/1692252046563518162"
+   },
+   {
+    "id": "1710197719491624126",
+    "name": "Sea Ponarama Aktau 88",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥929 CNY for 2 nights",
+    "lat": 43.6292,
+    "lng": 51.1648,
+    "url": "https://www.airbnb.com/rooms/1710197719491624126"
+   },
+   {
+    "id": "1750153084892246420",
+    "name": "Grey Noir Lounge",
+    "beds": "1 bedroom, 1 king bed, 1 bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥760 CNY for 2 nights",
+    "lat": 43.6434,
+    "lng": 51.1555,
+    "url": "https://www.airbnb.com/rooms/1750153084892246420"
+   },
+   {
+    "id": "854010414847061847",
+    "name": "Stylish apartment near the sea",
+    "beds": "1 bedroom, 1 bed, 1.5 baths",
+    "rating": null,
+    "badges": "",
+    "price": "¥875 CNY for 2 nights",
+    "lat": 43.68582,
+    "lng": 51.16153,
+    "url": "https://www.airbnb.com/rooms/854010414847061847"
+   },
+   {
+    "id": "1702878369117173455",
+    "name": "Mangystau travels",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,055 CNY for 2 nights",
+    "lat": 43.6292,
+    "lng": 51.1649,
+    "url": "https://www.airbnb.com/rooms/1702878369117173455"
+   }
+  ],
+  "saty": [
+   {
+    "id": "1557901567705628702",
+    "name": "Mountain View - Kolsay",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  7 reviews",
+    "badges": "Guest favorite",
+    "price": "¥982 CNY for 1 night",
+    "lat": 43.0096,
+    "lng": 78.3391,
+    "url": "https://www.airbnb.com/rooms/1557901567705628702"
+   },
+   {
+    "id": "1742561250139863191",
+    "name": "khan a-frame",
+    "beds": "2 bedrooms, 4 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  3 reviews",
+    "badges": "",
+    "price": "¥1,009 CNY for 1 night",
+    "lat": 43.0713,
+    "lng": 78.4033,
+    "url": "https://www.airbnb.com/rooms/1742561250139863191"
+   },
+   {
+    "id": "1728330146226167325",
+    "name": "Glamping Kolsay",
+    "beds": "1 bedroom, 2 double beds, 1 bath",
+    "rating": "4.86 out of 5 average rating,  7 reviews",
+    "badges": "",
+    "price": "¥875 CNY for 1 night",
+    "lat": 43.0121,
+    "lng": 78.3416,
+    "url": "https://www.airbnb.com/rooms/1728330146226167325"
+   },
+   {
+    "id": "1609289255127408860",
+    "name": "Double house, coziness and comfort in everything.",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "4.8 out of 5 average rating,  10 reviews",
+    "badges": "",
+    "price": "¥660 CNY for 1 night",
+    "lat": 43.06736,
+    "lng": 78.40221,
+    "url": "https://www.airbnb.com/rooms/1609289255127408860"
+   },
+   {
+    "id": "698827249187788906",
+    "name": "\"Bereke\" - Kaindy lake wooden cabin",
+    "beds": "1 bedroom, 2 beds, 1.5 baths",
+    "rating": "4.61 out of 5 average rating,  62 reviews",
+    "badges": "",
+    "price": "¥532 CNY for 1 night",
+    "lat": 43.0684,
+    "lng": 78.41967,
+    "url": "https://www.airbnb.com/rooms/698827249187788906"
+   },
+   {
+    "id": "1425913448193116832",
+    "name": "Kolsai A-Frame AI-ADIL",
+    "beds": "1 bedroom, 3 beds, 1 bath",
+    "rating": "4.49 out of 5 average rating,  39 reviews",
+    "badges": "Superhost",
+    "price": "¥697 CNY for 1 night",
+    "lat": 43.06910378015185,
+    "lng": 78.40905420883192,
+    "url": "https://www.airbnb.com/rooms/1425913448193116832"
+   },
+   {
+    "id": "1471145511620391154",
+    "name": "Kolsay_Aisha",
+    "beds": "8 bedrooms, 24 beds, 2 baths",
+    "rating": "4.44 out of 5 average rating,  9 reviews",
+    "badges": "",
+    "price": "¥504 CNY for 1 night",
+    "lat": 43.0694,
+    "lng": 78.4109,
+    "url": "https://www.airbnb.com/rooms/1471145511620391154"
+   },
+   {
+    "id": "892594811653343235",
+    "name": "Bereke - “QazaQ Ui” National Ethnic house",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "3.67 out of 5 average rating,  6 reviews",
+    "badges": "",
+    "price": "¥451 CNY for 1 night",
+    "lat": 43.0695,
+    "lng": 78.4187,
+    "url": "https://www.airbnb.com/rooms/892594811653343235"
+   },
+   {
+    "id": "1581232609498264029",
+    "name": "Little Barn",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,008 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1581232609498264029"
+   },
+   {
+    "id": "1723063697455208936",
+    "name": "A two-person cottage with coziness and comfort throughout!",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥559 CNY for 1 night",
+    "lat": 43.0506,
+    "lng": 78.365,
+    "url": "https://www.airbnb.com/rooms/1723063697455208936"
+   },
+   {
+    "id": "1581232705067591875",
+    "name": "Kolsay & Kaindy lakes Cozyrest",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,326 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1581232705067591875"
+   },
+   {
+    "id": "1247081374544824573",
+    "name": "Kolsai & Kayindy yurts with facilities",
+    "beds": "1 bedroom, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,948 CNY for 1 night",
+    "lat": 43.069,
+    "lng": 78.41044,
+    "url": "https://www.airbnb.com/rooms/1247081374544824573"
+   },
+   {
+    "id": "1635000264064044401",
+    "name": "Stay Saty Kolsai",
+    "beds": "4 bedrooms, 12 beds, 3 baths",
+    "rating": null,
+    "badges": "",
+    "price": "¥698 CNY for 1 night",
+    "lat": 43.07042846079976,
+    "lng": 78.39989124634772,
+    "url": "https://www.airbnb.com/rooms/1635000264064044401"
+   },
+   {
+    "id": "1756981255930394900",
+    "name": "Kolsay_hearth_lodge",
+    "beds": "3 bedrooms, 6 beds, 1 bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥1,682 CNY for 1 night",
+    "lat": 43.0711,
+    "lng": 78.4013,
+    "url": "https://www.airbnb.com/rooms/1756981255930394900"
+   },
+   {
+    "id": "1604354469425089715",
+    "name": "Ai Aru Hotel",
+    "beds": "8 bedrooms, 12 beds, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥528 CNY for 1 night",
+    "lat": 43.0118,
+    "lng": 78.3414,
+    "url": "https://www.airbnb.com/rooms/1604354469425089715"
+   },
+   {
+    "id": "1477875529038801867",
+    "name": "Guliniza homestay",
+    "beds": "4 beds, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,329 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1477875529038801867"
+   },
+   {
+    "id": "1718984722686524882",
+    "name": "Toresha Guest House",
+    "beds": "4 bedrooms, 18 beds, 4 baths",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥599 CNY for 1 night",
+    "lat": 43.06934,
+    "lng": 78.41091,
+    "url": "https://www.airbnb.com/rooms/1718984722686524882"
+   },
+   {
+    "id": "1720976493714515023",
+    "name": "Toresha Guest Yurt \n",
+    "beds": "1 bedroom, 8 beds, Half-bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥571 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1720976493714515023"
+   }
+  ]
+ }
+}

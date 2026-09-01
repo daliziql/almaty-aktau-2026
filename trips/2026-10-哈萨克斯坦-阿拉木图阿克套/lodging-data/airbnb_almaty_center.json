@@ -1,0 +1,9 @@
+{
+ "raw": {
+  "error": "Failed to parse search results from Airbnb. The page structure may have changed.",
+  "details": "Could not find data script element - page structure may have changed",
+  "diagnosis": "Could not parse script content as JSON",
+  "searchUrl": "https://www.airbnb.com/s/Almaty-city-center--Kazakhstan/homes?ne_lat=43.3643139&ne_lng=77.0399382&sw_lat=43.1642139&sw_lng=76.8398382&checkin=2026-10-02&checkout=2026-10-03&adults=2&children=0&infants=0&pets=0"
+ },
+ "brief": []
+}

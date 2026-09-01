@@ -1,0 +1,1902 @@
+{
+ "almaty_city": {
+  "query": {
+   "name": "almaty_city",
+   "query": "Almaty, Kazakhstan",
+   "arrival": "2026-10-02",
+   "departure": "2026-10-03",
+   "limit": 30
+  },
+  "brief": [],
+  "raw": {
+   "error": "Failed to parse search results from Airbnb. The page structure may have changed.",
+   "details": "Could not find data script element - page structure may have changed",
+   "diagnosis": "Could not parse script content as JSON",
+   "searchUrl": "https://www.airbnb.com/s/Almaty--Kazakhstan/homes?ne_lat=47.8699772&ne_lng=82.5785971&sw_lat=41.0789775&sw_lng=71.9506989&checkin=2026-10-02&checkout=2026-10-03&adults=2&children=0&infants=0&pets=0"
+  }
+ },
+ "saty_kolsai": {
+  "query": {
+   "name": "saty_kolsai",
+   "query": "Saty, Almaty Region, Kazakhstan",
+   "arrival": "2026-10-04",
+   "departure": "2026-10-05",
+   "limit": 20
+  },
+  "brief": [
+   {
+    "id": "1609289255127408860",
+    "name": "Double house, coziness and comfort in everything.",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "4.8 out of 5 average rating,  10 reviews",
+    "badges": "",
+    "price": "¥660 CNY for 1 night",
+    "lat": 43.06736,
+    "lng": 78.40221,
+    "url": "https://www.airbnb.com/rooms/1609289255127408860"
+   },
+   {
+    "id": "698827249187788906",
+    "name": "\"Bereke\" - Kaindy lake wooden cabin",
+    "beds": "1 bedroom, 2 beds, 1.5 baths",
+    "rating": "4.61 out of 5 average rating,  62 reviews",
+    "badges": "",
+    "price": "¥532 CNY for 1 night",
+    "lat": 43.0684,
+    "lng": 78.41967,
+    "url": "https://www.airbnb.com/rooms/698827249187788906"
+   },
+   {
+    "id": "1557901567705628702",
+    "name": "Mountain View - Kolsay",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  7 reviews",
+    "badges": "Guest favorite",
+    "price": "¥982 CNY for 1 night",
+    "lat": 43.0096,
+    "lng": 78.3391,
+    "url": "https://www.airbnb.com/rooms/1557901567705628702"
+   },
+   {
+    "id": "1728330146226167325",
+    "name": "Glamping Kolsay",
+    "beds": "1 bedroom, 2 double beds, 1 bath",
+    "rating": "4.86 out of 5 average rating,  7 reviews",
+    "badges": "",
+    "price": "¥875 CNY for 1 night",
+    "lat": 43.0121,
+    "lng": 78.3416,
+    "url": "https://www.airbnb.com/rooms/1728330146226167325"
+   },
+   {
+    "id": "1742561250139863191",
+    "name": "khan a-frame",
+    "beds": "2 bedrooms, 4 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  3 reviews",
+    "badges": "",
+    "price": "¥1,009 CNY for 1 night",
+    "lat": 43.0713,
+    "lng": 78.4033,
+    "url": "https://www.airbnb.com/rooms/1742561250139863191"
+   },
+   {
+    "id": "1425913448193116832",
+    "name": "Kolsai A-Frame AI-ADIL",
+    "beds": "1 bedroom, 3 beds, 1 bath",
+    "rating": "4.49 out of 5 average rating,  39 reviews",
+    "badges": "Superhost",
+    "price": "¥697 CNY for 1 night",
+    "lat": 43.06910378015185,
+    "lng": 78.40905420883192,
+    "url": "https://www.airbnb.com/rooms/1425913448193116832"
+   },
+   {
+    "id": "1581232609498264029",
+    "name": "Little Barn",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,008 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1581232609498264029"
+   },
+   {
+    "id": "1723063697455208936",
+    "name": "A two-person cottage with coziness and comfort throughout!",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥559 CNY for 1 night",
+    "lat": 43.0506,
+    "lng": 78.365,
+    "url": "https://www.airbnb.com/rooms/1723063697455208936"
+   },
+   {
+    "id": "1581232705067591875",
+    "name": "Kolsay & Kaindy lakes Cozyrest",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,326 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1581232705067591875"
+   },
+   {
+    "id": "892594811653343235",
+    "name": "Bereke - “QazaQ Ui” National Ethnic house",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "3.67 out of 5 average rating,  6 reviews",
+    "badges": "",
+    "price": "¥451 CNY for 1 night",
+    "lat": 43.0695,
+    "lng": 78.4187,
+    "url": "https://www.airbnb.com/rooms/892594811653343235"
+   },
+   {
+    "id": "1471145511620391154",
+    "name": "Kolsay_Aisha",
+    "beds": "8 bedrooms, 24 beds, 2 baths",
+    "rating": "4.44 out of 5 average rating,  9 reviews",
+    "badges": "",
+    "price": "¥504 CNY for 1 night",
+    "lat": 43.0694,
+    "lng": 78.4109,
+    "url": "https://www.airbnb.com/rooms/1471145511620391154"
+   },
+   {
+    "id": "1247081374544824573",
+    "name": "Kolsai & Kayindy yurts with facilities",
+    "beds": "1 bedroom, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,948 CNY for 1 night",
+    "lat": 43.069,
+    "lng": 78.41044,
+    "url": "https://www.airbnb.com/rooms/1247081374544824573"
+   },
+   {
+    "id": "1635000264064044401",
+    "name": "Stay Saty Kolsai",
+    "beds": "4 bedrooms, 12 beds, 3 baths",
+    "rating": null,
+    "badges": "",
+    "price": "¥698 CNY for 1 night",
+    "lat": 43.07042846079976,
+    "lng": 78.39989124634772,
+    "url": "https://www.airbnb.com/rooms/1635000264064044401"
+   },
+   {
+    "id": "1756981255930394900",
+    "name": "Kolsay_hearth_lodge",
+    "beds": "3 bedrooms, 6 beds, 1 bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥1,682 CNY for 1 night",
+    "lat": 43.0711,
+    "lng": 78.4013,
+    "url": "https://www.airbnb.com/rooms/1756981255930394900"
+   },
+   {
+    "id": "1604354469425089715",
+    "name": "Ai Aru Hotel",
+    "beds": "8 bedrooms, 12 beds, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥528 CNY for 1 night",
+    "lat": 43.0118,
+    "lng": 78.3414,
+    "url": "https://www.airbnb.com/rooms/1604354469425089715"
+   },
+   {
+    "id": "1477875529038801867",
+    "name": "Guliniza homestay",
+    "beds": "4 beds, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,329 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1477875529038801867"
+   },
+   {
+    "id": "1718984722686524882",
+    "name": "Toresha Guest House",
+    "beds": "4 bedrooms, 18 beds, 4 baths",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥599 CNY for 1 night",
+    "lat": 43.06934,
+    "lng": 78.41091,
+    "url": "https://www.airbnb.com/rooms/1718984722686524882"
+   },
+   {
+    "id": "1720976493714515023",
+    "name": "Toresha Guest Yurt \n",
+    "beds": "1 bedroom, 8 beds, Half-bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥571 CNY for 1 night",
+    "lat": 43.0699,
+    "lng": 78.4098,
+    "url": "https://www.airbnb.com/rooms/1720976493714515023"
+   }
+  ],
+  "raw": {
+   "searchUrl": "https://www.airbnb.com/s/Saty--Almaty-Region--Kazakhstan/homes?ne_lat=43.1757765&ne_lng=78.5254755&sw_lat=42.9641543&sw_lng=78.2915162&checkin=2026-10-04&checkout=2026-10-05&adults=2&children=0&infants=0&pets=0",
+   "searchResults": [
+    {
+     "id": "1609289255127408860",
+     "url": "https://www.airbnb.com/rooms/1609289255127408860",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTYwOTI4OTI1NTEyNzQwODg2MA==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Double house, coziness and comfort in everything."
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.06736,
+        "longitude": 78.40221
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.8 out of 5 average rating,  10 reviews",
+     "listingParamOverrides": {
+      "photoId": "2498007851",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥660 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥659.12 CNY: ¥659.12 CNY"
+      }
+     }
+    },
+    {
+     "id": "698827249187788906",
+     "url": "https://www.airbnb.com/rooms/698827249187788906",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6Njk4ODI3MjQ5MTg3Nzg4OTA2",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "\"Bereke\" - Kaindy lake wooden cabin"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0684,
+        "longitude": 78.41967
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1.5 baths",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.61 out of 5 average rating,  62 reviews",
+     "listingParamOverrides": {
+      "photoId": "1475039574",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥532 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥531.36 CNY: ¥531.36 CNY"
+      }
+     }
+    },
+    {
+     "id": "1557901567705628702",
+     "url": "https://www.airbnb.com/rooms/1557901567705628702",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTU1NzkwMTU2NzcwNTYyODcwMg==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Mountain View - Kolsay"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0096,
+        "longitude": 78.3391
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  7 reviews",
+     "listingParamOverrides": {
+      "photoId": "2411823185",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥982 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥981.95 CNY: ¥981.95 CNY"
+      }
+     }
+    },
+    {
+     "id": "1728330146226167325",
+     "url": "https://www.airbnb.com/rooms/1728330146226167325",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcyODMzMDE0NjIyNjE2NzMyNQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Glamping Kolsay"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0121,
+        "longitude": 78.3416
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 double beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.86 out of 5 average rating,  7 reviews",
+     "listingParamOverrides": {
+      "photoId": "2722675060",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥875 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥874.34 CNY: ¥874.34 CNY"
+      }
+     }
+    },
+    {
+     "id": "1742561250139863191",
+     "url": "https://www.airbnb.com/rooms/1742561250139863191",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTc0MjU2MTI1MDEzOTg2MzE5MQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "khan a-frame"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0713,
+        "longitude": 78.4033
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "2 bedrooms, 4 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  3 reviews",
+     "listingParamOverrides": {
+      "photoId": "2753286420",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,009 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥1,008.86 CNY: ¥1,008.86 CNY"
+      }
+     }
+    },
+    {
+     "id": "1425913448193116832",
+     "url": "https://www.airbnb.com/rooms/1425913448193116832",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQyNTkxMzQ0ODE5MzExNjgzMg==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Kolsai A-Frame AI-ADIL"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.06910378015185,
+        "longitude": 78.40905420883192
+       }
+      }
+     },
+     "badges": "Superhost",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 3 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.49 out of 5 average rating,  39 reviews",
+     "listingParamOverrides": {
+      "photoId": "2593859141",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥697 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥696.11 CNY: ¥696.11 CNY"
+      }
+     }
+    },
+    {
+     "id": "1581232609498264029",
+     "url": "https://www.airbnb.com/rooms/1581232609498264029",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTU4MTIzMjYwOTQ5ODI2NDAyOQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Little Barn"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0699,
+        "longitude": 78.4098
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "2570904967",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,008 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥1,007.71 CNY: ¥1,007.71 CNY"
+      }
+     }
+    },
+    {
+     "id": "1723063697455208936",
+     "url": "https://www.airbnb.com/rooms/1723063697455208936",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcyMzA2MzY5NzQ1NTIwODkzNg==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "A two-person cottage with coziness and comfort throughout!"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0506,
+        "longitude": 78.365
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "New place to stay",
+     "listingParamOverrides": {
+      "photoId": "2711403972",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥559 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥558.23 CNY: ¥558.23 CNY"
+      }
+     }
+    },
+    {
+     "id": "1581232705067591875",
+     "url": "https://www.airbnb.com/rooms/1581232705067591875",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTU4MTIzMjcwNTA2NzU5MTg3NQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Kolsay & Kaindy lakes Cozyrest"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0699,
+        "longitude": 78.4098
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "2449402910",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,326 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥1,325.58 CNY: ¥1,325.58 CNY"
+      }
+     }
+    },
+    {
+     "id": "892594811653343235",
+     "url": "https://www.airbnb.com/rooms/892594811653343235",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6ODkyNTk0ODExNjUzMzQzMjM1",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Bereke - “QazaQ Ui” National Ethnic house"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0695,
+        "longitude": 78.4187
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "3.67 out of 5 average rating,  6 reviews",
+     "listingParamOverrides": {
+      "photoId": "1652806300",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥451 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥450.32 CNY: ¥450.32 CNY"
+      }
+     }
+    },
+    {
+     "id": "1471145511620391154",
+     "url": "https://www.airbnb.com/rooms/1471145511620391154",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQ3MTE0NTUxMTYyMDM5MTE1NA==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Kolsay_Aisha"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0694,
+        "longitude": 78.4109
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "8 bedrooms, 24 beds, 2 baths",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.44 out of 5 average rating,  9 reviews",
+     "listingParamOverrides": {
+      "categoryTag": "Tag:8678",
+      "photoId": "2265103096",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥504 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥503.89 CNY: ¥503.89 CNY"
+      }
+     }
+    },
+    {
+     "id": "1247081374544824573",
+     "url": "https://www.airbnb.com/rooms/1247081374544824573",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTI0NzA4MTM3NDU0NDgyNDU3Mw==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Kolsai & Kayindy yurts with facilities"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.069,
+        "longitude": 78.41044
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "1994792952",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,948 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥1,947.77 CNY: ¥1,947.77 CNY"
+      }
+     }
+    },
+    {
+     "id": "1635000264064044401",
+     "url": "https://www.airbnb.com/rooms/1635000264064044401",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTYzNTAwMDI2NDA2NDA0NDQwMQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Stay Saty Kolsai"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.07042846079976,
+        "longitude": 78.39989124634772
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "4 bedrooms, 12 beds, 3 baths",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "categoryTag": "Tag:8678",
+      "photoId": "2540368957",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥698 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥697.73 CNY: ¥697.73 CNY"
+      }
+     }
+    },
+    {
+     "id": "1756981255930394900",
+     "url": "https://www.airbnb.com/rooms/1756981255930394900",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTc1Njk4MTI1NTkzMDM5NDkwMA==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Kolsay_hearth_lodge"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0711,
+        "longitude": 78.4013
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "3 bedrooms, 6 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "New place to stay",
+     "listingParamOverrides": {
+      "categoryTag": "Tag:8678",
+      "photoId": "2783731060",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,682 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥1,681.43 CNY: ¥1,681.43 CNY"
+      }
+     }
+    },
+    {
+     "id": "1604354469425089715",
+     "url": "https://www.airbnb.com/rooms/1604354469425089715",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTYwNDM1NDQ2OTQyNTA4OTcxNQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Ai Aru Hotel"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0118,
+        "longitude": 78.3414
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "8 bedrooms, 12 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "categoryTag": "Tag:8678",
+      "photoId": "2488712445",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥528 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥527.16 CNY: ¥527.16 CNY"
+      }
+     }
+    },
+    {
+     "id": "1477875529038801867",
+     "url": "https://www.airbnb.com/rooms/1477875529038801867",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQ3Nzg3NTUyOTAzODgwMTg2Nw==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Guliniza homestay"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0699,
+        "longitude": 78.4098
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "4 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "categoryTag": "Tag:8678",
+      "photoId": "2279346964",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,329 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥1,328.75 CNY: ¥1,328.75 CNY"
+      }
+     }
+    },
+    {
+     "id": "1718984722686524882",
+     "url": "https://www.airbnb.com/rooms/1718984722686524882",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcxODk4NDcyMjY4NjUyNDg4Mg==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Toresha Guest House"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.06934,
+        "longitude": 78.41091
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "4 bedrooms, 18 beds, 4 baths",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "New place to stay",
+     "listingParamOverrides": {
+      "photoId": "2707074427",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥599 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥598.59 CNY: ¥598.59 CNY"
+      }
+     }
+    },
+    {
+     "id": "1720976493714515023",
+     "url": "https://www.airbnb.com/rooms/1720976493714515023",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcyMDk3NjQ5MzcxNDUxNTAyMw==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Toresha Guest Yurt \n"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.0699,
+        "longitude": 78.4098
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 8 beds, Half-bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "New place to stay",
+     "listingParamOverrides": {
+      "photoId": "2707164017",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥571 CNY for 1 night"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "1 night x ¥570.34 CNY: ¥570.34 CNY"
+      }
+     }
+    }
+   ],
+   "paginationInfo": {
+    "pageCursors": [
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjowLCJ2ZXJzaW9uIjoxfQ==",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0="
+    ]
+   }
+  }
+ },
+ "aktau": {
+  "query": {
+   "name": "aktau",
+   "query": "Aktau, Kazakhstan",
+   "arrival": "2026-10-06",
+   "departure": "2026-10-08",
+   "limit": 30
+  },
+  "brief": [
+   {
+    "id": "936829216192675691",
+    "name": "Clean and cozy apartment",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "4.92 out of 5 average rating,  13 reviews",
+    "badges": "Guest favorite",
+    "price": "¥310 CNY for 2 nights",
+    "lat": 43.664,
+    "lng": 51.1484,
+    "url": "https://www.airbnb.com/rooms/936829216192675691"
+   },
+   {
+    "id": "1692252046563518162",
+    "name": "Sea view apartments! Versailles residential complex",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥848 CNY for 2 nights",
+    "lat": 43.63030239795677,
+    "lng": 51.17419882269935,
+    "url": "https://www.airbnb.com/rooms/1692252046563518162"
+   },
+   {
+    "id": "1144822307990599011",
+    "name": "Seaside apartment",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  14 reviews",
+    "badges": "Guest favorite",
+    "price": "¥458 CNY for 2 nights",
+    "lat": 43.6404,
+    "lng": 51.1564,
+    "url": "https://www.airbnb.com/rooms/1144822307990599011"
+   },
+   {
+    "id": "1447143235826495335",
+    "name": "Cozy studio in Premium Plaza residential complex",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  5 reviews",
+    "badges": "Guest favorite",
+    "price": "¥700 CNY for 2 nights",
+    "lat": 43.6869,
+    "lng": 51.1614,
+    "url": "https://www.airbnb.com/rooms/1447143235826495335"
+   },
+   {
+    "id": "968116450887302250",
+    "name": "The best location!",
+    "beds": "1 sofa bed, Half-bath",
+    "rating": "4.96 out of 5 average rating,  75 reviews",
+    "badges": "Guest favorite",
+    "price": "¥565 CNY for 2 nights",
+    "lat": 43.65891,
+    "lng": 51.14583,
+    "url": "https://www.airbnb.com/rooms/968116450887302250"
+   },
+   {
+    "id": "1710197719491624126",
+    "name": "Sea Ponarama Aktau 88",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥929 CNY for 2 nights",
+    "lat": 43.6292,
+    "lng": 51.1648,
+    "url": "https://www.airbnb.com/rooms/1710197719491624126"
+   },
+   {
+    "id": "29398848",
+    "name": "One-bedroom apartment for rent",
+    "beds": "1 bedroom, 3 beds, 1 bath",
+    "rating": "4.95 out of 5 average rating,  22 reviews",
+    "badges": "Guest favorite",
+    "price": "¥310 CNY for 2 nights",
+    "lat": 43.6632,
+    "lng": 51.1485,
+    "url": "https://www.airbnb.com/rooms/29398848"
+   },
+   {
+    "id": "1462202962435741539",
+    "name": "2-room apartment in the city center - quiet and close to the sea",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  3 reviews",
+    "badges": "",
+    "price": "¥666 CNY for 2 nights",
+    "lat": 43.6429,
+    "lng": 51.1608,
+    "url": "https://www.airbnb.com/rooms/1462202962435741539"
+   },
+   {
+    "id": "926620139481673697",
+    "name": "Beautiful studio apartment",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  5 reviews",
+    "badges": "",
+    "price": "¥323 CNY for 2 nights",
+    "lat": 43.64162,
+    "lng": 51.15498,
+    "url": "https://www.airbnb.com/rooms/926620139481673697"
+   },
+   {
+    "id": "1558327484910870861",
+    "name": "Aktau, 1 bedroom apartment, on the 1st floor.",
+    "beds": "1 bedroom, 2 beds, No bathroom",
+    "rating": "5.0 out of 5 average rating,  5 reviews",
+    "badges": "Superhost",
+    "price": "¥364 CNY for 2 nights",
+    "lat": 43.6628,
+    "lng": 51.1526,
+    "url": "https://www.airbnb.com/rooms/1558327484910870861"
+   },
+   {
+    "id": "1410239234530451004",
+    "name": "Sea breeze",
+    "beds": "2 bedrooms, 3 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  9 reviews",
+    "badges": "Guest favorite",
+    "price": "¥1,050 CNY for 2 nights",
+    "lat": 43.6324,
+    "lng": 51.1618,
+    "url": "https://www.airbnb.com/rooms/1410239234530451004"
+   },
+   {
+    "id": "770639158147482811",
+    "name": "Apartment with balcony on the sea",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": "5.0 out of 5 average rating,  10 reviews",
+    "badges": "Guest favorite",
+    "price": "¥444 CNY for 2 nights",
+    "lat": 43.64531,
+    "lng": 51.15287,
+    "url": "https://www.airbnb.com/rooms/770639158147482811"
+   },
+   {
+    "id": "1750153084892246420",
+    "name": "Grey Noir Lounge",
+    "beds": "1 bedroom, 1 king bed, 1 bath",
+    "rating": "New place to stay",
+    "badges": "",
+    "price": "¥760 CNY for 2 nights",
+    "lat": 43.6434,
+    "lng": 51.1555,
+    "url": "https://www.airbnb.com/rooms/1750153084892246420"
+   },
+   {
+    "id": "1393991293514077945",
+    "name": "Apartment with sea view",
+    "beds": "1 bedroom, 1 king bed, 1 bath",
+    "rating": "4.68 out of 5 average rating,  19 reviews",
+    "badges": "",
+    "price": "¥745 CNY for 2 nights",
+    "lat": 43.64147035059344,
+    "lng": 51.154430631367354,
+    "url": "https://www.airbnb.com/rooms/1393991293514077945"
+   },
+   {
+    "id": "1267870169161428099",
+    "name": "Apartment 20 home",
+    "beds": "2 bedrooms, 3 sofa beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  3 reviews",
+    "badges": "Superhost",
+    "price": "¥310 CNY for 2 nights",
+    "lat": 43.63652593875295,
+    "lng": 51.161707059407355,
+    "url": "https://www.airbnb.com/rooms/1267870169161428099"
+   },
+   {
+    "id": "1491039683962616337",
+    "name": "Two-room apartment 11-24",
+    "beds": "1 bedroom, 2 beds, 1 bath",
+    "rating": "5.0 out of 5 average rating,  4 reviews",
+    "badges": "",
+    "price": "¥539 CNY for 2 nights",
+    "lat": 43.6561,
+    "lng": 51.1512,
+    "url": "https://www.airbnb.com/rooms/1491039683962616337"
+   },
+   {
+    "id": "854010414847061847",
+    "name": "Stylish apartment near the sea",
+    "beds": "1 bedroom, 1 bed, 1.5 baths",
+    "rating": null,
+    "badges": "",
+    "price": "¥875 CNY for 2 nights",
+    "lat": 43.68582,
+    "lng": 51.16153,
+    "url": "https://www.airbnb.com/rooms/854010414847061847"
+   },
+   {
+    "id": "1702878369117173455",
+    "name": "Mangystau travels",
+    "beds": "1 bedroom, 1 bed, 1 bath",
+    "rating": null,
+    "badges": "",
+    "price": "¥1,055 CNY for 2 nights",
+    "lat": 43.6292,
+    "lng": 51.1649,
+    "url": "https://www.airbnb.com/rooms/1702878369117173455"
+   }
+  ],
+  "raw": {
+   "searchUrl": "https://www.airbnb.com/s/Aktau--Kazakhstan/homes?ne_lat=43.8041684&ne_lng=51.3201111&sw_lat=43.5229977&sw_lng=51.0230388&checkin=2026-10-06&checkout=2026-10-08&adults=2&children=0&infants=0&pets=0",
+   "searchResults": [
+    {
+     "id": "936829216192675691",
+     "url": "https://www.airbnb.com/rooms/936829216192675691",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6OTM2ODI5MjE2MTkyNjc1Njkx",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Clean and cozy apartment"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.664,
+        "longitude": 51.1484
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.92 out of 5 average rating,  13 reviews",
+     "listingParamOverrides": {
+      "photoId": "1698941391",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥310 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥154.69 CNY: ¥309.38 CNY"
+      }
+     }
+    },
+    {
+     "id": "1692252046563518162",
+     "url": "https://www.airbnb.com/rooms/1692252046563518162",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTY5MjI1MjA0NjU2MzUxODE2Mg==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Sea view apartments! Versailles residential complex"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.63030239795677,
+        "longitude": 51.17419882269935
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "2660384342",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥848 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥423.72 CNY: ¥847.44 CNY"
+      }
+     }
+    },
+    {
+     "id": "1144822307990599011",
+     "url": "https://www.airbnb.com/rooms/1144822307990599011",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTE0NDgyMjMwNzk5MDU5OTAxMQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Seaside apartment"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6404,
+        "longitude": 51.1564
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  14 reviews",
+     "listingParamOverrides": {
+      "photoId": "1894293677",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥458 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥228.67 CNY: ¥457.34 CNY"
+      }
+     }
+    },
+    {
+     "id": "1447143235826495335",
+     "url": "https://www.airbnb.com/rooms/1447143235826495335",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQ0NzE0MzIzNTgyNjQ5NTMzNQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Cozy studio in Premium Plaza residential complex"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6869,
+        "longitude": 51.1614
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  5 reviews",
+     "listingParamOverrides": {
+      "photoId": "2220181502",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥700 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥349.74 CNY: ¥699.48 CNY"
+      }
+     }
+    },
+    {
+     "id": "968116450887302250",
+     "url": "https://www.airbnb.com/rooms/968116450887302250",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6OTY4MTE2NDUwODg3MzAyMjUw",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "The best location!"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.65891,
+        "longitude": 51.14583
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 sofa bed, Half-bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.96 out of 5 average rating,  75 reviews",
+     "listingParamOverrides": {
+      "categoryTag": "Tag:8678",
+      "photoId": "2470968075",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥565 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥282.48 CNY: ¥564.95 CNY"
+      }
+     }
+    },
+    {
+     "id": "1710197719491624126",
+     "url": "https://www.airbnb.com/rooms/1710197719491624126",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcxMDE5NzcxOTQ5MTYyNDEyNg==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Sea Ponarama Aktau 88"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6292,
+        "longitude": 51.1648
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "2686183245",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥929 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥464.07 CNY: ¥928.14 CNY"
+      }
+     }
+    },
+    {
+     "id": "29398848",
+     "url": "https://www.airbnb.com/rooms/29398848",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MjkzOTg4NDg=",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "One-bedroom apartment for rent"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6632,
+        "longitude": 51.1485
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 3 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.95 out of 5 average rating,  22 reviews",
+     "listingParamOverrides": {
+      "photoId": "600307064",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥310 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥154.69 CNY: ¥309.38 CNY"
+      }
+     }
+    },
+    {
+     "id": "1462202962435741539",
+     "url": "https://www.airbnb.com/rooms/1462202962435741539",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQ2MjIwMjk2MjQzNTc0MTUzOQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "2-room apartment in the city center - quiet and close to the sea"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6429,
+        "longitude": 51.1608
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  3 reviews",
+     "listingParamOverrides": {
+      "photoId": "2765863329",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥666 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥332.93 CNY: ¥665.85 CNY"
+      }
+     }
+    },
+    {
+     "id": "926620139481673697",
+     "url": "https://www.airbnb.com/rooms/926620139481673697",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6OTI2NjIwMTM5NDgxNjczNjk3",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Beautiful studio apartment"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.64162,
+        "longitude": 51.15498
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  5 reviews",
+     "listingParamOverrides": {
+      "photoId": "1688306267",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥323 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥161.42 CNY: ¥322.84 CNY"
+      }
+     }
+    },
+    {
+     "id": "1558327484910870861",
+     "url": "https://www.airbnb.com/rooms/1558327484910870861",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTU1ODMyNzQ4NDkxMDg3MDg2MQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Aktau, 1 bedroom apartment, on the 1st floor."
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6628,
+        "longitude": 51.1526
+       }
+      }
+     },
+     "badges": "Superhost",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, No bathroom",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  5 reviews",
+     "listingParamOverrides": {
+      "photoId": "2608981853",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥364 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥181.59 CNY: ¥363.18 CNY"
+      }
+     }
+    },
+    {
+     "id": "1410239234530451004",
+     "url": "https://www.airbnb.com/rooms/1410239234530451004",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQxMDIzOTIzNDUzMDQ1MTAwNA==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Sea breeze"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6324,
+        "longitude": 51.1618
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "2 bedrooms, 3 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  9 reviews",
+     "listingParamOverrides": {
+      "photoId": "2156986171",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,050 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥524.61 CNY: ¥1,049.22 CNY"
+      }
+     }
+    },
+    {
+     "id": "770639158147482811",
+     "url": "https://www.airbnb.com/rooms/770639158147482811",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6NzcwNjM5MTU4MTQ3NDgyODEx",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Apartment with balcony on the sea"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.64531,
+        "longitude": 51.15287
+       }
+      }
+     },
+     "badges": "Guest favorite",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  10 reviews",
+     "listingParamOverrides": {
+      "photoId": "1536145213",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥444 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥221.95 CNY: ¥443.90 CNY"
+      }
+     }
+    },
+    {
+     "id": "1750153084892246420",
+     "url": "https://www.airbnb.com/rooms/1750153084892246420",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTc1MDE1MzA4NDg5MjI0NjQyMA==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Grey Noir Lounge"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6434,
+        "longitude": 51.1555
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 king bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "New place to stay",
+     "listingParamOverrides": {
+      "photoId": "2769711565",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥760 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥379.87 CNY: ¥759.73 CNY"
+      }
+     }
+    },
+    {
+     "id": "1393991293514077945",
+     "url": "https://www.airbnb.com/rooms/1393991293514077945",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTM5Mzk5MTI5MzUxNDA3Nzk0NQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Apartment with sea view"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.64147035059344,
+        "longitude": 51.154430631367354
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 king bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "4.68 out of 5 average rating,  19 reviews",
+     "listingParamOverrides": {
+      "photoId": "2527934729",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥745 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥372.10 CNY: ¥744.19 CNY"
+      }
+     }
+    },
+    {
+     "id": "1267870169161428099",
+     "url": "https://www.airbnb.com/rooms/1267870169161428099",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTI2Nzg3MDE2OTE2MTQyODA5OQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Apartment 20 home"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.63652593875295,
+        "longitude": 51.161707059407355
+       }
+      }
+     },
+     "badges": "Superhost",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "2 bedrooms, 3 sofa beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  3 reviews",
+     "listingParamOverrides": {
+      "photoId": "2013230758",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥310 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥154.69 CNY: ¥309.38 CNY"
+      }
+     }
+    },
+    {
+     "id": "1491039683962616337",
+     "url": "https://www.airbnb.com/rooms/1491039683962616337",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTQ5MTAzOTY4Mzk2MjYxNjMzNw==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Two-room apartment 11-24"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6561,
+        "longitude": 51.1512
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 2 beds, 1 bath",
+      "secondaryLine": ""
+     },
+     "avgRatingA11yLabel": "5.0 out of 5 average rating,  4 reviews",
+     "listingParamOverrides": {
+      "photoId": "2301319937",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥539 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥269.03 CNY: ¥538.06 CNY"
+      }
+     }
+    },
+    {
+     "id": "854010414847061847",
+     "url": "https://www.airbnb.com/rooms/854010414847061847",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6ODU0MDEwNDE0ODQ3MDYxODQ3",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Stylish apartment near the sea"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.68582,
+        "longitude": 51.16153
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1.5 baths",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "1613094897",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥875 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥437.17 CNY: ¥874.34 CNY"
+      }
+     }
+    },
+    {
+     "id": "1702878369117173455",
+     "url": "https://www.airbnb.com/rooms/1702878369117173455",
+     "demandStayListing": {
+      "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTcwMjg3ODM2OTExNzE3MzQ1NQ==",
+      "description": {
+       "name": {
+        "localizedStringWithTranslationPreference": "Mangystau travels"
+       }
+      },
+      "location": {
+       "coordinate": {
+        "latitude": 43.6292,
+        "longitude": 51.1649
+       }
+      }
+     },
+     "badges": "",
+     "structuredContent": {
+      "mapSecondaryLine": "",
+      "primaryLine": "1 bedroom, 1 bed, 1 bath",
+      "secondaryLine": ""
+     },
+     "listingParamOverrides": {
+      "photoId": "2669181992",
+      "relaxedAmenityIds": "",
+      "splitStaysLocationPrecisions": "",
+      "splitStaysLocationsAcpIds": ""
+     },
+     "structuredDisplayPrice": {
+      "primaryLine": {
+       "accessibilityLabel": "¥1,055 CNY for 2 nights"
+      },
+      "explanationData": {
+       "title": "Price details",
+       "priceDetails": "2 nights x ¥527.13 CNY: ¥1,054.25 CNY"
+      }
+     }
+    }
+   ],
+   "paginationInfo": {
+    "pageCursors": [
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjowLCJ2ZXJzaW9uIjoxfQ==",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0=",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjozNiwidmVyc2lvbiI6MX0=",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo1NCwidmVyc2lvbiI6MX0=",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo3MiwidmVyc2lvbiI6MX0=",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo5MCwidmVyc2lvbiI6MX0=",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMDgsInZlcnNpb24iOjF9",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMjYsInZlcnNpb24iOjF9",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNDQsInZlcnNpb24iOjF9",
+     "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNjIsInZlcnNpb24iOjF9"
+    ]
+   }
+  }
+ }
+}

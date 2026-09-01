@@ -1,0 +1,4 @@
+[
+  {"name":"almaty_a","query":"Almaty, Kazakhstan","arrival":"2026-10-02","departure":"2026-10-03","limit":40},
+  {"name":"almaty_center","query":"Almaty city center, Kazakhstan","arrival":"2026-10-02","departure":"2026-10-03","limit":40}
+]
