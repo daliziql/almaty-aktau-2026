@@ -100,6 +100,14 @@
   /* ---------- Flight board ---------- */
   h2.sec{font-size:19px;margin:30px 0 14px;display:flex;align-items:center;gap:9px}
   h2.sec::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--jade)}
+  /* ---------- 行程地图总览（海报） ---------- */
+  .poster-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 4px}
+  .poster-wrap figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+        box-shadow:0 2px 10px rgba(30,45,40,.05)}
+  .poster-wrap img{width:100%;display:block;background:#e7edee}
+  .poster-wrap figcaption{padding:9px 13px;font-size:13px;color:var(--sub);line-height:1.45}
+  .poster-wrap figcaption b{color:var(--ink);font-weight:700}
+  @media(max-width:860px){.poster-wrap{grid-template-columns:1fr;gap:12px}}
   /* ---------- Flight timeline（逐行时间顺序） ---------- */
   .flightline{display:flex;flex-direction:column;gap:10px;position:relative}
   .fleg{display:grid;grid-template-columns:104px 30px minmax(0,1fr);gap:14px;align-items:center;
@@ -373,6 +381,7 @@
   body.simple .day{margin-bottom:14px;border-radius:16px}
   body.simple .daynav a:not([data-t^="d"]){display:none}
   body.simple .hero{padding-bottom:26px}
+  body.simple .poster-wrap{grid-template-columns:1fr;gap:12px}
 
 </style>
 </head>
@@ -490,6 +499,19 @@
   <!-- ============ 总览地图 ============ -->
   <h2 class="sec" id="sec-overview">全程航图（广州 → 上海集合 → 阿拉木图 ⇄ 阿克套 → 分别回上海/广州）</h2>
   <div id="overviewMap" class="map big"></div>
+
+  <!-- ============ 行程地图总览（海报） ============ -->
+  <h2 class="sec">行程地图总览</h2>
+  <div class="poster-wrap">
+    <figure>
+      <img loading="eager" fetchpriority="high" src="assets/posters/almaty-map.jpg" alt="阿拉木图必游景点地图">
+      <figcaption><b>阿拉木图 · 山地线</b>｜两湖一峡谷、琴布拉克冰川、BAO 输水管徒步的地理分布与推荐走法</figcaption>
+    </figure>
+    <figure>
+      <img loading="eager" fetchpriority="high" src="assets/posters/mangystau-map.jpg" alt="曼吉斯套必游景点地图">
+      <figcaption><b>阿克套 · 曼吉斯套</b>｜北线球谷+狮山、南线彩丘+Bozzhyra 日落，远古海床两线走法</figcaption>
+    </figure>
+  </div>
 
   <!-- ============ 逐日 ============ -->
   <h2 class="sec" id="sec-days">逐日行程</h2>
