@@ -708,4 +708,49 @@ window.GALLERY={
     {"src": "assets/gallery2/museum_ama/museum_ama_13.webp", "cap": "色彩分区的现当代绘画展厅", "url": "https://www.xiaohongshu.com/explore/68e1ea45000000000700acc0", "like": "25"},
     {"src": "assets/gallery2/museum_ama/museum_ama_14.webp", "cap": "出口处文创咖啡区·苹果茶", "url": "https://www.xiaohongshu.com/explore/69a79c41000000002801c87a", "like": "51"},
   ]},
+
+  "black_canyon": {title:"黑峡谷 Black Canyon", items:[
+    {"src": "assets/gallery2/black_canyon/black_canyon_01.webp", "cap": "阿拉木图两湖一峡谷攻略", "url": "https://www.xiaohongshu.com/explore/6a68d318", "like": "50"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_02.webp", "cap": "阿拉木图两湖一峡谷攻略", "url": "https://www.xiaohongshu.com/explore/6a68d318", "like": "50"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_03.webp", "cap": "阿拉木图两湖一峡谷攻略", "url": "https://www.xiaohongshu.com/explore/6a68d318", "like": "50"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_04.webp", "cap": "一场不会后悔的两天两夜旅行", "url": "https://www.xiaohongshu.com/explore/6a8031bf", "like": "10"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_05.webp", "cap": "阿拉木图最后一程｜两湖一峡谷", "url": "https://www.xiaohongshu.com/explore/6a93fc87", "like": "9"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_06.webp", "cap": "阿拉木图最后一程｜两湖一峡谷", "url": "https://www.xiaohongshu.com/explore/6a93fc87", "like": "9"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_07.webp", "cap": "阿拉木图最惊艳的是游戏建模般的峡谷", "url": "https://www.xiaohongshu.com/explore/6a50c3fd", "like": "27"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_08.webp", "cap": "阿拉木图最惊艳的是游戏建模般的峡谷", "url": "https://www.xiaohongshu.com/explore/6a50c3fd", "like": "27"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_09.webp", "cap": "阿拉木图最惊艳的是游戏建模般的峡谷", "url": "https://www.xiaohongshu.com/explore/6a50c3fd", "like": "27"},
+    {"src": "assets/gallery2/black_canyon/black_canyon_10.webp", "cap": "阿拉木图两湖一峡谷旅行团最详细说明4/5", "url": "https://www.xiaohongshu.com/explore/681c361f", "like": "32"}
+  ]},
+  "moon_canyon": {title:"月亮峡谷 Moon Canyon", items:[
+    {"src": "assets/gallery2/moon_canyon/moon_canyon_01.webp", "cap": "一场不会后悔的两天两夜旅行", "url": "https://www.xiaohongshu.com/explore/6a8031bf", "like": "10"},
+    {"src": "assets/gallery2/moon_canyon/moon_canyon_02.webp", "cap": "两日一峡谷 day2 恰伦峡谷", "url": "https://www.xiaohongshu.com/explore/6a81f418", "like": "3"},
+    {"src": "assets/gallery2/moon_canyon/moon_canyon_03.webp", "cap": "阿拉木图两湖一峡谷旅行团最详细说明4/5", "url": "https://www.xiaohongshu.com/explore/681c361f", "like": "32"},
+    {"src": "assets/gallery2/moon_canyon/moon_canyon_04.webp", "cap": "阿拉木图3D2N跟团游", "url": "https://www.xiaohongshu.com/explore/665dd07c", "like": "19"},
+    {"src": "assets/gallery2/moon_canyon/moon_canyon_05.webp", "cap": "阿拉木图3D2N跟团游", "url": "https://www.xiaohongshu.com/explore/665dd07c", "like": "19"},
+    {"src": "assets/gallery2/moon_canyon/moon_canyon_06.webp", "cap": "阿拉木图3D2N跟团游", "url": "https://www.xiaohongshu.com/explore/665dd07c", "like": "19"}
+  ]},
+  "aktau_lighthouse": {title:"阿克套 Melovoy 屋顶灯塔", items:[
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_01.webp", "cap": "灯塔楼——阿克套城标之一", "url": "https://www.xiaohongshu.com/explore/68f86e8a", "like": "29"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_02.webp", "cap": "灯塔楼——阿克套城标之一", "url": "https://www.xiaohongshu.com/explore/68f86e8a", "like": "29"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_03.webp", "cap": "阿克套 Melovoy 屋顶灯塔", "url": "https://www.xiaohongshu.com/explore/67e684d9", "like": "7"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_04.webp", "cap": "阿克套 Melovoy 屋顶灯塔", "url": "https://www.xiaohongshu.com/explore/67e684d9", "like": "7"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_05.webp", "cap": "阿克套 Melovoy 屋顶灯塔", "url": "https://www.xiaohongshu.com/explore/67e684d9", "like": "7"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_06.webp", "cap": "阿克套 Melovoy 屋顶灯塔", "url": "https://www.xiaohongshu.com/explore/67e684d9", "like": "7"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_07.webp", "cap": "灯塔下的阿克套", "url": "https://www.xiaohongshu.com/explore/6900e217", "like": "4"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_08.webp", "cap": "旅行日记｜阿克套city walk看建筑雕像篇", "url": "https://www.xiaohongshu.com/explore/6a8db456", "like": "25"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_09.webp", "cap": "旅行日记｜阿克套city walk看建筑雕像篇", "url": "https://www.xiaohongshu.com/explore/6a8db456", "like": "25"},
+    {"src": "assets/gallery2/aktau_lighthouse/aktau_lighthouse_10.webp", "cap": "旅行日记｜阿克套city walk看建筑雕像篇", "url": "https://www.xiaohongshu.com/explore/6a8db456", "like": "25"}
+  ]},
+  "mangystau_museum": {title:"曼吉斯套州立博物馆", items:[
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_01.webp", "cap": "阿克套小众博物馆，珍藏众多标本", "url": "https://www.xiaohongshu.com/explore/69f6714c", "like": "36"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_02.webp", "cap": "阿克套小众博物馆，珍藏众多标本", "url": "https://www.xiaohongshu.com/explore/69f6714c", "like": "36"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_03.webp", "cap": "阿克套小众博物馆，珍藏众多标本", "url": "https://www.xiaohongshu.com/explore/69f6714c", "like": "36"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_04.webp", "cap": "阿克套小众博物馆，珍藏众多标本", "url": "https://www.xiaohongshu.com/explore/69f6714c", "like": "36"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_05.webp", "cap": "阿克套小众博物馆，珍藏众多标本", "url": "https://www.xiaohongshu.com/explore/69f6714c", "like": "36"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_06.webp", "cap": "阿克套小众博物馆，珍藏众多标本", "url": "https://www.xiaohongshu.com/explore/69f6714c", "like": "36"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_07.webp", "cap": "哈萨克斯坦之行 阿克套变形计", "url": "https://www.xiaohongshu.com/explore/6852e341", "like": "21"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_08.webp", "cap": "哈萨克斯坦之行 阿克套变形计", "url": "https://www.xiaohongshu.com/explore/6852e341", "like": "21"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_09.webp", "cap": "哈萨克斯坦之行 阿克套变形计", "url": "https://www.xiaohongshu.com/explore/6852e341", "like": "21"},
+    {"src": "assets/gallery2/mangystau_museum/mangystau_museum_10.webp", "cap": "哈萨克斯坦之行 阿克套变形计", "url": "https://www.xiaohongshu.com/explore/6852e341", "like": "21"}
+  ]},
 };
