@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>哈哈哈哈萨克斯坦 · 历史人文手册</title>
+<style>
+  :root{
+    --paper:#f4f2ec; --card:#ffffff; --ink:#22302c; --sub:#66736e; --line:#e4dfd4;
+    --jade:#2e7d6b; --jade-soft:#e4f0ec;
+    --sky:#3a7ca5;  --sky-soft:#e7f0f5;
+    --clay:#d08a3c; --clay-soft:#faf0e1;
+    --rose:#c2553d; --rose-soft:#fbe9e4;
+    --slate:#4f6d7a; --slate-soft:#e9eff1;
+    --gold:#b08900; --gold-soft:#f8f1dc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+       background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:15.5px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 90px}
+  a{color:var(--sky);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(125deg,#1d5b53 0%,#2e7d6b 48%,#3a7ca5 100%);color:#fff;
+        border-radius:0 0 28px 28px;padding:42px 32px 30px;position:relative;overflow:hidden;margin:0 -20px 22px}
+  .hero::after{content:"📜";position:absolute;right:20px;bottom:-18px;font-size:120px;opacity:.12}
+  .hero .eyebrow{font-size:12px;letter-spacing:4px;opacity:.85;font-weight:700}
+  .hero h1{font-size:27px;margin:10px 0 8px;line-height:1.35}
+  .hero .meta{font-size:14px;opacity:.95;max-width:620px}
+  .hero .navline{margin-top:16px;display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px}
+  .hero .navline a{color:#fff;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);
+                  padding:5px 14px;border-radius:30px}
+  .hero .navline a:hover{text-decoration:none;background:rgba(255,255,255,.28)}
+
+  /* ---------- 快跳 ---------- */
+  .toc{display:flex;gap:8px;overflow-x:auto;flex-wrap:nowrap;padding:6px 2px 12px;
+       -ms-overflow-style:none;scrollbar-width:none}
+  .toc::-webkit-scrollbar{display:none}
+  .toc a{flex:0 0 auto;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);
+         padding:6px 14px;border-radius:30px;white-space:nowrap}
+  .toc a:hover{text-decoration:none;border-color:var(--jade);color:var(--jade)}
+
+  /* ---------- 章节 ---------- */
+  .chapter{margin-top:40px}
+  .ch-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--jade);padding-bottom:10px;margin-bottom:20px}
+  .ch-head .no{font-size:13px;font-weight:700;color:#fff;background:var(--jade);border-radius:8px;padding:2px 10px}
+  .ch-head h2{font-size:21px}
+  .ch-head .en{color:var(--sub);font-size:12.5px;margin-left:auto;letter-spacing:1px}
+  .ch-intro{color:var(--sub);font-size:14px;background:var(--jade-soft);border-left:3px solid var(--jade);
+            padding:10px 14px;border-radius:0 10px 10px 0;margin-bottom:18px}
+
+  /* ---------- 条目卡 ---------- */
+  .entry{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+  .entry h3{font-size:17.5px;line-height:1.5;margin:4px 0 10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .e-anchor{font-size:12px;color:var(--slate);background:var(--slate-soft);display:inline-block;
+            padding:2px 10px;border-radius:20px;margin-bottom:6px}
+  .entry p{margin:9px 0}
+  .entry blockquote{margin:12px 0;padding:10px 16px;background:var(--gold-soft);border-left:3px solid var(--gold);
+                    border-radius:0 8px 8px 0;color:#5b4f2c;font-size:14.5px}
+  .entry blockquote .src{display:block;text-align:right;font-size:12px;color:#8a7a44;margin-top:4px}
+  .onsite{background:var(--sky-soft);border-radius:10px;padding:9px 14px;font-size:14px;color:#2e5a72}
+  .onsite b{color:var(--sky)}
+  .g-btn{font-size:12px;border:1px solid var(--jade);color:var(--jade);background:#fff;border-radius:20px;
+         padding:2px 10px;cursor:pointer;font-weight:600}
+  .g-btn:hover{background:var(--jade);color:#fff}
+  .h-btn{font-size:12px;border:1px solid #9a8460;color:#7a6534;background:var(--gold-soft);
+         border-radius:20px;padding:2px 10px;cursor:pointer;font-weight:600}
+  .h-btn:hover{background:#ecdfb6}
+
+  /* ---------- 历史影像 ---------- */
+  .hist-strip{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
+  .hist-fig{width:128px;cursor:pointer;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000}
+  .hist-fig img{width:100%;height:88px;object-fit:cover;display:block;filter:sepia(.18)}
+  .hist-fig .cap{font-size:11px;background:#fbf8ef;padding:4px 7px;color:#7a6534;line-height:1.35}
+  .hist-note{font-size:12px;color:var(--sub);margin:2px 0 0}
+
+  /* ---------- 卷首时间轴 ---------- */
+  .timeline{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 16px;-ms-overflow-style:none;scrollbar-width:none}
+  .timeline::-webkit-scrollbar{display:none}
+  .tl-card{flex:0 0 250px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--clay);
+           border-radius:12px;padding:14px 16px}
+  .tl-card .era{font-size:12.5px;font-weight:700;color:var(--clay);margin-bottom:6px}
+  .tl-card .txt{font-size:13.5px;color:#3d4a46;line-height:1.7}
+
+  /* ---------- 卷末 ---------- */
+  .tail-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+  .tail-card h3{font-size:17px;margin-bottom:12px}
+  .glossary{display:flex;flex-wrap:wrap;gap:8px}
+  .glossary span{font-size:13px;background:var(--slate-soft);border-radius:8px;padding:4px 11px}
+  .table-scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+  th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+  th{background:var(--jade-soft);font-weight:600}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:12px}
+  details summary{cursor:pointer;font-weight:600;font-size:15px}
+  details ul{margin:12px 0 2px 20px;font-size:14px;color:#3d4a46}
+  details li{margin:5px 0}
+  .foot{text-align:center;color:var(--sub);font-size:12.5px;margin-top:40px}
+
+  /* ---------- 实拍弹窗 ---------- */
+  .gal-mask{position:fixed;inset:0;background:rgba(25,30,28,.62);display:none;align-items:center;justify-content:center;z-index:1100;padding:22px}
+  .gal-mask.show{display:flex}
+  .gal-modal{background:#fff;border-radius:16px;max-width:920px;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+  .gal-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .gal-head h3{font-size:16px;flex:1}
+  .gal-count{font-size:12px;color:var(--sub)}
+  .gal-x{border:none;background:var(--slate-soft);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px}
+  .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;padding:18px;overflow-y:auto}
+  .gal-grid img{width:100%;height:120px;object-fit:cover;border-radius:9px;cursor:pointer;background:#eee}
+  .gal-view{display:none;flex-direction:column;flex:1;min-height:0}
+  .gal-view.show{display:flex}
+  .gal-back{align-self:flex-start;margin:10px 18px 0;border:none;background:none;color:var(--sky);cursor:pointer;font-size:14px}
+  .gal-stage{position:relative;display:flex;align-items:center;justify-content:center;padding:8px 50px;min-height:280px;flex:1}
+  .gal-stage img{max-width:100%;max-height:58vh;border-radius:10px}
+  .gal-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(0,0,0,.45);color:#fff;
+           width:40px;height:40px;border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
+  .gal-prev{left:10px}.gal-next{right:10px}
+  .gal-cap{padding:10px 18px 16px;font-size:13.5px;color:var(--sub);border-top:1px solid var(--line)}
+  .gal-cap a{font-size:12.5px}
+  .modal-lic{display:block;font-size:11.5px;color:#9a8460;margin-top:3px}
+
+  @media(max-width:640px){
+    body{font-size:15px}
+    .wrap{padding:0 13px 70px}
+    .hero{padding:34px 20px 26px;border-radius:0 0 20px 20px;margin:0 -13px 18px}
+    .hero h1{font-size:22px}
+    .entry{padding:16px 15px;border-radius:13px}
+    .entry h3{font-size:16.5px}
+    .tl-card{flex-basis:224px}
+    .hist-fig{width:108px}
+    .hist-fig img{height:74px}
+    .gal-mask{padding:0}
+    .gal-modal{border-radius:0;max-height:100dvh;height:100dvh}
+    .gal-grid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr));gap:8px;padding:12px}
+    .gal-grid img{height:104px}
+    .gal-stage{padding:8px 40px}
+    .gal-stage img{max-height:56vh}
+    .gal-nav{width:38px;height:38px}
+    .tail-card{padding:16px 15px}
+    .ch-head{flex-wrap:wrap;gap:8px 10px}
+    .ch-head .en{margin-left:0;width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">ALMATY × AKTAU · FIELD NOTES OF HISTORY</div>
+    <h1>人到，脑子也到<br>哈萨克斯坦历史人文手册</h1>
+    <p class="meta">八天行程里每一处风景、建筑与餐桌的来处。资料以《失落的卫星：深入中亚大陆的旅程》（刘子超）为行走线索，事实部分经公开权威来源交叉核验（2026-09）；实拍来自逐帖双审的小红书旅拍，老照片来自 Wikimedia Commons，分区呈现。</p>
+    <div class="navline">
+      <a href="../">← 返回主攻略</a>
+      <a href="../hotels/">住宿选型 ↗</a>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#t0">卷首·时间轴</a>
+    <a href="#c1">一、阿拉木图</a>
+    <a href="#c2">二、七河与天山</a>
+    <a href="#c3">三、曼吉斯套与里海</a>
+    <a href="#c4">四、餐桌上的中亚</a>
+    <a href="#tail">卷末·名词与书单</a>
+  </nav>
+
+  <!-- ================= 卷首时间轴 ================= -->
+  <section id="t0" class="chapter">
+    <div class="ch-head"><span class="no">卷首</span><h2>这片土地的时间轴</h2><span class="en">TIMELINE · 左右滑动</span></div>
+    <div class="timeline">
+      <div class="tl-card"><div class="era">前 2000–前 500｜青铜到塞种</div><div class="txt">泰姆格里（Tamgaly）的岩刻在此后两千年间被陆续刻下，约 5000 幅，2004 年列入 UNESCO。草原的主人是塞种人（Saka）——两千年后那个著名的“金人”，正是他们的贵族。</div></div>
+      <div class="tl-card"><div class="era">前 2 世纪–9 世纪｜丝路与突厥</div><div class="txt">七河地带是丝路北道，塔尔加（Talgar）等古城出土过汉语、突厥语、阿拉伯语、契丹文的铭文，商队和文字都从这里路过。</div></div>
+      <div class="tl-card"><div class="era">751｜伊斯兰东来</div><div class="txt">怛罗斯（今塔拉兹附近）一战，唐与阿拉伯阿拔斯王朝相遇，被俘的唐军工匠把造纸术带向西方。这是中亚命运的一次转向。</div></div>
+      <div class="tl-card"><div class="era">13 世纪｜蒙古风暴</div><div class="txt">1219–1220 年讹答剌事件引发第一次蒙古西征；到 17 世纪，准噶尔部入主七河近百年，牧场易主，部族四散。</div></div>
+      <div class="tl-card"><div class="era">1465｜哈萨克汗国</div><div class="txt">克烈与贾尼别克脱离乌兹别克汗国，在七河西部立国，后分大、中、小三玉兹。“哈萨克”一词，本意是“自由的流浪者”。</div></div>
+      <div class="tl-card"><div class="era">17–19 世纪｜两大帝国之间</div><div class="txt">大玉兹、中玉兹一度求助清帝国，小玉兹求助俄国。1854 年，一队哥萨克在外伊犁山脚下扎下木栅要塞——那就是阿拉木图的第一根木桩。</div></div>
+      <div class="tl-card"><div class="era">1917–1936｜苏联重塑</div><div class="txt">民族划界“造出”五个斯坦；1929 年阿拉木图成为哈萨克首府，1936 年哈萨克苏维埃社会主义共和国成立。农业集体化终结了千年游牧，大饥荒逾百万人死亡。</div></div>
+      <div class="tl-card"><div class="era">1949–1991｜核与黄昏</div><div class="txt">塞米伊核试验场 41 年 456 次核爆；1963 年耶斯克湖被泥石流放空；1982 年 Arasan 浴馆落成、1983 年 Kok Tobe 电视塔竖起；1986 年十二月事件；1991 年 12 月 16 日哈萨克最后一个宣布独立，12 月 21 日《阿拉木图宣言》在这座城市为苏联盖上棺盖。</div></div>
+      <div class="tl-card"><div class="era">1993–1997｜更名与迁都</div><div class="txt">1993 年 Alma-Ata 正名为 Almaty；1997 年首都北迁阿斯塔纳。阿拉木图卸下了权力，意外保住了悠闲。</div></div>
+      <div class="tl-card"><div class="era">独立之后｜重新长出来</div><div class="txt">1999 年中央清真寺在老鞑靼寺原址建成；2011 年扎瑙津的石油冲突与阿拉木图地铁通车同一年发生——地铁动工于 1988 年，建了 23 年。2025 年中亚首座私立现当代美术馆 AMA 开门。城市仍在书写自己。</div></div>
+      <div class="tl-card"><div class="era">2026.10｜你</div><div class="txt">你脚下的街道、巴扎、雪山、荒漠，就是这条时间轴目前的最后一格。</div></div>
+    </div>
+  </section>
+
+  <!-- ================= 第一章 ================= -->
+  <section id="c1" class="chapter">
+    <div class="ch-head"><span class="no">壹</span><h2>阿拉木图：从维尔内要塞到苹果城</h2><span class="en">ALMATY</span></div>
+    <div class="ch-intro">这座城市的每一层皮都能掀开：哥萨克的棋盘格街道、地震后只许建木房的政令、斯大林式柱廊、赫鲁晓夫的蜂巢、独立后重新镀金的穹顶。你不是在逛城市，是在走一块年轮。</div>
+
+    <article class="entry" id="e1-1">
+      <span class="e-anchor">锚点 · 在阿拉木图的每一天</span>
+      <h3>1.1 城市小传：一个要塞长成的都市
+        <button class="g-btn" data-gal="brutalism">苏式街区实拍 8</button>
+        <button class="h-btn" data-hist="city">老照片 4</button>
+      </h3>
+      <p>1854 年 2 月 4 日，沙俄在外伊犁阿拉套山脚下、大小阿尔马廷卡河之间扎下 Zailiyskoe 木栅要塞，同年改名“维尔内”（Verny，意为“忠诚”）——忠诚于谁，名字已经替它回答。1867 年设市，成为七河省首府。1887 年一场大地震几乎抹平全城，痛定思痛的总督下令此后只准建木房，全城的木构传统竟源自一纸抗震政令。1921 年它改名 Alma-Ata（“苹果之父”），1929 年成为哈萨克首府，1993 年按哈萨克语正名为 Almaty，1997 年又失去首都身份。</p>
+      <blockquote>“1854 年，哥萨克骑兵在这里建立堡垒，开启了阿拉木图的历史。1911 年，一场大地震抹平了城市。眼前的一切几乎都是此后重建的，因此不可避免地带有苏联的印记。”<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>横平竖直的街道就是当年哥萨克军堡的棋盘骨架；看任何一栋老房子，先判断它属于地震后木构时期、斯大林时期，还是赫鲁晓夫时期——这是行走全城的“三层地层”游戏。</p>
+    </article>
+
+    <article class="entry" id="e1-2">
+      <span class="e-anchor">锚点 · D4 / D8 绿巴扎</span>
+      <h3>1.2 “苹果城”不是浪漫比喻
+        <button class="g-btn" data-gal="green_bazaar">绿巴扎实拍 10</button>
+      </h3>
+      <p>Alma 是突厥语的“苹果”，Ata 是“祖先、父亲”。现代基因学认为，天山野苹果林（Malus sieversii）是全世界栽培苹果的祖先种之一，而阿拉木图所在的外伊犁阿拉套正是它的核心分布区——你在超市买的每一颗苹果，祖籍都可能写着这座城市。苏联时代，阿波特（Aport）大苹果是全城的骄傲，曾经大到一只近一公斤，绿巴扎当年以它为招牌。</p>
+      <blockquote>“小贩削了一块苹果给我，味道和阿克苏糖心苹果差不多——这两个地方相距并不遥远，共享着类似的土壤和光照。”<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>D8 在绿巴扎买苹果干做手信；野生苹果树要到城郊进山的公路边才看得见，城里是一排排被作者吐槽过的白杨树。</p>
+    </article>
+
+    <article class="entry" id="e1-3">
+      <span class="e-anchor">锚点 · city walk 沿街、金广场周边</span>
+      <h3>1.3 赫鲁晓夫楼：装下整个苏联的蜂巢</h3>
+      <p>1950 年代中后期，赫鲁晓夫用低成本、速成的五层板楼（khrushchevka）替代斯大林式廊柱公寓，让几代人从大杂院挤进有独立厨卫的小单元。因为阿拉木图坐落在地震带上，同期板楼额外做了抗震结构，1966–1971 年间建起 140 万㎡这类住宅。它不漂亮，但它让“家”第一次大规模成为普通工人的私有空间。</p>
+      <blockquote>“公寓楼是赫鲁晓夫时代的遗产，像一个巨大的蜂巢，能容纳近千户家庭。在这里，你很容易感到自己的渺小。”<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>D8 逛 Arbat 时抬头看密如蜂巢的阳台，每家的封闭方式都是一部私人生活史。这不是破败景观，而是理解苏联日常——通勤、分房、公共生活——的入口。</p>
+    </article>
+
+    <article class="entry" id="e1-4">
+      <span class="e-anchor">锚点 · D8 潘菲洛夫公园</span>
+      <h3>1.4 升天大教堂：地震中活下来的木构奇迹
+        <button class="g-btn" data-gal="cathedral">实拍 10</button>
+        <button class="h-btn" data-hist="cathedral">老照片 2</button>
+      </h3>
+      <p>1904–1907 年，工程师 Andrey Zenkov 主持建起这座高 56 米的东正教堂，整体以天山云杉为骨，以榫卯为主、几乎不用金属钉。1911 年 1 月 3 日 Kebin 大地震（不同机构定震级 7.7–8.2，维尔内约 452 人罹难）中，整座城市几近全毁，它却只轻微变形地站着，从此被当作抗震木构的活证据。苏联时期它被改成博物馆、广播站，钟被摘去，1995–1997 年才归还教会、重新鎏金。</p>
+      <p class="onsite"><b>到现场看什么：</b>凑近看梁柱节点——它的“抗震”不是更硬，而是更软：木构件可以在地震中摇动耗能，像一只编好的篮子。再想想 1887 年后“只许建木房”的政令，就懂了它为什么会被造出来。</p>
+    </article>
+
+    <article class="entry" id="e1-5">
+      <span class="e-anchor">锚点 · D8 公园长明火</span>
+      <h3>1.5 潘菲洛夫 28 勇士：苏联的英雄叙事
+        <button class="g-btn" data-gal="memorial_park">实拍 8</button>
+      </h3>
+      <p>公园以 Ivan Panfilov 将军的第 316 步兵师命名，叙事核心是 1941 年莫斯科保卫战中 28 名战士阻击德军坦克的故事，那句政治指导员的口号是“俄罗斯虽大，我们身后就是莫斯科”。长明火与英雄群像在 1975 年胜利三十周年时竖起。后世史学家对“28 人”的细节多有考证与争议，但记忆的功能从来不止于史实。</p>
+      <p class="onsite"><b>到现场看什么：</b>献花的多是拍婚纱照或带着孩子的本地市民，而不是游客——苏联英雄记忆在哈萨克仍是活着的日常，不只是玻璃柜里的展品。</p>
+    </article>
+
+    <article class="entry" id="e1-6">
+      <span class="e-anchor">锚点 · D4 午餐、D8 手信</span>
+      <h3>1.6 绿巴扎：一座游牧国家的灵魂还在
+        <button class="g-btn" data-gal="green_bazaar">实拍 10</button>
+      </h3>
+      <p>这里 1868 年自然成市，1875 年建起有柱廊的 Gostiny Dvor 客院，1887 年在地震中倒塌，1927 年以“中央集体农庄市场”的名义重开，1975 年封进晚期苏联构成主义的封闭场馆，2017 年改成今天的两层新馆。一座巴扎翻来覆去死了三次、活了四次。</p>
+      <blockquote>“卖牛羊肉的是哈萨克人或者鞑靼人，卖马肉的是哈萨克人，只有俄罗斯人才会卖猪肉。”肉案区就是一张活的族群地图，还有伏尔加德意志裔面孔的摊商、卖泡菜的、早已忘了母语的高丽女人。<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>二楼干果蜂蜜、一楼奶制品区找库米思（马奶酒）。卫国战争最困难的几年，这里也是少数还能用现金买到食物的地方——巴扎从来比体制更顽强。</p>
+    </article>
+
+    <article class="entry" id="e1-7">
+      <span class="e-anchor">锚点 · 绿巴扎奶制品区、Auyl 晚餐</span>
+      <h3>1.7 马奶酒与契诃夫的药方</h3>
+      <p>发酵马奶 Kumis（Kymyz）微酸、含低度酒精与活菌，是草原游牧最标志性的饮品，19 世纪经鞑靼商人风靡整个沙俄，被当成疗养院级的滋补品。1901 年，身患结核病的契诃夫在伏尔加河上蜜月旅行，医生开给他的药方，正是马奶酒。</p>
+      <blockquote>“我买了一杯，很酸，带有轻微的酒精度。我喝不太惯。”<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>不敢挑战马奶酒，可以从驼奶 shubat 或奶茶开始。理解了“用发酵保存一切”，就理解了草原“牲畜全身都是宝”的饮食逻辑。</p>
+    </article>
+
+    <article class="entry" id="e1-8">
+      <span class="e-anchor">锚点 · D8 Arbat · Zhibek Zholy 地铁站</span>
+      <h3>1.8 地铁站：迟到 23 年的苏联工程
+        <button class="g-btn" data-gal="metro">实拍 8</button>
+      </h3>
+      <p>阿拉木图地铁 1988 年动工，建到一半苏联没了：停工、缺钱、改标准，直到 2011 年 12 月 1 日才开通，整整 23 年，首批只有 7 站。Zhibek Zholy 站深埋地下 30 米，站名意为“丝绸之路”。它是苏联地铁美学的“遗腹子”——吊灯、浮雕、拱形柱廊与莫斯科地铁同一种语言，只是图案换成了哈萨克叙事。</p>
+      <p class="onsite"><b>到现场看什么：</b>花几块钱坐一站，顺路对比 Abay 站与航天主题的 Baikonur 站，看一个消失的国家如何把最后的审美预算，花在还没通车的地下。</p>
+    </article>
+
+    <article class="entry" id="e1-9">
+      <span class="e-anchor">锚点 · D3 晚阿拜歌剧院 / 备选看演出</span>
+      <h3>1.9 阿拜歌剧院：苏联为民族艺术造的神殿
+        <button class="g-btn" data-gal="abay_opera">实拍 10</button>
+        <button class="h-btn" data-hist="abai">阿拜肖像</button>
+      </h3>
+      <p>1934 年 1 月 13 日，哈萨克民族歌剧《Aiman-Sholpan》首演，这一天后来被当作哈萨克职业歌剧与芭蕾的生日。现楼 1936 年开工，赶在 1941 年 11 月 7 日十月革命节落成，1945 年以民族诗人阿拜·库南巴耶夫（1845–1904）命名。斯大林式新古典的柱廊里，嵌满哈萨克民族纹饰——这正是苏联民族政策的实体：一手抹平差异，一手系统“制造”各民族的艺术。</p>
+      <p class="onsite"><b>到现场看什么：</b>有排期就买一张最便宜的票进去坐半小时，看天花板吊灯与民族纹样如何在同一间屋子里相安无事；刘子超重返阿拉木图时租的公寓，就在歌剧院旁边。</p>
+    </article>
+
+    <article class="entry" id="e1-10">
+      <span class="e-anchor">锚点 · D8 中央国家博物馆</span>
+      <h3>1.10 “金人”：一个民族如何被讲述
+        <button class="g-btn" data-gal="museum_csm">实拍 10</button>
+        <button class="h-btn" data-hist="goldenman">金人影像</button>
+      </h3>
+      <p>镇馆之宝“金人”（Altyn Adam）原件出自 1969 年发掘的 Issyk 库尔干古墓——公元前 4 世纪前后的塞种贵族，身着 4000 余片金饰。它出土于苏联时期，却在独立后成为哈萨克头号国家符号：国旗般的复制件遍布全国广场。</p>
+      <blockquote>“所有解说词似乎都指向同一个内容：这就是哈萨克斯坦，这就是哈萨克民族。然而作为现代意义上的民族国家，哈萨克是十月革命后才产生的概念……苏联把西方的民族国家理论，应用到中亚这片民族观念尚处于前现代状态的土地上。”<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>带着问题看展——哪些是草原文明的实物，哪些是 20 世纪建构出来的叙事。这层自觉，比任何一件金饰都值钱。</p>
+    </article>
+
+    <article class="entry" id="e1-11">
+      <span class="e-anchor">锚点 · 城市背景知识 / D8 旧货市场淘宝</span>
+      <h3>1.11 苏联在这座城市落幕
+        <button class="g-btn" data-gal="barakholka">旧货市场实拍 8</button>
+      </h3>
+      <p><b>十二月事件（1986.12.16–19）：</b>戈尔巴乔夫撤换哈萨克第一书记库纳耶夫、派俄罗斯人接任，阿拉木图青年涌上街头，随即被镇压，这是苏联境内最早的民族主义抗议之一。<b>阿拉木图宣言（1991.12.21）：</b>11 个加盟共和国领导人在这里签约成立独联体、宣告苏联停止存在；哈萨克 12 月 16 日独立，是最后一个退出的共和国。纳扎尔巴耶夫本是最强硬反对解体的人——讽刺的是，终结仪式偏偏办在他的城市。</p>
+      <p><b>两枚彩蛋：</b>维克多·崔（Viktor Tsoi），1962 年生于阿拉木图的苏联高丽裔、苏联摇滚的教父，1990 年车祸离世，旧货摊上的崔徽章就是你的寻宝目标；1928–1929 年托洛茨基被流放于此，在阿拉木图写自传、译马克思，一年后被驱逐出境。</p>
+    </article>
+
+    <article class="entry" id="e1-12">
+      <span class="e-anchor">锚点 · 备选 / 绿巴扎旁</span>
+      <h3>1.12 中央清真寺：独立之后，信仰回来
+        <button class="g-btn" data-gal="central_mosque">实拍 8</button>
+      </h3>
+      <p>原址是 1890 年的一座鞑靼老寺，1987 年毁于火灾。新寺 1993 年——也就是独立的次年——奠基，1999 年建成，金色穹顶直径 20 米、高 36 米，穹顶内壁的古兰经书法由土耳其工匠在 2000 年手绘完成。一座几乎与国家同龄的清真寺。</p>
+      <p class="onsite"><b>到现场看什么：</b>把它和歌剧院（1.9）对照着看：1941 年的歌剧院讲“苏联如何制造民族艺术”，1999 年的清真寺讲“独立之后如何重新接上宗教传统”。向导谢伊的观察是，独立后长大的年轻人，反而比苏联出身的父母更传统。注意周五礼拜时段与游客开放时间。</p>
+    </article>
+
+    <article class="entry" id="e1-13">
+      <span class="e-anchor">锚点 · 备选 · 长途回来那晚</span>
+      <h3>1.13 Arasan 浴馆：库纳耶夫时代的余温
+        <button class="g-btn" data-gal="arasan_banya">实拍 5</button>
+      </h3>
+      <p>1977–1983 年建造（1982 年部分开放），由哈共中央第一书记丁穆罕默德·库纳耶夫拍板——他 1959–1986 年在任、勃列日涅夫的盟友、政治局里唯一的中亚人。苏联现代主义的方外壳里套着中亚穹顶与马赛克，俄式蒸汽浴、芬兰桑拿、土耳其浴三套并列。1986 年戈尔巴乔夫撤掉库纳耶夫、换上俄罗斯人，正是十二月事件（1.11）的导火索：你泡澡的这座楼，和那场抗议之间只隔着一个人的去职。</p>
+      <p class="onsite"><b>到现场看什么：</b>苏联福利国家的逻辑是“工人阶级配得上大理石浴场”，所以全城最豪华的建筑之一不是私人会所，是公共澡堂。两湖或冰川回来泡一晚，泡的是这个逻辑。</p>
+    </article>
+
+    <article class="entry" id="e1-14">
+      <span class="e-anchor">锚点 · 备选夜景 / D8 傍晚余兴</span>
+      <h3>1.14 Kok Tobe 与 371 米电视塔
+        <button class="g-btn" data-gal="koktobe">实拍 8</button>
+      </h3>
+      <p>Kok Tobe（“蓝山”）海拔约 1100 米，山顶电视塔 1975 年动工、1983 年建成，高 371 米，专门按地震带做结构设计。从苏联时代起，这里就是阿拉木图人的周末高地，坐缆车上山的传统延续至今。</p>
+      <p class="onsite"><b>到现场看什么：</b>傍晚上山，棋盘状的城市在脚下铺开——绿巴扎、歌剧院、赫鲁晓夫楼、浴馆、清真寺，第一章走过的点一次收进眼底；入夜后，灯网与电视塔同框。</p>
+    </article>
+
+    <article class="entry" id="e1-15">
+      <span class="e-anchor">锚点 · 备选（与中央国家博物馆二选一，周一闭馆）</span>
+      <h3>1.15 AMA：独立三十年后，怎么讲当代自己
+        <button class="g-btn" data-gal="museum_ama">实拍 14</button>
+      </h3>
+      <p>Almaty Museum of Arts 2025 年 9 月新开，是中亚第一座私立现当代美术馆，英国 Chapman Taylor 设计，两个石灰岩配铝板的 L 形体块正对着天山，馆藏 700 余件：基弗、塞拉、比尔·维奥拉与哈萨克本土的游牧当代艺术同场。它开放到晚上 21 点。</p>
+      <p class="onsite"><b>到现场看什么：</b>中央国家博物馆回答“哈萨克民族从哪里来”（且这套叙事部分由苏联民族学搭建），AMA 回答“今天的哈萨克艺术家在想什么”。一个向后建构起源，一个向前试探身份，正好一枚硬币的两面。</p>
+    </article>
+
+    <article class="entry" id="e1-16">
+      <span class="e-anchor">锚点 · city walk 全程</span>
+      <h3>1.16 街名与音乐里的哈萨克
+        <button class="g-btn" data-gal="instruments_museum">乐器博物馆实拍 12</button>
+        <button class="h-btn" data-hist="kurmangazy">库尔曼加齐肖像</button>
+      </h3>
+      <p><b>阿拜（1845–1904）</b>是草原的启蒙者，把普希金、莱蒙托夫译成哈萨克语，歌剧院以他命名——用 19 世纪本土诗人给苏联剧院冠名，是“民族形式、社会主义内容”的标准动作。<b>库尔曼加齐（1823–1896）</b>是冬不拉器乐曲 küi（奎依）之父，出身贫苦、两度入狱两度逃脱，代表作《Sary-Arqa》（金色草原）；2018 年起每年 7 月第一个星期日是全国冬不拉日，你路过的 Kurmangazy 街以他命名。<b>Zhibek Zholy</b>（丝绸之路）既是街名也是站名，提醒你脚下本就是商道。</p>
+      <p>潘菲洛夫公园内、升天大教堂旁边，还藏着一座<b>哈萨克民族国家乐器博物馆</b>：1908 年的复古全木建筑（与大教堂同属 Zenkov 的木构体系），藏千余件民族乐器，按弦、击、吹、响、簧五类陈列——冬不拉的十几种形制、马尾弦的萨满神器库布孜（kobyz）、像古筝的热特根（zhetygen）。10:00–19:00 开放，周一闭馆，45–60 分钟足够，正好和大教堂连成一组。</p>
+    </article>
+  </section>
+
+  <!-- ================= 第二章 ================= -->
+  <section id="c2" class="chapter">
+    <div class="ch-head"><span class="no">贰</span><h2>七河与天山：游牧、地震与湖</h2><span class="en">ZHETYSU & TIEN SHAN</span></div>
+    <div class="ch-intro">出城向东开，海拔一路抬升，你从俄国要塞边疆开进哈萨克民族的“金色摇篮”。这里的湖多是地震的作品，峡谷是流水 1200 万年的作业，草场上的毡房则是一种还没死掉的生活方式。</div>
+
+    <article class="entry" id="e2-1">
+      <span class="e-anchor">锚点 · D2–D4 整条山地线</span>
+      <h3>2.1 七河之地：民族的摇篮</h3>
+      <p>“七河”（Zhetysu / Semirechye）是历史名称，指历史上注入巴尔喀什湖的七条河流及其流域，北起巴尔喀什湖、南抵天山与伊犁。哈萨克汗国 1465 年在此成形，哈萨克民族也在这里完成自我认同。17 世纪准噶尔夺取牧场，小玉兹投俄、大中玉兹一度附清，鸦片战争后俄人取而代之——你窗外的山，曾是几大帝国反复换手的棋盘。</p>
+      <blockquote>“‘七河’是一个历史名称……是哈萨克民族的起源之地。”<span class="src">——《失落的卫星·七河之地》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>去 Saty 的四个小时车程就是一堂历史地理课：城市、农田、草原、雪山依次出现，等于从 1854 年一路开回 1465 年。</p>
+    </article>
+
+    <article class="entry" id="e2-2">
+      <span class="e-anchor">锚点 · D2 住 Saty 村</span>
+      <h3>2.2 Saty：被旅游重新唤醒的村子
+        <button class="g-btn" data-gal="saty_village">实拍 10</button>
+      </h3>
+      <p>七河天山脚下的定居村，进山门户。游牧民在苏联集体化时期被固定成村民，村子才真正形成；今天它靠民宿重新活过来，你住的那家民宿，就是“游牧→集体农庄→旅游民宿”三部曲的最新一章。</p>
+      <blockquote>“一条小溪穿村而过。村中有一座清真寺、两个小商店，没有餐馆，更无酒吧……女主人以前是历史老师。”<span class="src">——《失落的卫星·七河之地》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>和女主人聊聊天，她很可能亲历了从苏联农庄到民宿时代的全过程。</p>
+    </article>
+
+    <article class="entry" id="e2-3">
+      <span class="e-anchor">锚点 · D2 卡因迪湖</span>
+      <h3>2.3 卡因迪湖：沉没于 1911
+        <button class="g-btn" data-gal="kaindy">实拍 10</button>
+      </h3>
+      <p>1911 年 1 月 3 日，外伊犁的天山猛地一抖——Kebin 大地震把半面山坡推进峡谷，像一只巨手掐住了河流。融水雪水用数年时间灌满这座天然坝，一片成年雪岭云杉来不及呻吟，就被永远按在了水下，海拔约 1900 米。湖水太冷、太贫氧，细菌无从下嘴，于是这些树干一百年不腐，只把桅杆似的枯干举出水面。</p>
+      <blockquote>“透过明净的水面，我可以清楚地看到杉树的树干，就像露出水面的潜艇桅杆。”<span class="src">——《失落的卫星·七河之地》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>这些枯木不是湖的装饰，是地震发生那一刻被定格的森林；你脚下的碎石坡，就是当年的滑坡体。</p>
+    </article>
+
+    <article class="entry" id="e2-4">
+      <span class="e-anchor">锚点 · D2 下科尔赛湖</span>
+      <h3>2.4 科尔赛湖群与山里的人
+        <button class="g-btn" data-gal="kolsai">实拍 10</button>
+      </h3>
+      <p>三个湖阶梯分布在海拔 1818–2850 米，科尔赛湖国家公园 2007 年设立，约 16.1 万公顷，连卡因迪一并划入，属 UNESCO 人与生物圈网络。山里的生计百年未变：夏秋带游客进山，冬雪封山就歇业。</p>
+      <blockquote>马夫“罗圈腿，戴着绒线帽”，家有十来匹马、每匹约两千美元，“这差不多就是他的全部家当”。<span class="src">——《失落的卫星·七河之地》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>看湖岸云杉线的抬升，那是典型的北天山垂直带谱；给你牵马、做饭的人，和书里这位马夫过的是同一种日子。</p>
+    </article>
+
+    <article class="entry" id="e2-5">
+      <span class="e-anchor">锚点 · D3 黑峡谷 / 月亮峡谷 / 恰伦城堡谷</span>
+      <h3>2.5 三个峡谷：1200 万年的流水账
+        <button class="g-btn" data-gal="black_canyon">黑峡谷 10</button>
+        <button class="g-btn" data-gal="moon_canyon">月亮峡谷 6</button>
+        <button class="g-btn" data-gal="charyn">恰伦 10</button>
+      </h3>
+      <p>恰伦河在沉积岩里切出约 154 公里峡谷，岩层年龄约 1200 万年；恰伦国家公园 2004 年设立。城堡谷是风蚀雕琢的红层，谷中还藏着一片躲过冰期的残遗索格季亚纳白蜡林——世界上仅存两片的另一片在北美。</p>
+      <blockquote>书里讲过一个恐高的英国摄影师，在俯瞰点吓得哭起来、最后被人背下山。峡谷边缘没有护栏处，恐高是真实的。<span class="src">——《失落的卫星·七河之地》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>黑峡谷看沉积色带、月亮峡谷看风蚀曲线、城堡谷看垂直节理；红层颜色从正午到日落逐渐变深，下午进入恰好。走路靠里侧。</p>
+    </article>
+
+    <article class="entry" id="e2-6">
+      <span class="e-anchor">锚点 · D4 管道徒步 → 大阿拉木图湖</span>
+      <h3>2.6 大阿拉木图湖：全城的水龙头
+        <button class="g-btn" data-gal="bao_pipe">管道 10</button>
+        <button class="g-btn" data-gal="bao_lake">湖面 10</button>
+      </h3>
+      <p>海拔 2511 米的天然冰蚀湖，位于外伊犁阿拉套，是阿拉木图的城市水源保护地。“严禁下水”不是景区话术，是真正的水源安全；你沿“管道”徒步经过的那组输水管与检修道，就是山地向全城输水的命脉。那抹 Tiffany 蓝来自冰川研磨出的岩粉悬浊。</p>
+      <blockquote>“很快被一个荷枪实弹的哈萨克士兵拦住……他告诉我们，这里是水源保护地，任何人不准下去。”<span class="src">——《失落的卫星》序幕</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>沿管道上山，等于沿一座城市的供血管道上山；湖边只远观、不触碰。</p>
+    </article>
+
+    <article class="entry" id="e2-7">
+      <span class="e-anchor">锚点 · D5 Shymbulak 缆车 / Medeu</span>
+      <h3>2.7 Shymbulak：苏联山地度假学
+        <button class="g-btn" data-gal="shymbulak">实拍 8</button>
+        <button class="g-btn" data-gal="medeu">Medeu 9</button>
+        <button class="h-btn" data-hist="medeu">1982 老照片</button>
+      </h3>
+      <p>1940 年代末，业余滑雪者徒步三小时爬上这片坡，只为滑一趟；1954 年首届全苏高山滑雪赛在此举行并装上 1500 米拖牵，成为苏联第一条达国际标准的高山雪道；1983 年成为国家队奥运训练中心。山下 Medeu 高山冰场 1951 年首赛、1972 年建成著名速滑馆，冰厚 2.3 米，是苏联速滑纪录的工厂，其上方大坝为防泥石流而建。</p>
+      <blockquote>苏联时代“疗养院遍布各地——从远东到黑海……普通工人阶级也能负担得起的享受”，作息、治疗、运动都有固定时间表。<span class="src">——《失落的卫星·加加林疗养院》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>三段缆车刚好是苏联→奥林匹克→现代资本三个时代的地层剖面。</p>
+    </article>
+
+    <article class="entry" id="e2-8">
+      <span class="e-anchor">锚点 · D5 Tuyuk-Su 冰川与冰洞</span>
+      <h3>2.8 冰川、天文台与天山斯基
+        <button class="g-btn" data-gal="glacier">实拍 10</button>
+      </h3>
+      <p>Tuyuk-Su 冰川群是外伊犁阿拉套最大的冰川之一，百年间持续退缩，是气候记录的活标本；Oktyabrskaya 冰洞是消融期的季节性产物，位置年年在变。1857 年，沙俄地理学家谢苗诺夫两探天山，后来被赐姓“天山斯基”，他主管俄国地理学会四十余年，带出了普尔热瓦尔斯基一代探险家。山间那座苏联天山天文台曾是全苏第二大观测点，解体后经费枯竭、大门紧闭，“只能透过铁丝网看到一面巨大的雷达反射镜”。</p>
+      <p class="onsite"><b>到现场看什么：</b>踩上冰川时想一层：你脚下的冰可能压缩了数百年；进冰洞必须跟向导，它不是固定景点。</p>
+    </article>
+
+    <article class="entry" id="e2-9">
+      <span class="e-anchor">锚点 · 备选 Issyk 耶斯克湖（半日往返）</span>
+      <h3>2.9 耶斯克湖：一座湖的死亡与重生
+        <button class="g-btn" data-gal="issyk">实拍 6</button>
+      </h3>
+      <p>约八千到一万年前，地震滑坡堵出 300 米高的天然坝与深湖；1959 年湖畔建起旅馆餐厅，是苏联明信片上的阿拉木图后花园。1963 年 7 月 7 日，上游冰湖溃决引发巨型泥石流，冲开天然坝，四五个小时内整座湖被放空，山下耶斯克镇被毁，罹难者以百千计（官方统计长期模糊）——苏联境内最严重的泥石流灾难之一。2000 年代起人工修复，它以缩小版的形态重新回来。</p>
+      <p class="onsite"><b>到现场看什么：</b>它和卡因迪是一对镜像：卡因迪生于 1911 年的地震，耶斯克死于 1963 年的泥石流又被人救回。一天之内看尽自然的“造”与“毁”，以及人类有多倔强。留意修复坝体的痕迹，湖水仍会随光线从蒂芙尼蓝转向深蓝。</p>
+    </article>
+
+    <article class="entry" id="e2-10">
+      <span class="e-anchor">锚点 · 备选 Assy 高原 / Kok Zhailau 草甸</span>
+      <h3>2.10 Jailau：还活着的夏牧场
+        <button class="g-btn" data-gal="assy">Assy 8</button>
+        <button class="g-btn" data-gal="kokzhailau">Kok Zhailau</button>
+      </h3>
+      <p>jailau（жайлау）是游牧四季转场体系里的夏牧场——春牧场 kokteu、夏牧场 jailau、秋牧场 kuzdeu、冬牧场 kystau，畜群随雪线上上下下走了上千年。集体化把牧民固定进村庄，但夏牧场没有消失：Assy 高原 2700 米的草甸上，至今有毡房、马群和委托放牧。</p>
+      <blockquote>定居之后，“全村委托同一户人家在夏天放牧”——私有化后牲畜各归各家，但夏季转场仍以互助的方式延续。<span class="src">——《失落的卫星·最后的游牧》</span></blockquote>
+      <p class="onsite"><b>到现场看什么：</b>毡房不是民俗表演，是正在进行的经济活动；遇到马群保持距离，从下风处绕行。</p>
+    </article>
+  </section>
+
+  <!-- ================= 第三章 ================= -->
+  <section id="c3" class="chapter">
+    <div class="ch-head"><span class="no">叁</span><h2>曼吉斯套与里海：两亿年前的海底，六十年前的边城</h2><span class="en">MANGYSTAU & CASPIAN</span></div>
+    <div class="ch-intro">世界上很少有地方，能让你上午走在两亿年前的海底，下午路过一座用微区编号代替街名的核工业新城。曼吉斯套把地质时间与苏联时间压缩在了同一片荒原上。</div>
+
+    <article class="entry" id="e3-1">
+      <span class="e-anchor">锚点 · D7 第一海岸线</span>
+      <h3>3.1 里海到底是海还是湖
+        <button class="g-btn" data-gal="aktau_city">实拍 10</button>
+      </h3>
+      <p>里海是世界最大内陆水体，约 37 万 km²，地理学上叫“海迹湖”——约 1.1 万年前才与黑海分离；水面低于海平面约 28 米，盐度约 12‰，只有普通海水的三分之一，伏尔加河贡献约 80% 的入水。</p>
+      <p class="onsite"><b>到现场看什么：</b>这里没有大洋那种潮起潮落，更像一个大得没有对岸的咸水湖；手指沾一点尝尝（别喝），比你想象中淡。</p>
+    </article>
+
+    <article class="entry" id="e3-2">
+      <span class="e-anchor">锚点 · D6 全线</span>
+      <h3>3.2 古特提斯洋：你走在海底
+        <button class="g-btn" data-gal="fossils">化石实拍 6</button>
+      </h3>
+      <p>约 6000–8000 万年前，特提斯洋覆盖这里。白色石灰岩由无数海洋生物的壳体堆积成岩，海退之后又经约 4000 万年的风蚀水切，雕成今天的台地、峡谷与残丘。整个 D6 是一次“海底两万里”的反向旅程：不是潜下去，是海底升起来等你。</p>
+      <p class="onsite"><b>到现场看什么：</b>低头找贝壳、海百合茎、鲨鱼牙化石——它们就嵌在白垩纪灰岩里（找到请留给原地，别带走）；Kyzylkup 的红是铁元素周期性沉淀，Bozzhyra 的白是白垩纪壳体。</p>
+    </article>
+
+    <article class="entry" id="e3-3">
+      <span class="e-anchor">锚点 · 备选 Torysh 球谷</span>
+      <h3>3.3 球谷与“结核”是什么
+        <button class="g-btn" data-gal="torysh">实拍 10</button>
+      </h3>
+      <p>晚白垩到早古近纪（约 7000–5000 万年前），海底围绕贝壳、鲨鱼牙或碎屑核心，矿物质一层层胶结、长成石球，地质学家叫它“结核”（concretion）。外围软岩风化之后，坚硬的球核裸露出来，直径从 10 厘米到 4 米，遍布 Torysh 谷地。它们不是人工遗迹，更不是恐龙蛋。</p>
+      <p class="onsite"><b>到现场看什么：</b>找一颗自然裂开的球看圈层结构——这就是几千万年的“洋葱”。</p>
+    </article>
+
+    <article class="entry" id="e3-4">
+      <span class="e-anchor">锚点 · D6 Kyzylkup / Bozzhyra</span>
+      <h3>3.4 两座“剧场”的地质学速读
+        <button class="g-btn" data-gal="kyzylkup">提拉米苏 10</button>
+        <button class="g-btn" data-gal="bozzhyra">Bozzhyra 10</button>
+      </h3>
+      <p><b>Kyzylkup</b>，哈萨克语“很多红”：古湖与海湾的沉积层被铁染出红、橙、黄、白的条带，所以外号“提拉米苏”。<b>Bozzhyra</b> 是灰蓝洼地里的白色灰岩剧场，三面围合，龙脊与“Ship（船）”是残丘中最坚硬、最后才会倒下的部分。拼团把 Ship 放在傍晚不是随手排的——约 19:06 日落时，低角度光打穿红层，颜色每十分钟变一次。</p>
+      <p class="onsite"><b>到现场看什么：</b>日落那一小时别顾着看手机参数，让眼睛记住颜色变化的顺序。</p>
+    </article>
+
+    <article class="entry" id="e3-5">
+      <span class="e-anchor">锚点 · D6–D7 阿克套市区</span>
+      <h3>3.5 阿克套小传：从 Guryev-20 到舍甫琴科
+        <button class="g-btn" data-gal="aktau_lighthouse">屋顶灯塔 10</button>
+        <button class="h-btn" data-hist="shevchenko">舍甫琴科肖像</button>
+      </h3>
+      <p>1959–1961 年，为开采荒漠铀矿，这里出现了秘密工人定居点 Guryev-20，第一批双层木刻楞房从西伯利亚运来，构成今天 3 微区的雏形。1963 年 12 月 10 日设市，名 Aktau（哈萨克语“白色山”）；1964 年 7 月 1 日改名 Shevchenko，纪念 1850 年被沙皇流放至附近的乌克兰诗人塔拉斯·舍甫琴科；1991 年 9 月 13 日改回 Aktau。全城没有街名、只有微区（mikrorayon）编号——苏联工业城规划的极端样本；因为海岸线平坦无高地，唯一一座灯塔干脆建在一栋 11 层住宅楼的楼顶。</p>
+      <p class="onsite"><b>到现场看什么：</b>你找路时看到的“17 微区”“19 微区”不是随意编号，是这座城市的原生语法；在 Melovoy 抬头，灯塔真的长在公寓楼顶。</p>
+    </article>
+
+    <article class="entry" id="e3-6">
+      <span class="e-anchor">锚点 · 市区背景知识 / 厂区远景</span>
+      <h3>3.6 BN-350：给全城淡化海水的反应堆
+        <button class="g-btn" data-gal="bn350">遗址实拍 6</button>
+        <button class="h-btn" data-hist="bn350">历史影像 2</button>
+      </h3>
+      <p>1973 年 7 月 16 日投产的 BN-350，是世界第一座工业级快中子增殖堆，一身三任：产钚、发电、海水淡化——日产 12 万立方米淡水，全城的水一度靠它。1999 年关停，如今部分厂区改作海水处理厂，锈色巨管仍冒着蒸汽。它与远在塞米伊的核试验场构成哈萨克的两部核史：一个造弹，一个造城。塞米伊试验场 41 年间进行 456 次核爆，周边婴儿死亡率一度五倍于其他地区；独立后哈萨克主动弃核，成为无核国家。</p>
+      <p class="onsite"><b>到现场看什么：</b>海边远眺工业管廊即可（不进入、不拍摄敏感设施）。这座荒漠城市从水到电，都是工程奇迹硬撑出来的。</p>
+    </article>
+
+    <article class="entry" id="e3-7">
+      <span class="e-anchor">锚点 · D6 + D7 收束</span>
+      <h3>3.7 两层“海的消失”</h3>
+      <p><b>远古那层：</b>特提斯海退去，留下海床荒原（见 3.2）。<b>当代那层：</b>咸海因苏联棉田引水，在一代人的时间里消失，渔港穆伊纳克如今距海 160 公里，“搁浅着一排生锈的渔船……成为沧海桑田的唯一证据”。里海也在缓慢退缩，但你 D7 还能看到活的海岸、鲟鱼汤和游泳的人。</p>
+      <blockquote>——《失落的卫星·困守咸海的人》</blockquote>
+      <p class="onsite"><b>到现场看什么：</b>见过曼吉斯套的古海床，再读咸海的故事，“沧海桑田”四个字从此有了生理级别的具体。</p>
+    </article>
+
+    <article class="entry" id="e3-8">
+      <span class="e-anchor">锚点 · D7 曼吉斯套州立博物馆</span>
+      <h3>3.8 州立博物馆：先看它，再上路
+        <button class="g-btn" data-gal="mangystau_museum">实拍 10</button>
+      </h3>
+      <p>馆里有古海床地质展（化石、地层剖面）、丝路时期地下清真寺与草原文明展。把它当作 D6 野外实景的“说明书”：先看馆再看山，或看完山回来补课，两种顺序都成立。</p>
+    </article>
+
+    <article class="entry" id="e3-9">
+      <span class="e-anchor">锚点 · 北线备选 Sherkala / Kyzylkala</span>
+      <h3>3.9 狮山与红城：荒漠里的丝路驿
+        <button class="g-btn" data-gal="sherkala">狮山 10</button>
+        <button class="g-btn" data-gal="zhygylgan">坠落之地 5</button>
+        <button class="g-btn" data-gal="airakty">风蚀塔群 5</button>
+        <button class="g-btn" data-gal="tuzbair">盐沼 7</button>
+        <button class="g-btn" data-gal="karynzharyk">深洼地 8</button>
+      </h3>
+      <p>Sherkala（“狮堡”）是一座斯芬克斯般趴卧的孤峰，山下与山顶留有 10–13 世纪商队旅馆（caravanserai）与“红城”Kyzylkala 遗址：从巴格达前往卡马河保加尔城的商队在此歇脚，蒙古西进后衰落，大航海时代海路取代丝路，它被彻底遗忘。北线其余地貌：Zhygylgan 是坍塌成巨盆的古海床加 1.5 公里海蚀崖；Airakty 是 4000 万年风蚀岩塔群；Kapamsay 是 70 米高古河床白崖；Tuzbair 盐沼雨后成天空之镜；Karynzharyk 洼地最低 -75 米，Karagiye 更达 -132 米，是哈萨克最低点之一。</p>
+      <p class="onsite"><b>到现场看什么：</b>北线不只有地貌——商队曾在狮山下点篝火烧水、骆驼卧成一圈，残墙的每块石头都比马可·波罗更老。</p>
+    </article>
+
+    <article class="entry" id="e3-10">
+      <span class="e-anchor">锚点 · 北线备选 Shakpak-Ata / Beket-Ata</span>
+      <h3>3.10 岩石里的清真寺
+        <button class="g-btn" data-gal="shakpakata">Shakpak-Ata 7</button>
+        <button class="g-btn" data-gal="beket_ata">Beket-Ata 7</button>
+      </h3>
+      <p>Shakpak-Ata 是咸海-里海地区唯一壁存岩画与铭文的地下清真寺，10–13 世纪起在白垩岩丘中凿出，十字形平面，苏菲隐修士曾在此修行。Beket-Ata 由 18 世纪苏菲圣者 Beket Myrzagululy 在乌斯秋尔特陡崖（Ustyurt Chink）脚下凿建，距阿克套约 230 公里，至今是活的朝圣路线。12 世纪艾哈迈德·亚萨维最早用突厥语传教、完成草原伊斯兰化，他的学生把信仰一路带到曼吉斯套的岩壁里——这里就是那条脉络的西部终点。</p>
+      <p class="onsite"><b>到现场看什么：</b>遮肩膝、脱鞋；分清“遗址”（Shakpak-Ata）与“仍在使用的圣所”（Beket-Ata），后者请保持朝圣场合的安静。</p>
+    </article>
+
+    <article class="entry" id="e3-11">
+      <span class="e-anchor">锚点 · D6 经停 Zhanaozen</span>
+      <h3>3.11 扎瑙津：油路旁的能源小镇</h3>
+      <p>扎瑙津（Zhanaozen，“新河源”）因 OzenMunaiGaz 油田而生，是南线拼团中途停车补给的小镇。2011 年 5 月起，当地石油工人为同工同酬、自由组工会长时间罢工；12 月 16 日——哈萨克独立 20 周年纪念日——冲突爆发，官方与民间对伤亡数字长期存在分歧（至少十余人死亡），是独立后最沉重的一页。</p>
+      <p class="onsite"><b>到现场看什么：</b>停车买水时安静观察这座城市。它和阿克套（3.5–3.6）共同回答一个问题：在荒漠里撑起现代生活的，是铀、是石油，也是一个个具体的人。只看、只了解，不评论、不拍摄敏感设施。</p>
+    </article>
+
+    <article class="entry" id="e3-12">
+      <span class="e-anchor">锚点 · 备选 Bokty + 全程小彩蛋</span>
+      <h3>3.12 纸币上的风景
+        <button class="g-btn" data-gal="bokty">实拍 8</button>
+      </h3>
+      <p>曼吉斯套的粉色层山 Bokty 被选入哈萨克坚戈纸币画面，同系列背面还有乌斯秋尔特台地的轮廓。一个国家挑什么风景印在钱上，就是想让国民每天看见什么样的“国土地理”。金人（1.10）也在钞票与纪念物上——这套“国家图像学”可以一路玩到回程：钱包里翻一张坚戈，对照窗外的台地。</p>
+    </article>
+  </section>
+
+  <!-- ================= 第四章 ================= -->
+  <section id="c4" class="chapter">
+    <div class="ch-head"><span class="no">肆</span><h2>餐桌上的中亚：谁把什么带到了你的盘子里</h2><span class="en">AT THE TABLE</span></div>
+    <div class="ch-intro">在中亚，吃一顿饭就是读一遍移民史：游牧的保鲜智慧、东干人的西迁、苏联共同菜单、里海的馈赠，都在盘子里。</div>
+
+    <article class="entry" id="e4-1">
+      <span class="e-anchor">锚点 · Navat / Auyl / Aspan</span>
+      <h3>4.1 游牧四味
+        <button class="g-btn" data-gal="navat">Navat 8</button>
+        <button class="g-btn" data-gal="food_auyl">Auyl 8</button>
+      </h3>
+      <p><b>别什巴尔马克 Beshbarmak</b>，哈萨克国菜，马肉或羊肉配手擀宽面与洋葱肉汤，名字意为“五根手指”——传统上手抓而食，是好客与集体生活的仪式。<b>马肠 Kazy</b> 以马肋肉灌制熏煮，是没有冰箱年代的游牧保鲜术，绿巴扎里整条悬挂。<b>包尔萨克 Baursak</b> 是油炸金黄小面团，节庆与待客必备，中亚版“有福同享”的碳水。<b>库米思 / Shubat / Kurt</b>（马奶酒 / 驼奶 / 硬酸奶疙瘩）则说明：草原用发酵保存一切。</p>
+      <p class="onsite"><b>到现场吃什么：</b>第一晚点一份别什巴尔马克，用手吃一次（店家会给餐具，别紧张）；Kurt 酸硬，含着吃像一颗浓缩的草原。</p>
+    </article>
+
+    <article class="entry" id="e4-2">
+      <span class="e-anchor">锚点 · 绿巴扎简餐 / 全线</span>
+      <h3>4.2 抓饭、拉条子与东干人：一条味觉丝路</h3>
+      <p>抓饭（Plov）来自中亚绿洲的农耕传统，乌兹别克最具代表；拉条子（lagman）则是<b>东干人</b>带来的面食——他们是 1862–1877 年同治陕甘回变后西迁中亚的陕甘回族后裔，聚居哈萨克、吉尔吉斯，至今保留甘肃口音与面食手艺。一碗拉条子，就是 150 年前那场西迁。</p>
+      <blockquote>山里客栈的东干厨师“还能说简单的汉语，带着甘肃口音。他告诉我，他的祖上是陕甘地区的回民”；扎尔肯特维吾尔餐厅里“烤串和拉条子……味道已与新疆无异”。<span class="src">——《失落的卫星·天山游记 / 尾声》</span></blockquote>
+      <p class="onsite"><b>到现场吃什么：</b>D4 绿巴扎二楼点一碗 lagman，这是离你最近的“丝路”。</p>
+    </article>
+
+    <article class="entry" id="e4-3">
+      <span class="e-anchor">锚点 · D3 晚 Daredzhani</span>
+      <h3>4.3 格鲁吉亚菜为什么遍布苏联
+        <button class="g-btn" data-gal="daredzhani">实拍 10</button>
+      </h3>
+      <p>1930 年代起，格鲁吉亚菜成为苏联中产的“体面菜”：1940 年莫斯科 Aragvi 餐厅开张，铁路餐车与游轮厨师跨加盟国流动，再加上高层口味的加持，到 1950 年代，哈恰普里、辛加利、格鲁吉亚葡萄酒落地每个加盟共和国，成为全苏标准的“奢侈家常菜”。</p>
+      <blockquote>作者从阿拉木图出发去突厥斯坦前的晚餐就在格鲁吉亚餐馆，“点了哈恰普里和烤羊肉，喝了一杯卡赫季产区的葡萄酒，又喝了一杯产自天山山麓的葡萄酒”。<span class="src">——《失落的卫星·突厥斯坦的小人物》</span></blockquote>
+      <p class="onsite"><b>到现场吃什么：</b>Daredzhani 的奶酪船不是“异国菜”，是苏联共同记忆；配一杯哈萨克天山山麓葡萄酒，正好呼应书里那一杯。</p>
+    </article>
+
+    <article class="entry" id="e4-4">
+      <span class="e-anchor">锚点 · D3 晚 Atelier（Valikhanova 47）</span>
+      <h3>4.4 从苏联食堂到 Atelier 的吧台
+        <button class="g-btn" data-gal="atelier_bar">实拍 8</button>
+      </h3>
+      <p>苏联公共餐饮强调“社会主义的一致性”——“所有人的餐食都是一样的”，食堂、餐车、疗养院餐厅构成几代人的味觉底色，格瓦斯是街头味觉。而 Atelier 的创意调酒是独立三十年城市中产文化的产物。你在同一条街上喝到的，是“统一套餐”与“个性调酒”两个时代的对撞。</p>
+    </article>
+
+    <article class="entry" id="e4-5">
+      <span class="e-anchor">锚点 · D7 Aspan / Aydyn 海边午餐</span>
+      <h3>4.5 里海的馈赠：鲟鱼、鱼版五指面与鱼子酱</h3>
+      <p>里海出产世界主要的鲟鱼资源，黑鱼子酱曾是苏联顶级出口物资；伏尔加河贡献里海 80% 的入水，也贡献主要产卵场。过度捕捞与水位变化让野生鲟鱼长期受管制，今天沿岸各国以养殖接续。本地化吃法里，鱼版别什巴尔马克（fishbarmak）把草原“宽面+肉”的框架套到里海鱼上，鲟鱼汤（ukha）是海边标配——游牧逻辑遇见渔获，长出只在阿克套成立的味道。</p>
+      <p class="onsite"><b>到现场吃什么：</b>D7 中午点 fishbarmak 或鲟鱼汤；对照 3.7：一片海的鱼养活了一座城，另一片海（咸海）的船却永远搁浅。</p>
+    </article>
+  </section>
+
+  <!-- ================= 卷末 ================= -->
+  <section id="tail" class="chapter">
+    <div class="ch-head"><span class="no">卷末</span><h2>名词、书单与来源</h2><span class="en">APPENDIX</span></div>
+
+    <details open>
+      <summary>A. 《失落的卫星》章节索引（手册引文出处）</summary>
+      <div class="table-scroll" style="margin-top:10px">
+      <table>
+        <tr><th>书章</th><th>对应行程</th></tr>
+        <tr><td>序幕（阿拉木图）</td><td>D1/D4/D8 城市、巴扎、BAO、托洛茨基/崔/核背景</td></tr>
+        <tr><td>加加林疗养院</td><td>D5 苏联山地度假与疗养制度、公共餐饮</td></tr>
+        <tr><td>天山游记</td><td>东干人、谢苗诺夫-天山斯基、游牧日常（D2/D4）</td></tr>
+        <tr><td>突厥斯坦的小人物</td><td>怛罗斯/丝路、亚萨维、格鲁吉亚餐（D3、卷首）</td></tr>
+        <tr><td>困守咸海的人</td><td>D7 里海 vs 咸海的双重“海退”</td></tr>
+        <tr><td>草原核爆</td><td>BN-350 对照、弃核叙事（D6/D7）</td></tr>
+        <tr><td>七河之地</td><td>D2 Saty/卡因迪/科尔赛、七河定义、恰伦</td></tr>
+        <tr><td>最后的游牧</td><td>游牧定居化、维克多·崔、泰姆格里（D2、卷首）</td></tr>
+        <tr><td>尾声</td><td>边疆、维吾尔/东干饮食（D4）</td></tr>
+      </table>
+      </div>
+    </details>
+
+    <div class="tail-card">
+      <h3>B. 俄/哈/中名词小卡</h3>
+      <div class="glossary">
+        <span>Zhetysu 七河</span><span>Aport 阿波特苹果</span><span>Khrushchevka 赫鲁晓夫楼</span>
+        <span>Kumis 马奶酒</span><span>Beshbarmak 五指面</span><span>Fishbarmak 鱼版五指面</span>
+        <span>Kazy 马肠</span><span>Baursak 油炸面团</span><span>Lagman 拉条子</span>
+        <span>Mikrorayon 微区</span><span>Jailau 夏牧场</span><span>Küi 冬不拉曲</span>
+        <span>Dombra 冬不拉</span><span>Kobyz 库布孜</span><span>Zhetygen 热特根</span>
+        <span>Sufi 苏菲派</span><span>Ustyurt 乌斯秋尔特台地</span><span>Sturgeon 鲟鱼</span>
+        <span>Zhibek Zholy 丝绸之路</span><span>Altyn Adam 金人</span><span>Saka 塞种</span>
+        <span>Tethys 特提斯洋</span><span>Concretion 结核</span><span>Caravanserai 商队旅馆</span>
+      </div>
+    </div>
+
+    <details>
+      <summary>C. 延伸书单 / 片单</summary>
+      <ul>
+        <li>谢苗诺夫《天山游记》——1857 年的天山，也是托洛茨基流放阿拉木图时随身带的书。</li>
+        <li>纪录片《中亚高丽人：不可靠的人》——理解维克多·崔、绿巴扎朝鲜阿姨与 1937 年民族大迁徙。</li>
+        <li>鲍罗丁《在中亚细亚草原上》——作者坐火车去塞米伊时听的曲子，两支旋律交缠，正好当整趟旅行的 BGM。</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>D. 史源与图片来源（2026-09 核验）</summary>
+      <ul>
+        <li>事实核验：哈萨克 e-history.kz、中国驻阿拉木图总领馆领区介绍、阿拉木图地铁官网、Shymbulak 官网、恰伦/科尔赛国家公园官方资料、Astana Times、Encyclopædia Iranica、UNESCO（Tamgaly、人与生物圈）、Wikidata/维基条目交叉比对；分歧数字（如 1887/1911 地震震级、1963 耶斯克湖罹难人数、2011 扎瑙津伤亡）按区间或多口径并列呈现。</li>
+        <li>书摘：全部短句摘自刘子超《失落的卫星：深入中亚大陆的旅程》并标注章节，仅个人阅读使用。</li>
+        <li>实拍图：均来自小红书公开旅拍笔记，登录态下模拟人工浏览、逐帖双 Gate 核验（帖强相关 + 图强相关），版权归原作者，仅个人行程参考；点图可见原笔记链接。</li>
+        <li>历史影像：来自 Wikimedia Commons 公有领域（Public Domain / CC0）或 CC BY-SA 4.0 授权，逐张标注年代与来源；CC BY-SA 署名：Nurken（金人）、Mr Ptero（Medeu 1982）、Thomas Taylor Hammond（阿拉木图 1964）。</li>
+      </ul>
+    </details>
+
+    <p class="foot">个人使用，不可转载不可商用</p>
+  </section>
+
+</div>
+
+<!-- ================= 弹窗 ================= -->
+<div class="gal-mask" id="galMask">
+  <div class="gal-modal">
+    <div class="gal-head">
+      <h3 id="galTitle"></h3><span class="gal-count" id="galCount"></span>
+      <button class="gal-x" id="galClose" type="button">✕</button>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+    <div class="gal-view" id="galView">
+      <button class="gal-back" id="galBack" type="button">← 返回图集</button>
+      <div class="gal-stage">
+        <button class="gal-nav gal-prev" id="galPrev" type="button">‹</button>
+        <img id="galImg" alt="">
+        <button class="gal-nav gal-next" id="galNext" type="button">›</button>
+      </div>
+      <div class="gal-cap">
+        <div id="galCapText"></div>
+        <a id="galSrc" href="#" target="_blank" rel="noopener"></a>
+        <span class="modal-lic" id="galLic"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/gallery2/gallery-data.js"></script>
+<script>
+(function(){
+  const H="../assets/stories/history/";
+  window.HIST={
+    city:[
+      {src:H+"vereshchagin_stanitsa_1869.webp",cap:"七河流域的哥萨克村镇（1869–1870）",lic:"Vasily Vereshchagin 绘 · Wikimedia Commons · Public Domain",url:""},
+      {src:H+"verniy_1912.webp",cap:"维尔内（今阿拉木图）全景，1912 年",lic:"Engineer Popov · Wikimedia Commons · Public Domain",url:""},
+      {src:H+"verny_quake_1887.webp",cap:"1887 年维尔内大地震后的街景",lic:"Wikimedia Commons · CC0",url:""},
+      {src:H+"almaty_1964.webp",cap:"苏联时期的阿拉木图，1964 年",lic:"Thomas Taylor Hammond · CC BY-SA 4.0",url:""}
+    ],
+    cathedral:[
+      {src:H+"cathedral_ruins_1887.webp",cap:"1887 年地震中被毁的旧教堂残垣（升天大教堂的前史）",lic:"Ф. Ордэн, 1887–1888 · Public Domain",url:""},
+      {src:H+"cathedral_1913.webp",cap:"刚建成不久的升天大教堂，1913 年",lic:"Wikimedia Commons · Public Domain",url:""}
+    ],
+    abai:[{src:H+"abai_portrait.webp",cap:"阿拜·库南巴耶夫（1845–1904）",lic:"Wikimedia Commons · Public Domain",url:""}],
+    goldenman:[{src:H+"golden_man.webp",cap:"中央国家博物馆陈列的“金人”（Altyn Adam）复原件",lic:"Nurken · CC BY-SA 4.0",url:""}],
+    kurmangazy:[{src:H+"kurmangazy_portrait.webp",cap:"库尔曼加齐（1823–1896），冬不拉 küi 之父",lic:"Wikimedia Commons · Public Domain",url:""}],
+    medeu:[{src:H+"medeu_1982.webp",cap:"Medeu 高山冰场，1982 年",lic:"Mr Ptero · CC BY-SA 4.0",url:""}],
+    shevchenko:[{src:H+"shevchenko_portrait.webp",cap:"塔拉斯·舍甫琴科自画像（1841）；阿克套 1964–1991 年以他命名",lic:"Wikimedia Commons · Public Domain",url:""}],
+    bn350:[
+      {src:H+"bn350.webp",cap:"BN-350 快中子增殖堆历史影像",lic:"Wikimedia Commons · Public Domain",url:""},
+      {src:H+"bn350_desal.webp",cap:"BN-350 配套海水淡化装置",lic:"Wikimedia Commons · Public Domain",url:""}
+    ]
+  };
+
+  const mask=document.getElementById('galMask'),grid=document.getElementById('galGrid'),view=document.getElementById('galView');
+  const gTitle=document.getElementById('galTitle'),gCount=document.getElementById('galCount');
+  const gImg=document.getElementById('galImg'),gCap=document.getElementById('galCapText'),gSrc=document.getElementById('galSrc'),gLic=document.getElementById('galLic');
+  let cur=[],pos=0;
+  function showGrid(){view.classList.remove('show');grid.style.display='grid';mask.classList.remove('viewing');}
+  function openViewer(i){
+    pos=i;const it=cur[i];gImg.src=rootP(it.src);gImg.alt=it.cap||'';
+    gCap.textContent=it.cap||'';
+    if(it.url){gSrc.href=it.url;gSrc.textContent='查看原笔记 ↗';gSrc.style.display='';}else{gSrc.style.display='none';gSrc.href='#';}
+    gLic.textContent=it.lic||'';
+    grid.style.display='none';view.classList.add('show');mask.classList.add('viewing');
+  }
+  function step(d){openViewer((pos+d+cur.length)%cur.length);}
+  function rootP(p){return p.indexOf('assets/')===0?'../'+p:p;}
+  function openAlbum(title,items,countText){
+    cur=items;gTitle.textContent=title;gCount.textContent=countText;
+    grid.innerHTML=cur.map((it,i)=>{
+      const full=rootP(it.src), isHist=!!it.lic, th=isHist?full:full.replace(/\.webp$/,'.th.webp');
+      return `<img loading="eager" decoding="async" fetchpriority="high" src="${th}" data-full="${full}" onerror="this.onerror=null;this.src=this.dataset.full" data-i="${i}" alt="${it.cap||''}" title="${it.cap||''}">`;
+    }).join('');
+    showGrid();mask.classList.add('show');
+  }
+  window.openGallery=function(key){
+    const g=window.GALLERY&&window.GALLERY[key];if(!g||!g.items.length)return;
+    openAlbum(g.title,g.items,`${g.items.length} 张 · 小红书旅拍，点击看大图与原帖`);
+  };
+  window.openHist=function(album){
+    const h=window.HIST[album];if(!h||!h.length)return;
+    openAlbum('历史影像 · Wikimedia Commons',h,`${h.length} 张 · 公有领域 / CC 授权，点击看大图`);
+  };
+  grid.addEventListener('click',e=>{if(e.target.dataset.i)openViewer(+e.target.dataset.i);});
+  document.getElementById('galClose').addEventListener('click',()=>mask.classList.remove('show'));
+  document.getElementById('galBack').addEventListener('click',showGrid);
+  document.getElementById('galPrev').addEventListener('click',()=>step(-1));
+  document.getElementById('galNext').addEventListener('click',()=>step(1));
+  mask.addEventListener('click',e=>{if(e.target===mask)mask.classList.remove('show');});
+  document.addEventListener('keydown',e=>{
+    if(!mask.classList.contains('show'))return;
+    if(e.key==='Escape'){if(view.classList.contains('show'))showGrid();else mask.classList.remove('show');}
+    if(e.key==='ArrowLeft'&&view.classList.contains('show'))step(-1);
+    if(e.key==='ArrowRight'&&view.classList.contains('show'))step(1);
+  });
+  document.addEventListener('click',e=>{
+    const gb=e.target.closest('.g-btn');if(gb&&gb.dataset.gal){e.preventDefault();window.openGallery(gb.dataset.gal);}
+    const hb=e.target.closest('.h-btn');if(hb&&hb.dataset.hist){e.preventDefault();window.openHist(hb.dataset.hist);}
+  });
+})();
+</script>
+</body>
+</html>
