@@ -80,8 +80,20 @@
   .tl-legend{display:flex;gap:14px;flex-wrap:wrap;margin:2px 0 10px;font-size:12.5px;color:var(--sub)}
   .tl-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
   .tl-legend .lk i{background:var(--jade)} .tl-legend .lc i{background:var(--rose)}
-  .tl2{display:flex;overflow-x:auto;padding:6px 2px 18px;-ms-overflow-style:none;scrollbar-width:none;align-items:stretch}
-  .tl2::-webkit-scrollbar{display:none}
+  .tl-navbtns{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .tl-navbtns .tip{font-size:12px;color:var(--sub);margin-right:2px}
+  .tl-navbtns button{width:34px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--card);
+                     cursor:pointer;font-size:16px;line-height:1;color:var(--ink);padding:0;transition:.15s}
+  .tl-navbtns button:hover:not(:disabled){background:var(--jade-soft);border-color:var(--jade)}
+  .tl-navbtns button:disabled{opacity:.35;cursor:default}
+  .tl2{display:flex;overflow-x:auto;padding:6px 2px 14px;scrollbar-width:thin;
+       scrollbar-color:var(--clay) #eae5da;align-items:stretch;cursor:grab}
+  .tl2.dragging{cursor:grabbing}
+  .tl2::-webkit-scrollbar{height:9px;display:block}
+  .tl2::-webkit-scrollbar-track{background:#eae5da;border-radius:6px;margin:0 4px}
+  .tl2::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--jade),var(--clay) 50%,var(--rose));
+                                border-radius:6px;border:2px solid #eae5da}
+  .tl2::-webkit-scrollbar-thumb:hover{filter:brightness(.94)}
   .tl-col{flex:0 0 296px;display:grid;grid-template-rows:1fr auto 1fr;gap:9px;padding:0 7px;position:relative}
   .tl-col+.tl-col{border-left:1px dashed var(--line)}
   .side{display:block;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;
@@ -149,7 +161,9 @@
     .hero h1{font-size:22px}
     .entry{padding:16px 15px;border-radius:13px}
     .entry h3{font-size:16.5px}
-    .tl2{flex-direction:column;gap:0}
+    .tl2{flex-direction:column;gap:0;scrollbar-width:none;cursor:default}
+    .tl2::-webkit-scrollbar{display:none}
+    .tl-navbtns{display:none}
     .tl-col{flex:none;width:100%;grid-template-columns:14px 1fr;grid-template-rows:auto auto;
             column-gap:10px;padding:10px 0;border-left:0!important}
     .tl-col+.tl-col{border-top:1px dashed var(--line);border-left:0}
@@ -202,6 +216,11 @@
       <span class="lk"><i></i>轴上 · 哈萨克草原 / 七河</span>
       <span class="lc"><i></i>轴下 · 中国（中原王朝）</span>
       <span>默认简略，点卡片展开详细</span>
+      <span class="tl-navbtns">
+        <span class="tip">拖动 / 滚轮 / 按钮滑动</span>
+        <button type="button" id="tlPrev" aria-label="向前">‹</button>
+        <button type="button" id="tlNext" aria-label="向后">›</button>
+      </span>
     </div>
     <div class="tl2">
       <div class="tl-col">
@@ -845,6 +864,39 @@
     if(e.key==='ArrowLeft'&&view.classList.contains('show'))step(-1);
     if(e.key==='ArrowRight'&&view.classList.contains('show'))step(1);
   });
+  // ---- 双轨时间轴：滚轮横滑 / 按钮翻页 / 鼠标拖拽 ----
+  (function(){
+    const track=document.querySelector('.tl2');if(!track)return;
+    const prev=document.getElementById('tlPrev'),next=document.getElementById('tlNext');
+    const isTouch=matchMedia('(hover:none)').matches;
+    function edge(){
+      const max=track.scrollWidth-track.clientWidth-1;
+      if(prev)prev.disabled=track.scrollLeft<=1;
+      if(next)next.disabled=track.scrollLeft>=max;
+    }
+    track.addEventListener('scroll',edge);window.addEventListener('resize',edge);edge();
+    if(prev)prev.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.82,behavior:'smooth'}));
+    if(next)next.addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.82,behavior:'smooth'}));
+    // 竖轮转横滑（仅在内容确实横向溢出时）
+    track.addEventListener('wheel',e=>{
+      if(track.scrollWidth<=track.clientWidth+2)return;
+      if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();track.scrollLeft+=e.deltaY;}
+    },{passive:false});
+    if(!isTouch){
+      let down=false,startX=0,startSL=0,moved=false;
+      track.addEventListener('pointerdown',e=>{down=true;moved=false;startX=e.clientX;startSL=track.scrollLeft;
+        track.classList.add('dragging');});
+      window.addEventListener('pointermove',e=>{
+        if(!down)return;const dx=e.clientX-startX;
+        if(Math.abs(dx)>6)moved=true;
+        if(moved){track.scrollLeft=startSL-dx;}
+      });
+      window.addEventListener('pointerup',()=>{down=false;track.classList.remove('dragging');
+        setTimeout(()=>{moved=false;},0);});
+      // 拖拽位移超过阈值时，吞掉随后落在卡片上的 click，避免误触发展开
+      track.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+    }
+  })();
   document.addEventListener('click',e=>{
     const side=e.target.closest('.side');if(side){side.classList.toggle('open');return;}
     const gb=e.target.closest('.g-btn');if(gb&&gb.dataset.gal){e.preventDefault();window.openGallery(gb.dataset.gal);}
