@@ -76,13 +76,34 @@
   .hist-fig .cap{font-size:11px;background:#fbf8ef;padding:4px 7px;color:#7a6534;line-height:1.35}
   .hist-note{font-size:12px;color:var(--sub);margin:2px 0 0}
 
-  /* ---------- 卷首时间轴 ---------- */
-  .timeline{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 16px;-ms-overflow-style:none;scrollbar-width:none}
-  .timeline::-webkit-scrollbar{display:none}
-  .tl-card{flex:0 0 250px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--clay);
-           border-radius:12px;padding:14px 16px}
-  .tl-card .era{font-size:12.5px;font-weight:700;color:var(--clay);margin-bottom:6px}
-  .tl-card .txt{font-size:13.5px;color:#3d4a46;line-height:1.7}
+  /* ---------- 卷首双轨时间轴 ---------- */
+  .tl-legend{display:flex;gap:14px;flex-wrap:wrap;margin:2px 0 10px;font-size:12.5px;color:var(--sub)}
+  .tl-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+  .tl-legend .lk i{background:var(--jade)} .tl-legend .lc i{background:var(--rose)}
+  .tl2{display:flex;overflow-x:auto;padding:6px 2px 18px;-ms-overflow-style:none;scrollbar-width:none;align-items:stretch}
+  .tl2::-webkit-scrollbar{display:none}
+  .tl-col{flex:0 0 296px;display:grid;grid-template-rows:1fr auto 1fr;gap:9px;padding:0 7px;position:relative}
+  .tl-col+.tl-col{border-left:1px dashed var(--line)}
+  .side{display:block;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;
+         padding:11px 13px;cursor:pointer;font:inherit;color:inherit;line-height:1.65;transition:box-shadow .15s,border-color .15s}
+  .side:hover{box-shadow:0 3px 12px rgba(34,48,44,.08)}
+  .side.kz{border-top:3px solid var(--jade);align-self:end}
+  .side.cn{border-top:3px solid var(--rose)}
+  .side .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;border-radius:5px;padding:1px 7px;margin-bottom:6px}
+  .side.kz .tag{background:var(--jade-soft);color:var(--jade)}
+  .side.cn .tag{background:var(--rose-soft);color:var(--rose)}
+  .side .b{font-size:13.5px;color:#33413d}
+  .side .more{display:none;font-size:13px;color:var(--sub);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);line-height:1.75}
+  .side.open .more{display:block}
+  .side .hint{display:inline-block;margin-top:7px;font-size:11.5px;color:var(--jade);opacity:.75}
+  .side.cn .hint{color:var(--rose)}
+  .side.open .hint::after{content:"收起 ▴"}
+  .side:not(.open) .hint::after{content:"点击展开 ▾"}
+  .tl-mid{display:flex;flex-direction:column;align-items:center;gap:3px;position:relative}
+  .tl-mid::before{content:"";position:absolute;left:-10px;right:-10px;top:50%;height:2px;background:linear-gradient(90deg,var(--jade),var(--clay),var(--rose));opacity:.55;z-index:0}
+  .tl-mid .era{position:relative;z-index:1;background:var(--paper);border:1px solid var(--line);border-radius:20px;
+               font-size:12px;font-weight:700;color:var(--ink);padding:2px 11px;white-space:nowrap}
+  .tl-mid .dot{position:relative;z-index:1;width:9px;height:9px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 3px var(--paper)}
 
   /* ---------- 卷末 ---------- */
   .tail-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px}
@@ -128,7 +149,17 @@
     .hero h1{font-size:22px}
     .entry{padding:16px 15px;border-radius:13px}
     .entry h3{font-size:16.5px}
-    .tl-card{flex-basis:224px}
+    .tl2{flex-direction:column;gap:0}
+    .tl-col{flex:none;width:100%;grid-template-columns:14px 1fr;grid-template-rows:auto auto;
+            column-gap:10px;padding:10px 0;border-left:0!important}
+    .tl-col+.tl-col{border-top:1px dashed var(--line);border-left:0}
+    .tl-mid{grid-column:1;grid-row:1/3;flex-direction:row;justify-content:center}
+    .tl-mid::before{left:50%;top:0;bottom:0;right:auto;width:2px;height:100%;
+                    background:linear-gradient(180deg,var(--jade),var(--clay),var(--rose))}
+    .tl-mid .era{writing-mode:vertical-rl;letter-spacing:1px;padding:8px 3px}
+    .tl-mid .dot{position:absolute;top:50%;transform:translateY(-50%)}
+    .side.kz{grid-column:2;grid-row:1;align-self:stretch;margin-bottom:8px}
+    .side.cn{grid-column:2;grid-row:2}
     .hist-fig{width:108px}
     .hist-fig img{height:74px}
     .gal-mask{padding:0}
@@ -166,19 +197,68 @@
 
   <!-- ================= 卷首时间轴 ================= -->
   <section id="t0" class="chapter">
-    <div class="ch-head"><span class="no">卷首</span><h2>这片土地的时间轴</h2><span class="en">TIMELINE · 左右滑动</span></div>
-    <div class="timeline">
-      <div class="tl-card"><div class="era">前 2000–前 500｜青铜到塞种</div><div class="txt">泰姆格里（Tamgaly）的岩刻在此后两千年间被陆续刻下，约 5000 幅，2004 年列入 UNESCO。草原的主人是塞种人（Saka）——两千年后那个著名的“金人”，正是他们的贵族。</div></div>
-      <div class="tl-card"><div class="era">前 2 世纪–9 世纪｜丝路与突厥</div><div class="txt">七河地带是丝路北道，塔尔加（Talgar）等古城出土过汉语、突厥语、阿拉伯语、契丹文的铭文，商队和文字都从这里路过。</div></div>
-      <div class="tl-card"><div class="era">751｜伊斯兰东来</div><div class="txt">怛罗斯（今塔拉兹附近）一战，唐与阿拉伯阿拔斯王朝相遇，被俘的唐军工匠把造纸术带向西方。这是中亚命运的一次转向。</div></div>
-      <div class="tl-card"><div class="era">13 世纪｜蒙古风暴</div><div class="txt">1219–1220 年讹答剌事件引发第一次蒙古西征；到 17 世纪，准噶尔部入主七河近百年，牧场易主，部族四散。</div></div>
-      <div class="tl-card"><div class="era">1465｜哈萨克汗国</div><div class="txt">克烈与贾尼别克脱离乌兹别克汗国，在七河西部立国，后分大、中、小三玉兹。“哈萨克”一词，本意是“自由的流浪者”。</div></div>
-      <div class="tl-card"><div class="era">17–19 世纪｜两大帝国之间</div><div class="txt">大玉兹、中玉兹一度求助清帝国，小玉兹求助俄国。1854 年，一队哥萨克在外伊犁山脚下扎下木栅要塞——那就是阿拉木图的第一根木桩。</div></div>
-      <div class="tl-card"><div class="era">1917–1936｜苏联重塑</div><div class="txt">民族划界“造出”五个斯坦；1929 年阿拉木图成为哈萨克首府，1936 年哈萨克苏维埃社会主义共和国成立。农业集体化终结了千年游牧，大饥荒逾百万人死亡。</div></div>
-      <div class="tl-card"><div class="era">1949–1991｜核与黄昏</div><div class="txt">塞米伊核试验场 41 年 456 次核爆；1963 年耶斯克湖被泥石流放空；1982 年 Arasan 浴馆落成、1983 年 Kok Tobe 电视塔竖起；1986 年十二月事件；1991 年 12 月 16 日哈萨克最后一个宣布独立，12 月 21 日《阿拉木图宣言》在这座城市为苏联盖上棺盖。</div></div>
-      <div class="tl-card"><div class="era">1993–1997｜更名与迁都</div><div class="txt">1993 年 Alma-Ata 正名为 Almaty；1997 年首都北迁阿斯塔纳。阿拉木图卸下了权力，意外保住了悠闲。</div></div>
-      <div class="tl-card"><div class="era">独立之后｜重新长出来</div><div class="txt">1999 年中央清真寺在老鞑靼寺原址建成；2011 年扎瑙津的石油冲突与阿拉木图地铁通车同一年发生——地铁动工于 1988 年，建了 23 年。2025 年中亚首座私立现当代美术馆 AMA 开门。城市仍在书写自己。</div></div>
-      <div class="tl-card"><div class="era">2026.10｜你</div><div class="txt">你脚下的街道、巴扎、雪山、荒漠，就是这条时间轴目前的最后一格。</div></div>
+    <div class="ch-head"><span class="no">卷首</span><h2>这片土地的时间轴</h2><span class="en">哈萨克 × 中国 · 同一时期在发生什么</span></div>
+    <div class="tl-legend">
+      <span class="lk"><i></i>轴上 · 哈萨克草原 / 七河</span>
+      <span class="lc"><i></i>轴下 · 中国（中原王朝）</span>
+      <span>默认简略，点卡片展开详细</span>
+    </div>
+    <div class="tl2">
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">塞种人（Saka）游牧七河，在泰姆格里陆续刻下岩刻</div><div class="more">青铜时代的安德罗诺沃文化在此放牧与炼铜；泰姆格里（Tamgaly）峡谷此后两千年间留下约 5000 幅岩刻，2004 年列入 UNESCO。千年后著名的“金人”（Altyn Adam），正是塞种贵族的葬制。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">前 2000–前 500</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">夏商周青铜时代：甲骨文、西周礼乐、春秋诸侯</div><div class="more">约前 2070 夏、前 1600 商（殷墟甲骨文）、前 1046 西周分封；前 770 进入东周春秋。中原与草原经玉石、金属之路已有间接往来，农耕与游牧两大世界开始成型。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">七河成为丝路北道，突厥、粟特商队往来不熄</div><div class="more">塔尔加（Talgar）等古城出土过汉语、突厥语、阿拉伯语、契丹文的铭文与钱币。657 年唐灭西突厥后此地归安西都护护翼；粟特商人是丝路上最活跃的中转者，文字与宗教（景教、摩尼教、佛教）都从这里路过。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">前 2 世纪–9 世纪</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">张骞凿空、西域都护设立；盛唐势力直达中亚</div><div class="more">前 138/前 119 张骞两使西域，前 60 年西汉设西域都护府；640 年唐设安西都护府，657 年苏定方平定西突厥。长安是当时世界最大城市之一，丝路把长安与七河直接缝在一起。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">怛罗斯之战，造纸术经工匠西传，中亚走向伊斯兰化</div><div class="more">751 年在今塔拉兹附近，唐将高仙芝与阿拉伯阿拔斯王朝相遇战败；被俘唐军工匠把造纸术带到撒马尔罕，再经巴格达、开罗进入欧洲。此后中亚的信仰、文字与知识体系逐步转向伊斯兰世界。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">751</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">同一年盛唐转衰：四年后安史之乱，唐退出中亚</div><div class="more">怛罗斯之战时的唐朝正处鼎盛顶点；755 年安史之乱爆发，此后唐由盛转衰、无力西顾，安西都护府在半个世纪后陷落，中原与中亚的直接统辖就此中断近千年。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">喀喇汗、花剌子模相继；1219 蒙古第一次西征</div><div class="more">9–12 世纪喀喇汗国伊斯兰化，《突厥语大词典》在喀什编成；花剌子模一度强盛。1219–1221 成吉思汗因讹答剌事件西征，诸城被毁，其后这片土地分属察合台汗国与金帐汗国，游牧世界重新洗牌。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">9–13 世纪</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">两宋、西辽、蒙元：西辽曾统有七河，元驿站重通丝路</div><div class="more">两宋经济文化达高峰但军事收缩；辽亡后耶律大石西迁建西辽（1124–1218），1141 卡特万之战后称雄中亚、统有七河。1271 年元朝建立，驿站体系让欧亚丝路再度贯通。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">1465 哈萨克汗国建立，后分大中小三玉兹</div><div class="more">克烈与贾尼别克苏丹脱离乌兹别克汗国，在七河西部立国；“哈萨克”本意“自由的流浪者、分离者”。16 世纪在哈斯木汗等治下强盛，后分为大、中、小三玉兹（部落联盟）。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">1465</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">明成化元年；郑和时代落幕，明廷退守嘉峪关</div><div class="more">1449 土木堡之变过去仅 16 年，明朝由外向开拓转向内缩，关西七卫渐废、以嘉峪关为西界。陆上丝路让位于海上，中原王朝与中亚的官方往来从此稀疏了数百年。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">三玉兹夹在清俄两大帝国之间选边，俄筑要塞线南压</div><div class="more">1731 年小玉兹阿布勒海尔向俄宣誓；大玉兹、中玉兹一度内附清朝，在伊犁、乌鲁木齐互市。俄罗斯沿额尔齐斯河—外伊犁一线修筑哥萨克要塞，1854 年扎下的那根木桩，就是后来的阿拉木图。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">17–19 世纪中</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">康乾平定准噶尔、设伊犁将军；嘉道转衰、鸦片战争</div><div class="more">1755–1757 年两平准噶尔、再定大小和卓，1762 年设伊犁将军统辖全新疆，西北版图至此极盛，与南下的俄罗斯在草原上接壤博弈。1840 年鸦片战争爆发，清帝国由盛转衰，再无力西顾。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">维尔内要塞建城，两次大地震“震”出一座木头城</div><div class="more">1854 年建 Zailiyskoe 要塞，后改名维尔内（Verny，忠诚），1867 年成七河州首府。1887、1911 年两次大地震几乎毁城，总督下令此后只准建木房——全城木构传统与升天大教堂的抗震奇迹都源于这纸政令；斯拉夫移民与西迁的东干、维吾尔人带来新的饮食。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">1854–1911</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">咸丰、同治、光绪：洋务图强；1911 辛亥革命清亡</div><div class="more">1854 正是太平天国起事第三年，内忧外患中开始洋务运动；1860 年北京条约割让外东北；1884 年新疆建省，省会迪化，与俄属七河州隔界相望。1911 年武昌起义，清朝灭亡、民国建立。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">民族划界造出哈萨克，集体化终结千年游牧</div><div class="more">1921 更名 Alma-Ata，1929 年成为哈萨克首府，1936.12.5 哈萨克苏维埃社会主义共和国成立。1929–1933 强制定居与集体化酿成大饥荒（Asharshylyk），逾百万人死亡；二战中大量工厂与被迁民族涌入，阿拉木图成为后方。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">1917–1945</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">民国、抗战；西北国际交通线经哈萨克连通苏联</div><div class="more">1921 年中共成立，1934 长征，1937 全面抗战、1945 胜利。苏联是抗战初期主要援助国之一，援华物资经中亚—阿拉木图—新疆的西北国际交通线进入中国，这条线也串起了你即将走过的城市。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">核试验场、十二月事件；1991 阿拉木图为苏联盖棺</div><div class="more">塞米巴拉金斯克核场 41 年间 456 次核爆，1989 年被民间运动关闭；1986 年 12 月杰勒托克桑事件；1991.12.16 哈萨克最后一个宣布独立，12.21《阿拉木图宣言》在这座城市签署、宣告苏联终结，独立后主动弃核。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">1949–1991</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">建国、两弹一星、改革开放；中苏从交恶到正常化</div><div class="more">1949 新中国成立，1964 罗布泊第一颗原子弹爆炸——与哈萨克草原上的核场恰是冷战同一枚硬币的两面；1969 珍宝岛冲突、1989 中苏关系正常化，1978 改革开放，1991 年进入深化开放新阶段，次年与独立的哈萨克斯坦建交。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">正名 Almaty、迁都阿斯塔纳，城市缓慢重新生长</div><div class="more">1993 年按哈萨克语正名 Almaty，1997 年首都北迁阿斯塔纳；1999 中央清真寺落成，2011 年建了 23 年的地铁通车，2025 年中亚首座私立现当代美术馆 AMA 开门——权力北上之后，阿拉木图保住了生活气。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">1993–今</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">香港回归、上合成立、一带一路首倡于哈萨克</div><div class="more">1997 香港回归；2001 年上合组织在上海成立，哈萨克是创始成员；2013 年 9 月在阿斯塔纳首提“丝绸之路经济带”——两千年前从长安出发的那条路，以新的名字在同一片草原上被重新接上，中哈原油管道、中欧班列经阿拉木图西去。</div><span class="hint"></span></button>
+      </div>
+      <div class="tl-col">
+        <button type="button" class="side kz"><span class="tag">哈萨克</span><div class="b">街道、巴扎、雪山与荒漠——时间轴目前的最后一格</div><div class="more">从塞种的岩刻到苏联的地铁，这趟旅行的每一个坐标都是时间轴上的一个刻度，你将亲手补上“现在”这一格。</div><span class="hint"></span></button>
+        <div class="tl-mid"><span class="era">2026.10 · 你</span><span class="dot"></span></div>
+        <button type="button" class="side cn"><span class="tag">中国</span><div class="b">你从上海、广州起飞，八天后带着两千年的故事回来</div><div class="more">出发地上海（10/1 CA8582 广州先飞上海集合），回程一人回上海、一人回广州——一次旅行，把丝路两端的时间重新接上。</div><span class="hint"></span></button>
+      </div>
     </div>
   </section>
 
@@ -766,6 +846,7 @@
     if(e.key==='ArrowRight'&&view.classList.contains('show'))step(1);
   });
   document.addEventListener('click',e=>{
+    const side=e.target.closest('.side');if(side){side.classList.toggle('open');return;}
     const gb=e.target.closest('.g-btn');if(gb&&gb.dataset.gal){e.preventDefault();window.openGallery(gb.dataset.gal);}
     const hb=e.target.closest('.h-btn');if(hb&&hb.dataset.hist){e.preventDefault();window.openHist(hb.dataset.hist);}
   });
