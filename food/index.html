@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>哈哈哈哈萨克斯坦</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root{
+    --paper:#f4f2ec; --card:#ffffff; --ink:#22302c; --sub:#66736e; --line:#e4dfd4;
+    --jade:#2e7d6b; --jade-soft:#e4f0ec;
+    --sky:#3a7ca5;  --sky-soft:#e7f0f5;
+    --clay:#d08a3c; --clay-soft:#faf0e1;
+    --rose:#c2553d; --rose-soft:#fbe9e4;
+    --slate:#4f6d7a; --slate-soft:#e9eff1;
+    --gold:#b08900; --gold-soft:#f8f1dc;
+    --wine:#8e3b46; --wine-soft:#f6e8ea;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+       background:var(--paper);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased;font-size:15.5px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 90px}
+  a{color:var(--sky);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(125deg,#7a3b2e 0%,#c2553d 52%,#d08a3c 100%);color:#fff;
+        border-radius:0 0 28px 28px;padding:42px 32px 30px;position:relative;overflow:hidden;margin:0 -20px 22px}
+  .hero::after{content:"🍽️";position:absolute;right:22px;bottom:-16px;font-size:120px;opacity:.14}
+  .hero .eyebrow{font-size:12px;letter-spacing:4px;opacity:.85;font-weight:700}
+  .hero h1{font-size:27px;margin:10px 0 8px;line-height:1.35}
+  .hero .meta{font-size:14px;opacity:.95;max-width:640px}
+  .hero .navline{margin-top:16px;display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px}
+  .hero .navline a{color:#fff;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);
+                  padding:5px 14px;border-radius:30px}
+  .hero .navline a:hover{text-decoration:none;background:rgba(255,255,255,.28)}
+
+  /* ---------- 说明条 ---------- */
+  .note{background:var(--gold-soft);border:1px solid #e8dcae;border-radius:12px;padding:12px 16px;
+        font-size:13px;color:#6b5d2e;line-height:1.75;margin-bottom:18px}
+  .note b{color:#8a7320}
+
+  /* ---------- 筛选 chips ---------- */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:30px;
+        padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+  .chip .dot{width:9px;height:9px;border-radius:50%}
+  .chip.off{opacity:.4}
+  .chip:hover{border-color:var(--ink)}
+
+  /* ---------- 地图 ---------- */
+  .map-wrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#e8e6df;margin-bottom:10px}
+  #foodMap{height:500px;width:100%;font-family:inherit}
+  .map-tip{font-size:12px;color:var(--sub);margin:0 2px 26px}
+  .pin{border-radius:50%;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.35);
+       display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}
+  .leaflet-popup-content{font-size:13px;line-height:1.65;margin:12px 14px}
+  .leaflet-popup-content b{font-size:14px}
+  .pp-tag{display:inline-block;font-size:11px;color:#fff;border-radius:5px;padding:0 7px;margin:3px 0}
+  .pp-meta{color:var(--sub);font-size:12px;margin-top:3px}
+
+  /* ---------- 章节 ---------- */
+  .chapter{margin-top:34px}
+  .ch-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--jade);padding-bottom:10px;margin-bottom:16px}
+  .ch-head .bar{width:12px;height:20px;border-radius:3px}
+  .ch-head h2{font-size:20px}
+  .ch-head .en{color:var(--sub);font-size:12px;margin-left:auto;letter-spacing:1px}
+
+  /* ---------- 餐厅卡 ---------- */
+  .r{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade);
+     border-radius:14px;padding:16px 18px;margin-bottom:13px}
+  .r h3{font-size:17px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:7px}
+  .r h3 .alt{font-size:12.5px;color:var(--sub);font-weight:400}
+  .r .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}
+  .r .tags span{font-size:11.5px;border-radius:6px;padding:1px 9px;background:var(--slate-soft);color:#3f5863}
+  .r .tags .t-price{background:var(--gold-soft);color:#7a6520}
+  .r .tags .t-hour{background:var(--sky-soft);color:#2e5a72}
+  .r .row{font-size:14px;margin:5px 0;display:flex;gap:8px}
+  .r .row .k{flex:0 0 52px;color:var(--sub);font-size:12.5px;padding-top:2px}
+  .r .row.good .k{color:var(--jade)} .r .row.bad .k{color:var(--rose)}
+  .r .acts{margin-top:10px;display:flex;gap:9px;flex-wrap:wrap}
+  .g-btn{font-size:12px;border:1px solid var(--jade);color:var(--jade);background:#fff;border-radius:20px;
+         padding:3px 12px;cursor:pointer;font-weight:600;font-family:inherit}
+  .g-btn:hover{background:var(--jade);color:#fff}
+  .fly-btn{font-size:12px;border:1px solid var(--sky);color:var(--sky);background:#fff;border-radius:20px;
+           padding:3px 12px;cursor:pointer;font-family:inherit}
+  .fly-btn:hover{background:var(--sky);color:#fff}
+  .polar{font-size:12px;color:var(--rose);background:var(--rose-soft);border-radius:6px;padding:1px 8px;align-self:center}
+
+  /* 分类配色 */
+  .c-kazakh{border-left-color:var(--jade)}  .c-kazakh .bar{background:var(--jade)}  .c-kazakh .pp-tag{background:var(--jade)}
+  .c-grill{border-left-color:var(--rose)}   .c-grill .bar{background:var(--rose)}   .c-grill .pp-tag{background:var(--rose)}
+  .c-west{border-left-color:var(--sky)}    .c-west .bar{background:var(--sky)}    .c-west .pp-tag{background:var(--sky)}
+  .c-korean{border-left-color:var(--clay)} .c-korean .bar{background:var(--clay)} .c-korean .pp-tag{background:var(--clay)}
+  .c-cafe{border-left-color:var(--slate)}   .c-cafe .bar{background:var(--slate)}   .c-cafe .pp-tag{background:var(--slate)}
+  .c-bar{border-left-color:var(--wine)}    .c-bar .bar{background:var(--wine)}    .c-bar .pp-tag{background:var(--wine)}
+  .c-bazaar{border-left-color:var(--gold)} .c-bazaar .bar{background:var(--gold)} .c-bazaar .pp-tag{background:var(--gold)}
+  .hide{display:none!important}
+
+  /* ---------- 共识 / 表格 ---------- */
+  .tail-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+  .tail-card h3{font-size:17px;margin:14px 0 8px}
+  .tail-card h3:first-child{margin-top:0}
+  .tail-card ul{margin:4px 0 4px 20px;font-size:14px;color:#3d4a46}
+  .tail-card li{margin:5px 0}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .mini{border-radius:12px;padding:13px 16px;font-size:13.5px}
+  .mini.try{background:var(--jade-soft)} .mini.skip{background:var(--rose-soft)}
+  .mini h4{font-size:14px;margin-bottom:7px}
+  .mini.try h4{color:var(--jade)} .mini.skip h4{color:var(--rose)}
+  .mini ul{margin-left:18px}
+  .table-scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+  th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+  th{background:var(--jade-soft);font-weight:600;white-space:nowrap}
+  .foot{text-align:center;color:var(--sub);font-size:12.5px;margin-top:42px}
+
+  /* ---------- 实拍弹窗 ---------- */
+  .gal-mask{position:fixed;inset:0;background:rgba(25,30,28,.62);display:none;align-items:center;justify-content:center;z-index:1100;padding:22px}
+  .gal-mask.show{display:flex}
+  .gal-modal{background:#fff;border-radius:16px;max-width:920px;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+  .gal-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .gal-head h3{font-size:16px;flex:1}
+  .gal-count{font-size:12px;color:var(--sub)}
+  .gal-x{border:none;background:var(--slate-soft);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px}
+  .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;padding:18px;overflow-y:auto}
+  .gal-grid img{width:100%;height:120px;object-fit:cover;border-radius:9px;cursor:pointer;background:#eee}
+  .gal-view{display:none;flex-direction:column;flex:1;min-height:0}
+  .gal-view.show{display:flex}
+  .gal-back{align-self:flex-start;margin:10px 18px 0;border:none;background:none;color:var(--sky);cursor:pointer;font-size:14px}
+  .gal-stage{position:relative;display:flex;align-items:center;justify-content:center;padding:8px 50px;min-height:280px;flex:1}
+  .gal-stage img{max-width:100%;max-height:58vh;border-radius:10px}
+  .gal-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(0,0,0,.45);color:#fff;
+           width:40px;height:40px;border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
+  .gal-prev{left:10px}.gal-next{right:10px}
+  .gal-cap{padding:10px 18px 16px;font-size:13.5px;color:var(--sub);border-top:1px solid var(--line)}
+  .gal-cap a{font-size:12.5px}
+
+  @media(max-width:640px){
+    body{font-size:15px}
+    .wrap{padding:0 13px 70px}
+    .hero{padding:34px 20px 26px;border-radius:0 0 20px 20px;margin:0 -13px 18px}
+    .hero h1{font-size:22px}
+    #foodMap{height:400px}
+    .filters{flex-wrap:nowrap;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
+    .filters::-webkit-scrollbar{display:none}
+    .chip{flex:0 0 auto}
+    .r{padding:14px 14px}
+    .r .row{gap:7px}
+    .r .row .k{flex:0 0 46px}
+    .tail-card{padding:16px 15px}
+    .gal-mask{padding:0}
+    .gal-modal{border-radius:0;max-height:100dvh;height:100dvh}
+    .gal-grid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr));gap:8px;padding:12px}
+    .gal-grid img{height:104px}
+    .gal-stage{padding:8px 40px}
+    .gal-stage img{max-height:56vh}
+    .gal-nav{width:38px;height:38px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">ALMATY FOOD MAP</div>
+    <h1>阿拉木图吃啥地图</h1>
+    <div class="meta">哪些店是真好吃、哪些是网红滤镜，一次说清。地图按菜系配色，点卡片上的「在地图上看」可以直接飞过去。</div>
+    <div class="navline">
+      <a href="../">← 返回主攻略</a>
+      <a href="../stories/">📜 历史人文手册 ↗</a>
+    </div>
+  </header>
+
+  <div class="note">
+    <b>这份单子怎么来的：</b>汇总 50+ 篇小红书探店帖与数百条评论（2026-09 采集，优先 9–10 月样本），再用 2GIS / Yandex Maps / 官网逐家核验地址、营业时间与评分；定制游、地接账号的「九家亲测」榜单帖已按广告剔除，只留有门脸、菜单、小票、具体菜价或真实差评的内容。<b>人均与价格为 2026-09-22 采集值，下单前以现场菜单为准。</b>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="map-wrap"><div id="foodMap"></div></div>
+  <p class="map-tip">地图为 Esri 公共底图，点位来自 2GIS / OpenStreetMap 核验；Auyl 在梅杰乌山腰、Gastreat 在西南郊，缩放时会一并入镜。</p>
+
+  <!-- ============ 游牧国菜 ============ -->
+  <section class="chapter c-kazakh" data-cat="kazakh">
+    <div class="ch-head"><span class="bar"></span><h2>游牧国菜 · 哈萨克与中亚</h2><span class="en">KAZAKH & CENTRAL ASIAN</span></div>
+
+    <div class="r" id="r-auyl">
+      <h3>Auyl <span class="alt">游牧创意菜 · 梅杰乌山腰</span></h3>
+      <div class="tags"><span class="t-price">人均 ¥150–200（约 11k–15k₸）</span><span class="t-hour">周一至五 12:00–24:00 / 周末 11:00 起</span><span>Kerey-Jánibek Handar 586</span></div>
+      <div class="row good"><span class="k">招牌</span><div>烤牛骨髓配烤馕、马肉鞑靼、beshbarmak（别什巴尔马克）、马肉串、烩面、现烤包尔萨克、哈萨克奶茶</div></div>
+      <div class="row good"><span class="k">口碑</span><div>Yandex 5.0、Ultima Guide 入选、Tatler 2025 亚太最佳 100；小红书多帖「恨不得每天去」，毡房元素+雪山景，仪式感全城第一，17:00 后不订位基本只能坐室外</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>马奶、骆驼奶酸腥，先点小杯猎奇；位置在山腰，和琼布拉克/梅杰乌安排同一天最顺路</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="auyl">📍 在地图上看</button><button class="g-btn" data-gal="auyl">实拍/菜单 8</button></div>
+    </div>
+
+    <div class="r" id="r-sandyq">
+      <h3>Sandyq <span class="alt">国宴级民族菜 · 市中心网红</span><span class="polar">口碑两极</span></h3>
+      <div class="tags"><span class="t-price">人均 20k–25k₸，多人餐约 60k₸</span><span class="t-hour">每日 12:00–24:00</span><span>Abylai Khan 55</span></div>
+      <div class="row good"><span class="k">招牌</span><div>samsa 烤包子 2990₸（全场 MVP）、beshbarmak 9990₸、马奶炖肋排 10990₸、牛骨髓 8090₸；周末晚有冬不拉弹唱，装修最出片，有中文菜单（主动要）</div></div>
+      <div class="row bad"><span class="k">争议</span><div>评论区同时存在「名不符实、死贵、味道一般、吃不惯」的多条差评，汤和表演好评、菜品褒贬不一；想拍照摆酒可来，纯追求吃的性价比选 Navat / Bes Qazan</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="sandyq">📍 在地图上看</button><button class="g-btn" data-gal="sandyq">实拍 10</button></div>
+    </div>
+
+    <div class="r" id="r-navat">
+      <h3>Chaihona Navat <span class="alt">乌兹别克茶馆连锁 · 游客友好默认食堂</span></h3>
+      <div class="tags"><span class="t-price">人均 6k–10k₸</span><span class="t-hour">约 10:00–24:00（分店不同）</span><span>全市 18 店，地图取 Abylai Khan 58a</span></div>
+      <div class="row good"><span class="k">招牌</span><div>别什巴尔马克、手抓饭、马肉肠、烤包子、炸鸡肉；进店送包尔萨克，出品稳定、有中文菜单，walk-in 无压力</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>测评帖共识是「稳定但不惊喜」，肉普遍偏咸、苹果汁有勾兑感；两人吃到 500 元多半是点多了，抓饭+烤包子+面足够</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="navat">📍 在地图上看</button><button class="g-btn" data-gal="navat">实拍 8</button></div>
+    </div>
+
+    <div class="r" id="r-besqazan">
+      <h3>Bes Qazan <span class="alt">抓饭专门店 · 本地人食堂</span></h3>
+      <div class="tags"><span class="t-price">人均约 3000₸</span><span class="t-hour">市中心店 08:00 开门</span><span>Amangeldi 52（全市 4 店）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>大盘抓饭 5990₸（约 ¥85）够 3 人分，拉条子、曼提、水果茶；2GIS 4.5（285 评），满店本地人，小红书评价「比 Navat 实惠太多好吃太多」</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="besqazan">📍 在地图上看</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 巴扎小吃 ============ -->
+  <section class="chapter c-bazaar" data-cat="bazaar">
+    <div class="ch-head"><span class="bar"></span><h2>巴扎烟火气</h2><span class="en">BAZAAR STREET FOOD</span></div>
+
+    <div class="r" id="r-bazaar">
+      <h3>绿巴扎二楼食堂 + Bowler Coffee <span class="alt">Kök Bazaar · 最本地的一顿</span></h3>
+      <div class="tags"><span class="t-price">抓饭约 2200₸、奶茶 500₸</span><span class="t-hour">巴扎白天开放，周一休市</span><span>Zhibek Zholy 53</span></div>
+      <div class="row good"><span class="k">招牌</span><div>红色箭头上二楼：抓饭、牛羊肉配薯条、现烤馕、包尔萨克，无服务费、饭点拼桌，奶茶可无限续热水；对面老咖啡机很有年代感。二楼 Bowler Coffee Roasters 可俯瞰整个巴扎</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>买干果蜂蜜先问价再称重；续热水说「just hot water」，否则按新壶收费</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="bazaar">📍 在地图上看</button><button class="g-btn" data-gal="green_bazaar">巴扎实拍 10</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 烤肉牛排 ============ -->
+  <section class="chapter c-grill" data-cat="grill">
+    <div class="ch-head"><span class="bar"></span><h2>烤肉与牛排</h2><span class="en">KEBAB & STEAK</span></div>
+
+    <div class="r" id="r-shashlychok">
+      <h3>Shashlychok na Pastera · Smile <span class="alt">红房子美式烤肉 · 撸串性价比之王</span></h3>
+      <div class="tags"><span class="t-price">2GIS 人均 2600₸，三人不到 ¥300</span><span class="t-hour">10:30–24:00</span><span>Makataeva 29 二层</span></div>
+      <div class="row good"><span class="k">招牌</span><div>肉串小臂粗（一人先点两串）、烤口蘑爆汁（一致好评）、羊油包羊肝、烤鸡嫩；2GIS 4.8，walk-in 不用订、有中文菜单。Yandex 搜「Smile」才定位得到</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>红酱有人嫌酸臭、整体偏咸偏油、羊排偶有干柴；服务员会劝加单，够吃就摆手</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="shashlychok">📍 在地图上看</button><button class="g-btn" data-gal="smile">实拍 8</button></div>
+    </div>
+
+    <div class="r" id="r-xose">
+      <h3>Xose &amp; Josper <span class="alt">蓝房子炭烤牛排 · 多帖复推</span></h3>
+      <div class="tags"><span class="t-price">人均 ¥100 上下（约 7k–10k₸）</span><span class="t-hour">10:00–24:00</span><span>Zheltoksan 162</span></div>
+      <div class="row good"><span class="k">招牌</span><div>烤牛舌软烂（必点）、T-bone 一两百人民币配土豆泥、马肉配番茄奶酪黑醋（三分熟刚好）；2GIS 4.8（约 2900 评），有中文菜单，马甲/Faye/问水等多位博主复推</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>希腊沙拉别点（贵且朴素）；Yandex 要搜 hose&amp;josper；续水说 just hot water，one more tea = 新壶 2000₸</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="xose">📍 在地图上看</button><button class="g-btn" data-gal="hosejosper">实拍 8</button></div>
+    </div>
+
+    <div class="r" id="r-linebrew">
+      <h3>Line Brew <span class="alt">干式熟成牛排+精酿 · 2026 新宠</span></h3>
+      <div class="tags"><span class="t-price">人均 10k–15k₸</span><span class="t-hour">12:00–02:00</span><span>Nazarbayev 187A（Abay 路口）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>干式熟成牛排：瘦口点「魔鬼」、油润点 T 骨；鸡肝面包、西芹苹果沙拉、巧克力塔配餐精酿。2026-09 新帖（107 赞）称「比洛杉矶/杜塞/悉尼名店性价比高」，评论区多人「每周必吃」</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>同名分店多家（Mix / Reserve），打卡认准 Nazarbayev 187A 总店</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="linebrew">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-gastreat">
+      <h3>Gastreat <span class="alt">24 小时肉食综合体 · 深夜救星</span></h3>
+      <div class="tags"><span class="t-price">人均约 6000₸</span><span class="t-hour">24 小时</span><span>Gagarina 287 блок Б（Gagarin Park）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>战斧牛排 12999₸ 配沙拉薯条、千层面、三文鱼、汉堡、水烟；2GIS 4.5（约 1600 评），一人食友好，红眼航班前后都能吃上热肉</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>在西南郊住宅区，不顺路不必专门跑，住附近或赶早晚班机时最香</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="gastreat">📍 在地图上看</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 异国西餐 ============ -->
+  <section class="chapter c-west" data-cat="west">
+    <div class="ch-head"><span class="bar"></span><h2>异国西餐</h2><span class="en">GEORGIAN · ITALIAN · EUROPEAN</span></div>
+
+    <div class="r" id="r-daredzhani">
+      <h3>Daredzhani <span class="alt">格鲁吉亚菜连锁 · 主攻略 D3 晚餐</span></h3>
+      <div class="tags"><span class="t-price">人均约 8000₸</span><span class="t-hour">09:00–24:00</span><span>Kunaev 85（全市 36 店）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>奶酪烤饼 Khachapuri、大理石面 Khinkali 大馅饺子、格鲁吉亚茄子、蘑菇炖鸡，配格鲁吉亚红酒；「来吃格鲁吉亚就选它」，热门时段建议订位</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="daredzhani">📍 在地图上看</button><button class="g-btn" data-gal="daredzhani">实拍 10</button></div>
+    </div>
+
+    <div class="r" id="r-delpapa">
+      <h3>Del Papa <span class="alt">意餐连锁 · 马肉意面名物</span></h3>
+      <div class="tags"><span class="t-price">人均 7k–10k₸</span><span class="t-hour">10:00–23:00（周五六至 24:00）</span><span>Gogol 87（多店）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>马肉 pasta（必点）、薄底 pizza、烤南瓜；环境安静适合慢吃</div></div>
+      <div class="row bad"><span class="k">避坑</span><div>多篇帖主反馈<strong>只收现金</strong>（公开渠道未证实，去前备足坚戈）</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="delpapa">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-bistro130">
+      <h3>Bistro 130 <span class="alt">欧陆小馆 · brunch 到夜宵</span></h3>
+      <div class="tags"><span class="t-price">人均约 7000₸</span><span class="t-hour">08:00–00:00</span><span>Kunaev 130</span></div>
+      <div class="row good"><span class="k">招牌</span><div>烟熏三文鱼可丽饼、班尼迪克蛋、芒果酱 pancake；英式早餐供应到 18:00，Yandex 4.6</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="bistro130">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-bitanga">
+      <h3>Bitanga <span class="alt">现代乌克兰菜</span></h3>
+      <div class="tags"><span class="t-price">人均约 9000₸</span><span class="t-hour">以 2GIS 当日为准</span><span>Panfilov 114（另有 Dostyk Plaza 店）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>红菜汤、饺子、乌克兰家常菜，登过本地「一只苹果梨」美食榜，换口味的一站</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="bitanga">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-ogonek">
+      <h3>Ogonek / Огонёк <span class="alt">小馆 · 牛骨髓配 pita</span></h3>
+      <div class="tags"><span class="t-price">中档</span><span class="t-hour">约 10:00–24:00（以 2GIS 为准）</span><span>Panfilov 125</span></div>
+      <div class="row good"><span class="k">招牌</span><div>牛骨髓配 pita 香、出品稳定，可看着石板煎肉；热门时段<strong>需要预约</strong></div></div>
+      <div class="acts"><button class="fly-btn" data-fly="ogonek">📍 在地图上看</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 高丽韩餐 ============ -->
+  <section class="chapter c-korean" data-cat="korean">
+    <div class="ch-head"><span class="bar"></span><h2>高丽韩餐</h2><span class="en">KORYO · KOREAN</span></div>
+    <p style="font-size:13.5px;color:var(--sub);margin:-4px 0 12px">哈萨克斯坦有庞大的高丽裔社区（斯大林时期从远东迁来），阿拉木图的韩餐又正宗又便宜，是当地特色，别错过。</p>
+
+    <div class="r" id="r-masisso">
+      <h3>Masisso <span class="alt">韩餐老店 · 商务午餐划算</span></h3>
+      <div class="tags"><span class="t-price">人均约 8000₸，商务午餐 3490₸ 起</span><span class="t-hour">12:00–24:00</span><span>Nazarbayev 57（近 Makataeva）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>凉面 Куксу 3490₸、糖醋鸡 4590₸，入座送 6 小咸菜；Yandex 5.0（245 评），绿巴扎摊主都会向游客推荐</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="masisso">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-bone">
+      <h3>Bone Korea <span class="alt">韩国老板的烤肉店 · 第一梯队</span></h3>
+      <div class="tags"><span class="t-price">人均约 5000₸</span><span class="t-hour">10:00 起</span><span>Zhibek Zholy 100</span></div>
+      <div class="row good"><span class="k">招牌</span><div>腌牛肉、烤五花、石锅拌饭、小菜免费续；老板是韩国人，评论称「一秒到首尔」，2026-09 帖评「阿拉木图韩餐第一梯队，除了环境一般没毛病」</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="bone">📍 在地图上看</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 咖啡甜品 ============ -->
+  <section class="chapter c-cafe" data-cat="cafe">
+    <div class="ch-head"><span class="bar"></span><h2>咖啡 · 早午餐 · 甜品</h2><span class="en">CAFE & BRUNCH</span></div>
+
+    <div class="r" id="r-fika">
+      <h3>Fika <span class="alt">brunch 头牌 · 本地人排队</span></h3>
+      <div class="tags"><span class="t-price">人均 5k–10k₸</span><span class="t-hour">08:00–23:00</span><span>Kabanbay Batyr 104</span></div>
+      <div class="row good"><span class="k">招牌</span><div>嫩蛋 brunch、番茄系料理、甜品、Red Boost 鲜榨果汁（多人称「全城最好喝的果汁」）；Yandex 4.9，北欧极简风，多帖「吊打上海 brunch」，好待一下午</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="fika">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-julius">
+      <h3>Julius Specialty Coffee <span class="alt">Auyl 同集团 · 咖啡早餐稳</span></h3>
+      <div class="tags"><span class="t-price">人均约 5500₸</span><span class="t-hour">08:00 起</span><span>Kabanbay Batyr 83</span></div>
+      <div class="row good"><span class="k">招牌</span><div>精品咖啡、可颂与早餐盘，出品稳定；店小座位少，外带或早去</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="julius">📍 在地图上看</button></div>
+    </div>
+
+    <div class="r" id="r-vanilla">
+      <h3>Vanilla <span class="alt">面包房连锁 · 出片早餐</span></h3>
+      <div class="tags"><span class="t-price">人均约 3000₸</span><span class="t-hour">约 08:00–23:00</span><span>Kunaev 130（全市 16 店）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>牛油果吐司、granola 碗、甜甜圈与面包，咖啡约 ¥14 起；2GIS 4.7–4.8，斯堪的纳维亚风、人多出片</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="vanilla">📍 在地图上看</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 酒吧 ============ -->
+  <section class="chapter c-bar" data-cat="bar">
+    <div class="ch-head"><span class="bar"></span><h2>夜晚一杯</h2><span class="en">BAR</span></div>
+
+    <div class="r" id="r-atelier">
+      <h3>Atelier <span class="alt">本地创意调酒 · 主攻略 D3 第二摊</span></h3>
+      <div class="tags"><span class="t-price">鸡尾酒 4k–8k₸</span><span class="t-hour">18:00 开门</span><span>Valikhanov 47（与餐酒馆 Barbolsyn 同址）</span></div>
+      <div class="row good"><span class="k">招牌</span><div>按口味描述让调酒师自由发挥，本地口碑 4.7；楼下 Barbolsyn 是餐酒馆，微醺续摊不用挪窝</div></div>
+      <div class="acts"><button class="fly-btn" data-fly="atelier">📍 在地图上看</button><button class="g-btn" data-gal="atelier_bar">实拍 8</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 吃饭共识 ============ -->
+  <section class="chapter">
+    <div class="ch-head"><span class="bar" style="background:var(--gold)"></span><h2>在阿拉木图吃饭的潜规则</h2><span class="en">SURVIVAL NOTES</span></div>
+    <div class="tail-card">
+      <ul>
+        <li><b>服务费：</b>餐厅账单普遍含 10%–15% 服务费，看小票确认，不必再额外给小费。</li>
+        <li><b>茶水套路：</b>茶按壶卖；想续热水要说「No, just hot water」，说 one more tea 会按新壶收约 2000₸；餐厅不主动提供免费白水。</li>
+        <li><b>支付：</b>接触式信用卡与 Kaspi QR 为主，支付宝部分店可用；个别店（如 Del Papa 帖主反馈）只收现金，随身备 1–2 万坚戈。</li>
+        <li><b>地图与打车：</b>地图用 2GIS / Yandex Maps（Google Maps 信息旧），打车用 Yandex Go；Xose 要搜 hose&amp;josper、红房子要搜 Smile。</li>
+        <li><b>订位：</b>Auyl、Sandyq、Ogonek、Daredzhani 热门时段提前 1–2 天，可让酒店礼宾代打电话或 Instagram 私信；Navat、Shashlychok 直接 walk-in。</li>
+        <li><b>选店偷懒法则：</b>2GIS 评分 4.5 以上基本不踩雷；满店本地人、没有中文招牌的店通常又便宜又稳。</li>
+      </ul>
+      <div class="two-col" style="margin-top:14px">
+        <div class="mini try">
+          <h4>闭眼试</h4>
+          <ul>
+            <li>面粉系：烤馕、samsa 烤包子、包尔萨克 Baursak，便宜且零差评</li>
+            <li>现抓的大盘抓饭（Bes Qazan / 巴扎二楼）</li>
+            <li>大白熊雪糕，3–4 元一根，多人封神</li>
+            <li>烤奶、本地奶酪与奶疙瘩</li>
+            <li>干式熟成牛排，价格约为国内 1/3</li>
+          </ul>
+        </div>
+        <div class="mini skip">
+          <h4>量力而行</h4>
+          <ul>
+            <li>马奶 / 骆驼奶：酸腥，先点最小杯猎奇</li>
+            <li>马肠 Kazy：齁咸，评价两极</li>
+            <li>咸酸奶、酸奶油：多人踩雷</li>
+            <li>餐厅沙拉：黄瓜番茄撒盐敢卖 800–2000₸</li>
+            <li>Astra 一类电影感网红店：量小到女生吃不饱，拍照可以、吃饭别去</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 其他口碑 ============ -->
+  <section class="chapter">
+    <div class="ch-head"><span class="bar" style="background:var(--slate)"></span><h2>其他口碑清单</h2><span class="en">MENTIONS, PIN NOT VERIFIED</span></div>
+    <div class="tail-card" style="padding:14px 16px">
+      <p style="font-size:13px;color:var(--sub);margin-bottom:10px">以下在小红书有真实好评但坐标未逐一核验，到当地用 2GIS 现搜店名即可；Aroma 有实拍。</p>
+      <div class="table-scroll">
+      <table>
+        <tr><th>店</th><th>类型</th><th>看点 / 招牌</th><th>备注</th></tr>
+        <tr><td><b>Aroma</b> <button class="g-btn" data-gal="aroma" style="margin-left:6px">实拍 8</button></td><td>法式 brunch</td><td>绿植系，早餐与窗景都在线，多帖好评</td><td>Tulebaeva 35 一带</td></tr>
+        <tr><td><b>Dasarang / ДАСАРАНГ</b></td><td>家常韩餐</td><td>韩国阿姨掌勺：石锅拌饭、紫菜包饭、辣炒鸡爪，留学生食堂感，便宜</td><td>2GIS 搜俄文名</td></tr>
+        <tr><td><b>Aqqu Central Cafe</b></td><td>公园咖啡简餐</td><td>市中心苏联社区公园喷泉边玻璃房，2025 新开；开心果面包湿润、柠檬味清爽，意面中规中矩</td><td>逛公园顺路</td></tr>
+        <tr><td><b>Crave cafe</b></td><td>下午茶</td><td>草莓千层酸甜出色，环境好</td><td>Seifullina 416</td></tr>
+        <tr><td><b>Umami</b></td><td>冰淇淋</td><td>帖称「阿拉木图最好吃的冰淇淋」</td><td>单帖口碑，路过可试</td></tr>
+        <tr><td><b>Kulikov</b></td><td>连锁蛋糕</td><td>本地国民蛋糕房，路过买一块</td><td>多分店</td></tr>
+        <tr><td><b>happycake</b></td><td>蜂蜜蛋糕</td><td>只卖整个（约 ¥100+），人多 share</td><td>—</td></tr>
+        <tr><td><b>Alatau ajk</b></td><td>新疆菜+川菜</td><td>砂锅必点，中国胃救星</td><td>挑厨师，同菜水平有波动</td></tr>
+        <tr><td><b>Shipudim</b></td><td>连锁快餐</td><td>薯条炒牛肉、烤肉串、纳仁，性价比高</td><td>多分店</td></tr>
+        <tr><td><b>Akbulak</b></td><td>拌面小馆</td><td>拌面约 2000₸、无服务费</td><td>评论区推荐</td></tr>
+        <tr><td><b>Venezia</b></td><td>待核验</td><td>某必吃榜第 2，菜系与地址未核实</td><td>找到再去，别盲跑</td></tr>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">个人使用，不可转载不可商用</p>
+</div>
+
+<!-- ============ 实拍弹窗 ============ -->
+<div class="gal-mask" id="galMask">
+  <div class="gal-modal">
+    <div class="gal-head">
+      <button class="gal-x" id="galClose" style="order:2">✕</button>
+      <h3 style="order:1" id="galTitle"></h3>
+      <span class="gal-count" style="order:3" id="galCount"></span>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+    <div class="gal-view" id="galView">
+      <button class="gal-back" id="galBack">← 返回宫格</button>
+      <div class="gal-stage">
+        <button class="gal-nav gal-prev" id="galPrev">‹</button>
+        <img id="galImg" alt="">
+        <button class="gal-nav gal-next" id="galNext">›</button>
+      </div>
+      <div class="gal-cap">
+        <div id="galCapText"></div>
+        <a id="galSrc" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/gallery2/gallery-data.js"></script>
+<script>
+(function(){
+  /* ---------------- 数据 ---------------- */
+  var CATS=[
+    {id:'kazakh', name:'游牧国菜', color:'#2e7d6b'},
+    {id:'bazaar', name:'巴扎小吃', color:'#b08900'},
+    {id:'grill',  name:'烤肉牛排', color:'#c2553d'},
+    {id:'west',   name:'异国西餐', color:'#3a7ca5'},
+    {id:'korean', name:'高丽韩餐', color:'#d08a3c'},
+    {id:'cafe',   name:'咖啡甜品', color:'#4f6d7a'},
+    {id:'bar',    name:'酒吧',     color:'#8e3b46'}
+  ];
+  var P=[
+    {id:'auyl',cat:'kazakh',name:'Auyl',en:'游牧创意菜',lat:43.16233,lng:77.05985,
+     dish:'烤牛骨髓、马肉鞑靼、beshbarmak',price:'人均 ¥150–200',hour:'12:00 起，周末 11:00 起'},
+    {id:'sandyq',cat:'kazakh',name:'Sandyq',en:'国宴民族菜（口碑两极）',lat:43.26307,lng:76.93981,
+     dish:'samsa 烤包子、beshbarmak、马奶炖肋排',price:'人均 20k–25k₸',hour:'12:00–24:00'},
+    {id:'navat',cat:'kazakh',name:'Navat',en:'乌兹别克茶馆连锁',lat:43.26296,lng:76.94141,
+     dish:'抓饭、别什巴尔马克、马肉肠、烤包子',price:'人均 6k–10k₸',hour:'约 10:00–24:00'},
+    {id:'besqazan',cat:'kazakh',name:'Bes Qazan',en:'抓饭专门店',lat:43.25478,lng:76.93123,
+     dish:'大盘抓饭 5990₸ 够 3 人、拉条子',price:'人均约 3000₸',hour:'08:00 起'},
+    {id:'bazaar',cat:'bazaar',name:'绿巴扎二楼 + Bowler',en:'Kök Bazaar 巴扎小吃',lat:43.26368,lng:76.95520,
+     dish:'抓饭、烤馕、包尔萨克、奶茶续热水',price:'抓饭约 2200₸',hour:'白天，周一休'},
+    {id:'shashlychok',cat:'grill',name:'Shashlychok · Smile（红房子）',en:'美式烤肉串',lat:43.26524,lng:76.96032,
+     dish:'小臂粗肉串、爆汁烤口蘑、羊油包羊肝',price:'人均约 2600₸',hour:'10:30–24:00'},
+    {id:'xose',cat:'grill',name:'Xose & Josper（蓝房子）',en:'炭烤牛排',lat:43.24445,lng:76.94135,
+     dish:'烤牛舌、T-bone、马肉配黑醋',price:'人均约 ¥100',hour:'10:00–24:00'},
+    {id:'linebrew',cat:'grill',name:'Line Brew',en:'干式熟成牛排+精酿',lat:43.24111,lng:76.94817,
+     dish:'干式熟成「魔鬼」/T 骨、鸡肝面包',price:'人均 10k–15k₸',hour:'12:00–02:00'},
+    {id:'gastreat',cat:'grill',name:'Gastreat',en:'24h 肉食综合体',lat:43.20471,lng:76.89804,
+     dish:'战斧 12999₸、千层面、汉堡',price:'人均约 6000₸',hour:'24 小时'},
+    {id:'daredzhani',cat:'west',name:'Daredzhani',en:'格鲁吉亚菜',lat:43.25640,lng:76.94972,
+     dish:'Khachapuri 奶酪烤饼、Khinkali、茄子',price:'人均约 8000₸',hour:'09:00–24:00'},
+    {id:'delpapa',cat:'west',name:'Del Papa',en:'意餐连锁',lat:43.26001,lng:76.94286,
+     dish:'马肉 pasta、薄底 pizza',price:'人均 7k–10k₸',hour:'10:00–23:00'},
+    {id:'bistro130',cat:'west',name:'Bistro 130',en:'欧陆 brunch',lat:43.24893,lng:76.95131,
+     dish:'三文鱼可丽饼、班尼迪克蛋、pancake',price:'人均约 7000₸',hour:'08:00–00:00'},
+    {id:'bitanga',cat:'west',name:'Bitanga',en:'现代乌克兰菜',lat:43.25090,lng:76.94590,
+     dish:'红菜汤、乌克兰饺子',price:'人均约 9000₸',hour:'以 2GIS 为准'},
+    {id:'ogonek',cat:'west',name:'Ogonek',en:'石板煎肉小馆',lat:43.25283,lng:76.94487,
+     dish:'牛骨髓配 pita',price:'中档',hour:'约 10:00–24:00'},
+    {id:'masisso',cat:'korean',name:'Masisso',en:'高丽韩餐',lat:43.26439,lng:76.94522,
+     dish:'凉面 Куксу、糖醋鸡、6 小咸菜',price:'人均约 8000₸',hour:'12:00–24:00'},
+    {id:'bone',cat:'korean',name:'Bone Korea',en:'韩国老板烤肉',lat:43.26097,lng:76.94272,
+     dish:'腌牛肉、烤五花、石锅拌饭',price:'人均约 5000₸',hour:'10:00 起'},
+    {id:'fika',cat:'cafe',name:'Fika',en:'brunch 头牌',lat:43.24974,lng:76.94835,
+     dish:'嫩蛋 brunch、Red Boost 果汁',price:'人均 5k–10k₸',hour:'08:00–23:00'},
+    {id:'julius',cat:'cafe',name:'Julius',en:'精品咖啡早餐',lat:43.25005,lng:76.94697,
+     dish:'精品咖啡、可颂、早餐盘',price:'人均约 5500₸',hour:'08:00 起'},
+    {id:'vanilla',cat:'cafe',name:'Vanilla',en:'面包房连锁',lat:43.24865,lng:76.95156,
+     dish:'牛油果吐司、granola、甜甜圈',price:'人均约 3000₸',hour:'约 08:00–23:00'},
+    {id:'atelier',cat:'bar',name:'Atelier',en:'创意调酒（楼下 Barbolsyn）',lat:43.25250,lng:76.94300,
+     dish:'按口味定制鸡尾酒',price:'4k–8k₸/杯',hour:'18:00 开门'}
+  ];
+
+  /* ---------------- 地图 ---------------- */
+  var map=L.map('foodMap',{scrollWheelZoom:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
+    attribution:'Tiles © Esri · 数据 © OpenStreetMap, 2GIS',maxZoom:18}).addTo(map);
+
+  var groups={}, markers={};
+  CATS.forEach(function(c){groups[c.id]=L.layerGroup().addTo(map);});
+  var bounds=L.latLngBounds([]);
+  P.forEach(function(p,idx){
+    var c=CATS.filter(function(x){return x.id===p.cat;})[0];
+    var icon=L.divIcon({className:'',iconSize:[22,22],iconAnchor:[11,11],
+      html:'<div class="pin" style="width:22px;height:22px;background:'+c.color+'">'+(idx+1)+'</div>'});
+    var m=L.marker([p.lat,p.lng],{icon:icon});
+    m.bindPopup(
+      '<div><span class="pp-tag" style="background:'+c.color+'">'+c.name+'</span><br>'+
+      '<b>'+p.name+'</b> <span style="color:#888;font-size:12px">'+p.en+'</span><br>'+
+      p.dish+'<div class="pp-meta">'+p.price+' · '+p.hour+'</div></div>');
+    m.addTo(groups[p.cat]);
+    markers[p.id]=m;
+    bounds.extend([p.lat,p.lng]);
+  });
+  map.fitBounds(bounds,{padding:[34,34]});
+  setTimeout(function(){map.invalidateSize();map.fitBounds(bounds,{padding:[34,34]});},300);
+
+  /* ---------------- 筛选 chips ---------------- */
+  var fbox=document.getElementById('filters');
+  var allChip=document.createElement('button');
+  allChip.className='chip';allChip.textContent='全部';
+  allChip.onclick=function(){
+    CATS.forEach(function(c){groups[c.id].addTo(map);document.querySelectorAll('.chapter[data-cat]').forEach(function(s){s.classList.remove('hide');});});
+    Array.prototype.forEach.call(fbox.querySelectorAll('.chip'),function(x){x.classList.remove('off');});
+    map.fitBounds(bounds,{padding:[34,34]});
+  };
+  fbox.appendChild(allChip);
+  CATS.forEach(function(c){
+    var b=document.createElement('button');
+    b.className='chip';
+    b.innerHTML='<span class="dot" style="background:'+c.color+'"></span>'+c.name;
+    b.onclick=function(){
+      b.classList.toggle('off');
+      var off=b.classList.contains('off');
+      var sec=document.querySelector('.chapter[data-cat="'+c.id+'"]');
+      if(off){map.removeLayer(groups[c.id]);sec.classList.add('hide');}
+      else{groups[c.id].addTo(map);sec.classList.remove('hide');}
+      var vis=P.filter(function(p){return map.hasLayer(markers[p.id]);});
+      if(vis.length){
+        var bb=L.latLngBounds(vis.map(function(p){return [p.lat,p.lng];}));
+        map.fitBounds(bb,{padding:[34,34]});
+      }
+    };
+    fbox.appendChild(b);
+  });
+
+  /* ---------------- 卡片 → 地图 ---------------- */
+  document.addEventListener('click',function(e){
+    var fb=e.target.closest('.fly-btn');
+    if(fb&&fb.dataset.fly){
+      var p=P.filter(function(x){return x.id===fb.dataset.fly;})[0];if(!p)return;
+      map.flyTo([p.lat,p.lng],Math.max(map.getZoom(),15),{duration:.7});
+      setTimeout(function(){markers[p.id].openPopup();},750);
+    }
+  });
+
+  /* ---------------- 实拍弹窗（与主攻略同款） ---------------- */
+  var mask=document.getElementById('galMask'),grid=document.getElementById('galGrid'),view=document.getElementById('galView');
+  var gTitle=document.getElementById('galTitle'),gCount=document.getElementById('galCount');
+  var gImg=document.getElementById('galImg'),gCap=document.getElementById('galCapText'),gSrc=document.getElementById('galSrc');
+  var cur=[],pos=0;
+  function rootP(p){return p.indexOf('assets/')===0?'../'+p:p;}
+  function showGrid(){view.classList.remove('show');grid.style.display='grid';mask.classList.remove('viewing');}
+  function openViewer(i){
+    pos=i;var it=cur[i];gImg.src=rootP(it.src);gImg.alt=it.cap||'';
+    gCap.textContent=it.cap||'';
+    if(it.url){gSrc.href=it.url;gSrc.textContent='查看原笔记 ↗';gSrc.style.display='';}else{gSrc.style.display='none';gSrc.href='#';}
+    grid.style.display='none';view.classList.add('show');mask.classList.add('viewing');
+  }
+  function step(d){openViewer((pos+d+cur.length)%cur.length);}
+  window.openGallery=function(key){
+    var g=window.GALLERY&&window.GALLERY[key];if(!g||!g.items.length)return;
+    cur=g.items;gTitle.textContent=g.title;gCount.textContent=g.items.length+' 张 · 小红书旅拍，点击看大图与原帖';
+    grid.innerHTML=cur.map(function(it,i){
+      var full=rootP(it.src),th=full.replace(/\.webp$/,'.th.webp');
+      return '<img loading="eager" decoding="async" fetchpriority="high" src="'+th+'" data-full="'+full+
+        '" onerror="this.onerror=null;this.src=this.dataset.full" data-i="'+i+'" alt="'+(it.cap||'')+'" title="'+(it.cap||'')+'">';
+    }).join('');
+    showGrid();mask.classList.add('show');
+  };
+  grid.addEventListener('click',function(e){if(e.target.dataset.i)openViewer(+e.target.dataset.i);});
+  document.getElementById('galClose').addEventListener('click',function(){mask.classList.remove('show');});
+  document.getElementById('galBack').addEventListener('click',showGrid);
+  document.getElementById('galPrev').addEventListener('click',function(){step(-1);});
+  document.getElementById('galNext').addEventListener('click',function(){step(1);});
+  mask.addEventListener('click',function(e){if(e.target===mask)mask.classList.remove('show');});
+  document.addEventListener('keydown',function(e){
+    if(!mask.classList.contains('show'))return;
+    if(e.key==='Escape'){if(view.classList.contains('show'))showGrid();else mask.classList.remove('show');}
+    if(e.key==='ArrowLeft'&&view.classList.contains('show'))step(-1);
+    if(e.key==='ArrowRight'&&view.classList.contains('show'))step(1);
+  });
+  document.addEventListener('click',function(e){
+    var gb=e.target.closest('.g-btn');
+    if(gb&&gb.dataset.gal){e.preventDefault();window.openGallery(gb.dataset.gal);}
+  });
+})();
+</script>
+</body>
+</html>
