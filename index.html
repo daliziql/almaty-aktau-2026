@@ -1672,7 +1672,7 @@ setTimeout(()=>{
     }else if(now<T1){
       box.classList.add('state-travel');
       eye='ON THE ROAD · 旅途进行中';
-      main='即将见面啦';
+      main='即将见面，上海集合！';
       for(const [lt,txt] of LINES){ if(now>=lt) main=txt; }
       x=parts(now-T0);
       prog=(now-T0)/(T1-T0)*100;
